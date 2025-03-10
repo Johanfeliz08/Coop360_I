@@ -2,6 +2,12 @@
 
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
 
+:root {
+  --accent-color: #49ba85;
+  --bg-color: #f3f5f7;
+  --section-bg-color: #ffffff;
+}
+
 * {
   margin: 0;
   padding: 0;
