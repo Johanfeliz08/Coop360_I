@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Iniciar Sesion";
+    Layout = "~/Views/Shared/_LayoutLogin.cshtml";
+}
+
+<div class="bg-logo">
+    <img src="" alt="">
+</div>
+
+<section class="login">
+    <div class="columna-izquierda">
+        <img src="" alt="" class="logo">
+        <div class="transparent-color"></div>
+    </div>
+    <div class="login-form-container">
+        <div class="titulo">
+            <h1>Iniciar Sesion</h1>
+        </div>
+        <form class="login-form" method="post">
+            <div class="login-form-group">
+                <label for="usuario">Usuario</label>
+                <input type="text" id="usuario" name="usuario" required>
+            </div>
+            <div class="login-form-group">
+                <label for="password">Contraseña</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" class="btn-login">Ingresar</button>
+        </form>
+    </div>
+</section>
+
+<div class="bg-logo">
+    <img src="" alt="">
+</div>
