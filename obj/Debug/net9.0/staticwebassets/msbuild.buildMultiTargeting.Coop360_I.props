@@ -1,0 +1,3 @@
+﻿<Project>
+  <Import Project="..\build\Coop360_I.props" />
+</Project>
