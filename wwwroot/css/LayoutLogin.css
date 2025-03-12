@@ -6,6 +6,41 @@
   align-items: center;
   height: 100vh;
   background-color: #f3f5f7;
+  position: relative;
+  overflow: hidden;
+  z-index: 100;
+}
+
+/* Estilos imagenes de fondo login */
+
+.bg-logo-tl,
+.bg-logo-br {
+  position: absolute;
+  opacity: 70%;
+  overflow: hidden;
+}
+
+.bg-logo-tl {
+  top: -350px;
+  left: -480px;
+  rotate: -17deg;
+}
+
+.bg-logo-tl img {
+  width: 1200px;
+  height: auto;
+}
+
+.bg-logo-br {
+  bottom: -550px;
+  right: -400px;
+  rotate: 17deg;
+  z-index: -1;
+}
+
+.bg-logo-br img {
+  width: 1200px;
+  height: auto;
 }
 
 /* Login Styles */
@@ -13,14 +48,17 @@
 .login {
   width: 100%;
   max-height: 600px;
-  max-width: 800px;
+  max-width: 1000px;
   margin: 0 auto;
   background-color: #fff;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  box-shadow: 1px 1px 10px 2px rgba(0, 0, 0, 0.25);
 }
+
+/* Columna izquierda */
 
 .columna-izquierda {
   display: flex;
@@ -30,18 +68,9 @@
   background-size: cover;
   background-position: center;
   height: 600px;
-  width: 400px;
+  width: 500px;
   /* border: 1px solid red; */
   position: relative;
-}
-
-.login-form-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 600px;
-  width: 400px;
-  /* border: 1px solid yellow; */
 }
 
 .color-transparente {
@@ -57,4 +86,81 @@
 .columna-izquierda img {
   position: relative;
   z-index: 1;
+}
+
+/* Columna derecha */
+
+.login-form-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  width: 800px;
+  max-height: 800px;
+  /* border: 1px solid yellow; */
+  position: relative;
+}
+
+.login-form-container > .login-form {
+  /* border: 1px solid red; */
+  padding: 50px 0px;
+  width: 80%;
+}
+
+.login-form-container .login-form .titulo-container .titulo {
+  font-size: 2.5rem;
+  color: var(--accent-color);
+  text-align: center;
+}
+
+.login-form-container .login-form .login-form-group {
+  margin: 1.5rem 0;
+}
+
+.login-form-container .login-form .login-form-group input {
+  height: 45px;
+  width: 100%;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.3rem;
+  border-left: 4px solid #49ba85;
+  border-top: 2px solid #fff;
+  border-bottom: 2px solid #fff;
+  border-right: 2px solid #fff;
+  background: #fff;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  padding-left: 3px;
+  outline: none;
+  transition: all 0.3s ease;
+}
+
+.login-form-container .login-form .login-form-group input:hover {
+  border-top: 2px solid var(--accent-color);
+  border-bottom: 2px solid var(--accent-color);
+  border-right: 2px solid var(--accent-color);
+}
+
+.login-form-container .login-form button {
+  height: 45px;
+  width: 100%;
+  font-family: "Oxygen", sans-serif;
+  font-size: 1.3rem;
+  background-color: var(--accent-color);
+  color: #fff;
+  font-weight: 500;
+  border: none;
+  cursor: pointer;
+  box-shadow: 0px 2px 4px 0px rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s;
+}
+
+.login-form-container .login-form button:hover {
+  background-color: #297451;
+}
+
+.login-form-container .login-form .logo-br img {
+  width: 100px;
+  height: auto;
+  position: absolute;
+  bottom: 0px;
+  right: 0px;
 }

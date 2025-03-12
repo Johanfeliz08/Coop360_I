@@ -3,8 +3,8 @@
     Layout = "~/Views/Shared/_LayoutLogin.cshtml";
 }
 
-<div class="bg-logo">
-    <img src="" alt="">
+<div class="bg-logo-tl">
+    <img src="../img/logos/1.png" alt="Logo coop360 fondo">
 </div>
 
 <section class="login">
@@ -14,24 +14,27 @@
     </div>
     <div class="login-form-container">
         <div class="login-form">
-            <div class="titulo">
-                <h1>Iniciar Sesion</h1>
+            <div class="titulo-container">
+                <h1 class="titulo oxygen-bold">Iniciar Sesion</h1>
             </div>
             <form class="login-form" method="post">
                 <div class="login-form-group">
-                    <label for="usuario">Usuario</label>
-                    <input type="text" id="usuario" name="usuario" required>
+                    @* <label for="usuario">Usuario</label> *@
+                    <input type="text" placeholder="Usuario" id="usuario" name="usuario" required>
                 </div>
                 <div class="login-form-group">
-                    <label for="password">Contraseña</label>
-                    <input type="password" id="password" name="password" required>
+                    @* <label for="password">Contraseña</label> *@
+                    <input type="password" placeholder="Contraseña" id="password" name="password" required>
                 </div>
                 <button type="submit" class="btn-login">Ingresar</button>
             </form>
+            <div class="logo-br">
+                <img src="../img/logos/1.png" alt="Logo coop360">
+            </div>
         </div>
     </div>
 </section>
 
-<div class="bg-logo">
-    <img src="" alt="">
+<div class="bg-logo-br">
+    <img src="../img/logos/1.png" alt="Logo coop360 fondo">
 </div>
