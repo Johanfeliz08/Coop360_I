@@ -1,0 +1,55 @@
+@model string
+
+@{
+    ViewData["Title"] = "Error";
+}
+
+<head>
+    <link rel="stylesheet" href="~/css/ErrorModal.css">
+</head>
+
+<dialog id="errorModal" class="modal">
+
+  <div class="container">
+    <div class="icon">
+      <img src="" alt="">
+    </div>
+    <div class="title">
+      <h2>Ha ocurrido un error</h2>
+    </div>
+    <div class="errorMessage">
+      <p>@Model</p>
+    </div>
+    <div class="close-btn">
+      <button>Aceptar</button>
+    </div>
+  </div>
+
+</dialog>
+
+@* <script>
+
+document.addEventListener("DOMContentLoaded", () => {
+    
+    const errorMessage = '@TempData["Error"]';
+
+    if (errorMessage) {
+      const modal = document.getElementById("errorModal");
+      document.getElementById("errorMessage").textContent = errorMessage;
+      modal.showDialog();
+
+      // Cerrar modal al hacer clic en el boton aceptar
+      document.querySelector(".close-btn").addEventListener("click", function () {
+        modal.close();
+      });
+
+      // Cerrar modal si el usuario hace clic fuera del modal
+      window.onclick = function (event) {
+        if (event.target == modal) {
+          modal.close();
+        }
+      }
+    }
+  });
+
+</script> *@

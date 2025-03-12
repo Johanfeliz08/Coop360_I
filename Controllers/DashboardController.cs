@@ -1,19 +1,23 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Coop360_I.Models;
+using Coop360_I.Data;
 
 namespace Coop360_I.Controllers;
 
-public class LoginController : Controller
+public class DashboardController : Controller
 {
-    private readonly ILogger<LoginController> _logger;
+    private readonly ILogger<DashboardController> _logger;
+    private readonly ApplicationDbContext _context;
 
-    public LoginController(ILogger<LoginController> logger)
+    public DashboardController(ApplicationDbContext context, ILogger<DashboardController> logger)
     {
         _logger = logger;
+        _context = context;
     }
 
-    public IActionResult Index()
+    [HttpGet]
+    public IActionResult Home()
     {
         return View();
     }

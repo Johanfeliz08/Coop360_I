@@ -1,6 +1,14 @@
 {
   "Files": [
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\ErrorModal.css",
+      "PackagePath": "staticwebassets\\css\\ErrorModal.css"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\LayoutDashboard.css",
+      "PackagePath": "staticwebassets\\css\\LayoutDashboard.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\LayoutLogin.css",
       "PackagePath": "staticwebassets\\css\\LayoutLogin.css"
     },

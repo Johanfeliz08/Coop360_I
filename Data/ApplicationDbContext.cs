@@ -10,5 +10,8 @@ namespace Coop360_I.Data
         {
         }
 
+        // Definiciones de dbsets
+        public DbSet<Usuario> Usuarios { get; set; }
+
     }
 }

@@ -164,3 +164,8 @@
   bottom: 0px;
   right: 0px;
 }
+
+.login-form .error {
+  color: red;
+  padding: 2px;
+}

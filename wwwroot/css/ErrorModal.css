@@ -1,0 +1,5 @@
+dialog {
+  background: black;
+  z-index: 1000;
+  position: fixed;
+}
