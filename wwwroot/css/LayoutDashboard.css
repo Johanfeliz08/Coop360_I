@@ -1,0 +1,20 @@
+header {
+  display: flex;
+  flex-direction: row;
+  justify-content: right;
+  justify-items: center;
+  background: var(--accent-color);
+  width: 100vw;
+  height: 60px;
+  overflow: hidden;
+}
+
+.menu {
+  background: var(--accent-color);
+  width: 200px;
+  height: 100vh;
+}
+
+.container {
+  background-color: aqua;
+}
