@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Coop360_I.Models;
 using Coop360_I.Data;
+using Microsoft.AspNetCore.Http;
 
 namespace Coop360_I.Controllers;
 
@@ -19,6 +20,11 @@ public class DashboardController : Controller
     [HttpGet]
     public IActionResult Home()
     {
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
         return View();
     }
 

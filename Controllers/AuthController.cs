@@ -2,6 +2,8 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Coop360_I.Models;
 using Coop360_I.Data;
+using Microsoft.AspNetCore.Http;
+
 
 namespace Coop360_I.Controllers;
 
@@ -28,6 +30,9 @@ public class AuthController : Controller
         var AuthUsuario = _context.Usuarios.FirstOrDefault(u => u.CODIGO_EMPLEADO == Convert.ToInt32(usuario) && u.CONTRASENA == contrasena);
         if (AuthUsuario != null)
         {
+            // Guardar usuario en la sesion
+            HttpContext.Session.SetInt32("ID_USUARIO", AuthUsuario.ID_USUARIO);
+            HttpContext.Session.SetInt32("USUARIO", AuthUsuario.CODIGO_EMPLEADO);
             return RedirectToAction("Home", "Dashboard");
         }
         else
