@@ -25,11 +25,15 @@ public class AuthController : Controller
         return View();
     }
 
+    public IActionResult Logout()
+    {
+        HttpContext.Session.Clear();
+        return RedirectToAction("Login", "Auth");
+    }
+
     [HttpPost]
     public IActionResult Login(int usuario, string contrasena)
     {   
-        // var AuthUsuario = _context.Usuarios.FirstOrDefault(u => u.CODIGO_EMPLEADO == Convert.ToInt32(usuario) && u.CONTRASENA == contrasena);
-        
         var AuthUsuario = _context.Usuarios
         .FromSqlRaw("EXEC SP_OBTENER_USUARIO @CODIGO_EMPLEADO = {0}, @CONTRASENA = {1}", Convert.ToInt32(usuario), contrasena)
         .AsEnumerable()

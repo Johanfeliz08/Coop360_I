@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\Coop360_I.csproj": {}
+    "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\Coop360_I.csproj": {}
   },
   "projects": {
-    "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\Coop360_I.csproj": {
+    "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\Coop360_I.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\Coop360_I.csproj",
+        "projectUniqueName": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\Coop360_I.csproj",
         "projectName": "Coop360_I",
-        "projectPath": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\Coop360_I.csproj",
-        "packagesPath": "C:\\Users\\iamjo\\.nuget\\packages\\",
-        "outputPath": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\",
+        "projectPath": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\Coop360_I.csproj",
+        "packagesPath": "C:\\Users\\Johan\\.nuget\\packages\\",
+        "outputPath": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\iamjo\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Johan\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -26,7 +26,6 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "C:\\Program Files\\dotnet\\library-packs": {},
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {

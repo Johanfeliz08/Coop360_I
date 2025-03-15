@@ -270,7 +270,7 @@ D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\Coop360_I.pdb
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\Coop360_I.genruntimeconfig.cache
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\ref\Coop360_I.dll
-D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\2kv498179r-ihz5qvqmyz.gz
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\saa8dtaixl-fcn0b2wds4.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\saa8dtaixl-fcn0b2wds4.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\2kv498179r-2t9vnsa72w.gz
+D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\2kv498179r-2t9vnsa72w.gz
