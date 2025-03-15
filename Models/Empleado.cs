@@ -28,7 +28,7 @@ public class Empleado
     public required int ID_PUESTO { get; set; }
     public required int ID_DEPARTAMENTO { get; set; }
     public required string TIPO_SANGRE { get; set; }
-    public string? NOMBRE_FAMILAR_PRIMARIO { get; set; }
+    public string? NOMBRE_FAMILIAR_PRIMARIO { get; set; }
     public string? TELEFONO_FAMILIAR_PRIMARIO { get; set; }
     public string? PARENTESCO_FAMILIAR_PRIMARIO { get; set; }
     public string? NOMBRE_FAMILIAR_SECUNDARIO { get; set; }
