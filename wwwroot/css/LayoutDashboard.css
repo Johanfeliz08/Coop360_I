@@ -80,6 +80,7 @@ main {
 }
 
 #logobg-inicio {
+  position: absolute;
   opacity: 0.6;
 }
 
