@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "6IX2Go/Zv4ikSWMiusG/zyVy1FFWJ9TpxanIHxpsF38=",
+  "Hash": "LxPrCwaxKCCIiFwS9StO8+Wcy6Q/woswfALe/YnCC24=",
   "Source": "Coop360_I",
   "BasePath": "_content/Coop360_I",
   "Mode": "Default",
@@ -80,12 +80,12 @@
       "OriginalItemSpec": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
     },
     {
-      "Identity": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-2t9vnsa72w.gz",
+      "Identity": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-4eafbdfs0e.gz",
       "SourceId": "Coop360_I",
       "SourceType": "Discovered",
       "ContentRoot": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Coop360_I",
-      "RelativePath": "css/LayoutDashboard#[.{fingerprint=2t9vnsa72w}]?.css.gz",
+      "RelativePath": "css/LayoutDashboard#[.{fingerprint=4eafbdfs0e}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -94,8 +94,8 @@
       "RelatedAsset": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\LayoutDashboard.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "myel7v0qfz",
-      "Integrity": "/gGqfHMuT1gto9zbO+uBbaQ+aPMlINyE9PjYdhNZU6Y=",
+      "Fingerprint": "lxkovy8a6w",
+      "Integrity": "+caCKrUJaZ1RMsGfM6imIyP67Be27f2b+MMFS8yoKxY=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\LayoutDashboard.css"
@@ -120,6 +120,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\lib\\bootstrap\\dist\\js\\bootstrap.esm.js.map"
+    },
+    {
+      "Identity": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\57mgd12axj-h39uudrgyq.gz",
+      "SourceId": "Coop360_I",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Coop360_I",
+      "RelativePath": "css/Cuenta/Perfil#[.{fingerprint=h39uudrgyq}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\Cuenta\\Perfil.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "10hy8hwxnu",
+      "Integrity": "kbYx7UDx7cUFd0l/14PWkqW7RdxdUPAdETcx1SCY1ag=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\Cuenta\\Perfil.css"
     },
     {
       "Identity": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\59718xsd0v-r4e9w2rdcm.gz",
@@ -1382,6 +1403,27 @@
       "OriginalItemSpec": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\lib\\jquery\\dist\\jquery.min.js"
     },
     {
+      "Identity": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\Cuenta\\Perfil.css",
+      "SourceId": "Coop360_I",
+      "SourceType": "Discovered",
+      "ContentRoot": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\",
+      "BasePath": "_content/Coop360_I",
+      "RelativePath": "css/Cuenta/Perfil#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "h39uudrgyq",
+      "Integrity": "c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Cuenta\\Perfil.css"
+    },
+    {
       "Identity": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\ErrorModal.css",
       "SourceId": "Coop360_I",
       "SourceType": "Discovered",
@@ -1417,8 +1459,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "2t9vnsa72w",
-      "Integrity": "ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY=",
+      "Fingerprint": "4eafbdfs0e",
+      "Integrity": "pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\LayoutDashboard.css"
@@ -3022,6 +3064,304 @@
   ],
   "Endpoints": [
     {
+      "Route": "css/Cuenta/Perfil.css",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\57mgd12axj-h39uudrgyq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.018181818182"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "54"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kbYx7UDx7cUFd0l/14PWkqW7RdxdUPAdETcx1SCY1ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Mar 2025 14:12:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k="
+        }
+      ]
+    },
+    {
+      "Route": "css/Cuenta/Perfil.css",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\Cuenta\\Perfil.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Mar 2025 14:12:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k="
+        }
+      ]
+    },
+    {
+      "Route": "css/Cuenta/Perfil.css.gz",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\57mgd12axj-h39uudrgyq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "54"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kbYx7UDx7cUFd0l/14PWkqW7RdxdUPAdETcx1SCY1ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Mar 2025 14:12:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-kbYx7UDx7cUFd0l/14PWkqW7RdxdUPAdETcx1SCY1ag="
+        }
+      ]
+    },
+    {
+      "Route": "css/Cuenta/Perfil.h39uudrgyq.css",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\57mgd12axj-h39uudrgyq.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.018181818182"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "54"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kbYx7UDx7cUFd0l/14PWkqW7RdxdUPAdETcx1SCY1ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Mar 2025 14:12:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h39uudrgyq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Cuenta/Perfil.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k="
+        }
+      ]
+    },
+    {
+      "Route": "css/Cuenta/Perfil.h39uudrgyq.css",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\Cuenta\\Perfil.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "34"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Mar 2025 14:12:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h39uudrgyq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Cuenta/Perfil.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k="
+        }
+      ]
+    },
+    {
+      "Route": "css/Cuenta/Perfil.h39uudrgyq.css.gz",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\57mgd12axj-h39uudrgyq.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "54"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"kbYx7UDx7cUFd0l/14PWkqW7RdxdUPAdETcx1SCY1ag=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 15 Mar 2025 14:12:55 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "h39uudrgyq"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Cuenta/Perfil.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-kbYx7UDx7cUFd0l/14PWkqW7RdxdUPAdETcx1SCY1ag="
+        }
+      ]
+    },
+    {
       "Route": "css/ErrorModal.css",
       "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\p46wo4tuq9-ykrkcy1crg.gz",
       "Selectors": [
@@ -3320,13 +3660,13 @@
       ]
     },
     {
-      "Route": "css/LayoutDashboard.2t9vnsa72w.css",
-      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-2t9vnsa72w.gz",
+      "Route": "css/LayoutDashboard.4eafbdfs0e.css",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-4eafbdfs0e.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000798084597"
+          "Quality": "0.000697836706"
         }
       ],
       "ResponseHeaders": [
@@ -3336,15 +3676,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1252"
+          "Value": "1432"
         },
         {
           "Name": "ETag",
-          "Value": "\"/gGqfHMuT1gto9zbO+uBbaQ+aPMlINyE9PjYdhNZU6Y=\""
+          "Value": "\"+caCKrUJaZ1RMsGfM6imIyP67Be27f2b+MMFS8yoKxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 12:31:04 GMT"
+          "Value": "Sat, 15 Mar 2025 14:10:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3364,13 +3704,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY=\""
+          "Value": "W/\"pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2t9vnsa72w"
+          "Value": "4eafbdfs0e"
         },
         {
           "Name": "label",
@@ -3378,12 +3718,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY="
+          "Value": "sha256-pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk="
         }
       ]
     },
     {
-      "Route": "css/LayoutDashboard.2t9vnsa72w.css",
+      "Route": "css/LayoutDashboard.4eafbdfs0e.css",
       "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\LayoutDashboard.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -3393,7 +3733,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5039"
+          "Value": "6281"
         },
         {
           "Name": "Content-Type",
@@ -3401,11 +3741,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY=\""
+          "Value": "\"pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 12:31:04 GMT"
+          "Value": "Sat, 15 Mar 2025 14:10:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3415,7 +3755,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2t9vnsa72w"
+          "Value": "4eafbdfs0e"
         },
         {
           "Name": "label",
@@ -3423,13 +3763,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY="
+          "Value": "sha256-pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk="
         }
       ]
     },
     {
-      "Route": "css/LayoutDashboard.2t9vnsa72w.css.gz",
-      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-2t9vnsa72w.gz",
+      "Route": "css/LayoutDashboard.4eafbdfs0e.css.gz",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-4eafbdfs0e.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3438,7 +3778,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1252"
+          "Value": "1432"
         },
         {
           "Name": "Content-Type",
@@ -3446,11 +3786,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/gGqfHMuT1gto9zbO+uBbaQ+aPMlINyE9PjYdhNZU6Y=\""
+          "Value": "\"+caCKrUJaZ1RMsGfM6imIyP67Be27f2b+MMFS8yoKxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 12:31:04 GMT"
+          "Value": "Sat, 15 Mar 2025 14:10:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3468,7 +3808,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "2t9vnsa72w"
+          "Value": "4eafbdfs0e"
         },
         {
           "Name": "label",
@@ -3476,18 +3816,18 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-/gGqfHMuT1gto9zbO+uBbaQ+aPMlINyE9PjYdhNZU6Y="
+          "Value": "sha256-+caCKrUJaZ1RMsGfM6imIyP67Be27f2b+MMFS8yoKxY="
         }
       ]
     },
     {
       "Route": "css/LayoutDashboard.css",
-      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-2t9vnsa72w.gz",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-4eafbdfs0e.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000798084597"
+          "Quality": "0.000697836706"
         }
       ],
       "ResponseHeaders": [
@@ -3497,15 +3837,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1252"
+          "Value": "1432"
         },
         {
           "Name": "ETag",
-          "Value": "\"/gGqfHMuT1gto9zbO+uBbaQ+aPMlINyE9PjYdhNZU6Y=\""
+          "Value": "\"+caCKrUJaZ1RMsGfM6imIyP67Be27f2b+MMFS8yoKxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 12:31:04 GMT"
+          "Value": "Sat, 15 Mar 2025 14:10:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3525,13 +3865,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY=\""
+          "Value": "W/\"pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY="
+          "Value": "sha256-pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk="
         }
       ]
     },
@@ -3546,7 +3886,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "5039"
+          "Value": "6281"
         },
         {
           "Name": "Content-Type",
@@ -3554,11 +3894,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY=\""
+          "Value": "\"pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 12:31:04 GMT"
+          "Value": "Sat, 15 Mar 2025 14:10:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3568,13 +3908,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY="
+          "Value": "sha256-pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk="
         }
       ]
     },
     {
       "Route": "css/LayoutDashboard.css.gz",
-      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-2t9vnsa72w.gz",
+      "AssetFile": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\2kv498179r-4eafbdfs0e.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -3583,7 +3923,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1252"
+          "Value": "1432"
         },
         {
           "Name": "Content-Type",
@@ -3591,11 +3931,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"/gGqfHMuT1gto9zbO+uBbaQ+aPMlINyE9PjYdhNZU6Y=\""
+          "Value": "\"+caCKrUJaZ1RMsGfM6imIyP67Be27f2b+MMFS8yoKxY=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Sat, 15 Mar 2025 12:31:04 GMT"
+          "Value": "Sat, 15 Mar 2025 14:10:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -3613,7 +3953,7 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-/gGqfHMuT1gto9zbO+uBbaQ+aPMlINyE9PjYdhNZU6Y="
+          "Value": "sha256-+caCKrUJaZ1RMsGfM6imIyP67Be27f2b+MMFS8yoKxY="
         }
       ]
     },

@@ -5,6 +5,10 @@ namespace Coop360_I.Data
 {
     public class ApplicationDbContext : DbContext
     {
+        public ApplicationDbContext()
+        {
+        }
+
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options)
             : base(options)
         {
@@ -12,6 +16,6 @@ namespace Coop360_I.Data
 
         // Definiciones de dbsets
         public DbSet<Usuario> Usuarios { get; set; }
-
+        public DbSet<Empleado> Empleados { get; set; }
     }
 }

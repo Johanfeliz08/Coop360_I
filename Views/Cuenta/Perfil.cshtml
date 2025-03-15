@@ -1,0 +1,17 @@
+@{
+  ViewBag.Title = "Mi Perfil";
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+@Model Empleado
+
+<head>
+  <link rel="stylesheet" href="~/css/Cuenta/Perfil.css" asp-append-version="true" />
+</head>
+
+<section>
+  <div class="campo">
+    <span class="label">Primer Nombre</span>
+    <span class="valor">@Model.P_NOMBRE</span>
+  </div>
+</section>

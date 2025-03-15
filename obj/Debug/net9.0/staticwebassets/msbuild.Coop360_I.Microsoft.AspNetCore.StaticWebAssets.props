@@ -1,5 +1,23 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Cuenta\Perfil.css'))">
+      <SourceType>Package</SourceType>
+      <SourceId>Coop360_I</SourceId>
+      <ContentRoot>$(MSBuildThisFileDirectory)..\staticwebassets\</ContentRoot>
+      <BasePath>_content/Coop360_I</BasePath>
+      <RelativePath>css/Cuenta/Perfil.css</RelativePath>
+      <AssetKind>All</AssetKind>
+      <AssetMode>All</AssetMode>
+      <AssetRole>Primary</AssetRole>
+      <RelatedAsset></RelatedAsset>
+      <AssetTraitName></AssetTraitName>
+      <AssetTraitValue></AssetTraitValue>
+      <Fingerprint>h39uudrgyq</Fingerprint>
+      <Integrity>c5RaEIWuFIWdBUXoBeskiKzp3iNjV0YXJGocW4bbV7k=</Integrity>
+      <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Cuenta\Perfil.css'))</OriginalItemSpec>
+    </StaticWebAsset>
     <StaticWebAsset Include="$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\ErrorModal.css'))">
       <SourceType>Package</SourceType>
       <SourceId>Coop360_I</SourceId>
@@ -30,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>2t9vnsa72w</Fingerprint>
-      <Integrity>ZgrKq6f3WQkoC/WevzDDEUqSqMo31yiB9ez0IzH/WlY=</Integrity>
+      <Fingerprint>4eafbdfs0e</Fingerprint>
+      <Integrity>pO4H7IW84iOQ9cE6phnEE06mrDGIgnJoa58qw7UVtNk=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\LayoutDashboard.css'))</OriginalItemSpec>

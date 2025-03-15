@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\Cuenta\\Perfil.css",
+      "PackagePath": "staticwebassets\\css\\Cuenta\\Perfil.css"
+    },
+    {
       "Id": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\css\\ErrorModal.css",
       "PackagePath": "staticwebassets\\css\\ErrorModal.css"
     },
