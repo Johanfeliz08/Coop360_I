@@ -21,6 +21,34 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\iconos\\cobros.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\cobros.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\iconos\\codeudores.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\codeudores.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\iconos\\empleados.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\empleados.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\iconos\\flecha-menu-desplegable.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\flecha-menu-desplegable.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\iconos\\inicio.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\inicio.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\iconos\\prestamos.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\prestamos.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\iconos\\socios.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\socios.png"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\login-bg.jpg",
       "PackagePath": "staticwebassets\\img\\login-bg.jpg"
     },
@@ -31,6 +59,14 @@
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\logos\\3.png",
       "PackagePath": "staticwebassets\\img\\logos\\3.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\logos\\logo-menu.png",
+      "PackagePath": "staticwebassets\\img\\logos\\logo-menu.png"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\img\\logos\\logobg-inicio.png",
+      "PackagePath": "staticwebassets\\img\\logos\\logobg-inicio.png"
     },
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\site.js",

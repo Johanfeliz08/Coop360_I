@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Coop360_I.Models;
 using Coop360_I.Data;
 using Microsoft.AspNetCore.Http;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace Coop360_I.Controllers;
@@ -27,12 +28,24 @@ public class AuthController : Controller
     [HttpPost]
     public IActionResult Login(int usuario, string contrasena)
     {   
-        var AuthUsuario = _context.Usuarios.FirstOrDefault(u => u.CODIGO_EMPLEADO == Convert.ToInt32(usuario) && u.CONTRASENA == contrasena);
+        // var AuthUsuario = _context.Usuarios.FirstOrDefault(u => u.CODIGO_EMPLEADO == Convert.ToInt32(usuario) && u.CONTRASENA == contrasena);
+        
+        var AuthUsuario = _context.Usuarios
+        .FromSqlRaw("EXEC SP_OBTENER_USUARIO @CODIGO_EMPLEADO = {0}, @CONTRASENA = {1}", Convert.ToInt32(usuario), contrasena)
+        .AsEnumerable()
+        .FirstOrDefault();
+
         if (AuthUsuario != null)
         {
             // Guardar usuario en la sesion
             HttpContext.Session.SetInt32("ID_USUARIO", AuthUsuario.ID_USUARIO);
             HttpContext.Session.SetInt32("USUARIO", AuthUsuario.CODIGO_EMPLEADO);
+            HttpContext.Session.SetString("P_NOMBRE", AuthUsuario.P_NOMBRE);
+            HttpContext.Session.SetString("S_NOMBRE", AuthUsuario.S_NOMBRE);
+            HttpContext.Session.SetString("P_APELLIDO", AuthUsuario.P_APELLIDO);
+            HttpContext.Session.SetString("S_APELLIDO", AuthUsuario.S_APELLIDO);
+            HttpContext.Session.SetString("FECHA_CREACION", AuthUsuario.FECHA_CREACION.ToString());
+
             return RedirectToAction("Home", "Dashboard");
         }
         else

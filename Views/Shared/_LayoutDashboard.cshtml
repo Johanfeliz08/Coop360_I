@@ -1,3 +1,6 @@
+@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,11 +17,25 @@
 <body>
   <header>
     <div class="informacion-usuario">
-      <div class="logo-usuario">
-        <span>J</span>
-      </div>
       <div class="nombre-usuario">
-        <p>Bienvenido, Johan Feliz</p>
+        @{
+
+          var session = HttpContextAccessor.HttpContext?.Session;
+          var P_NOMBRE = session?.GetString("P_NOMBRE") ?? "Invitado";
+          var S_NOMBRE = session?.GetString("S_NOMBRE") ?? "";
+          var P_APELLIDO = session?.GetString("P_APELLIDO") ?? "";
+          var S_APELLIDO = session?.GetString("S_APELLIDO") ?? "";
+
+          <p>Bienvenido, @P_NOMBRE @P_APELLIDO</p>
+        }
+      </div>
+      <div class="logo-usuario">
+        @{
+
+          var logoUsuario = @P_NOMBRE.Substring(0, 1);
+          <span>@logoUsuario</span>
+
+        }
       </div>
     </div>
   </header>
@@ -28,60 +45,116 @@
     </div>
     <nav>
 
+      @* Inicio *@
+      <div class="dropdown option">
+        <div class="dropdown-titulo">
+          <div class="titulo">
+            <div class="opcion-icono">
+              <img src="../img/iconos/inicio.png" alt="Icono prestamos">
+            </div>
+            <span class="dropdown-title">Inicio</span>
+          </div>
+        </div>
+      </div>
+
+      @* Prestamos *@
       <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
               <img src="../img/iconos/prestamos.png" alt="Icono prestamos">
             </div>
-            <span class="dropdown-title">Titulo</span>
+            <span class="dropdown-title">Prestamos</span>
           </div>
           <div class="dropdown-icono">
             <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
           </div>
         </div>
-        <div class="opciones">
-          <li><a href="#">Opcion 1</a></li>
-          <li><a href="#">Opcion 2</a></li>
-          <li><a href="#">Opcion 3</a></li>
+        <div id="opciones-prestamo" class="opciones">
+          <li><a class="hvr-underline-from-center" href="#">Solicitud de prestamo</del></a></li>
+          <li><a class="hvr-underline-from-center" href="#">Aprobacion de prestamos</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Consultar prestamos</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Categoria prestamos</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Niveles de aprobacion</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Anexos</a></li>
         </div>
       </ul>
 
+      @*Gestion de pagos  *@
       <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
-              <img src="../img/iconos/prestamos.png" alt="Icono prestamos">
+              <img src="../img/iconos/cobros.png" alt="Icono prestamos">
             </div>
-            <span class="dropdown-title">Titulo</span>
+            <span class="dropdown-title">Gestion de pagos</span>
           </div>
           <div class="dropdown-icono">
             <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
           </div>
         </div>
         <div class="opciones">
-          <li><a href="#">Opcion 1</a></li>
-          <li><a href="#">Opcion 2</a></li>
-          <li><a href="#">Opcion 3</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Registrar pago</del></a></li>
+          <li><a class="hvr-underline-from-center" href="#">Historial de pagos</a></li>
         </div>
       </ul>
 
+      @*Gestion de socios  *@
       <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
-              <img src="../img/iconos/prestamos.png" alt="Icono prestamos">
+              <img src="../img/iconos/socios.png" alt="Icono prestamos">
             </div>
-            <span class="dropdown-title">Titulo</span>
+            <span class="dropdown-title">Gestion de socios</span>
           </div>
           <div class="dropdown-icono">
             <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
           </div>
         </div>
         <div class="opciones">
-          <li><a href="#">Opcion 1</a></li>
-          <li><a href="#">Opcion 2</a></li>
-          <li><a href="#">Opcion 3</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Registro de socios</del></a></li>
+          <li><a class="hvr-underline-from-center" href="#">Consultar socios</a></li>
+        </div>
+      </ul>
+
+      @*Gestion de empleados  *@
+      <ul class="dropdown option">
+        <div class="dropdown-titulo">
+          <div class="titulo">
+            <div class="opcion-icono">
+              <img src="../img/iconos/empleados.png" alt="Icono prestamos">
+            </div>
+            <span class="dropdown-title">Gestion de empleados</span>
+          </div>
+          <div class="dropdown-icono">
+            <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
+          </div>
+        </div>
+        <div id="opciones-empleados" class="opciones">
+          <li><a class="hvr-underline-from-center" href="#">Registro de empleados</del></a></li>
+          <li><a class="hvr-underline-from-center" href="#">Consultar empleados</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Puestos</a></li>
+          <li><a class="hvr-underline-from-center" href="#">Departamentos</a></li>
+        </div>
+      </ul>
+
+      @*Gestion de codeudores  *@
+      <ul class="dropdown option">
+        <div class="dropdown-titulo">
+          <div class="titulo">
+            <div class="opcion-icono">
+              <img src="../img/iconos/codeudores.png" alt="Icono prestamos">
+            </div>
+            <span class="dropdown-title">Gestion de codeudores</span>
+          </div>
+          <div class="dropdown-icono">
+            <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
+          </div>
+        </div>
+        <div class="opciones">
+          <li><a class="hvr-underline-from-center" href="#">Registro de codeudores</del></a></li>
+          <li><a class="hvr-underline-from-center" href="#">Consultar codeudores</a></li>
         </div>
       </ul>
 
@@ -89,8 +162,8 @@
   </div>
   <div class="main-container">
     <main role="main" class="pb-3">
-      <h1>main</h1>
       @RenderBody()
+      <img id="logobg-inicio" src="../img/logos/logobg-inicio.png" alt="Logo Coop360_I Fondo">
     </main>
   </div>
 

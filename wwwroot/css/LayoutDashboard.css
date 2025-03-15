@@ -79,6 +79,10 @@ main {
   font-weight: bold;
 }
 
+#logobg-inicio {
+  opacity: 0.6;
+}
+
 /* Estilos del menu principal */
 
 .logo {
@@ -104,6 +108,28 @@ nav ul li a {
 
 .dropdown {
   padding: 2px 0px;
+  cursor: pointer;
+  height: auto;
+  max-height: 50px;
+  transition: all ease 0.5s;
+}
+
+.dropdown .opciones {
+  background-color: #33825d;
+  height: 200px;
+  max-height: 0px;
+  overflow: hidden;
+  transition: max-height 0.5s ease;
+}
+
+.dropdown #opciones-prestamo {
+  height: 400px;
+  max-height: 0px;
+}
+
+.dropdown #opciones-empleados {
+  height: 300px;
+  max-height: 0px;
 }
 
 .dropdown-titulo {
@@ -111,13 +137,8 @@ nav ul li a {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-  padding: 5px 5px;
-  border-left: 2px solid #fff;
-  background: #33825d;
+  padding: 10px 5px;
   position: relative;
-  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
-  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
-  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
 }
 
 .dropdown-titulo .titulo {
@@ -149,13 +170,8 @@ nav ul li a {
   height: 20px;
 }
 
-.dropdown .opciones {
-  background-color: #33825d;
-  padding: 10px 10px;
-}
-
 .dropdown .opciones li {
-  padding: 8px 0px;
+  margin: 10px 0px;
 }
 
 .dropdown .opciones li a {
@@ -164,14 +180,87 @@ nav ul li a {
   justify-content: left;
   align-items: center;
   color: #fff;
+  padding: 15px 15px;
 }
 
-.dropdown .dropdown-titulo .icono-dropdown img {
-  width: 20px;
-  height: 20px;
+.dropdown .dropdown-titulo .dropdown-icono img {
+  width: 25px;
+  height: 25px;
+  rotate: 180deg;
+  transition: all ease 0.5s;
 }
 
 .dropdown .opciones li a img {
   width: 20px;
   height: 20px;
+}
+
+/* Underline From Center */
+.hvr-underline-from-center {
+  display: inline-block;
+  vertical-align: middle;
+  -webkit-transform: perspective(1px) translateZ(0);
+  transform: perspective(1px) translateZ(0);
+  box-shadow: 0 0 1px rgba(0, 0, 0, 0);
+  position: relative;
+  overflow: hidden;
+}
+.hvr-underline-from-center:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 51%;
+  right: 51%;
+  bottom: 0;
+  background: #ffffff;
+  height: 2px;
+  -webkit-transition-property: left, right;
+  transition-property: left, right;
+  -webkit-transition-duration: 0.3s;
+  transition-duration: 0.3s;
+  -webkit-transition-timing-function: ease-out;
+  transition-timing-function: ease-out;
+}
+.hvr-underline-from-center:hover:before,
+.hvr-underline-from-center:focus:before,
+.hvr-underline-from-center:active:before {
+  left: 0;
+  right: 0;
+}
+
+/* Efecto despliegue dropdown */
+
+.dropdown:hover {
+  height: auto;
+  max-height: 500px;
+  transition: all ease 0.5s;
+}
+
+.dropdown:hover .opciones {
+  height: 200px;
+  max-height: 200px;
+}
+
+.dropdown:hover > #opciones-prestamo {
+  height: 400px;
+  max-height: 400px;
+}
+
+.dropdown:hover > #opciones-empleados {
+  height: 300px;
+  max-height: 300px;
+}
+
+.dropdown:hover > .dropdown-titulo {
+  border-left: 2px solid #fff;
+  background: #33825d;
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  transition: background ease 0.3s;
+}
+
+.dropdown:hover > .dropdown-titulo > .dropdown-icono > img {
+  rotate: 0deg;
+  transition: all ease 0.5s;
 }
