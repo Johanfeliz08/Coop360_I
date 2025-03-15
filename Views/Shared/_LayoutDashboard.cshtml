@@ -55,15 +55,13 @@
     <nav>
 
       @* Inicio *@
-      <div class="dropdown option">
-        <div class="dropdown-titulo">
-          <div class="titulo">
-            <div class="opcion-icono">
-              <img src="../img/iconos/inicio.png" alt="Icono prestamos">
-            </div>
-            <span class="dropdown-title">Inicio</span>
+      <div class="opcion-unica">
+        <a id="test" class="opcion-link" href="@Url.Action("Home", "Dashboard")">
+          <div class="icono">
+            <img src="../img/iconos/inicio.png" alt="Icono inicio">
           </div>
-        </div>
+          <span class="nombre">Inicio</span>
+        </a>
       </div>
 
       @* Prestamos *@

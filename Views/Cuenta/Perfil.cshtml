@@ -8,215 +8,169 @@
 </head>
 
 <section class="main-container">
-  <div class="campo">
-    <span class="label">Primer Nombre:</span>
-    <span class="valor">@Model.P_NOMBRE</span>
-  </div>
-  <div class="campo">
-    <span class="label">Segundo Nombre:</span>
-    <span class="valor">@Model.S_NOMBRE</span>
-  </div>
-  <div class="campo">
-    <span class="label">Primer Apellido:</span>
-    <span class="valor">@Model.P_APELLIDO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Segundo Apellido:</span>
-    <span class="valor">@Model.S_APELLIDO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Direccion:</span>
-    <span class="valor">@Model.DIRECCION</span>
-  </div>
-  <div class="campo">
-    <span class="label">ID Sector:</span>
-    <span class="valor">@Model.ID_SECTOR</span>
-  </div>
-  <div class="campo">
-    <span class="label">ID Ciudad:</span>
-    <span class="valor">@Model.ID_CIUDAD</span>
-  </div>
-  <div class="campo">
-    <span class="label">ID Provincia:</span>
-    <span class="valor">@Model.ID_PROVINCIA</span>
-  </div>
-  <div class="campo">
-    <span class="label">Pais Nacimiento:</span>
-    <span class="valor">@Model.PAIS_NACIMIENTO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Telefono Principal:</span>
-    <span class="valor">@Model.TELEFONO_PRINCIPAL</span>
-  </div>
-  <div class="campo">
-    <span class="label">Telefono Secundario:</span>
-    <span class="valor">@Model.TELEFONO_SECUNDARIO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Fecha Nacimineto:</span>
-    <span class="valor">@Model.FECHA_NACIMIENTO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Email:</span>
-    <span class="valor">@Model.EMAIL</span>
-  </div>
-  <div class="campo">
-    <span class="label">Sexo:</span>
-    <span class="valor">@Model.SEXO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Estado Civil:</span>
-    <span class="valor">@Model.ESTADO_CIVIL</span>
-  </div>
-  <div class="campo">
-    <span class="label">Fecha Creacion:</span>
-    <span class="valor">@Model.FECHA_CREACION</span>
-  </div>
-  <div class="campo">
-    <span class="label">Frecuencia Cobro:</span>
-    <span class="valor">@Model.FRECUENCIA_COBRO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Cuenta Banco:</span>
-    <span class="valor">@Model.CUENTA_BANCO</span>
-  </div>
-  <div class="campo">
-    <span class="label">ID Entidad Bacaria:</span>
-    <span class="valor">@Model.ID_ENTIDAD_BANCARIA</span>
-  </div>
-  <div class="campo">
-    <span class="label">ID Puesto:</span>
-    <span class="valor">@Model.ID_PUESTO</span>
-  </div>
-  <div class="campo">
-    <span class="label">ID Departamento:</span>
-    <span class="valor">@Model.ID_DEPARTAMENTO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Tipo Sangre:</span>
-    <span class="valor">@Model.TIPO_SANGRE</span>
-  </div>
-  <div class="campo">
-    <span class="label">Nombre Familiar Primario:</span>
-    <span class="valor">@Model.NOMBRE_FAMILIAR_PRIMARIO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Telefono Familiar Primario:</span>
-    <span class="valor">@Model.TELEFONO_FAMILIAR_PRIMARIO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Parentesco Familiar Primario:</span>
-    <span class="valor">@Model.PARENTESCO_FAMILIAR_PRIMARIO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Nombre Familiar Secundario:</span>
-    <span class="valor">@Model.NOMBRE_FAMILIAR_SECUNDARIO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Telefono Familiar Secundario:</span>
-    <span class="valor">@Model.TELEFONO_FAMILIAR_SECUNDARIO</span>
-  </div>
-  <div class="campo">
-    <span class="label">Parentesco Familiar Secundario:</span>
-    <span class="valor">@Model.PARENTESCO_FAMILIAR_SECUNDARIO</span>
-  </div>
-  <div class="campo">
-    <span class="label">ID Nivel Aprobacion:</span>
-    <span class="valor">@Model.ID_NIVEL_APROBACION</span>
-  </div>
-  <div class="campo">
-    <span class="label">Estatus:</span>
-    <span class="valor">@Model.ESTATUS</span>
-  </div>
-  <div class="campo">
-    <span class="label">Creado Por:</span>
-    <span class="valor">@Model.CREADO_POR</span>
-  </div>
-
-  <div>
-
-    <!-- Select para Sectores -->
-    <div>
-
-      <label for="sector">Sector</label>
-      <select id="sector" name="ID_SECTOR">
-        @* @foreach (var sector in ViewBag.Sectores as SelectList)
-        {
-          <option value="@sector.Value">@sector.Text</option>
-        } *@
-      </select>
+  <div class="campos-container">
+    <div class="titulo-seccion">
+      <h1>Mi Perfil</h1>
+    </div>
+    <div class="grupo informacion-personal">
+      <div class="titulo-grupo">
+        <h2>Informacion personal</h2>
+      </div>
+      <div class="campo">
+        <span class="label">Primer Nombre:</span>
+        <span class="valor">@Model.P_NOMBRE</span>
+      </div>
+      <div class="campo">
+        <span class="label">Segundo Nombre:</span>
+        <span class="valor">@Model.S_NOMBRE</span>
+      </div>
+      <div class="campo">
+        <span class="label">Primer Apellido:</span>
+        <span class="valor">@Model.P_APELLIDO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Segundo Apellido:</span>
+        <span class="valor">@Model.S_APELLIDO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Pais Nacimiento:</span>
+        <span class="valor">@Model.PAIS_NACIMIENTO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Fecha Nacimineto:</span>
+        <span class="valor">@Model.FECHA_NACIMIENTO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Sexo:</span>
+        <span class="valor">@Model.SEXO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Estado Civil:</span>
+        <span class="valor">@Model.ESTADO_CIVIL</span>
+      </div>
+      <div class="campo">
+        <span class="label">Tipo Sangre:</span>
+        <span class="valor">@Model.TIPO_SANGRE</span>
+      </div>
     </div>
 
-    <!-- Select para Ciudades -->
-    <div>
-      <label for="ciudad">Ciudad</label>
-      <select id="ciudad" name="ID_CIUDAD">
-        @* @foreach (var ciudad in ViewBag.Ciudades as SelectList)
-        {
-          <option value="@ciudad.Value">@ciudad.Text</option>
-        } *@
-      </select>
+    <div class="grupo contacto">
+      <div class="titulo-grupo">
+        <h2>Contacto</h2>
+      </div>
+      <div class="campo">
+        <span class="label">Direccion:</span>
+        <span class="valor">@Model.DIRECCION</span>
+      </div>
+      <div class="campo">
+        <span class="label">Telefono Principal:</span>
+        <span class="valor">@Model.TELEFONO_PRINCIPAL</span>
+      </div>
+      <div class="campo">
+        <span class="label">Telefono Secundario:</span>
+        <span class="valor">@Model.TELEFONO_SECUNDARIO</span>
+      </div>
+
+      <div class="campo">
+        <span class="label">Email:</span>
+        <span class="valor">@Model.EMAIL</span>
+      </div>
     </div>
 
-    <!-- Select para Provincias -->
-    <div>
-      <label for="provincia">Provincia</label>
-      <select id="provincia" name="ID_PROVINCIA">
-        @* @foreach (var provincia in ViewBag.Provincias as SelectList)
-        {
-          <option value="@provincia.Value">@provincia.Text</option>
-        } *@
-      </select>
+    <div class="grupo informacion-geografica">
+      <div class="titulo-grupo">
+        <h2>Informacion geografica</h2>
+      </div>
+      <div class="campo">
+        <span class="label">ID Sector:</span>
+        <span class="valor">@Model.ID_SECTOR</span>
+      </div>
+      <div class="campo">
+        <span class="label">ID Ciudad:</span>
+        <span class="valor">@Model.ID_CIUDAD</span>
+      </div>
+      <div class="campo">
+        <span class="label">ID Provincia:</span>
+        <span class="valor">@Model.ID_PROVINCIA</span>
+      </div>
     </div>
 
-    <!-- Select para Entidades Bancarias -->
-    <div>
-      <label for="entidad_bancaria">Entidad Bancaria</label>
-      <select id="entidad_bancaria" name="ID_ENTIDAD_BANCARIA">
-        @* @foreach (var entidad in ViewBag.EntidadesBancarias as SelectList)
-        {
-          <option value="@entidad.Value">@entidad.Text</option>
-        } *@
-      </select>
+    <div class="grupo informacion-laboral">
+      <div class="titulo-grupo">
+        <h2>Informacion laboral</h2>
+      </div>
+      <div class="campo">
+        <span class="label">Frecuencia Cobro:</span>
+        <span class="valor">@Model.FRECUENCIA_COBRO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Cuenta Banco:</span>
+        <span class="valor">@Model.CUENTA_BANCO</span>
+      </div>
+      <div class="campo">
+        <span class="label">ID Entidad Bacaria:</span>
+        <span class="valor">@Model.ID_ENTIDAD_BANCARIA</span>
+      </div>
+      <div class="campo">
+        <span class="label">ID Puesto:</span>
+        <span class="valor">@Model.ID_PUESTO</span>
+      </div>
+      <div class="campo">
+        <span class="label">ID Departamento:</span>
+        <span class="valor">@Model.ID_DEPARTAMENTO</span>
+      </div>
+      <div class="campo">
+        <span class="label">ID Nivel Aprobacion:</span>
+        <span class="valor">@Model.ID_NIVEL_APROBACION</span>
+      </div>
+      <div class="campo">
+        <span class="label">Estatus:</span>
+        <span class="valor">@Model.ESTATUS</span>
+      </div>
     </div>
 
-    <!-- Select para Puestos -->
-    <div>
-      <label for="puesto">Puesto</label>
-      <select id="puesto" name="ID_PUESTO">
-        @* @foreach (var puesto in ViewBag.Puestos as SelectList)
-        {
-          <option value="@puesto.Value">@puesto.Text</option>
-        } *@
-      </select>
+    <div class="grupo informacion-familiar">
+      <div class="titulo-grupo">
+        <h2>Informacion familiar</h2>
+      </div>
+      <div class="campo">
+        <span class="label">Nombre Familiar Primario:</span>
+        <span class="valor">@Model.NOMBRE_FAMILIAR_PRIMARIO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Telefono Familiar Primario:</span>
+        <span class="valor">@Model.TELEFONO_FAMILIAR_PRIMARIO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Parentesco Familiar Primario:</span>
+        <span class="valor">@Model.PARENTESCO_FAMILIAR_PRIMARIO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Nombre Familiar Secundario:</span>
+        <span class="valor">@Model.NOMBRE_FAMILIAR_SECUNDARIO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Telefono Familiar Secundario:</span>
+        <span class="valor">@Model.TELEFONO_FAMILIAR_SECUNDARIO</span>
+      </div>
+      <div class="campo">
+        <span class="label">Parentesco Familiar Secundario:</span>
+        <span class="valor">@Model.PARENTESCO_FAMILIAR_SECUNDARIO</span>
+      </div>
+    </div>
+    @* <div class="campo">
+      <span class="label">Fecha Creacion:</span>
+      <span class="valor">@Model.FECHA_CREACION</span>
     </div>
 
-    <!-- Select para Departamentos -->
-    <div>
-      <label for="departamento">Departamento</label>
-      <select id="departamento" name="ID_DEPARTAMENTO">
-        @* @foreach (var departamento in ViewBag.Departamentos as SelectList)
-        {
-          <option value="@departamento.Value">@departamento.Text</option>
-        } *@
-      </select>
+    <div class="campo">
+      <span class="label">Creado Por:</span>
+      <span class="valor">@Model.CREADO_POR</span>
+    </div> *@
+    <div class="btn">
+      <button type="button">Cambiar contraseña</button>
     </div>
-
-    <!-- Select para Niveles de Aprobación -->
-    <div>
-      <label for="nivel_aprobacion">Nivel de Aprobación</label>
-      <select id="nivel_aprobacion" name="ID_NIVEL_APROBACION">
-        @* @foreach (var nivel in ViewBag.NivelesAprobacion as SelectList)
-        {
-          <option value="@nivel.Value">@nivel.Text</option>
-        } *@
-      </select>
-    </div>
-
-
-
-
-
+  </div>
 
 
 </section>

@@ -51,6 +51,7 @@ main {
   width: 85%;
   height: 94vh;
   background-color: #f3f5f7;
+  overflow: hidden;
 }
 
 /*  Estilos de la barra de navegacion */
@@ -103,8 +104,9 @@ nav ul {
   list-style: none;
 }
 
-nav ul li a {
+a {
   text-decoration: none;
+  color: #fff;
 }
 
 .dropdown {
@@ -264,6 +266,43 @@ nav ul li a {
 .dropdown:hover > .dropdown-titulo > .dropdown-icono > img {
   rotate: 0deg;
   transition: all ease 0.5s;
+}
+
+/* Opciones unicas del menu principal */
+
+.opcion-unica:hover {
+  border-left: 2px solid #fff;
+  background: #33825d;
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  transition: background ease 0.3s;
+}
+
+.opcion-unica .opcion-link {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  color: #fff;
+  padding: 15px 5px;
+}
+
+/* #test {
+  border: solid 1px red;
+} */
+
+/* #test .icono {
+  border: solid 1px blue;
+} */
+
+.opcion-unica .opcion-link .icono {
+  padding: 0px 5px;
+}
+
+.opcion-unica .opcion-link .icono img {
+  width: 20px;
+  height: 20px;
 }
 
 /* Menu desplegable usuario */
