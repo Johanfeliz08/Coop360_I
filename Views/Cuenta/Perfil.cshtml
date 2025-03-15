@@ -7,9 +7,17 @@
   <link rel="stylesheet" href="~/css/Cuenta/Perfil.css" asp-append-version="true" />
 </head>
 
-<section>
+<section class="main-container">
   <div class="campo">
     <span class="label">Primer Nombre:</span>
     <span class="valor">@Model.P_NOMBRE</span>
+  </div>
+  <div class="campo">
+    <span class="label">Segundo Nombre:</span>
+    <span class="valor">@Model.S_NOMBRE</span>
+  </div>
+  <div class="campo">
+    <span class="label">Primer Apellido:</span>
+    <span class="valor">@Model.S_APELLIDO</span>
   </div>
 </section>
