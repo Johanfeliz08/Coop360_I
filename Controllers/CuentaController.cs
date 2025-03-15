@@ -1,5 +1,6 @@
 using Coop360_I.Data;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 
 namespace Coop360_I.Controllers
 {
@@ -18,25 +19,22 @@ namespace Coop360_I.Controllers
         {
 
         // Obtener el ID del usuario actual desde la sesión
-        var Usuario_Actual = HttpContext.Session.GetInt32("USUARIO");
-        if (Usuario_Actual != null)
+        var AuthUsuario = HttpContext.Session.GetInt32("USUARIO");
+        if (AuthUsuario != null)
         {
-                // Buscar el empleado en la base de datos por el ID del usuario
-                Empleado? Data_Empleado = _context.Empleados
-                    .Where(e => e.CODIGO_EMPLEADO == Usuario_Actual)
-                    .AsEnumerable()
-                    .FirstOrDefault();
 
-                if (Data_Empleado != null)
-                {
-                    return View(Data_Empleado);
-                }
-                else
-                {
-                    ViewBag.Error = "No se encontró el empleado";
-                    return View();
-                }
+          var empleado = _context.Empleados
+         .FromSqlRaw("EXEC SP_LEER_EMPLEADO @CODIGO_EMPLEADO = {0}", Convert.ToInt32(AuthUsuario))
+         .AsEnumerable()
+         .FirstOrDefault();
+
+            if (empleado != null){
+                return View(empleado);
+            } else {
+                ViewBag.Error = "No se encontró el empleado";
+                return View();
             }
+        }
 
             return RedirectToAction("Login", "Auth");
         

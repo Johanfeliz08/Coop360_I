@@ -11,9 +11,9 @@ public class Empleado
     public required string P_APELLIDO { get; set; }
     public string? S_APELLIDO { get; set; }
     public required string DIRECCION { get; set; }
-    public required int ID_SECTOR { get; set; }
-    public required int ID_CIUDAD { get; set; }
-    public required int ID_PROVINCIA { get; set; }
+    public required string NOMBRE_SECTOR { get; set; }
+    public required string NOMBRE_CIUDAD { get; set; }
+    public required string NOMBRE_PROVINCIA { get; set; }
     public required string PAIS_NACIMIENTO { get; set; }
     public required string TELEFONO_PRINCIPAL { get; set; }
     public string? TELEFONO_SECUNDARIO { get; set; }
@@ -24,9 +24,9 @@ public class Empleado
     public DateTime FECHA_CREACION { get; set; }
     public required int FRECUENCIA_COBRO { get; set; }
     public required int CUENTA_BANCO { get; set; }
-    public int? ID_ENTIDAD_BANCARIA { get; set; }
-    public required int ID_PUESTO { get; set; }
-    public required int ID_DEPARTAMENTO { get; set; }
+    public string? NOMBRE_ENTIDAD_BANCARIA { get; set; }
+    public required string NOMBRE_PUESTO { get; set; }
+    public required string NOMBRE_DEPARTAMENTO { get; set; }
     public required string TIPO_SANGRE { get; set; }
     public string? NOMBRE_FAMILIAR_PRIMARIO { get; set; }
     public string? TELEFONO_FAMILIAR_PRIMARIO { get; set; }

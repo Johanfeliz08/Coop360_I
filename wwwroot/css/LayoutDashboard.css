@@ -285,16 +285,8 @@ a {
   justify-content: left;
   align-items: center;
   color: #fff;
-  padding: 15px 5px;
+  padding: 10px 5px;
 }
-
-/* #test {
-  border: solid 1px red;
-} */
-
-/* #test .icono {
-  border: solid 1px blue;
-} */
 
 .opcion-unica .opcion-link .icono {
   padding: 0px 5px;

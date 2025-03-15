@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>w7jhocu7ay</Fingerprint>
-      <Integrity>dBxj5u/kTlCDK+8NxNtgo0XzfOD3O0LD7FDOVksr/F0=</Integrity>
+      <Fingerprint>3r433zjzq6</Fingerprint>
+      <Integrity>MYbZJj2rKRzwRARJhxXS4ogmeK5fZC2kB2ujMF3EvSM=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Cuenta\Perfil.css'))</OriginalItemSpec>
@@ -48,8 +48,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>d67av91zk6</Fingerprint>
-      <Integrity>1VV/r/puF0daHf461musU5SVDX/kGW2wiTZfyZImrkQ=</Integrity>
+      <Fingerprint>0n9yotujxp</Fingerprint>
+      <Integrity>tE5UoWW06KnEnlzUtJbpkhHEzJZsZUBPcoK5Zoq27ko=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\LayoutDashboard.css'))</OriginalItemSpec>
