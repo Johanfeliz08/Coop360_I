@@ -45,6 +45,10 @@
       "PackagePath": "staticwebassets\\img\\iconos\\inicio.png"
     },
     {
+      "Id": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\img\\iconos\\logo-menu.png",
+      "PackagePath": "staticwebassets\\img\\iconos\\logo-menu.png"
+    },
+    {
       "Id": "D:\\Johan\\Universidad\\Enero - Abril 2025\\Integrador I\\Coop360_I\\wwwroot\\img\\iconos\\prestamos.png",
       "PackagePath": "staticwebassets\\img\\iconos\\prestamos.png"
     },

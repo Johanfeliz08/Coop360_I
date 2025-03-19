@@ -40,9 +40,11 @@
       <div class="menu-usuario">
         <nav>
           <ul>
-            <li><a href="@Url.Action("Perfil", "Cuenta")">Mi Perfil</a></li>
-            <li><a href="#">Configuracion</a></li>
-            <li><a href="@Url.Action("Logout", "Auth")">Cerrar sesion</a></li>
+            <li><a href="@Url.Action("Perfil", "Cuenta")"><i class="fi fi-tr-member-list"></i><span>Mi Perfil</span></a>
+            </li>
+            @* <li><a href="#">Configuracion</a></li> *@
+            <li><a href="@Url.Action("Logout", "Auth")"><i class="fi fi-tr-sign-out-alt"></i><span>Cerrar
+                  sesion</span></a></li>
           </ul>
         </nav>
       </div>
@@ -58,7 +60,8 @@
       <div class="opcion-unica">
         <a id="test" class="opcion-link" href="@Url.Action("Home", "Dashboard")">
           <div class="icono">
-            <img src="../img/iconos/inicio.png" alt="Icono inicio">
+            <i class="fi fi-tr-house-chimney"></i>
+            @* <img src="../img/iconos/inicio.png" alt="Icono inicio"> *@
           </div>
           <span class="nombre">Inicio</span>
         </a>
@@ -69,7 +72,8 @@
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
-              <img src="../img/iconos/prestamos.png" alt="Icono prestamos">
+              <i class="fi fi-tr-handshake-deal-loan"></i>
+              @* <img src="../img/iconos/prestamos.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Prestamos</span>
           </div>
@@ -92,7 +96,8 @@
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
-              <img src="../img/iconos/cobros.png" alt="Icono prestamos">
+              <i class="fi fi-tr-sack-dollar"></i>
+              @* <img src="../img/iconos/cobros.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de pagos</span>
           </div>
@@ -111,7 +116,8 @@
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
-              <img src="../img/iconos/socios.png" alt="Icono prestamos">
+              <i class="fi fi-tr-customer-care"></i>
+              @* <img src="../img/iconos/socios.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de socios</span>
           </div>
@@ -130,7 +136,8 @@
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
-              <img src="../img/iconos/empleados.png" alt="Icono prestamos">
+              <i class="fi fi-tr-employee-man"></i>
+              @* <img src="../img/iconos/empleados.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de empleados</span>
           </div>
@@ -151,7 +158,8 @@
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
-              <img src="../img/iconos/codeudores.png" alt="Icono prestamos">
+              <i class="fi fi-tr-user-salary"></i>
+              @* <img src="../img/iconos/codeudores.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de codeudores</span>
           </div>

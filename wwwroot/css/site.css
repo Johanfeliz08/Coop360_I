@@ -1,9 +1,11 @@
 /* Estilos generales */
 
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
+@import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css");
 
 :root {
   --accent-color: #49ba85;
+  --accent-color-2: #1c2d3e;
   --bg-color: #f3f5f7;
   --section-bg-color: #ffffff;
 }
