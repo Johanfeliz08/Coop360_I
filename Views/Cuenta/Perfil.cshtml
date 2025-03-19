@@ -12,7 +12,7 @@
     <h1>Mi Perfil</h1>
   </div>
   <div class="secciones">
-    <div class="campos-container">
+    <div class="campos-container icono-nombre-container">
       <div class="grupo icono-nombre">
         <div class="logo-usuario">
           @{
@@ -23,12 +23,31 @@
           }
         </div>
         <div class="campo nombre-completo">
-          <span class="valor">@Model.P_NOMBRE @Model.S_NOMBRE @Model.P_APELLIDO @Model.S_APELLIDO</span>
+          <h3 class="valor">@Model.P_NOMBRE @Model.S_NOMBRE @Model.P_APELLIDO @Model.S_APELLIDO</h3>
         </div>
         <div class="campo Puesto-departamento">
           <span class="valor">@Model.NOMBRE_PUESTO de @Model.NOMBRE_DEPARTAMENTO</span>
         </div>
       </div>
+    </div>
+    <div class="campos-container">
+      <div class="grupo cuenta">
+        <div class="titulo-grupo">
+          <h2>Cuenta</h2>
+        </div>
+        <div class="campo">
+          <span class="label">Usuario:</span>
+          <span class="valor">@Model.CODIGO_EMPLEADO</span>
+        </div>
+        <div class="campo">
+          <span class="label">Contrasena:</span>
+          <span class="valor">******************</span>
+        </div>
+        <div class="btn">
+          <button type="button">Cambiar contraseña</button>
+        </div>
+      </div>
+
     </div>
     <div class="campos-container">
       <div class="grupo informacion-personal">
@@ -71,18 +90,6 @@
           <span class="label">Tipo Sangre:</span>
           <span class="valor">@Model.TIPO_SANGRE</span>
         </div>
-      </div>
-      @* <div class="campo">
-      <span class="label">Fecha Creacion:</span>
-      <span class="valor">@Model.FECHA_CREACION</span>
-    </div>
-
-    <div class="campo">
-      <span class="label">Creado Por:</span>
-      <span class="valor">@Model.CREADO_POR</span>
-    </div> *@
-      <div class="btn">
-        <button type="button">Cambiar contraseña</button>
       </div>
     </div>
     <div class="campos-container">
@@ -195,7 +202,4 @@
         </div>
       </div>
     </div>
-  </div>
-
-
 </section>
