@@ -183,6 +183,7 @@ a {
 
 .dropdown .opciones li {
   margin: 10px 0px;
+  /* position: relative; */
 }
 
 .dropdown .opciones li a {
@@ -193,6 +194,18 @@ a {
   color: #fff;
   padding: 15px 15px;
 }
+
+/* .dropdown .opciones li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 2px;
+  height: 100%;
+  margin-left: 10px;
+  background: #fff;
+  border-left: solid 1px #fff;
+} */
 
 .dropdown .dropdown-titulo .dropdown-icono img {
   width: 25px;

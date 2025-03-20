@@ -1,0 +1,53 @@
+<div class="table-container">
+
+  <!-- Tabla de datos -->
+  <table id="data-table">
+    <thead>
+      <tr>
+        <!-- Columnas dinámicas -->
+        <th>Editar</th>
+        <th>
+          ID
+          <button class="sort-btn" data-column="ID">Ordenar</button>
+        </th>
+        <th>
+          Nombre
+          <button class="sort-btn" data-column="Nombre">Ordenar</button>
+        </th>
+        <th>
+          Correo
+          <button class="sort-btn" data-column="Correo">Ordenar</button>
+        </th>
+        <th>
+          Rol
+          <button class="sort-btn" data-column="Rol">Ordenar</button>
+        </th>
+        <th>Eliminar</th>
+      </tr>
+    </thead>
+    <tbody>
+      <!-- Ejemplo de filas dinámicas -->
+      <tr>
+        <td>
+          <button class="edit-btn">Editar</button>
+        </td>
+        <td>1</td>
+        <td>Juan Pérez</td>
+        <td>juan@example.com</td>
+        <td>Administrador</td>
+        <td>
+          <button class="delete-btn">Eliminar</button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+
+  <!-- Menú flotante para ordenar -->
+  <div id="sort-menu" style="display:none; position:absolute;">
+    <ul>
+      <li><button data-order="asc">Orden Ascendente</button></li>
+      <li><button data-order="desc">Orden Descendente</button></li>
+    </ul>
+  </div>
+
+</div>
