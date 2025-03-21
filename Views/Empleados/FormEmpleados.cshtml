@@ -1,0 +1,17 @@
+@{
+  ViewBag.Title = "Formulario Empleados";
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+  </div>
+  <div class="form-container">
+    <div class="acciones">
+      <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <a href="@Url.Action("Guardar", "Empleados")" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></a>
+    </div>
+  </div>
+</section>

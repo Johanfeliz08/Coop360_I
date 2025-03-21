@@ -26,6 +26,10 @@ public class EmpleadosController : Controller {
     
     }
 
+    public IActionResult Crear () {
+        return View("FormEmpleados");
+    }
+
     // [HttpGet]
     // public IActionResult Create() {
     //     return View();
