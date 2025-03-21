@@ -24,7 +24,7 @@ namespace Coop360_I.Controllers
         {
 
           var empleado = _context.Empleados
-         .FromSqlRaw("EXEC SP_LEER_EMPLEADO @CODIGO_EMPLEADO = {0}", Convert.ToInt32(AuthUsuario))
+         .FromSqlRaw("EXEC SP_BUSCAR_EMPLEADO @CODIGO_EMPLEADO = {0}", Convert.ToInt32(AuthUsuario))
          .AsEnumerable()
          .FirstOrDefault();
 

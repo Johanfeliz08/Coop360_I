@@ -3,6 +3,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Oxygen:wght@300;400;700&display=swap");
 @import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-rounded/css/uicons-thin-rounded.css");
 @import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-regular-rounded/css/uicons-regular-rounded.css");
+@import url("https://cdn-uicons.flaticon.com/2.6.0/uicons-thin-chubby/css/uicons-thin-chubby.css");
 
 :root {
   --accent-color: #49ba85;
@@ -73,7 +74,10 @@
   height: 80%;
   padding: 20px 30px;
   background: #fff;
-  border: solid 1px red;
+  /* border: solid 1px red; */
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
 }
 
 .data-container .acciones {
@@ -81,15 +85,16 @@
   flex-direction: row;
   justify-content: end;
   align-items: center;
-  border: solid 1px red;
+  /* border: solid 1px red; */
   width: 100%;
   height: 50px;
+  margin-bottom: 20px;
+  gap: 10px;
 }
 
 .data-container .acciones .btn {
   color: #000;
-  margin: 0px 5px;
-  border: solid 1px blue;
+  /* border: solid 1px blue; */
   padding: 5px 10px;
 }
 
@@ -156,4 +161,89 @@
 .data-container .acciones .btn-nuevo:hover span {
   color: var(--accent-color);
   transition: all ease 0.5s;
+}
+
+.data-container .table-container {
+  width: 100%;
+  height: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  overflow-x: scroll;
+  scrollbar-width: thin;
+  scrollbar-color: var(--accent-color);
+}
+
+.data-container .table-container::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+.data-container .table-container .table {
+  /* border: solid 1px green; */
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.data-container .table-container .table thead {
+  background: var(--accent-color-2);
+  color: #fff;
+  font-weight: 300;
+  height: 40px;
+}
+
+.data-container .table-container .table thead tr th:hover {
+  background: var(--accent-color);
+  color: #fff;
+  transition: all ease 0.5s;
+}
+.data-container .table-container .table thead tr th:hover .th button i {
+  color: #fff;
+  transition: all ease 0.5s;
+}
+
+.data-container .table-container .table thead tr th .th {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 0px 100px;
+}
+
+.data-container .table-container .table thead tr th .sort-btn {
+  background: none;
+  border: none;
+  color: var(--accent-color);
+}
+
+.data-container .table-container .table thead tr th .sort-btn i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+/* Filas de la tabla */
+
+.data-container .table-container .table tbody tr {
+  border-bottom: solid 1px rgba(0, 0, 0, 0.1);
+}
+
+.data-container .table-container .table tbody tr td .dato {
+  padding: 15px 0px;
+  /* border: solid 1px red; */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Boton editar y elimnar de las filas */
+
+.data-container .table-container .table tbody tr td .accion-editar {
+  font-size: 1.3em;
+  color: var(--accent-color);
+}
+
+.data-container .table-container .table tbody tr td .accion-eliminar {
+  font-size: 1.3em;
+  color: var(--accent-color);
 }

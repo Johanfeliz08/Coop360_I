@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using Coop360_I.Models;
+using Microsoft.EntityFrameworkCore;
 using Coop360_I.Data;
 
 namespace Coop360_I.Controllers;
@@ -16,7 +17,13 @@ public class EmpleadosController : Controller {
 
     [HttpGet]
     public IActionResult RegistroEmpleados() {
-        return View();
+
+        var empleados = _context.Empleados
+        .FromSqlRaw("EXEC SP_LEER_EMPLEADOS")
+        .AsEnumerable()
+        .ToList();
+        return View(empleados);
+    
     }
 
     // [HttpGet]

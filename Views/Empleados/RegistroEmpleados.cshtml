@@ -20,44 +20,313 @@
     <div class="table-container">
 
       <!-- Tabla de datos -->
-      <table id="data-table">
+      <table id="table" class="table">
         <thead>
-          <tr>
+          <tr class="cabecera">
             <!-- Columnas dinámicas -->
-            <th>Editar</th>
             <th>
-              ID
-              <button class="sort-btn" data-column="ID">Ordenar</button>
+              <div class="th">Editar</div>
             </th>
             <th>
-              Nombre
-              <button class="sort-btn" data-column="Nombre">Ordenar</button>
+              <div class="th">
+                <span>Codigo Empleado</span>
+                @* <button class="sort-btn" data-column="Nombre"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
             </th>
             <th>
-              Correo
-              <button class="sort-btn" data-column="Correo">Ordenar</button>
+              <div class="th">
+                <span>Cedula</span>
+                @* <button class="sort-btn" data-column="Nombre"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
             </th>
             <th>
-              Rol
-              <button class="sort-btn" data-column="Rol">Ordenar</button>
+              <div class="th">
+                <span>Primer Nombre</span>
+                @* <button class="sort-btn" data-column="Correo"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
             </th>
-            <th>Eliminar</th>
+            <th>
+              <div class="th">
+                <span>Segundo Nombre</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Primer Apellido</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Segundo Apellido</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Direccion</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Sector</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Ciudad</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Provincia</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Pais de nacimiento</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Telefono Principal</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Telefono Secundario</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Fecha de nacimiento</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Email</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Sexo</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Estado civil</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Frecuencia de cobro</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Cuenta de banco</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Entidad bancaria</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Puesto</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Departamento</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Tipo de sangre</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Nombre familiar primario</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Telefono familiar primario</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Parestesco familiar primario</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Nombre familiar secundario</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Telefono familiar secundario</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Parentesco familiar secundario</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Nivel de aprobacion</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Estatus</span>
+                @* <button class="sort-btn" data-column="Rol"><i class="fi fi-tr-sort-alt"></i></button> *@
+              </div>
+            </th>
+            <th class="btn-eliminar">
+              <div class="th">Eliminar</div>
+            </th>
           </tr>
         </thead>
         <tbody>
           <!-- Ejemplo de filas dinámicas -->
-          <tr>
-            <td>
-              <button class="edit-btn">Editar</button>
-            </td>
-            <td>1</td>
-            <td>Juan Pérez</td>
-            <td>juan@example.com</td>
-            <td>Administrador</td>
-            <td>
-              <button class="delete-btn">Eliminar</button>
-            </td>
-          </tr>
+          @foreach (var empleado in Model)
+          {
+            <tr>
+              <td>
+                <div class="dato accion-editar"><i class="fi fi-tc-pencil"></i></div>
+                @* <button class="edit-btn"><i class="fi fi-tc-pencil"></i></button> *@
+              </td>
+              <td>
+                <div class="dato">@empleado.CODIGO_EMPLEADO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.CEDULA</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.P_NOMBRE</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.S_NOMBRE</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.P_APELLIDO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.S_APELLIDO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.DIRECCION</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_SECTOR</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_CIUDAD</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_PROVINCIA</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.PAIS_NACIMIENTO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.TELEFONO_PRINCIPAL</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.TELEFONO_SECUNDARIO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.FECHA_NACIMIENTO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.EMAIL</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.SEXO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.ESTADO_CIVIL</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.FRECUENCIA_COBRO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.CUENTA_BANCO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_ENTIDAD_BANCARIA</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_PUESTO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_DEPARTAMENTO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.TIPO_SANGRE</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_FAMILIAR_PRIMARIO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.TELEFONO_FAMILIAR_PRIMARIO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.PARENTESCO_FAMILIAR_PRIMARIO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.NOMBRE_FAMILIAR_SECUNDARIO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.TELEFONO_FAMILIAR_SECUNDARIO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.PARENTESCO_FAMILIAR_SECUNDARIO</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.ID_NIVEL_APROBACION</div>
+              </td>
+              <td>
+                <div class="dato">@empleado.ESTATUS</div>
+              </td>
+
+              <td>
+                <div class="dato accion-eliminar"><i class="fi fi-tr-trash-xmark"></i></div>
+                @* <button class="delete-btn">Eliminar</button> *@
+              </td>
+            </tr>
+          }
         </tbody>
       </table>
 
