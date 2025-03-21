@@ -1,0 +1,177 @@
+.titulo-seccion h1 {
+  width: 100%;
+}
+
+/* .titulo-seccion {
+  border: solid 1px red;
+} */
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  gap: 20px;
+  padding: 0px 30px;
+  /* border: solid 1px red; */
+}
+
+.campos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+  /* margin: 0px 20px; */
+  background-color: #fff;
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+}
+
+.campos-container .grupo {
+  /* border: solid 1px rgba(166, 166, 166, 0.5); */
+  padding: 20px 20px;
+  margin: 10px 0px;
+  gap: 10px;
+}
+
+.campos-container .grupo .titulo-grupo {
+  padding: 8px 0px;
+}
+
+.form-container .campos-container .grupo .titulo-grupo h2 {
+  color: var(--accent-color);
+  font-size: 2em;
+  font-weight: 300;
+  text-align: left;
+}
+
+.campos-container .grupo .campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+  max-width: 800px;
+  padding: 10px 0px;
+}
+
+#codigoempleado {
+  width: 200px;
+}
+
+.campos-container .grupo .campo label {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.campos-container .grupo .campo input {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: var(--accent-color) 1px solid;
+}
+
+.grupo {
+  display: grid;
+}
+
+/* Grid grupo informacion laboral */
+
+.informacion-laboral {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 100px);
+  grid-template-areas:
+    "titulo titulo . ."
+    "cedula . . ."
+    "p_nombre s_nombre p_apellido s_apellido"
+    "fecha_nacimiento sexo estado_civil tipo_sangre"
+    "pais_nacimiento pais_nacimiento . .";
+}
+
+#titulo {
+  grid-area: titulo;
+}
+
+#campo_cedula {
+  grid-area: cedula;
+}
+
+#campo_p_nombre {
+  grid-area: p_nombre;
+}
+
+#campo_s_nombre {
+  grid-area: s_nombre;
+}
+
+#campo_p_apellido {
+  grid-area: p_apellido;
+}
+
+#campo_s_apellido {
+  grid-area: s_apellido;
+}
+
+#campo_fecha_nacimiento {
+  grid-area: fecha_nacimiento;
+}
+
+#campo_sexo {
+  grid-area: sexo;
+}
+
+#campo_estado_civil {
+  grid-area: estado_civil;
+}
+
+#campo_tipo_sangre {
+  grid-area: tipo_sangre;
+}
+
+#campo_pais_nacimiento {
+  grid-area: pais_nacimiento;
+}
+
+/* Grid grupo Contacto */
+
+.contacto {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 100px);
+  grid-template-areas:
+    "titulo titulo "
+    "direccion direccion"
+    "telefono_principal telefono_secundario"
+    "email email";
+}
+
+#titulo_contacto {
+  grid-area: titulo;
+}
+
+#campo_direccion {
+  grid-area: direccion;
+}
+
+#campo_telefono_principal {
+  grid-area: telefono_principal;
+}
+
+#campo_telefono_secundario {
+  grid-area: telefono_secundario;
+}
+
+#campo_email {
+  grid-area: email;
+}

@@ -3,15 +3,91 @@
   Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
+<head>
+  <link rel="stylesheet" href="~/css/Empleados/FormEmpleados.css">
+</head>
+
 <section class="main-container">
   <div class="titulo-seccion">
     <h1>@ViewBag.Title</h1>
-  </div>
-  <div class="form-container">
     <div class="acciones">
-      <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <a href="@Url.Action("RegistroEmpleados", "Empleados")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
       <a href="@Url.Action("Guardar", "Empleados")" class="btn btn-nuevo"><i
           class="fi fi-rr-plus"></i><span>Guardar</span></a>
     </div>
+  </div>
+  <div class="form-container">
+    <form action="">
+      <div class="campos-container">
+        <div class="grupo informacion-laboral">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Informacion laboral</h2>
+          </div>
+          <div class="campo" id="campo_cedula">
+            <label for="cedula">Cedula</label>
+            <input type="text" name="cedula" id="cedula">
+          </div>
+          <div class="campo" id="campo_p_nombre">
+            <label for="p_nombre">Primer nombre</label>
+            <input type="text" name="p_nombre" id="p_nombre">
+          </div>
+          <div class="campo" id="campo_s_nombre">
+            <label for="s_nombre">Segundo nombre</label>
+            <input type="text" name="s_nombre" id="s_nombre">
+          </div>
+          <div class="campo" id="campo_p_apellido">
+            <label for="p_apellido">Primer apellido</label>
+            <input type="text" name="p_apellido" id="p_apellido">
+          </div>
+          <div class="campo" id="campo_s_apellido">
+            <label for="s_apellido">Segundo apellido</label>
+            <input type="text" name="s_apellido" id="s_apellido">
+          </div>
+          <div class="campo" id="campo_fecha_nacimiento">
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input type="text" name="fecha_nacimiento" id="fecha_nacimiento">
+          </div>
+          <div class="campo" id="campo_sexo">
+            <label for="sexo">Sexo</label>
+            <input type="text" name="sexo" id="sexo">
+          </div>
+          <div class="campo" id="campo_estado_civil">
+            <label for="estado_civil">Estado civil</label>
+            <input type="text" name="estado_civil" id="estado_civil">
+          </div>
+          <div class="campo" id="campo_tipo_sangre">
+            <label for="tipo_sangre">Tipo de sangre</label>
+            <input type="text" name="tipo_sangre" id="tipo_sangre">
+          </div>
+          <div class="campo" id="campo_pais_nacimiento">
+            <label for="pais_nacimiento">Pais de nacimiento</label>
+            <input type="text" name="pais_nacimiento" id="pais_nacimiento">
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo contacto">
+          <div class="titulo-grupo" id="titulo-contacto">
+            <h2>Contacto</h2>
+          </div>
+          <div class="campo" id="campo_direccion">
+            <label for="direccion">Direccion</label>
+            <input type="text" name="direccion" id="direccion">
+          </div>
+          <div class="campo" id="campo_telefono_principal">
+            <label for="telefono_principal">Telefono principal</label>
+            <input type="text" name="telefono_principal" id="telefono_principal">
+          </div>
+          <div class="campo" id="campo_telefono_secundario">
+            <label for="telefono_secundario">Telefono secundario</label>
+            <input type="text" name="telefono_secundario" id="telefono_secundario">
+          </div>
+          <div class="campo" id="campo_email">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email">
+          </div>
+        </div>
+      </div>
+    </form>
   </div>
 </section>
