@@ -13,6 +13,7 @@
   align-items: left;
   gap: 20px;
   padding: 0px 30px;
+  padding-bottom: 150px;
   /* border: solid 1px red; */
 }
 
@@ -174,4 +175,32 @@ input:focus {
 
 #campo_email {
   grid-area: email;
+}
+
+/* Grid grupo informacion geografica */
+
+.informacion-geografica {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-areas:
+    "titulo titulo "
+    "sector sector"
+    "ciudad ciudad "
+    "provincia provincia";
+}
+
+#titulo-informacion-geografica {
+  grid-area: titulo;
+}
+
+#campo_sector {
+  grid-area: sector;
+}
+
+#campo_ciudad {
+  grid-area: ciudad;
+}
+
+#campo_provincia {
+  grid-area: provincia;
 }
