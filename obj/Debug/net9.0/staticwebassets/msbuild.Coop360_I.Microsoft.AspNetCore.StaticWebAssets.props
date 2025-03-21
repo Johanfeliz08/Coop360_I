@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>f2exepeoao</Fingerprint>
-      <Integrity>iYiUuvtUgGfTI7UfizTArZhhHdWHdYfdEI6JmhrlknU=</Integrity>
+      <Fingerprint>w0tzwi8zil</Fingerprint>
+      <Integrity>UJoxxNCrIzSeOkX7rlQzbY6VMD/xYRTOiKT17V48/K8=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Cuenta\Perfil.css'))</OriginalItemSpec>

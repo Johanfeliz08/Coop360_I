@@ -34,7 +34,7 @@
 .main-container .campos-container {
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: top;
   align-items: left;
   width: 98%;
   height: 100%;
