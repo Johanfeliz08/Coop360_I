@@ -19,6 +19,11 @@ public class PrestamosController : Controller
     [HttpGet]
     public IActionResult SolicitudPrestamo()
     {
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+        
         return View();
     }
 
