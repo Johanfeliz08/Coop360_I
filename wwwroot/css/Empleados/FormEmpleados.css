@@ -90,7 +90,7 @@ input:focus {
 
 /* Grid grupo informacion laboral */
 
-.informacion-laboral {
+.informacion-personal {
   grid-template-columns: repeat(4, 1fr);
   grid-template-rows: repeat(5, 100px);
   grid-template-areas:
@@ -203,4 +203,81 @@ input:focus {
 
 #campo_provincia {
   grid-area: provincia;
+}
+
+.informacion-laboral {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-areas:
+    "titulo titulo "
+    "cuenta_banco entidad_bancaria"
+    "puesto departamento"
+    "nivel_aprobacion estatus ";
+}
+
+#titulo-informacion-laboral {
+  grid-area: titulo;
+}
+
+#campo_cuenta_banco {
+  grid-area: cuenta_banco;
+}
+
+#campo_entidad_bancaria {
+  grid-area: entidad_bancaria;
+}
+
+#campo_puesto {
+  grid-area: puesto;
+}
+
+#campo_departamento {
+  grid-area: departamento;
+}
+
+#campo_nivel_aprobacion {
+  grid-area: nivel_aprobacion;
+}
+
+#campo_estatus {
+  grid-area: estatus;
+}
+
+/* Grid grupo informacion familiar */
+
+.informacion-familiar {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  grid-template-areas:
+    "titulo titulo ."
+    "nombre_familiar_primario telefono_familiar_primario parentesco_familiar_primario"
+    "nombre_familiar_secundario telefono_familiar_secundario parentesco_familiar_secundario";
+}
+
+#titulo-informacion-familiar {
+  grid-area: titulo;
+}
+
+#campo_nombre_familiar_primario {
+  grid-area: nombre_familiar_primario;
+}
+
+#campo_telefono_familiar_primario {
+  grid-area: telefono_familiar_primario;
+}
+
+#campo_parentesco_familiar_primario {
+  grid-area: parentesco_familiar_primario;
+}
+
+#campo_nombre_familiar_secundario {
+  grid-area: nombre_familiar_secundario;
+}
+
+#campo_telefono_familiar_secundario {
+  grid-area: telefono_familiar_secundario;
+}
+
+#campo_parentesco_familiar_secundario {
+  grid-area: parentesco_familiar_secundario;
 }
