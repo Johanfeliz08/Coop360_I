@@ -200,7 +200,8 @@ select:focus {
     "titulo titulo "
     "sector sector"
     "ciudad ciudad "
-    "provincia provincia";
+    "provincia provincia"
+    "region region";
 }
 
 #titulo-informacion-geografica {
@@ -217,6 +218,10 @@ select:focus {
 
 #campo_provincia {
   grid-area: provincia;
+}
+
+#campo_region {
+  grid-area: region;
 }
 
 .informacion-laboral {

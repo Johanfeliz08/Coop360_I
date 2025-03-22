@@ -48,31 +48,53 @@ public class EmpleadosController : Controller {
         .AsEnumerable()
         .ToList();
 
+        var puestos = _context.Puestos
+        .FromSqlRaw("EXEC SP_LEER_PUESTOS")
+        .AsEnumerable()
+        .ToList();
+
+        var departamentos = _context.Departamentos
+        .FromSqlRaw("EXEC SP_LEER_DEPARTAMENTOS")
+        .AsEnumerable()
+        .ToList();
+
+        var nivelesAprobacion = _context.NivelesAprobacion
+        .FromSqlRaw("EXEC SP_LEER_NIVELES_APROBACION")
+        .AsEnumerable()
+        .ToList();
+
+        var entidadesBancarias = _context.EntidadesBancarias
+        .FromSqlRaw("EXEC SP_LEER_ENTIDADES_BANCARIAS")
+        .AsEnumerable()
+        .ToList();
+
         var viewModel = new EmpleadoFormViewModel
         {
             Regiones = regiones,
             Provincias = provincias,
             Ciudades = ciudades,
-            Sectores = sectores
+            Sectores = sectores,
+            Puestos = puestos,
+            Departamentos = departamentos,
+            NivelesAprobacion = nivelesAprobacion,
+            EntidadesBancarias = entidadesBancarias
         };
 
         return View("FormEmpleados",viewModel);
     }
 
-    // [HttpGet]
-    // public IActionResult Create() {
-    //     return View();
-    // }
+        [HttpPost]
+        public IActionResult Guardar(Empleado empleado) {
+        
+            if (empleado != null) {
+                var context = _context.Empleados
+                .FromSqlRaw("EXEC SP_CREAR_EMPLEADO @CODIGO_EMPLEADO = {0}, @CEDULA = {1}, @P_NOMBRE = {2}, @S_NOMBRE = {3}, @P_APELLIDO = {4}, @S_APELLIDO = {5}, @DIRECCION = {6}, @ID_SECTOR = {7}, @ID_CIUDAD = {8}, @ID_PROVINCIA = {9}, @PAIS_NACIMIENTO = {10}, @TELEFONO_PRINCIPAL = {11}, @TELEFONO_SECUNDARIO = {12}, @FECHA_NACIMIENTO = {13}, @EMAIL = {14}, @SEXO = {15}, @ESTADO_CIVIL = {16}, @FECHA_CREACION = {17}, @FRECUENCIA_COBRO = {18}, @CUENTA_BANCO = {19}, @ID_ENTIDAD_BANCARIA = {20}, @ID_PUESTO = {21}, @ID_DEPARTAMENTO = {22}, @TIPO_SANGRE = {23}, @NOMBRE_FAMILIAR_PRIMARIO = {24}, @TELEFONO_FAMILIAR_PRIMARIO = {25}, @PARENTESCO_FAMILIAR_PRIMARIO = {26}, @NOMBRE_FAMILIAR_SECUNDARIO = {27}, @TELEFONO_FAMILIAR_SECUNDARIO = {28}, @PARENTESCO_FAMILIAR_SECUNDARIO = {29}, @ID_NIVEL_APROBACION = {30}, @ESTATUS = {31}, @CREADO_POR = {32}", empleado.CODIGO_EMPLEADO, empleado.CEDULA, empleado.P_NOMBRE, empleado.S_NOMBRE, empleado.P_APELLIDO, empleado.S_APELLIDO, empleado.DIRECCION, empleado.ID_SECTOR, empleado.ID_CIUDAD, empleado.ID_PROVINCIA, empleado.PAIS_NACIMIENTO, empleado.TELEFONO_PRINCIPAL, empleado.TELEFONO_SECUNDARIO, empleado.FECHA_NACIMIENTO, empleado.EMAIL, empleado.SEXO, empleado.ESTADO_CIVIL, empleado.FECHA_CREACION, empleado.FRECUENCIA_COBRO, empleado.CUENTA_BANCO, empleado.ID_ENTIDAD_BANCARIA, empleado.ID_PUESTO, empleado.ID_DEPARTAMENTO, empleado.TIPO_SANGRE, empleado.NOMBRE_FAMILIAR_PRIMARIO, empleado.TELEFONO_FAMILIAR_PRIMARIO, empleado.PARENTESCO_FAMILIAR_PRIMARIO, empleado.NOMBRE_FAMILIAR_SECUNDARIO, empleado.TELEFONO_FAMILIAR_SECUNDARIO, empleado.PARENTESCO_FAMILIAR_SECUNDARIO, empleado.ID_NIVEL_APROBACION, empleado.ESTATUS, empleado.CREADO_POR);
+            }
+        
+            return RedirectToAction("RegistroEmpleados");
+        
+        }
 
-    // [HttpPost]
-    // public IActionResult Create(Empleado empleado) {
-    //     if (ModelState.IsValid) {
-    //         _context.Empleados.Add(empleado);
-    //         _context.SaveChanges();
-    //         return RedirectToAction("Index");
-    //     }
-    //     return View(empleado);
-    // }
 
     // [HttpGet]
     // public IActionResult Edit(int id) {
