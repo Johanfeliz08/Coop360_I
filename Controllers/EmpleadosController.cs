@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Coop360_I.Models;
 using Microsoft.EntityFrameworkCore;
 using Coop360_I.Data;
+using Coop360_I.Controllers;
 
 namespace Coop360_I.Controllers;
 
@@ -26,12 +27,64 @@ public class EmpleadosController : Controller {
     
     }
 
+    private Empleado validarEmpleado(Empleado empleado){
+
+        // Verifica el objeto recibido desde el formulario no este vacio
+        if (empleado == null) { 
+            throw new Exception("El servidor no puede procesar la solicitud, objeto empleado vacio");
+        };
+    
+        // Valida que los campos obligatorios no esten vacios
+
+        if (empleado.CEDULA == null || empleado.P_NOMBRE == null || empleado.P_APELLIDO == null || empleado.DIRECCION == null || empleado.ID_SECTOR == null || empleado.ID_CIUDAD == null || empleado.ID_PROVINCIA == null || empleado.PAIS_NACIMIENTO == null || empleado.TELEFONO_PRINCIPAL == null  || empleado.SEXO == null || empleado.ESTADO_CIVIL == null || empleado.FRECUENCIA_COBRO == null || empleado.CUENTA_BANCO == "" || empleado.ID_ENTIDAD_BANCARIA == null || empleado.ID_PUESTO == null || empleado.ID_DEPARTAMENTO == null || empleado.TIPO_SANGRE == null || empleado.NOMBRE_FAMILIAR_PRIMARIO == null || empleado.TELEFONO_FAMILIAR_PRIMARIO == null || empleado.PARENTESCO_FAMILIAR_PRIMARIO == null || empleado.ID_NIVEL_APROBACION == null || empleado.ESTATUS == null || empleado.CREADO_POR == null) {
+            throw new Exception("El servidor no puede procesar la solicitud, campos obligatorios vacios");
+        };
+
+        // Validacion y conversion de datos
+        var empleadoValido = new Empleado
+        {
+            CEDULA = empleado.CEDULA,
+            P_NOMBRE = empleado.P_NOMBRE,
+            S_NOMBRE = empleado.S_NOMBRE ?? "",
+            P_APELLIDO = empleado.P_APELLIDO,
+            S_APELLIDO = empleado.S_APELLIDO ?? "",
+            DIRECCION = empleado.DIRECCION,
+            ID_SECTOR = Convert.ToInt32(empleado.ID_SECTOR ?? 0),
+            ID_CIUDAD = Convert.ToInt32(empleado.ID_CIUDAD ?? 0),
+            ID_PROVINCIA = Convert.ToInt32(empleado.ID_PROVINCIA ?? 0),
+            PAIS_NACIMIENTO = empleado.PAIS_NACIMIENTO,
+            TELEFONO_PRINCIPAL = empleado.TELEFONO_PRINCIPAL,
+            TELEFONO_SECUNDARIO = empleado.TELEFONO_SECUNDARIO ?? "",
+            FECHA_NACIMIENTO = Convert.ToDateTime(empleado.FECHA_NACIMIENTO),
+            EMAIL = empleado.EMAIL ?? "",
+            SEXO = empleado.SEXO,
+            ESTADO_CIVIL = empleado.ESTADO_CIVIL,
+            FRECUENCIA_COBRO = empleado.FRECUENCIA_COBRO,
+            CUENTA_BANCO = empleado.CUENTA_BANCO,
+            ID_ENTIDAD_BANCARIA = Convert.ToInt32(empleado.ID_ENTIDAD_BANCARIA ?? 0),
+            ID_PUESTO = Convert.ToInt32(empleado.ID_PUESTO ?? 0),
+            ID_DEPARTAMENTO = Convert.ToInt32(empleado.ID_DEPARTAMENTO ?? 0),
+            TIPO_SANGRE = empleado.TIPO_SANGRE,
+            NOMBRE_FAMILIAR_PRIMARIO = empleado.NOMBRE_FAMILIAR_PRIMARIO ?? "",
+            TELEFONO_FAMILIAR_PRIMARIO = empleado.TELEFONO_FAMILIAR_PRIMARIO ?? "",
+            PARENTESCO_FAMILIAR_PRIMARIO = empleado.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
+            NOMBRE_FAMILIAR_SECUNDARIO = empleado.NOMBRE_FAMILIAR_SECUNDARIO ?? "",
+            TELEFONO_FAMILIAR_SECUNDARIO = empleado.TELEFONO_FAMILIAR_SECUNDARIO ?? "",
+            PARENTESCO_FAMILIAR_SECUNDARIO = empleado.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
+            ID_NIVEL_APROBACION = empleado.ID_NIVEL_APROBACION ?? "",
+            ESTATUS = empleado.ESTATUS,
+            CREADO_POR = Convert.ToInt32(empleado.CREADO_POR)
+        };
+
+        return empleadoValido;
+    }
+
     public IActionResult Crear () {
 
-        var regiones = _context.Regiones
-        .FromSqlRaw("EXEC SP_LEER_REGIONES")
-        .AsEnumerable()
-        .ToList();
+        // var regiones = _context.Regiones
+        // .FromSqlRaw("EXEC SP_LEER_REGIONES")
+        // .AsEnumerable()
+        // .ToList();
 
         var provincias = _context.Provincias
         .FromSqlRaw("EXEC SP_LEER_PROVINCIAS")
@@ -70,7 +123,7 @@ public class EmpleadosController : Controller {
 
         var viewModel = new EmpleadoFormViewModel
         {
-            Regiones = regiones,
+            // Regiones = regiones,
             Provincias = provincias,
             Ciudades = ciudades,
             Sectores = sectores,
@@ -84,14 +137,72 @@ public class EmpleadosController : Controller {
     }
 
         [HttpPost]
-        public IActionResult Guardar(Empleado empleado) {
+        public async Task<IActionResult> GuardarAsync(Empleado empleado) {
+
+        // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
+                return RedirectToAction("Login", "Auth");
+        } else {
+                // Asigna el codigo del empleado que esta creando el registro
+                empleado.CREADO_POR = HttpContext.Session.GetInt32("ID_USUARIO");
+        };
+
+        // Valida el empleado y devuelve un objeto con los campos validados
+        var empleadoValido = validarEmpleado(empleado);
+
+        // Imprimir los datos recibidos para validar
+        Console.WriteLine("--------------------------");
+        Console.WriteLine("CEDULA: " + empleadoValido.CEDULA);
+        Console.WriteLine("P_NOMBRE: " + empleadoValido.P_NOMBRE);
+        Console.WriteLine("S_NOMBRE: " + empleadoValido.S_NOMBRE);
+        Console.WriteLine("P_APELLIDO: " + empleadoValido.P_APELLIDO);
+        Console.WriteLine("S_APELLIDO: " + empleadoValido.S_APELLIDO);
+        Console.WriteLine("DIRECCION: " + empleadoValido.DIRECCION);
+        Console.WriteLine("ID_SECTOR: " + empleadoValido.ID_SECTOR);
+        Console.WriteLine("ID_CIUDAD: " + empleadoValido.ID_CIUDAD);
+        Console.WriteLine("ID_PROVINCIA: " + empleadoValido.ID_PROVINCIA);
+        Console.WriteLine("PAIS_NACIMIENTO: " + empleadoValido.PAIS_NACIMIENTO);
+        Console.WriteLine("TELEFONO_PRINCIPAL: " + empleadoValido.TELEFONO_PRINCIPAL);
+        Console.WriteLine("TELEFONO_SECUNDARIO: " + empleadoValido.TELEFONO_SECUNDARIO);
+        Console.WriteLine("FECHA_NACIMIENTO: " + empleadoValido.FECHA_NACIMIENTO);
+        Console.WriteLine("EMAIL: " + empleadoValido.EMAIL);
+        Console.WriteLine("SEXO: " + empleadoValido.SEXO);
+        Console.WriteLine("ESTADO_CIVIL: " + empleadoValido.ESTADO_CIVIL);
+        Console.WriteLine("FRECUENCIA_COBRO: " + empleadoValido.FRECUENCIA_COBRO);
+        Console.WriteLine("CUENTA_BANCO: " + empleadoValido.CUENTA_BANCO);
+        Console.WriteLine("ID_ENTIDAD_BANCARIA: " + empleadoValido.ID_ENTIDAD_BANCARIA);
+        Console.WriteLine("ID_PUESTO: " + empleadoValido.ID_PUESTO);
+        Console.WriteLine("ID_DEPARTAMENTO: " + empleadoValido.ID_DEPARTAMENTO);
+        Console.WriteLine("TIPO_SANGRE: " + empleadoValido.TIPO_SANGRE);
+        Console.WriteLine("NOMBRE_FAMILIAR_PRIMARIO: " + empleadoValido.NOMBRE_FAMILIAR_PRIMARIO);
+        Console.WriteLine("TELEFONO_FAMILIAR_PRIMARIO: " + empleadoValido.TELEFONO_FAMILIAR_PRIMARIO);
+        Console.WriteLine("PARENTESCO_FAMILIAR_PRIMARIO: " + empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO);
+        Console.WriteLine("NOMBRE_FAMILIAR_SECUNDARIO: " + empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO);
+        Console.WriteLine("TELEFONO_FAMILIAR_SECUNDARIO: " + empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO);
+        Console.WriteLine("PARENTESCO_FAMILIAR_SECUNDARIO: " + empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO);
+        Console.WriteLine("ID_NIVEL_APROBACION: " + empleadoValido.ID_NIVEL_APROBACION);
+        Console.WriteLine("ESTATUS: " + empleadoValido.ESTATUS);
+        Console.WriteLine("CREADO_POR: " + empleadoValido.CREADO_POR);
+        Console.WriteLine("--------------------------");
+
+        try {
+        await _context.Database.ExecuteSqlRawAsync(
+            "EXEC SP_CREAR_EMPLEADO @CEDULA = {0}, @P_NOMBRE = {1}, @S_NOMBRE = {2}, @P_APELLIDO = {3}, @S_APELLIDO = {4}, @DIRECCION = {5}, @ID_SECTOR = {6}, @ID_CIUDAD = {7}, @ID_PROVINCIA = {8}, @PAIS_NACIMIENTO = {9}, @TELEFONO_PRINCIPAL = {10}, @TELEFONO_SECUNDARIO = {11}, @FECHA_NACIMIENTO = {12}, @EMAIL = {13}, @SEXO = {14}, @ESTADO_CIVIL = {15}, @FRECUENCIA_COBRO = {16}, @CUENTA_BANCO = {17}, @ID_ENTIDAD_BANCARIA = {18}, @ID_PUESTO = {19}, @ID_DEPARTAMENTO = {20}, @TIPO_SANGRE = {21}, @NOMBRE_FAMILIAR_PRIMARIO = {22}, @TELEFONO_FAMILIAR_PRIMARIO = {23}, @PARENTESCO_FAMILIAR_PRIMARIO = {24}, @NOMBRE_FAMILIAR_SECUNDARIO = {25}, @TELEFONO_FAMILIAR_SECUNDARIO = {26}, @PARENTESCO_FAMILIAR_SECUNDARIO = {27}, @ID_NIVEL_APROBACION = {28}, @ESTATUS = {29}, @CREADO_POR = {30}",
+            empleadoValido.CEDULA, empleadoValido.P_NOMBRE, empleadoValido.S_NOMBRE ?? "", empleadoValido.P_APELLIDO, empleadoValido.S_APELLIDO ?? "",
+            empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
+            empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
+            empleadoValido.SEXO, empleadoValido.ESTADO_CIVIL, empleadoValido.FRECUENCIA_COBRO, empleadoValido.CUENTA_BANCO,
+            empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
+            empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
+            empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
+            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
+        );
+        } catch (Exception ex) {
+            throw new Exception("Error al guardar el registro: " + ex.Message + ex.Source);
+        }
+
+        return RedirectToAction("RegistroEmpleados");
         
-            if (empleado != null) {
-                var context = _context.Empleados
-                .FromSqlRaw("EXEC SP_CREAR_EMPLEADO @CODIGO_EMPLEADO = {0}, @CEDULA = {1}, @P_NOMBRE = {2}, @S_NOMBRE = {3}, @P_APELLIDO = {4}, @S_APELLIDO = {5}, @DIRECCION = {6}, @ID_SECTOR = {7}, @ID_CIUDAD = {8}, @ID_PROVINCIA = {9}, @PAIS_NACIMIENTO = {10}, @TELEFONO_PRINCIPAL = {11}, @TELEFONO_SECUNDARIO = {12}, @FECHA_NACIMIENTO = {13}, @EMAIL = {14}, @SEXO = {15}, @ESTADO_CIVIL = {16}, @FECHA_CREACION = {17}, @FRECUENCIA_COBRO = {18}, @CUENTA_BANCO = {19}, @ID_ENTIDAD_BANCARIA = {20}, @ID_PUESTO = {21}, @ID_DEPARTAMENTO = {22}, @TIPO_SANGRE = {23}, @NOMBRE_FAMILIAR_PRIMARIO = {24}, @TELEFONO_FAMILIAR_PRIMARIO = {25}, @PARENTESCO_FAMILIAR_PRIMARIO = {26}, @NOMBRE_FAMILIAR_SECUNDARIO = {27}, @TELEFONO_FAMILIAR_SECUNDARIO = {28}, @PARENTESCO_FAMILIAR_SECUNDARIO = {29}, @ID_NIVEL_APROBACION = {30}, @ESTATUS = {31}, @CREADO_POR = {32}", empleado.CODIGO_EMPLEADO, empleado.CEDULA, empleado.P_NOMBRE, empleado.S_NOMBRE, empleado.P_APELLIDO, empleado.S_APELLIDO, empleado.DIRECCION, empleado.ID_SECTOR, empleado.ID_CIUDAD, empleado.ID_PROVINCIA, empleado.PAIS_NACIMIENTO, empleado.TELEFONO_PRINCIPAL, empleado.TELEFONO_SECUNDARIO, empleado.FECHA_NACIMIENTO, empleado.EMAIL, empleado.SEXO, empleado.ESTADO_CIVIL, empleado.FECHA_CREACION, empleado.FRECUENCIA_COBRO, empleado.CUENTA_BANCO, empleado.ID_ENTIDAD_BANCARIA, empleado.ID_PUESTO, empleado.ID_DEPARTAMENTO, empleado.TIPO_SANGRE, empleado.NOMBRE_FAMILIAR_PRIMARIO, empleado.TELEFONO_FAMILIAR_PRIMARIO, empleado.PARENTESCO_FAMILIAR_PRIMARIO, empleado.NOMBRE_FAMILIAR_SECUNDARIO, empleado.TELEFONO_FAMILIAR_SECUNDARIO, empleado.PARENTESCO_FAMILIAR_SECUNDARIO, empleado.ID_NIVEL_APROBACION, empleado.ESTATUS, empleado.CREADO_POR);
-            }
-        
-            return RedirectToAction("RegistroEmpleados");
         
         }
 

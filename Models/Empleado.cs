@@ -22,11 +22,11 @@ public class Empleado
     public string? TELEFONO_SECUNDARIO { get; set; }
     public required DateTime FECHA_NACIMIENTO { get; set; }
     public string? EMAIL { get; set; }
-    public required char SEXO { get; set; }
+    public required string SEXO { get; set; }
     public required string ESTADO_CIVIL { get; set; }
     public DateTime FECHA_CREACION { get; set; }
     public required string FRECUENCIA_COBRO { get; set; }
-    public required int CUENTA_BANCO { get; set; }
+    public required string CUENTA_BANCO { get; set; }
     public int? ID_ENTIDAD_BANCARIA { get; set; }
     public string? NOMBRE_ENTIDAD_BANCARIA { get; set; }
     public int? ID_PUESTO { get; set; }

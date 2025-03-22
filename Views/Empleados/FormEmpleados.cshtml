@@ -12,12 +12,13 @@
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
       <a href="@Url.Action("RegistroEmpleados", "Empleados")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
-      <a href="@Url.Action("Guardar", "Empleados")" class="btn btn-nuevo"><i
-          class="fi fi-rr-plus"></i><span>Guardar</span></a>
+      @* <button type="submit" class="btn btn-nuevo">Guardar</button> *@
+      @* <a href="@Url.Action("Guardar", "Empleados")" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></a> *@
     </div>
   </div>
   <div class="form-container">
-    <form action="">
+    <form asp-action="Guardar" asp-controller="Empleados" method="post">
       <div class="campos-container">
         <div class="grupo informacion-personal">
           <div class="titulo-grupo" id="titulo">
@@ -25,11 +26,11 @@
           </div>
           <div class="campo" id="campo_cedula">
             <label for="cedula">Cedula</label>
-            <input type="text" name="cedula" id="cedula">
+            <input required type="text" name="cedula" id="cedula">
           </div>
           <div class="campo" id="campo_p_nombre">
             <label for="p_nombre">Primer nombre</label>
-            <input type="text" name="p_nombre" id="p_nombre">
+            <input required type="text" name="p_nombre" id="p_nombre">
           </div>
           <div class="campo" id="campo_s_nombre">
             <label for="s_nombre">Segundo nombre</label>
@@ -37,7 +38,7 @@
           </div>
           <div class="campo" id="campo_p_apellido">
             <label for="p_apellido">Primer apellido</label>
-            <input type="text" name="p_apellido" id="p_apellido">
+            <input required type="text" name="p_apellido" id="p_apellido">
           </div>
           <div class="campo" id="campo_s_apellido">
             <label for="s_apellido">Segundo apellido</label>
@@ -45,21 +46,20 @@
           </div>
           <div class="campo" id="campo_fecha_nacimiento">
             <label for="fecha_nacimiento">Fecha de nacimiento</label>
-            <input type="text" name="fecha_nacimiento" id="fecha_nacimiento">
+            <input required type="text" name="fecha_nacimiento" id="fecha_nacimiento">
           </div>
           <div class="campo" id="campo_sexo">
             <label for="sexo">Sexo</label>
             @* <input type="text" name="sexo" id="sexo"> *@
-            <select name="sexo" id="sexo">
+            <select required name="sexo" id="sexo">
               <option value="default" disabled selected>Seleccionar</option>
-
               <option value="F">Femenino</option>
               <option value="M">Masculino</option>
             </select>
           </div>
           <div class="campo" id="campo_estado_civil">
             <label for="estado_civil">Estado civil</label>
-            <select name="estado_civil" id="estado_civil">
+            <select required name="ESTADO_CIVIL" id="estado_civil">
               <option value="default" disabled selected>Seleccionar</option>
               <option value="Casado/a">Casado/a</option>
               <option value="Soltero/a">Soltero/a</option>
@@ -68,7 +68,7 @@
           </div>
           <div class="campo" id="campo_tipo_sangre">
             <label for="tipo_sangre">Tipo de sangre</label>
-            <select name="tipo_sangre" id="tipo_sangre">
+            <select name="TIPO_SANGRE" id="tipo_sangre">
               <option value="default" disabled selected>Seleccionar</option>
 
               <option value="A+">A+</option>
@@ -80,11 +80,10 @@
               <option value="O+">O+</option>
               <option value="O-">O-</option>
             </select>
-            @* <input type="text" name="tipo_sangre" id="tipo_sangre"> *@
           </div>
           <div class="campo" id="campo_pais_nacimiento">
             <label for="pais_nacimiento">Pais de nacimiento</label>
-            <input type="text" name="pais_nacimiento" id="pais_nacimiento">
+            <input required type="text" name="PAIS_NACIMIENTO" id="pais_nacimiento">
           </div>
         </div>
       </div>
@@ -95,19 +94,19 @@
           </div>
           <div class="campo" id="campo_direccion">
             <label for="direccion">Direccion</label>
-            <input type="text" name="direccion" id="direccion">
+            <input required type="text" name="DIRECCION" id="direccion">
           </div>
           <div class="campo" id="campo_telefono_principal">
             <label for="telefono_principal">Telefono principal</label>
-            <input type="text" name="telefono_principal" id="telefono_principal">
+            <input type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal">
           </div>
           <div class="campo" id="campo_telefono_secundario">
             <label for="telefono_secundario">Telefono secundario</label>
-            <input type="text" name="telefono_secundario" id="telefono_secundario">
+            <input type="text" name="TELEFONO_SECUNDARIO" id="telefono_secundario">
           </div>
           <div class="campo" id="campo_email">
             <label for="email">Email</label>
-            <input type="text" name="email" id="email">
+            <input type="text" name="EMAIL" id="email">
           </div>
         </div>
       </div>
@@ -118,7 +117,7 @@
           </div>
           <div class="campo" id="campo_sector">
             <label for="sector">Sector</label>
-            <select name="sector" id="sector">
+            <select required name="ID_SECTOR" id="sector">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var sector in @Model.Sectores)
               {
@@ -126,11 +125,10 @@
                 <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR">@sector.NOMBRE</option>
               }
             </select>
-            @* <input type="text" name="sector" id="sector"> *@
           </div>
           <div class="campo" id="campo_ciudad">
             <label for="ciudad">Ciudad</label>
-            <select name="ciudad" id="ciudad">
+            <select required name="ID_CIUDAD" id="ciudad">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var ciudad in @Model.Ciudades)
               {
@@ -138,11 +136,10 @@
                 <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD">@ciudad.NOMBRE</option>
               }
             </select>
-            @* <input type="text" name="ciudad" id="ciudad"> *@
           </div>
           <div class="campo" id="campo_provincia">
             <label for="provincia">Provincia</label>
-            <select>
+            <select required name="ID_PROVINCIA" id="provincia">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var provincia in @Model.Provincias)
               {
@@ -150,11 +147,10 @@
                 <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA">@provincia.NOMBRE</option>
               }
             </select>
-            @* <input type="text" name="provincia" id="provincia"> *@
           </div>
-          <div class="campo" id="campo_region">
+          @* <div class="campo" id="campo_region">
             <label for="region">Region</label>
-            <select>
+            <select required name="ID_REGION" id="region">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var region in @Model.Regiones)
               {
@@ -162,8 +158,7 @@
                 <option id="@region.ID_REGION" value="@region.ID_REGION">@region.REGION</option>
               }
             </select>
-            @* <input type="text" name="provincia" id="provincia"> *@
-          </div>
+          </div> *@
         </div>
       </div>
       <div class="campos-container">
@@ -173,21 +168,20 @@
           </div>
           <div class="campo" id="campo_frecuencia_cobro">
             <label for="frecuencia_cobro">Frecuencia cobro</label>
-            <select name="frecuencia_cobro" id="frecuencia_cobro">
+            <select required name="FRECUENCIA_COBRO" id="frecuencia_cobro">
               <option value="default" disabled selected>Seleccionar</option>
               <option value="Semanal">Semanal</option>
               <option value="Quincenal">Quincenal</option>
               <option value="Mensual">Mensual</option>
             </select>
-            @* <input type="text" name="frecuencia_cobro" id="frecuencia_cobro"> *@
           </div>
           <div class="campo" id="campo_cuenta_banco">
             <label for="cuenta_banco">Cuenta banco</label>
-            <input type="text" name="cuenta_banco" id="cuenta_banco">
+            <input type="text" name="CUENTA_BANCO" id="cuenta_banco">
           </div>
           <div class="campo" id="campo_entidad_bancaria">
             <label for="entidad_bancaria">Entidad bancaria</label>
-            <select name="entidad_bancaria" id="entidad_bancaria">
+            <select name="ID_ENTIDAD_BANCARIA" id="entidad_bancaria">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var entidad_bancaria in @Model.EntidadesBancarias)
               {
@@ -195,11 +189,10 @@
                   @entidad_bancaria.NOMBRE</option>
               }
             </select>
-            @* <input type="text" name="entidad_bancaria" id="entidad_bancaria"> *@
           </div>
           <div class="campo" id="campo_puesto">
             <label for="puesto">Puesto</label>
-            <select name="puesto" id="puesto">
+            <select name="ID_PUESTO" id="puesto">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var puesto in @Model.Puestos)
               {
@@ -207,11 +200,11 @@
                 <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO">@puesto.NOMBRE</option>
               }
             </select>
-            @* <input type="text" name="puesto" id="puesto"> *@
+            @* <input required type="text" name="puesto" id="puesto"> *@
           </div>
           <div class="campo" id="campo_departamento">
             <label for="departamento">Departamento</label>
-            <select name="departamento" id="departamento">
+            <select name="ID_DEPARTAMENTO" id="departamento">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var departamento in @Model.Departamentos)
               {
@@ -220,11 +213,11 @@
                 </option>
               }
             </select>
-            @* <input type="text" name="departamento" id="departamento"> *@
+            @* <input required type="text" name="departamento" id="departamento"> *@
           </div>
           <div class="campo" id="campo_nivel_aprobacion">
             <label for="nivel_aprobacion">Nivel Aprobacion</label>
-            <select name="nivel_aprobacion" id="nivel_aprobacion">
+            <select name="ID_NIVEL_APROBACION" id="nivel_aprobacion">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var nivel_aprobacion in @Model.NivelesAprobacion)
               {
@@ -233,18 +226,15 @@
                   @nivel_aprobacion.ID_NIVEL_APROBACION</option>
               }
             </select>
-            @* <input type="text" name="nivel_aprobacion" id="nivel_aprobacion"> *@
           </div>
           <div class="campo" id="campo_estatus">
             <label for="estatus">Estatus</label>
             <select name="estatus" id="estatus">
               <option value="default" disabled selected>Seleccionar</option>
-
               <option value="Activo">Activo</option>
               <option value="Suspendido">Suspendido</option>
               <option value="Inactivo">Inactivo</option>
             </select>
-            @* <input type="text" name="estatus" id="estatus"> *@
           </div>
         </div>
       </div>
@@ -255,17 +245,16 @@
           </div>
           <div class="campo" id="campo_nombre_familiar_primario">
             <label for="nombre_familiar_primario">Nombre familiar primario</label>
-            <input type="text" name="nombre_familiar_primario" id="nombre_familiar_primario">
+            <input type="text" name="NOMBRE_FAMILIAR_PRIMARIO" id="nombre_familiar_primario">
           </div>
           <div class="campo" id="campo_telefono_familiar_primario">
             <label for="telefono_familiar_primario">Telefono familiar primario</label>
-            <input type="text" name="telefono_familiar_primario" id="telefono_familiar_primario">
+            <input type="text" name="TELEFONO_FAMILIAR_PRIMARIO" id="telefono_familiar_primario">
           </div>
           <div class="campo" id="campo_parentesco_familiar_primario">
             <label for="parentesco_familiar_primario">Parentesco familiar primario</label>
-            <select name="parentesco_familiar_primario" id="parentesco_familiar_primario">
+            <select name="PARENTESCO_FAMILIAR_PRIMARIO" id="parentesco_familiar_primario">
               <option value="default" disabled selected>Seleccionar</option>
-
               <option value="Padre">Padre</option>
               <option value="Madre">Madre</option>
               <option value="Hermano/a">Hermano/a</option>
@@ -277,17 +266,16 @@
           </div>
           <div class="campo" id="campo_nombre_familiar_secundario">
             <label for="nombre_familiar_secundario">Nombre familiar secundario</label>
-            <input type="text" name="nombre_familiar_secundario" id="nombre_familiar_secundario">
+            <input type="text" name="NOMBRE_FAMILIAR_SECUNDARIO" id="nombre_familiar_secundario">
           </div>
           <div class="campo" id="campo_telefono_familiar_secundario">
             <label for="telefono_familiar_secundario">Telefono familiar secundario</label>
-            <input type="text" name="telefono_familiar_secundario" id="telefono_familiar_secundario">
+            <input type="text" name="TELEFONO_FAMILIAR_SECUNDARIO" id="telefono_familiar_secundario">
           </div>
           <div class="campo" id="campo_parentesco_familiar_secundario">
             <label for="parentesco_familiar_secundario">Parentesco familiar secundario</label>
-            <select name="parentesco_familiar_secundario" id="parentesco_familiar_secundario">
+            <select name="PARENTESCO_FAMILIAR_SECUNDARIO" id="parentesco_familiar_secundario">
               <option value="default" disabled selected>Seleccionar</option>
-
               <option value="Padre">Padre</option>
               <option value="Madre">Madre</option>
               <option value="Hermano/a">Hermano/a</option>
@@ -295,22 +283,10 @@
               <option value="Tio/a">Tio/a</option>
               <option value="Esposo/a">Esposo/a</option>
             </select>
-            @* <input type="text" name="parentesco_familiar_secundario" id="parentesco_familiar_secundario"> *@
           </div>
         </div>
       </div>
-
-      @* <div class="campos-container">
-          <div class="grupo ">
-            <div class="titulo-grupo" id="titulo-">
-              <h2></h2>
-            </div>
-            <div class="campo" id="campo_">
-              <label for=""></label>
-              <input type="text" name="" id="">
-            </div>
-          </div>
-        </div> *@
+      <button type="submit" class="btn btn-nuevo">Guardar</button>
     </form>
   </div>
 </section>
