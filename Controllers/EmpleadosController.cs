@@ -27,7 +27,36 @@ public class EmpleadosController : Controller {
     }
 
     public IActionResult Crear () {
-        return View("FormEmpleados");
+
+        var regiones = _context.Regiones
+        .FromSqlRaw("EXEC SP_LEER_REGIONES")
+        .AsEnumerable()
+        .ToList();
+
+        var provincias = _context.Provincias
+        .FromSqlRaw("EXEC SP_LEER_PROVINCIAS")
+        .AsEnumerable()
+        .ToList();
+
+        var ciudades = _context.Ciudades
+        .FromSqlRaw("EXEC SP_LEER_CIUDADES")
+        .AsEnumerable()
+        .ToList();
+
+        var sectores = _context.Sectores
+        .FromSqlRaw("EXEC SP_LEER_SECTORES")
+        .AsEnumerable()
+        .ToList();
+
+        var viewModel = new EmpleadoFormViewModel
+        {
+            Regiones = regiones,
+            Provincias = provincias,
+            Ciudades = ciudades,
+            Sectores = sectores
+        };
+
+        return View("FormEmpleados",viewModel);
     }
 
     // [HttpGet]

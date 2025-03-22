@@ -84,6 +84,20 @@ input:focus {
   outline: var(--accent-color) 1px solid;
 }
 
+.campos-container .grupo .campo select {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: var(--accent-color) 1px solid;
+}
+
 .grupo {
   display: grid;
 }

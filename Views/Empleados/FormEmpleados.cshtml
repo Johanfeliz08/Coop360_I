@@ -49,15 +49,33 @@
           </div>
           <div class="campo" id="campo_sexo">
             <label for="sexo">Sexo</label>
-            <input type="text" name="sexo" id="sexo">
+            @* <input type="text" name="sexo" id="sexo"> *@
+            <select name="sexo" id="sexo">
+              <option value="F">Femenino</option>
+              <option value="M">Masculino</option>
+            </select>
           </div>
           <div class="campo" id="campo_estado_civil">
             <label for="estado_civil">Estado civil</label>
-            <input type="text" name="estado_civil" id="estado_civil">
+            <select name="estado_civil" id="estado_civil">
+              <option value="Casado/a">Casado/a</option>
+              <option value="Soltero/a">Soltero/a</option>
+            </select>
+            @* <input type="text" name="estado_civil" id="estado_civil"> *@
           </div>
           <div class="campo" id="campo_tipo_sangre">
             <label for="tipo_sangre">Tipo de sangre</label>
-            <input type="text" name="tipo_sangre" id="tipo_sangre">
+            <select name="tipo_sangre" id="tipo_sangre">
+              <option value="A+">A+</option>
+              <option value="A-">A-</option>
+              <option value="B+">B+</option>
+              <option value="B-">B-</option>
+              <option value="AB+">AB+</option>
+              <option value="AB-">AB-</option>
+              <option value="O+">O+</option>
+              <option value="O-">O-</option>
+            </select>
+            @* <input type="text" name="tipo_sangre" id="tipo_sangre"> *@
           </div>
           <div class="campo" id="campo_pais_nacimiento">
             <label for="pais_nacimiento">Pais de nacimiento</label>
@@ -95,7 +113,13 @@
           </div>
           <div class="campo" id="campo_sector">
             <label for="sector">Sector</label>
-            <input type="text" name="sector" id="sector">
+            <select name="sector" id="sector">
+              @foreach (var sector in @Model.Sectores)
+              {
+                <option value="@sector.ID_SECTOR">@sector.NOMBRE</option>
+              }
+            </select>
+            @* <input type="text" name="sector" id="sector"> *@
           </div>
           <div class="campo" id="campo_ciudad">
             <label for="ciudad">Ciudad</label>

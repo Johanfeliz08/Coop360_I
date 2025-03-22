@@ -5,6 +5,10 @@
       "PackagePath": "staticwebassets\\css\\Cuenta\\Perfil.css"
     },
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Empleados\\FormEmpleados.css",
+      "PackagePath": "staticwebassets\\css\\Empleados\\FormEmpleados.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Empleados\\RegistroEmpleados.css",
       "PackagePath": "staticwebassets\\css\\Empleados\\RegistroEmpleados.css"
     },
