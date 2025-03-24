@@ -136,8 +136,8 @@ public class EmpleadosController : Controller {
         return View("FormEmpleados",viewModel);
     }
 
-        [HttpPost]
-        public async Task<IActionResult> GuardarAsync(Empleado empleado) {
+    [HttpPost]
+    public async Task<IActionResult> GuardarAsync(Empleado empleado) {
 
         // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
         if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
@@ -149,41 +149,6 @@ public class EmpleadosController : Controller {
 
         // Valida el empleado y devuelve un objeto con los campos validados
         var empleadoValido = validarEmpleado(empleado);
-
-        // Imprimir los datos recibidos para validar
-        Console.WriteLine("--------------------------");
-        Console.WriteLine("CEDULA: " + empleadoValido.CEDULA);
-        Console.WriteLine("P_NOMBRE: " + empleadoValido.P_NOMBRE);
-        Console.WriteLine("S_NOMBRE: " + empleadoValido.S_NOMBRE);
-        Console.WriteLine("P_APELLIDO: " + empleadoValido.P_APELLIDO);
-        Console.WriteLine("S_APELLIDO: " + empleadoValido.S_APELLIDO);
-        Console.WriteLine("DIRECCION: " + empleadoValido.DIRECCION);
-        Console.WriteLine("ID_SECTOR: " + empleadoValido.ID_SECTOR);
-        Console.WriteLine("ID_CIUDAD: " + empleadoValido.ID_CIUDAD);
-        Console.WriteLine("ID_PROVINCIA: " + empleadoValido.ID_PROVINCIA);
-        Console.WriteLine("PAIS_NACIMIENTO: " + empleadoValido.PAIS_NACIMIENTO);
-        Console.WriteLine("TELEFONO_PRINCIPAL: " + empleadoValido.TELEFONO_PRINCIPAL);
-        Console.WriteLine("TELEFONO_SECUNDARIO: " + empleadoValido.TELEFONO_SECUNDARIO);
-        Console.WriteLine("FECHA_NACIMIENTO: " + empleadoValido.FECHA_NACIMIENTO);
-        Console.WriteLine("EMAIL: " + empleadoValido.EMAIL);
-        Console.WriteLine("SEXO: " + empleadoValido.SEXO);
-        Console.WriteLine("ESTADO_CIVIL: " + empleadoValido.ESTADO_CIVIL);
-        Console.WriteLine("FRECUENCIA_COBRO: " + empleadoValido.FRECUENCIA_COBRO);
-        Console.WriteLine("CUENTA_BANCO: " + empleadoValido.CUENTA_BANCO);
-        Console.WriteLine("ID_ENTIDAD_BANCARIA: " + empleadoValido.ID_ENTIDAD_BANCARIA);
-        Console.WriteLine("ID_PUESTO: " + empleadoValido.ID_PUESTO);
-        Console.WriteLine("ID_DEPARTAMENTO: " + empleadoValido.ID_DEPARTAMENTO);
-        Console.WriteLine("TIPO_SANGRE: " + empleadoValido.TIPO_SANGRE);
-        Console.WriteLine("NOMBRE_FAMILIAR_PRIMARIO: " + empleadoValido.NOMBRE_FAMILIAR_PRIMARIO);
-        Console.WriteLine("TELEFONO_FAMILIAR_PRIMARIO: " + empleadoValido.TELEFONO_FAMILIAR_PRIMARIO);
-        Console.WriteLine("PARENTESCO_FAMILIAR_PRIMARIO: " + empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO);
-        Console.WriteLine("NOMBRE_FAMILIAR_SECUNDARIO: " + empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO);
-        Console.WriteLine("TELEFONO_FAMILIAR_SECUNDARIO: " + empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO);
-        Console.WriteLine("PARENTESCO_FAMILIAR_SECUNDARIO: " + empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO);
-        Console.WriteLine("ID_NIVEL_APROBACION: " + empleadoValido.ID_NIVEL_APROBACION);
-        Console.WriteLine("ESTATUS: " + empleadoValido.ESTATUS);
-        Console.WriteLine("CREADO_POR: " + empleadoValido.CREADO_POR);
-        Console.WriteLine("--------------------------");
 
         try {
         await _context.Database.ExecuteSqlRawAsync(
@@ -201,38 +166,9 @@ public class EmpleadosController : Controller {
             throw new Exception("Error al guardar el registro: " + ex.Message + ex.Source);
         }
 
+        ViewBag.Message = "Registro guardado con exito";
         return RedirectToAction("RegistroEmpleados");
         
         
         }
-
-
-    // [HttpGet]
-    // public IActionResult Edit(int id) {
-    //     var empleado = _context.Empleados.Find(id);
-    //     return View(empleado);
-    // }
-
-    // [HttpPost]
-    // public IActionResult Edit(Empleado empleado) {
-    //     if (ModelState.IsValid) {
-    //         _context.Empleados.Update(empleado);
-    //         _context.SaveChanges();
-    //         return RedirectToAction("Index");
-    //     }
-    //     return View(empleado);
-    // }
-
-    // [HttpGet]
-    // public IActionResult Delete(int id) {
-    //     var empleado = _context.Empleados.Find(id);
-    //     return View(empleado);
-    // }
-
-    // [HttpPost]
-    // public IActionResult Delete(Empleado empleado) {
-    //     _context.Empleados.Remove(empleado);
-    //     _context.SaveChanges();
-    //     return RedirectToAction("Index");
-    // }
 }

@@ -247,3 +247,60 @@
   font-size: 1.3em;
   color: var(--accent-color);
 }
+
+/* Boton submit */
+
+.acciones {
+  position: relative;
+}
+
+#btn-submit {
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#btn-submit {
+  background: var(--accent-color);
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 170px;
+  border: none;
+}
+
+#btn-submit i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: var(--accent-color-2);
+  padding-right: 10px;
+  /* border: solid 1px red; */
+  transition: all ease 0.5s;
+}
+
+#btn-submit span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2em;
+  /* border: solid 1px blue; */
+  transition: all ease 0.5s;
+}
+
+#btn-submit:hover {
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+#btn-submit:hover i {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+#btn-submit:hover span {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}
