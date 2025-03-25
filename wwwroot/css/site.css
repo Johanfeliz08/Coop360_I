@@ -255,12 +255,6 @@
 }
 
 #btn-submit {
-  position: absolute;
-  top: 0;
-  right: 0;
-}
-
-#btn-submit {
   background: var(--accent-color);
   padding: 5px 10px;
   display: flex;
