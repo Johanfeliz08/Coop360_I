@@ -276,17 +276,17 @@
       <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-nls3xlbQN9jqvemBIwrj8BSNG5mAqDcaHvE5Xh\u002BL3DM="}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=3600, must-revalidate"},{"Name":"Content-Length","Value":"4246"},{"Name":"Content-Type","Value":"image/png"},{"Name":"ETag","Value":"\u0022nls3xlbQN9jqvemBIwrj8BSNG5mAqDcaHvE5Xh\u002BL3DM=\u0022"},{"Name":"Last-Modified","Value":"Fri, 14 Mar 2025 23:12:25 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/js/Form.gytrlwb722.js">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Form.js'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gytrlwb722"},{"Name":"integrity","Value":"sha256-mAoqVPppAi62jDaaORLTrCZglwFqs4nKZ90nSrXx5y8="},{"Name":"label","Value":"_content/Coop360_I/js/Form.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"309"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022mAoqVPppAi62jDaaORLTrCZglwFqs4nKZ90nSrXx5y8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 01:59:14 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/js/Form.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Form.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-uPfIrpiWV\u002BaWDnMrNF42OgHd4smac0GgEdYCDi28lZw="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"320"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022uPfIrpiWV\u002BaWDnMrNF42OgHd4smac0GgEdYCDi28lZw=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 01:45:53 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/js/Form.kdi5ckgfgl.js">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Form.js'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"kdi5ckgfgl"},{"Name":"integrity","Value":"sha256-uPfIrpiWV\u002BaWDnMrNF42OgHd4smac0GgEdYCDi28lZw="},{"Name":"label","Value":"_content/Coop360_I/js/Form.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"320"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022uPfIrpiWV\u002BaWDnMrNF42OgHd4smac0GgEdYCDi28lZw=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 01:45:53 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-mAoqVPppAi62jDaaORLTrCZglwFqs4nKZ90nSrXx5y8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"309"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022mAoqVPppAi62jDaaORLTrCZglwFqs4nKZ90nSrXx5y8=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 01:59:14 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/js/site.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\site.js'))</AssetFile>
