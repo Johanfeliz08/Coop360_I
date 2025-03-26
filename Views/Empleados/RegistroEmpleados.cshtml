@@ -224,7 +224,12 @@
           {
             <tr>
               <td>
-                <div class="dato accion-editar"><i class="fi fi-tc-pencil"></i></div>
+                <a class="dato accion-editar" data-codigo-empleado="@empleado.CODIGO_EMPLEADO"
+                  href="@Url.Action("Editar", "Empleados", new { codigoEmpleado = @empleado.CODIGO_EMPLEADO })"><i
+                    class="fi fi-tc-pencil"></i></a>
+                @* <a class="dato accion-editar" href="@Url.Action("Editar", "Empleados")"><i
+                    class="fi fi-tc-pencil"></i></a> *@
+                @* <div class="dato accion-editar"><i class="fi fi-tc-pencil"></i></div> *@
                 @* <button class="edit-btn"><i class="fi fi-tc-pencil"></i></button> *@
               </td>
               <td>
@@ -341,3 +346,5 @@
     </div>
   </div>
 </section>
+
+<script src="~/js/Table.js"></script>

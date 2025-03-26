@@ -121,7 +121,11 @@ public class EmpleadosController : Controller {
         .AsEnumerable()
         .ToList();
 
-        var viewModel = new EmpleadoFormViewModel
+        if (provincias == null || ciudades == null || sectores == null || puestos == null || departamentos == null || nivelesAprobacion == null || entidadesBancarias == null) {
+            throw new Exception("Error al cargar los datos del formulario");
+        }
+
+        var viewModel = new EmpleadoViewModel
         {
             // Regiones = regiones,
             Provincias = provincias,
@@ -133,6 +137,7 @@ public class EmpleadosController : Controller {
             EntidadesBancarias = entidadesBancarias
         };
 
+        ViewBag.Title = "Crear Empleado";
         return View("FormEmpleados",viewModel);
     }
 
@@ -171,4 +176,83 @@ public class EmpleadosController : Controller {
         
         
         }
+
+    [HttpGet]
+    public IActionResult Editar(string codigoEmpleado) {
+
+        if (codigoEmpleado != null) {
+
+        
+        var provincias = _context.Provincias
+        .FromSqlRaw("EXEC SP_LEER_PROVINCIAS")
+        .AsEnumerable()
+        .ToList();
+
+        var ciudades = _context.Ciudades
+        .FromSqlRaw("EXEC SP_LEER_CIUDADES")
+        .AsEnumerable()
+        .ToList();
+
+        var sectores = _context.Sectores
+        .FromSqlRaw("EXEC SP_LEER_SECTORES")
+        .AsEnumerable()
+        .ToList();
+
+        var puestos = _context.Puestos
+        .FromSqlRaw("EXEC SP_LEER_PUESTOS")
+        .AsEnumerable()
+        .ToList();
+
+        var departamentos = _context.Departamentos
+        .FromSqlRaw("EXEC SP_LEER_DEPARTAMENTOS")
+        .AsEnumerable()
+        .ToList();
+
+        var nivelesAprobacion = _context.NivelesAprobacion
+        .FromSqlRaw("EXEC SP_LEER_NIVELES_APROBACION")
+        .AsEnumerable()
+        .ToList();
+
+        var entidadesBancarias = _context.EntidadesBancarias
+        .FromSqlRaw("EXEC SP_LEER_ENTIDADES_BANCARIAS")
+        .AsEnumerable()
+        .ToList();
+
+        if (provincias == null || ciudades == null || sectores == null || puestos == null || departamentos == null || nivelesAprobacion == null || entidadesBancarias == null) {
+            throw new Exception("Error al cargar los datos del formulario");
+        }
+
+        var codigo_empleado = Convert.ToInt32(codigoEmpleado);    
+        var empleado = _context.Empleados
+        .FromSqlRaw("EXEC SP_BUSCAR_EMPLEADO @CODIGO_EMPLEADO = {0}", codigo_empleado)
+        .AsEnumerable()
+        .FirstOrDefault();
+    
+        // Console.WriteLine($"Codigo empleado: {codigoEmpleado}");
+        // Console.WriteLine($"Empleado: {empleado?.CEDULA}");
+    
+        var viewModel = new EmpleadoViewModel
+        {
+            Provincias = provincias,
+            Ciudades = ciudades,
+            Sectores = sectores,
+            Puestos = puestos,
+            Departamentos = departamentos,
+            NivelesAprobacion = nivelesAprobacion,
+            EntidadesBancarias = entidadesBancarias,
+            Empleado = empleado
+        };
+        
+        ViewBag.Title = "Editar Empleado";
+        return View("FormEmpleados",viewModel);
+
+        } else {
+
+            ViewBag.Error = "Codigo de empleado no valido";
+            return RedirectToAction("RegistroEmpleados");
+
+        }
+
+    
+    }
 }

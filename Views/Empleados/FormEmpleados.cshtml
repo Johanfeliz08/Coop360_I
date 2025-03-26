@@ -1,5 +1,4 @@
 @{
-  ViewBag.Title = "Formulario Empleados";
   Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
@@ -12,9 +11,6 @@
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
       <a href="@Url.Action("RegistroEmpleados", "Empleados")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
-      @* <button type="submit" class="btn btn-nuevo">Guardar</button> *@
-      @* <a href="@Url.Action("Guardar", "Empleados")" class="btn btn-nuevo"><i
-          class="fi fi-rr-plus"></i><span>Guardar</span></a> *@
       <button type="button" id="btn-submit" class="btn btn-nuevo"><i
           class="fi fi-rr-plus"></i><span>Guardar</span></button>
     </div>
@@ -28,35 +24,58 @@
           </div>
           <div class="campo" id="campo_cedula">
             <label for="cedula">Cedula</label>
-            <input required type="text" name="cedula" id="cedula">
+            <input required type="text" name="cedula" id="cedula" value="@((Model.Empleado?.CEDULA) ?? "")">
           </div>
           <div class="campo" id="campo_p_nombre">
             <label for="p_nombre">Primer nombre</label>
-            <input required type="text" name="p_nombre" id="p_nombre">
+            <input required type="text" name="p_nombre" id="p_nombre" value="@((Model.Empleado?.P_NOMBRE) ?? "")">
           </div>
           <div class="campo" id="campo_s_nombre">
             <label for="s_nombre">Segundo nombre</label>
-            <input type="text" name="s_nombre" id="s_nombre">
+            <input type="text" name="s_nombre" id="s_nombre" value="@((Model.Empleado?.S_NOMBRE) ?? "")">
           </div>
           <div class="campo" id="campo_p_apellido">
             <label for="p_apellido">Primer apellido</label>
-            <input required type="text" name="p_apellido" id="p_apellido">
+            <input required type="text" name="p_apellido" id="p_apellido" value="@((Model.Empleado?.P_APELLIDO) ?? "")">
           </div>
           <div class="campo" id="campo_s_apellido">
             <label for="s_apellido">Segundo apellido</label>
-            <input type="text" name="s_apellido" id="s_apellido">
+            <input type="text" name="s_apellido" id="s_apellido" value="@((Model.Empleado?.S_APELLIDO) ?? "")">
           </div>
           <div class="campo" id="campo_fecha_nacimiento">
             <label for="fecha_nacimiento">Fecha de nacimiento</label>
-            <input required type="text" name="fecha_nacimiento" id="fecha_nacimiento">
+            <input required type="text" name="fecha_nacimiento" id="fecha_nacimiento"
+              value="@((Model.Empleado?.FECHA_NACIMIENTO) ?? "")">
           </div>
           <div class="campo" id="campo_sexo">
             <label for="sexo">Sexo</label>
-            @* <input type="text" name="sexo" id="sexo"> *@
-            <select required name="sexo" id="sexo">
+            <select required name="sexo" id="sexo" val>
               <option value="default" disabled selected>Seleccionar</option>
-              <option value="F">Femenino</option>
-              <option value="M">Masculino</option>
+              @{
+
+                if (Model.Empleado?.SEXO == "M")
+                {
+                  <option value="M" selected>Masculino</option>
+                }
+                else
+                {
+                  <option value="M">Masculino</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.SEXO == "F")
+                {
+                  <option value="F" selected>Femenino</option>
+                }
+                else
+                {
+                  <option value="F">Femenino</option>
+
+                }
+              }
             </select>
           </div>
           <div class="campo" id="campo_estado_civil">
@@ -66,7 +85,6 @@
               <option value="Casado/a">Casado/a</option>
               <option value="Soltero/a">Soltero/a</option>
             </select>
-            @* <input type="text" name="estado_civil" id="estado_civil"> *@
           </div>
           <div class="campo" id="campo_tipo_sangre">
             <label for="tipo_sangre">Tipo de sangre</label>

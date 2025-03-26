@@ -1,6 +1,8 @@
-public class EmpleadoFormViewModel
+public class EmpleadoViewModel
 {
     // public required List<Region> Regiones { get; set; }
+
+    public Empleado? Empleado { get; set; }
     public required List<Provincia> Provincias { get; set; }
     public required List<Ciudad> Ciudades { get; set; }
     public required List<Sector> Sectores { get; set; }
