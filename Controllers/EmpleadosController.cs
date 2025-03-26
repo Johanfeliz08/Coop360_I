@@ -16,18 +16,8 @@ public class EmpleadosController : Controller {
         _context = context;
     }
 
-    [HttpGet]
-    public IActionResult RegistroEmpleados() {
-
-        var empleados = _context.Empleados
-        .FromSqlRaw("EXEC SP_LEER_EMPLEADOS")
-        .AsEnumerable()
-        .ToList();
-        return View(empleados);
-    
-    }
-
     private Empleado validarEmpleado(Empleado empleado){
+
 
         // Verifica el objeto recibido desde el formulario no este vacio
         if (empleado == null) { 
@@ -78,6 +68,22 @@ public class EmpleadosController : Controller {
 
         return empleadoValido;
     }
+
+    // Views
+
+    // View con tabla que muestra los datos
+    [HttpGet]
+    public IActionResult RegistroEmpleados() {
+
+        var empleados = _context.Empleados
+        .FromSqlRaw("EXEC SP_LEER_EMPLEADOS")
+        .AsEnumerable()
+        .ToList();
+        return View(empleados);
+    
+    }
+    
+    // View con formulario para crear empleado
 
     public IActionResult Crear () {
 
@@ -141,43 +147,9 @@ public class EmpleadosController : Controller {
         return View("FormEmpleados",viewModel);
     }
 
-    [HttpPost]
-    public async Task<IActionResult> GuardarAsync(Empleado empleado) {
+    // View con formulario para editar empleado
 
-        // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
-        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
-                return RedirectToAction("Login", "Auth");
-        } else {
-                // Asigna el codigo del empleado que esta creando el registro
-                empleado.CREADO_POR = HttpContext.Session.GetInt32("ID_USUARIO");
-        };
-
-        // Valida el empleado y devuelve un objeto con los campos validados
-        var empleadoValido = validarEmpleado(empleado);
-
-        try {
-        await _context.Database.ExecuteSqlRawAsync(
-            "EXEC SP_CREAR_EMPLEADO @CEDULA = {0}, @P_NOMBRE = {1}, @S_NOMBRE = {2}, @P_APELLIDO = {3}, @S_APELLIDO = {4}, @DIRECCION = {5}, @ID_SECTOR = {6}, @ID_CIUDAD = {7}, @ID_PROVINCIA = {8}, @PAIS_NACIMIENTO = {9}, @TELEFONO_PRINCIPAL = {10}, @TELEFONO_SECUNDARIO = {11}, @FECHA_NACIMIENTO = {12}, @EMAIL = {13}, @SEXO = {14}, @ESTADO_CIVIL = {15}, @FRECUENCIA_COBRO = {16}, @CUENTA_BANCO = {17}, @ID_ENTIDAD_BANCARIA = {18}, @ID_PUESTO = {19}, @ID_DEPARTAMENTO = {20}, @TIPO_SANGRE = {21}, @NOMBRE_FAMILIAR_PRIMARIO = {22}, @TELEFONO_FAMILIAR_PRIMARIO = {23}, @PARENTESCO_FAMILIAR_PRIMARIO = {24}, @NOMBRE_FAMILIAR_SECUNDARIO = {25}, @TELEFONO_FAMILIAR_SECUNDARIO = {26}, @PARENTESCO_FAMILIAR_SECUNDARIO = {27}, @ID_NIVEL_APROBACION = {28}, @ESTATUS = {29}, @CREADO_POR = {30}",
-            empleadoValido.CEDULA, empleadoValido.P_NOMBRE, empleadoValido.S_NOMBRE ?? "", empleadoValido.P_APELLIDO, empleadoValido.S_APELLIDO ?? "",
-            empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
-            empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
-            empleadoValido.SEXO, empleadoValido.ESTADO_CIVIL, empleadoValido.FRECUENCIA_COBRO, empleadoValido.CUENTA_BANCO,
-            empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
-            empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
-            empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
-            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
-        );
-        } catch (Exception ex) {
-            throw new Exception("Error al guardar el registro: " + ex.Message + ex.Source);
-        }
-
-        ViewBag.Message = "Registro guardado con exito";
-        return RedirectToAction("RegistroEmpleados");
-        
-        
-        }
-
-    [HttpGet]
+     [HttpGet]
     public IActionResult Editar(string codigoEmpleado) {
 
         if (codigoEmpleado != null) {
@@ -228,10 +200,6 @@ public class EmpleadosController : Controller {
         .AsEnumerable()
         .FirstOrDefault();
     
-        // Console.WriteLine($"Codigo empleado: {codigoEmpleado}");
-        // Console.WriteLine($"Empleado: {empleado?.CEDULA}");
-        // Console.WriteLine($"Tipo de sangre: {empleado?.TIPO_SANGRE}");
-    
         var viewModel = new EmpleadoViewModel
         {
             Provincias = provincias,
@@ -256,4 +224,83 @@ public class EmpleadosController : Controller {
 
     
     }
+
+    // Acciones
+
+    // Guardar empleado
+
+    [HttpPost]
+    public async Task<IActionResult> GuardarAsync(Empleado empleado) {
+
+        // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
+                return RedirectToAction("Login", "Auth");
+        } else {
+                // Asigna el codigo del empleado que esta creando el registro
+                empleado.CREADO_POR = HttpContext.Session.GetInt32("ID_USUARIO");
+        };
+
+        // Valida el empleado y devuelve un objeto con los campos validados
+        var empleadoValido = validarEmpleado(empleado);
+
+        try {
+        await _context.Database.ExecuteSqlRawAsync(
+            "EXEC SP_CREAR_EMPLEADO @CEDULA = {0}, @P_NOMBRE = {1}, @S_NOMBRE = {2}, @P_APELLIDO = {3}, @S_APELLIDO = {4}, @DIRECCION = {5}, @ID_SECTOR = {6}, @ID_CIUDAD = {7}, @ID_PROVINCIA = {8}, @PAIS_NACIMIENTO = {9}, @TELEFONO_PRINCIPAL = {10}, @TELEFONO_SECUNDARIO = {11}, @FECHA_NACIMIENTO = {12}, @EMAIL = {13}, @SEXO = {14}, @ESTADO_CIVIL = {15}, @FRECUENCIA_COBRO = {16}, @CUENTA_BANCO = {17}, @ID_ENTIDAD_BANCARIA = {18}, @ID_PUESTO = {19}, @ID_DEPARTAMENTO = {20}, @TIPO_SANGRE = {21}, @NOMBRE_FAMILIAR_PRIMARIO = {22}, @TELEFONO_FAMILIAR_PRIMARIO = {23}, @PARENTESCO_FAMILIAR_PRIMARIO = {24}, @NOMBRE_FAMILIAR_SECUNDARIO = {25}, @TELEFONO_FAMILIAR_SECUNDARIO = {26}, @PARENTESCO_FAMILIAR_SECUNDARIO = {27}, @ID_NIVEL_APROBACION = {28}, @ESTATUS = {29}, @CREADO_POR = {30}",
+            empleadoValido.CEDULA, empleadoValido.P_NOMBRE, empleadoValido.S_NOMBRE ?? "", empleadoValido.P_APELLIDO, empleadoValido.S_APELLIDO ?? "",
+            empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
+            empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
+            empleadoValido.SEXO, empleadoValido.ESTADO_CIVIL, empleadoValido.FRECUENCIA_COBRO, empleadoValido.CUENTA_BANCO,
+            empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
+            empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
+            empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
+            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
+        );
+        } catch (Exception ex) {
+            throw new Exception("Error al guardar el registro: " + ex.Message + ex.Source);
+        }
+
+        ViewBag.Sucess = "Registro guardado con exito";
+        return RedirectToAction("RegistroEmpleados");
+        
+        
+        }
+
+
+    // Actualizar empleado
+    [HttpPut]
+    public async Task<IActionResult> ActualizarAsync(Empleado empleado) {
+        
+        // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
+            return RedirectToAction("Login", "Auth");
+        } else {
+        
+            // Asigna el codigo del empleado que esta creando el registro
+            empleado.CREADO_POR = HttpContext.Session.GetInt32("ID_USUARIO");
+        };
+
+        // Valida el empleado y devuelve un objeto con los campos validados
+        var empleadoValido = validarEmpleado(empleado);
+
+        try {
+
+            await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR EMPLEADO @CODIGO_EMPLEADO = {0}, @CEDULA = {1}, @P_NOMBRE = {2}, @S_NOMBRE = {3}, @P_APELLIDO = {4}, @S_APELLIDO = {5}, @DIRECCION = {6}, @ID_SECTOR = {7}, @ID_CIUDAD = {8}, @ID_PROVINCIA = {9}, @PAIS_NACIMIENTO = {10}, @TELEFONO_PRINCIPAL = {11}, @TELEFONO_SECUNDARIO = {12}, @FECHA_NACIMIENTO = {13}, @EMAIL = {14}, @SEXO = {15}, @ESTADO_CIVIL = {16}, @FRECUENCIA_COBRO = {17}, @CUENTA_BANCO = {18}, @ID_ENTIDAD_BANCARIA = {19}, @ID_PUESTO = {20}, @ID_DEPARTAMENTO = {21}, @TIPO_SANGRE = {22}, @NOMBRE_FAMILIAR_PRIMARIO = {23}, @TELEFONO_FAMILIAR_PRIMARIO = {24}, @PARENTESCO_FAMILIAR_PRIMARIO = {25}, @NOMBRE_FAMILIAR_SECUNDARIO = {26}, @TELEFONO_FAMILIAR_SECUNDARIO = {27}, @PARENTESCO_FAMILIAR_SECUNDARIO = {28}, @ID_NIVEL_APROBACION = {29}, @ESTATUS = {30}, @CREADO_POR = {31}",
+            empleadoValido.CODIGO_EMPLEADO,empleadoValido.CEDULA, empleadoValido.P_NOMBRE, empleadoValido.S_NOMBRE ?? "", empleadoValido.P_APELLIDO, empleadoValido.S_APELLIDO ?? "",
+            empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
+            empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
+            empleadoValido.SEXO, empleadoValido.ESTADO_CIVIL, empleadoValido.FRECUENCIA_COBRO, empleadoValido.CUENTA_BANCO,
+            empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
+            empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
+            empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
+            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0);
+
+        } catch(Exception ex) {
+            throw new Exception("Error al actualizar el empleado" + ex.Message);
+        }
+        
+            ViewBag.Sucess = "Registro actualizado con exito";
+            return RedirectToAction("RegistroEmpleados");
+
+    }
+   
 }
