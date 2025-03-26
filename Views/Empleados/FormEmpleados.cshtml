@@ -82,28 +82,147 @@
             <label for="estado_civil">Estado civil</label>
             <select required name="ESTADO_CIVIL" id="estado_civil">
               <option value="default" disabled selected>Seleccionar</option>
-              <option value="Casado/a">Casado/a</option>
-              <option value="Soltero/a">Soltero/a</option>
+
+              @{
+
+                if (Model.Empleado?.ESTADO_CIVIL == "Casado/a")
+                {
+                  <option value="Casado/a" selected>Casado/a</option>
+                }
+                else
+                {
+                  <option value="Casado/a">Casado/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.ESTADO_CIVIL == "Soltero/a")
+                {
+                  <option value="Soltero/a" selected>Soltero/a</option>
+                }
+                else
+                {
+                  <option value="Soltero/a">Soltero/a</option>
+
+                }
+              }
             </select>
           </div>
           <div class="campo" id="campo_tipo_sangre">
             <label for="tipo_sangre">Tipo de sangre</label>
             <select name="TIPO_SANGRE" id="tipo_sangre">
               <option value="default" disabled selected>Seleccionar</option>
+              @{
 
-              <option value="A+">A+</option>
-              <option value="A-">A-</option>
-              <option value="B+">B+</option>
-              <option value="B-">B-</option>
-              <option value="AB+">AB+</option>
-              <option value="AB-">AB-</option>
-              <option value="O+">O+</option>
-              <option value="O-">O-</option>
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "A+")
+                {
+                  <option value="A+" selected>A+</option>
+                }
+                else
+                {
+                  <option value="A+">A+</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "A-")
+                {
+                  <option value="A-" selected>A-</option>
+                }
+                else
+                {
+                  <option value="A-">A-</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "B+")
+                {
+                  <option value="B+" selected>B+</option>
+                }
+                else
+                {
+                  <option value="B+">B+</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "B-")
+                {
+                  <option value="B-" selected>B-</option>
+                }
+                else
+                {
+                  <option value="B-">B-</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "AB+")
+                {
+                  <option value="AB+" selected>AB+</option>
+                }
+                else
+                {
+                  <option value="AB+">AB+</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "AB-")
+                {
+                  <option value="AB-" selected>AB-</option>
+                }
+                else
+                {
+                  <option value="AB-">AB-</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "O+")
+                {
+                  <option value="O+" selected>O+</option>
+                }
+                else
+                {
+                  <option value="O+">O+</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.TIPO_SANGRE.Trim() == "O-")
+                {
+                  <option value="O-" selected>O-</option>
+                }
+                else
+                {
+                  <option value="O-">O-</option>
+
+                }
+              }
             </select>
           </div>
           <div class="campo" id="campo_pais_nacimiento">
             <label for="pais_nacimiento">Pais de nacimiento</label>
-            <input required type="text" name="PAIS_NACIMIENTO" id="pais_nacimiento">
+            <input required type="text" name="PAIS_NACIMIENTO" id="pais_nacimiento"
+              value="@((Model.Empleado?.PAIS_NACIMIENTO) ?? "")">
           </div>
         </div>
       </div>
@@ -114,19 +233,21 @@
           </div>
           <div class="campo" id="campo_direccion">
             <label for="direccion">Direccion</label>
-            <input required type="text" name="DIRECCION" id="direccion">
+            <input required type="text" name="DIRECCION" id="direccion" value="@((Model.Empleado?.DIRECCION) ?? "")">
           </div>
           <div class="campo" id="campo_telefono_principal">
             <label for="telefono_principal">Telefono principal</label>
-            <input type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal">
+            <input type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal"
+              value="@((Model.Empleado?.TELEFONO_PRINCIPAL) ?? "")">
           </div>
           <div class="campo" id="campo_telefono_secundario">
             <label for="telefono_secundario">Telefono secundario</label>
-            <input type="text" name="TELEFONO_SECUNDARIO" id="telefono_secundario">
+            <input type="text" name="TELEFONO_SECUNDARIO" id="telefono_secundario"
+              value="@((Model.Empleado?.TELEFONO_SECUNDARIO) ?? "")">
           </div>
           <div class="campo" id="campo_email">
             <label for="email">Email</label>
-            <input type="text" name="EMAIL" id="email">
+            <input type="text" name="EMAIL" id="email" value="@((Model.Empleado?.EMAIL) ?? "")">
           </div>
         </div>
       </div>
@@ -142,7 +263,14 @@
               @foreach (var sector in @Model.Sectores)
               {
 
-                <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR">@sector.NOMBRE</option>
+                if (sector.ID_SECTOR == Model.Empleado?.ID_SECTOR)
+                {
+                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR" selected>@sector.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR">@sector.NOMBRE</option>
+                }
               }
             </select>
           </div>
@@ -152,8 +280,14 @@
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var ciudad in @Model.Ciudades)
               {
-
-                <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD">@ciudad.NOMBRE</option>
+                if (ciudad.ID_CIUDAD == Model.Empleado?.ID_CIUDAD)
+                {
+                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD" selected>@ciudad.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD">@ciudad.NOMBRE</option>
+                }
               }
             </select>
           </div>
@@ -164,7 +298,14 @@
               @foreach (var provincia in @Model.Provincias)
               {
 
-                <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA">@provincia.NOMBRE</option>
+                if (provincia.ID_PROVINCIA == Model.Empleado?.ID_PROVINCIA)
+                {
+                  <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA" selected>@provincia.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA">@provincia.NOMBRE</option>
+                }
               }
             </select>
           </div>
@@ -186,18 +327,9 @@
           <div class="titulo-grupo" id="titulo-informacion-laboral">
             <h2>Informacion laboral</h2>
           </div>
-          <div class="campo" id="campo_frecuencia_cobro">
-            <label for="frecuencia_cobro">Frecuencia cobro</label>
-            <select required name="FRECUENCIA_COBRO" id="frecuencia_cobro">
-              <option value="default" disabled selected>Seleccionar</option>
-              <option value="Semanal">Semanal</option>
-              <option value="Quincenal">Quincenal</option>
-              <option value="Mensual">Mensual</option>
-            </select>
-          </div>
           <div class="campo" id="campo_cuenta_banco">
             <label for="cuenta_banco">Cuenta banco</label>
-            <input type="text" name="CUENTA_BANCO" id="cuenta_banco">
+            <input type="text" name="CUENTA_BANCO" id="cuenta_banco" value="@((Model.Empleado?.CUENTA_BANCO) ?? "")">
           </div>
           <div class="campo" id="campo_entidad_bancaria">
             <label for="entidad_bancaria">Entidad bancaria</label>
@@ -205,8 +337,16 @@
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var entidad_bancaria in @Model.EntidadesBancarias)
               {
-                <option id="@entidad_bancaria.ID" value="@entidad_bancaria.ID">
-                  @entidad_bancaria.NOMBRE</option>
+                if (entidad_bancaria.ID == Model.Empleado?.ID_ENTIDAD_BANCARIA)
+                {
+                  <option id="@entidad_bancaria.ID" value="@entidad_bancaria.ID" selected>
+                    @entidad_bancaria.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@entidad_bancaria.ID" value="@entidad_bancaria.ID">
+                    @entidad_bancaria.NOMBRE</option>
+                }
               }
             </select>
           </div>
@@ -217,10 +357,17 @@
               @foreach (var puesto in @Model.Puestos)
               {
 
-                <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO">@puesto.NOMBRE</option>
+                if (puesto.ID_PUESTO == Model.Empleado?.ID_PUESTO)
+                {
+                  <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO" selected>@puesto.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO">@puesto.NOMBRE</option>
+                }
+
               }
             </select>
-            @* <input required type="text" name="puesto" id="puesto"> *@
           </div>
           <div class="campo" id="campo_departamento">
             <label for="departamento">Departamento</label>
@@ -229,11 +376,20 @@
               @foreach (var departamento in @Model.Departamentos)
               {
 
-                <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO">@departamento.NOMBRE
-                </option>
+                if (departamento.ID_DEPARTAMENTO == Model.Empleado?.ID_DEPARTAMENTO)
+                {
+                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO" selected>
+                    @departamento.NOMBRE
+                  </option>
+                }
+                else
+                {
+                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO">
+                    @departamento.NOMBRE
+                  </option>
+                }
               }
             </select>
-            @* <input required type="text" name="departamento" id="departamento"> *@
           </div>
           <div class="campo" id="campo_nivel_aprobacion">
             <label for="nivel_aprobacion">Nivel Aprobacion</label>
@@ -242,8 +398,63 @@
               @foreach (var nivel_aprobacion in @Model.NivelesAprobacion)
               {
 
-                <option id="@nivel_aprobacion.ID_NIVEL_APROBACION" value="@nivel_aprobacion.ID_NIVEL_APROBACION">
-                  @nivel_aprobacion.ID_NIVEL_APROBACION</option>
+                if (nivel_aprobacion.ID_NIVEL_APROBACION == Model.Empleado?.ID_NIVEL_APROBACION)
+                {
+                  <option id="@nivel_aprobacion.ID_NIVEL_APROBACION" value="@nivel_aprobacion.ID_NIVEL_APROBACION" selected>
+                    @nivel_aprobacion.ID_NIVEL_APROBACION
+                  </option>
+                }
+                else
+                {
+                  <option id="@nivel_aprobacion.ID_NIVEL_APROBACION" value="@nivel_aprobacion.ID_NIVEL_APROBACION">
+                    @nivel_aprobacion.ID_NIVEL_APROBACION
+                  </option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_frecuencia_cobro">
+            <label for="frecuencia_cobro">Frecuencia cobro</label>
+            <select required name="FRECUENCIA_COBRO" id="frecuencia_cobro">
+              <option value="default" disabled selected>Seleccionar</option>
+
+              @{
+
+                if (Model.Empleado?.FRECUENCIA_COBRO == "Semanal")
+                {
+                  <option value="Semanal" selected>Semanal</option>
+                }
+                else
+                {
+                  <option value="Semanal">Semanal</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.FRECUENCIA_COBRO == "Quincenal")
+                {
+                  <option value="Quincenal" selected>Quincenal</option>
+                }
+                else
+                {
+                  <option value="Quincenal">Quincenal</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.FRECUENCIA_COBRO == "Mensual")
+                {
+                  <option value="Mensual" selected>Mensual</option>
+                }
+                else
+                {
+                  <option value="Mensual">Mensual</option>
+
+                }
               }
             </select>
           </div>
@@ -251,9 +462,44 @@
             <label for="estatus">Estatus</label>
             <select name="estatus" id="estatus">
               <option value="default" disabled selected>Seleccionar</option>
-              <option value="Activo">Activo</option>
-              <option value="Suspendido">Suspendido</option>
-              <option value="Inactivo">Inactivo</option>
+              @{
+
+                if (Model.Empleado?.ESTATUS == "Activo")
+                {
+                  <option value="Activo" selected>Activo</option>
+                }
+                else
+                {
+                  <option value="Activo">Activo</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.ESTATUS == "Suspendido")
+                {
+                  <option value="Suspendido" selected>Suspendido</option>
+                }
+                else
+                {
+                  <option value="Suspendido">Suspendido</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.ESTATUS == "Inactivo")
+                {
+                  <option value="Inactivo" selected>Inactivo</option>
+                }
+                else
+                {
+                  <option value="Inactivo">Inactivo</option>
+
+                }
+              }
             </select>
           </div>
         </div>
@@ -265,43 +511,188 @@
           </div>
           <div class="campo" id="campo_nombre_familiar_primario">
             <label for="nombre_familiar_primario">Nombre familiar primario</label>
-            <input type="text" name="NOMBRE_FAMILIAR_PRIMARIO" id="nombre_familiar_primario">
+            <input type="text" name="NOMBRE_FAMILIAR_PRIMARIO" id="nombre_familiar_primario"
+              value="@((Model.Empleado?.NOMBRE_FAMILIAR_PRIMARIO) ?? "")">
           </div>
           <div class="campo" id="campo_telefono_familiar_primario">
             <label for="telefono_familiar_primario">Telefono familiar primario</label>
-            <input type="text" name="TELEFONO_FAMILIAR_PRIMARIO" id="telefono_familiar_primario">
+            <input type="text" name="TELEFONO_FAMILIAR_PRIMARIO" id="telefono_familiar_primario"
+              value="@((Model.Empleado?.TELEFONO_FAMILIAR_PRIMARIO) ?? "")">
           </div>
           <div class="campo" id="campo_parentesco_familiar_primario">
             <label for="parentesco_familiar_primario">Parentesco familiar primario</label>
             <select name="PARENTESCO_FAMILIAR_PRIMARIO" id="parentesco_familiar_primario">
               <option value="default" disabled selected>Seleccionar</option>
-              <option value="Padre">Padre</option>
-              <option value="Madre">Madre</option>
-              <option value="Hermano/a">Hermano/a</option>
-              <option value="Primo/a">Primo/a</option>
-              <option value="Tio/a">Tio/a</option>
-              <option value="Esposo/a">Esposo/a</option>
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_PRIMARIO == "Padre")
+                {
+                  <option value="Padre" selected>Padre</option>
+                }
+                else
+                {
+                  <option value="Padre">Padre</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_PRIMARIO == "Madre")
+                {
+                  <option value="Madre" selected>Madre</option>
+                }
+                else
+                {
+                  <option value="Madre">Madre</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_PRIMARIO == "Hermano/a")
+                {
+                  <option value="Hermano/a" selected>Hermano/a</option>
+                }
+                else
+                {
+                  <option value="Hermano/a">Hermano/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_PRIMARIO == "Primo/a")
+                {
+                  <option value="Primo/a" selected>Primo/a</option>
+                }
+                else
+                {
+                  <option value="Primo/a">Primo/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_PRIMARIO == "Tio/a")
+                {
+                  <option value="Tio/a" selected>Tio/a</option>
+                }
+                else
+                {
+                  <option value="Tio/a">Tio/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_PRIMARIO == "Esposo/a")
+                {
+                  <option value="Esposo/a" selected>Esposo/a</option>
+                }
+                else
+                {
+                  <option value="Esposo/a">Esposo/a</option>
+
+                }
+              }
             </select>
-            @* <input type="text" name="parentesco_familiar_primario" id="parentesco_familiar_primario"> *@
           </div>
           <div class="campo" id="campo_nombre_familiar_secundario">
             <label for="nombre_familiar_secundario">Nombre familiar secundario</label>
-            <input type="text" name="NOMBRE_FAMILIAR_SECUNDARIO" id="nombre_familiar_secundario">
+            <input type="text" name="NOMBRE_FAMILIAR_SECUNDARIO" id="nombre_familiar_secundario"
+              value="@((Model.Empleado?.NOMBRE_FAMILIAR_SECUNDARIO) ?? "")">
           </div>
           <div class="campo" id="campo_telefono_familiar_secundario">
             <label for="telefono_familiar_secundario">Telefono familiar secundario</label>
-            <input type="text" name="TELEFONO_FAMILIAR_SECUNDARIO" id="telefono_familiar_secundario">
+            <input type="text" name="TELEFONO_FAMILIAR_SECUNDARIO" id="telefono_familiar_secundario"
+              value="@((Model.Empleado?.TELEFONO_FAMILIAR_SECUNDARIO) ?? "")">
           </div>
           <div class="campo" id="campo_parentesco_familiar_secundario">
             <label for="parentesco_familiar_secundario">Parentesco familiar secundario</label>
             <select name="PARENTESCO_FAMILIAR_SECUNDARIO" id="parentesco_familiar_secundario">
               <option value="default" disabled selected>Seleccionar</option>
-              <option value="Padre">Padre</option>
-              <option value="Madre">Madre</option>
-              <option value="Hermano/a">Hermano/a</option>
-              <option value="Primo/a">Primo/a</option>
-              <option value="Tio/a">Tio/a</option>
-              <option value="Esposo/a">Esposo/a</option>
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_SECUNDARIO == "Padre")
+                {
+                  <option value="Padre" selected>Padre</option>
+                }
+                else
+                {
+                  <option value="Padre">Padre</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_SECUNDARIO == "Madre")
+                {
+                  <option value="Madre" selected>Madre</option>
+                }
+                else
+                {
+                  <option value="Madre">Madre</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_SECUNDARIO == "Hermano/a")
+                {
+                  <option value="Hermano/a" selected>Hermano/a</option>
+                }
+                else
+                {
+                  <option value="Hermano/a">Hermano/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_SECUNDARIO == "Primo/a")
+                {
+                  <option value="Primo/a" selected>Primo/a</option>
+                }
+                else
+                {
+                  <option value="Primo/a">Primo/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_SECUNDARIO == "Tio/a")
+                {
+                  <option value="Tio/a" selected>Tio/a</option>
+                }
+                else
+                {
+                  <option value="Tio/a">Tio/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.PARENTESCO_FAMILIAR_SECUNDARIO == "Esposo/a")
+                {
+                  <option value="Esposo/a" selected>Esposo/a</option>
+                }
+                else
+                {
+                  <option value="Esposo/a">Esposo/a</option>
+
+                }
+              }
             </select>
           </div>
         </div>

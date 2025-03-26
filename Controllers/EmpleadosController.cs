@@ -230,6 +230,7 @@ public class EmpleadosController : Controller {
     
         // Console.WriteLine($"Codigo empleado: {codigoEmpleado}");
         // Console.WriteLine($"Empleado: {empleado?.CEDULA}");
+        // Console.WriteLine($"Tipo de sangre: {empleado?.TIPO_SANGRE}");
     
         var viewModel = new EmpleadoViewModel
         {
