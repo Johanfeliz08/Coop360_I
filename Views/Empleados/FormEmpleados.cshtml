@@ -16,7 +16,9 @@
     </div>
   </div>
   <div class="form-container">
-    <form id="form" asp-action="Guardar" asp-controller="Empleados" method="post">
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Empleado" ? "Actualizar" : "Guardar")"
+      asp-controller="Empleados" method="post">
+      @* <form id="form" asp-action="Guardar" asp-controller="Empleados" method="post"> *@
       <div class="campos-container">
         <div class="grupo informacion-personal">
           <div class="titulo-grupo" id="titulo">
