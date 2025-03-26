@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Components\\ModalView.css",
+      "PackagePath": "staticwebassets\\css\\Components\\ModalView.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Cuenta\\Perfil.css",
       "PackagePath": "staticwebassets\\css\\Cuenta\\Perfil.css"
     },
