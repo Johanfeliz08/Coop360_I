@@ -1,7 +1,112 @@
 .modal {
+  background: rgba(0, 0, 0, 0.4);
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 9999;
+  background: rgba(0, 0, 0, 0.4);
+  width: 100lvw;
+  height: 100lvh;
+  top: 0;
+  left: 0;
+}
+
+.modal .content {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: #fff;
+  width: 620px;
+  height: 322px;
+  border-radius: 25px;
+  gap: 12px;
+}
+
+/* Boton cerrar */
+
+.modal .content .btn-cerrar {
   position: absolute;
-  z-index: 1000;
-  background-color: red;
-  width: 100vw;
-  height: 100vh;
+  top: 20px;
+  right: 20px;
+  color: #000;
+}
+
+.btn-cerrar button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.btn-cerrar i {
+  font-size: 1.5em;
+}
+
+/* Icono */
+
+.modal .content .icono {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.icono i {
+  font-size: 4.5em;
+}
+
+/* Titulo */
+
+.modal .content .header .titulo {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 19px;
+}
+
+/* Mensaje */
+
+.modal .content .mensaje {
+  text-align: center;
+}
+
+.mensaje p {
+  font-weight: 300;
+  font-size: 1.2em;
+}
+
+/* Boton aceptar */
+
+.footer .btn {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 170px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  color: #fff;
+  cursor: pointer;
+}
+
+.btn-error {
+  background: red;
+  transition: all ease 0.5s;
+}
+
+.btn-success {
+  background: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+.footer #btn:hover {
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
 }
