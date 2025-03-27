@@ -79,6 +79,7 @@ public class EmpleadosController : Controller {
         .FromSqlRaw("EXEC SP_LEER_EMPLEADOS")
         .AsEnumerable()
         .ToList();
+
         return View(empleados);
     
     }
@@ -260,6 +261,7 @@ public class EmpleadosController : Controller {
         }
 
         ViewBag.Sucess = "Registro guardado con exito";
+        TempData["openModal"] = true;
         return RedirectToAction("RegistroEmpleados");
         
         
