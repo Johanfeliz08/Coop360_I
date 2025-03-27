@@ -154,6 +154,11 @@ public class EmpleadosController : Controller {
      [HttpGet]
     public IActionResult Editar(string codigoEmpleado) {
 
+        // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
+                return RedirectToAction("Login", "Auth");
+        }
+
         if (codigoEmpleado != null) {
 
         
@@ -226,6 +231,26 @@ public class EmpleadosController : Controller {
 
     
     }
+
+    // View modal de confirmacion para eliminar empleado
+    [HttpGet]
+
+    public IActionResult Eliminar(string CodigoEmpleado) {
+            
+        if (CodigoEmpleado != null ){
+
+            int codigo_empleado = Convert.ToInt32(CodigoEmpleado);
+            TempData["openModal"] = true;
+            TempData["Tipo"] = "confirmation";
+            TempData["Titulo"] = "¡Cuidado!";
+            TempData["Confirmation"] = "¿Esta seguro que desea eliminar este empleado?";
+            TempData["CodigoEmpleado"] = codigo_empleado;
+            return RedirectToAction("RegistroEmpleados");
+        }
+
+            return RedirectToAction("RegistroEmpleados");
+    }   
+
 
     // Acciones
 
@@ -312,6 +337,47 @@ public class EmpleadosController : Controller {
             TempData["Success"] = "El empleado ha sido actualizado correctamente."; 
             Console.WriteLine("Empleado actualizado con exito"); // Mensaje para el log en el server
             return RedirectToAction("RegistroEmpleados");
+
+    }
+
+    // Eliminar empleado
+
+    [HttpPost]
+
+    public async Task<IActionResult> EliminarAsync(string codigoEmpleado) {
+
+        // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
+            return RedirectToAction("Login", "Auth");
+        }
+    
+        
+        if (codigoEmpleado != null ) {
+        
+        int codigo_empleado = Convert.ToInt32(codigoEmpleado);
+
+        try {
+
+            await _context.Database.ExecuteSqlRawAsync("EXEC SP_ELIMINAR_EMPLEADO @CODIGO_EMPLEADO = {0}", codigo_empleado);
+
+        } catch (Exception e) {
+            TempData["openModal"] = true;
+            TempData["Error"] = "Error al eliminar el empleado";
+            Console.WriteLine("Error al eliminar el empleado: " + e.Message + e.Source);
+            return RedirectToAction("RegistroEmpleados");
+        }
+
+        TempData["openModal"] = true;
+        TempData["Success"] = "El empleado ha sido eliminado correctamente.";
+        Console.WriteLine("Empleado eliminado con exito"); // Mensaje para el log en el server
+        return RedirectToAction("RegistroEmpleados");
+
+    }
+    
+    TempData["openModal"] = true;
+    TempData["Error"] = "Codigo de empleado no valido";
+    return RedirectToAction("RegistroEmpleados");
+
 
     }
    
