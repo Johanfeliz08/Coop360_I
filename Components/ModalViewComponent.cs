@@ -2,10 +2,10 @@ using Microsoft.AspNetCore.Mvc;
 
 public class ModalViewComponent : ViewComponent
 {
-    public IViewComponentResult Invoke(string tipo, string mensaje)
+    public IViewComponentResult Invoke(string tipo, string mensaje, int codigoEmpleado)
     {
 
-      // Tipos: error, success
+      // Tipos: error, success, confirmation
 
       if (tipo != null  || mensaje != null){
         
@@ -16,6 +16,16 @@ public class ModalViewComponent : ViewComponent
 
         if (tipo == "error") {
           ViewBag.Titulo = "¡Oopss!";
+        }
+
+        if (tipo == "confirmation") {
+          
+          ViewBag.Titulo = "¡Cuidado!";
+
+          if (codigoEmpleado != 0) {
+            ViewBag.CodigoEmpleado = codigoEmpleado;
+          }
+
         }
 
         ViewBag.Tipo = tipo;
