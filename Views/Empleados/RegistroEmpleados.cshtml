@@ -11,7 +11,19 @@
 
   if (TempData["openModal"] != null)
   {
-    @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = "El empleado ha sido registrado correctamente."})
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+
+    @* @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = "El empleado ha sido registrado correctamente."}) *@
   }
 }
 
