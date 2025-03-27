@@ -2,30 +2,30 @@ using Microsoft.AspNetCore.Mvc;
 
 public class ModalViewComponent : ViewComponent
 {
-    public IViewComponentResult Invoke(string tipo, string titulo, string mensaje)
+    public IViewComponentResult Invoke(string tipo, string mensaje)
     {
 
-      if (tipo != null || titulo != null || mensaje != null){
+      // Tipos: error, success
+
+      if (tipo != null  || mensaje != null){
         
+
+        if (tipo == "success") {
+          ViewBag.Titulo = "¡Enhorabuena!";
+        } else
+
+        if (tipo == "error") {
+          ViewBag.Titulo = "¡Oopss!";
+        }
+
         ViewBag.Tipo = tipo;
-        ViewBag.Titulo = titulo;
+        ViewBag.Mensaje = mensaje;
 
-        if (tipo == "info"){
-          ViewBag.Info = mensaje;
-        }
-
-        if (tipo == "error"){
-          ViewBag.Error = mensaje;
-        }
-
-        if (tipo == "success"){
-          ViewBag.Success = mensaje;
-        }
       } else {
 
         ViewBag.Tipo = "Undefined";
         ViewBag.Titulo = "Undefined";
-        ViewBag.Message = "La vista no ha recibido los datos necesarios para mostrar el mensaje";
+        ViewBag.Mensaje = "La vista no ha recibido los datos necesarios para mostrar el mensaje";
       
       }
 
