@@ -257,11 +257,16 @@ public class EmpleadosController : Controller {
             empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
         );
         } catch (Exception ex) {
-            throw new Exception("Error al guardar el registro: " + ex.Message + ex.Source);
+            TempData["openModal"] = true;
+            TempData["Error"] = "Ha ocurrido un error al guardar el empleado:";
+            Console.WriteLine("Error al guardar el registro: " + ex.Message + ex.Source); // Mensaje para el log en el server
+            // throw new Exception("Error al guardar el registro: " + ex.Message + ex.Source);
         }
 
-        ViewBag.Sucess = "Registro guardado con exito";
+        // ViewBag.Sucess = "Registro guardado con exito";
         TempData["openModal"] = true;
+        TempData["Success"] = "El empleado ha sido registrado correctamente.";
+        Console.WriteLine("Empleado guardado con exito"); // Mensaje para el log en el server
         return RedirectToAction("RegistroEmpleados");
         
         
@@ -297,10 +302,15 @@ public class EmpleadosController : Controller {
             empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0);
 
         } catch(Exception ex) {
-            throw new Exception("Error al actualizar el empleado" + ex.Message);
+            TempData["openModal"] = true;
+            TempData["Error"] = "Ha ocurrido un error al actualizar el empleado";
+            Console.WriteLine("Error al actualizar el empleado" + ex.Message + ex.Source); // Mensaje para el log en el server
         }
         
-            ViewBag.Sucess = "Registro actualizado con exito";
+            // ViewBag.Sucess = "Registro actualizado con exito";    
+            TempData["openModal"] = true;
+            TempData["Success"] = "El empleado ha sido actualizado correctamente."; 
+            Console.WriteLine("Empleado actualizado con exito"); // Mensaje para el log en el server
             return RedirectToAction("RegistroEmpleados");
 
     }
