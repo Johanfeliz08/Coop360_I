@@ -26,13 +26,14 @@ public class EmpleadosController : Controller {
     
         // Valida que los campos obligatorios no esten vacios
 
-        if (empleado.CEDULA == null || empleado.P_NOMBRE == null || empleado.P_APELLIDO == null || empleado.DIRECCION == null || empleado.ID_SECTOR == null || empleado.ID_CIUDAD == null || empleado.ID_PROVINCIA == null || empleado.PAIS_NACIMIENTO == null || empleado.TELEFONO_PRINCIPAL == null  || empleado.SEXO == null || empleado.ESTADO_CIVIL == null || empleado.FRECUENCIA_COBRO == null || empleado.CUENTA_BANCO == "" || empleado.ID_ENTIDAD_BANCARIA == null || empleado.ID_PUESTO == null || empleado.ID_DEPARTAMENTO == null || empleado.TIPO_SANGRE == null || empleado.NOMBRE_FAMILIAR_PRIMARIO == null || empleado.TELEFONO_FAMILIAR_PRIMARIO == null || empleado.PARENTESCO_FAMILIAR_PRIMARIO == null || empleado.ID_NIVEL_APROBACION == null || empleado.ESTATUS == null || empleado.CREADO_POR == null) {
+        if (empleado.CEDULA == null || empleado.P_NOMBRE == null || empleado.P_APELLIDO == null || empleado.DIRECCION == null || empleado.ID_SECTOR == null || empleado.ID_CIUDAD == null || empleado.ID_PROVINCIA == null || empleado.PAIS_NACIMIENTO == null || empleado.TELEFONO_PRINCIPAL == null  || empleado.SEXO == null || empleado.ESTADO_CIVIL == null || empleado.FRECUENCIA_COBRO == null || empleado.CUENTA_BANCO == "" || empleado.ID_ENTIDAD_BANCARIA == null || empleado.ID_PUESTO == null || empleado.ID_DEPARTAMENTO == null || empleado.TIPO_SANGRE == null || empleado.ID_NIVEL_APROBACION == null || empleado.ESTATUS == null ) {
             throw new Exception("El servidor no puede procesar la solicitud, campos obligatorios vacios");
         };
 
         // Validacion y conversion de datos
         var empleadoValido = new Empleado
         {
+            CODIGO_EMPLEADO = Convert.ToInt32(empleado.CODIGO_EMPLEADO),
             CEDULA = empleado.CEDULA,
             P_NOMBRE = empleado.P_NOMBRE,
             S_NOMBRE = empleado.S_NOMBRE ?? "",
@@ -260,6 +261,7 @@ public class EmpleadosController : Controller {
             TempData["openModal"] = true;
             TempData["Error"] = "Ha ocurrido un error al guardar el empleado:";
             Console.WriteLine("Error al guardar el registro: " + ex.Message + ex.Source); // Mensaje para el log en el server
+            return RedirectToAction("RegistroEmpleados");
             // throw new Exception("Error al guardar el registro: " + ex.Message + ex.Source);
         }
 
@@ -274,24 +276,20 @@ public class EmpleadosController : Controller {
 
 
     // Actualizar empleado
-    [HttpPut]
+    [HttpPost]
     public async Task<IActionResult> ActualizarAsync(Empleado empleado) {
         
         // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
         if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
             return RedirectToAction("Login", "Auth");
-        } else {
-        
-            // Asigna el codigo del empleado que esta creando el registro
-            empleado.CREADO_POR = HttpContext.Session.GetInt32("ID_USUARIO");
-        };
+        }
 
         // Valida el empleado y devuelve un objeto con los campos validados
         var empleadoValido = validarEmpleado(empleado);
 
         try {
 
-            await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR EMPLEADO @CODIGO_EMPLEADO = {0}, @CEDULA = {1}, @P_NOMBRE = {2}, @S_NOMBRE = {3}, @P_APELLIDO = {4}, @S_APELLIDO = {5}, @DIRECCION = {6}, @ID_SECTOR = {7}, @ID_CIUDAD = {8}, @ID_PROVINCIA = {9}, @PAIS_NACIMIENTO = {10}, @TELEFONO_PRINCIPAL = {11}, @TELEFONO_SECUNDARIO = {12}, @FECHA_NACIMIENTO = {13}, @EMAIL = {14}, @SEXO = {15}, @ESTADO_CIVIL = {16}, @FRECUENCIA_COBRO = {17}, @CUENTA_BANCO = {18}, @ID_ENTIDAD_BANCARIA = {19}, @ID_PUESTO = {20}, @ID_DEPARTAMENTO = {21}, @TIPO_SANGRE = {22}, @NOMBRE_FAMILIAR_PRIMARIO = {23}, @TELEFONO_FAMILIAR_PRIMARIO = {24}, @PARENTESCO_FAMILIAR_PRIMARIO = {25}, @NOMBRE_FAMILIAR_SECUNDARIO = {26}, @TELEFONO_FAMILIAR_SECUNDARIO = {27}, @PARENTESCO_FAMILIAR_SECUNDARIO = {28}, @ID_NIVEL_APROBACION = {29}, @ESTATUS = {30}, @CREADO_POR = {31}",
+            await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR_EMPLEADO @CODIGO_EMPLEADO = {0}, @CEDULA = {1}, @P_NOMBRE = {2}, @S_NOMBRE = {3}, @P_APELLIDO = {4}, @S_APELLIDO = {5}, @DIRECCION = {6}, @ID_SECTOR = {7}, @ID_CIUDAD = {8}, @ID_PROVINCIA = {9}, @PAIS_NACIMIENTO = {10}, @TELEFONO_PRINCIPAL = {11}, @TELEFONO_SECUNDARIO = {12}, @FECHA_NACIMIENTO = {13}, @EMAIL = {14}, @SEXO = {15}, @ESTADO_CIVIL = {16}, @FRECUENCIA_COBRO = {17}, @CUENTA_BANCO = {18}, @ID_ENTIDAD_BANCARIA = {19}, @ID_PUESTO = {20}, @ID_DEPARTAMENTO = {21}, @TIPO_SANGRE = {22}, @NOMBRE_FAMILIAR_PRIMARIO = {23}, @TELEFONO_FAMILIAR_PRIMARIO = {24}, @PARENTESCO_FAMILIAR_PRIMARIO = {25}, @NOMBRE_FAMILIAR_SECUNDARIO = {26}, @TELEFONO_FAMILIAR_SECUNDARIO = {27}, @PARENTESCO_FAMILIAR_SECUNDARIO = {28}, @ID_NIVEL_APROBACION = {29}, @ESTATUS = {30}",
             empleadoValido.CODIGO_EMPLEADO,empleadoValido.CEDULA, empleadoValido.P_NOMBRE, empleadoValido.S_NOMBRE ?? "", empleadoValido.P_APELLIDO, empleadoValido.S_APELLIDO ?? "",
             empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
             empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
@@ -299,12 +297,14 @@ public class EmpleadosController : Controller {
             empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
             empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
             empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
-            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0);
+            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS);
 
         } catch(Exception ex) {
             TempData["openModal"] = true;
             TempData["Error"] = "Ha ocurrido un error al actualizar el empleado";
             Console.WriteLine("Error al actualizar el empleado" + ex.Message + ex.Source); // Mensaje para el log en el server
+            return RedirectToAction("RegistroEmpleados");
+            
         }
         
             // ViewBag.Sucess = "Registro actualizado con exito";    
