@@ -29,6 +29,34 @@
   gap: 12px;
 }
 
+.modal .footer .btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Open animation */
+
+dialog[open] > .container > .content {
+  animation: abrirModal 0.5s ease;
+}
+
+@keyframes abrirModal {
+  0% {
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0.5;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
 /* Boton cerrar */
 
 .modal .content .btn-cerrar {
@@ -92,21 +120,59 @@
   border: none;
   border-radius: 15px;
   font-size: 20px;
-  color: #fff;
   cursor: pointer;
 }
 
 .btn-error {
   background: red;
   transition: all ease 0.5s;
+  color: #fff;
 }
 
 .btn-success {
+  color: #fff;
   background: var(--accent-color);
   transition: all ease 0.5s;
 }
 
 .footer #btn:hover {
+  color: #fff;
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+/* Confirmation modal styel */
+
+.btn-confirmation {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 170px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  background: red;
+  transition: all ease 0.5s;
+}
+
+.btn-confirmation:hover {
+  color: #fff;
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+.btn-cancelar {
+  background: #d6d6d6;
+  color: #000;
+  transition: all ease 0.5s;
+}
+
+.btn-cancelar:hover {
+  color: #fff;
   background: var(--accent-color-2);
   transition: all ease 0.5s;
 }
