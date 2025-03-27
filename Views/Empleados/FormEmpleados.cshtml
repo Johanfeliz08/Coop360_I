@@ -24,6 +24,11 @@
           <div class="titulo-grupo" id="titulo">
             <h2>Informacion personal</h2>
           </div>
+          <div class="campo" id="campo_codigo_empleado" style="display: none;">
+            <label for="codigo_empleado">Codigo empleado</label>
+            <input type="text" name="codigo_empleado" id="codigo_empleado"
+              value="@((Model.Empleado?.CODIGO_EMPLEADO) ?? "")">
+          </div>
           <div class="campo" id="campo_cedula">
             <label for="cedula">Cedula</label>
             <input required type="text" name="cedula" id="cedula" value="@((Model.Empleado?.CEDULA) ?? "")">
