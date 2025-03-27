@@ -17,14 +17,18 @@
       @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
       ;
     }
-    else
+    else if (TempData["Success"] != null)
     {
       @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
       ;
     }
-
-    @* @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = "El empleado ha sido registrado correctamente."}) *@
+    else if (TempData["Confirmation"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], codigoEmpleado =
+      TempData["codigoEmpleado"] })
+;
   }
+}
 }
 
 <section class="main-container">
@@ -247,10 +251,6 @@
                 <a class="dato accion-editar" data-codigo-empleado="@empleado.CODIGO_EMPLEADO"
                   href="@Url.Action("Editar", "Empleados", new { codigoEmpleado = @empleado.CODIGO_EMPLEADO })"><i
                     class="fi fi-tc-pencil"></i></a>
-                @* <a class="dato accion-editar" href="@Url.Action("Editar", "Empleados")"><i
-                    class="fi fi-tc-pencil"></i></a> *@
-                @* <div class="dato accion-editar"><i class="fi fi-tc-pencil"></i></div> *@
-                @* <button class="edit-btn"><i class="fi fi-tc-pencil"></i></button> *@
               </td>
               <td>
                 <div class="dato">@empleado.CODIGO_EMPLEADO</div>
@@ -347,8 +347,9 @@
               </td>
 
               <td>
-                <div class="dato accion-eliminar"><i class="fi fi-tr-trash-xmark"></i></div>
-                @* <button class="delete-btn">Eliminar</button> *@
+                <a class="dato accion-eliminar" data-codigo-empleado="@empleado.CODIGO_EMPLEADO"
+                  href="@Url.Action("Eliminar", "Empleados", new { codigoEmpleado = @empleado.CODIGO_EMPLEADO })"><i
+                    class="fi fi-tr-trash-xmark"></i></a>
               </td>
             </tr>
           }
