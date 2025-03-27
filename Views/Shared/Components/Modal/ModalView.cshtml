@@ -3,12 +3,54 @@
 </head>
 
 <dialog open class="modal" id="modal">
+  <div class="container">
+    <div class="content">
+      <div class="btn-cerrar">
+        <button class="btn btn-danger" id="btn-cerrar"><i class="fi fi-tr-x"></i></button>
+      </div>
+      <div class="header">
+        <div class="icono">
+          @{
+            if (ViewBag.Tipo == "error")
+            {
+              <i class="fi fi-tr-x" style="color:red; font-size:2.5em ;"></i>
+            }
+            else if (ViewBag.Tipo == "success")
+            {
+              <i class="fi fi-rr-check" style="color:var(--accent-color)"></i>
+            }
+          }
+        </div>
+        <div class="titulo">
+          <h2>@ViewBag.Titulo</h2>
+        </div>
+      </div>
+      <div class="mensaje">
+        <p>@ViewBag.Mensaje</p>
+      </div>
+      <div class="footer">
+        <div class="btn-container">
+          <button class="btn @( ViewBag.Tipo == "error" ? "btn-error" : "btn-success")" id="btn">Aceptar</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
+</dialog>
 
-  <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Incidunt esse rem totam repellat, eaque cum ex quod ab
-    voluptate nisi enim a in repellendus. Aperiam nulla rem accusantium. Suscipit, labore!</p>
+<script>
 
+  const dialog = document.querySelector("dialog");
 
-  <p>@ViewBag.Message</p>
+  if (dialog != null) {
 
-</dialog open>
+    const btns = document.querySelectorAll(".btn");
+    btns.forEach(btn => {
+      btn.addEventListener("click", (e) => {
+        e.preventDefault();
+        dialog.close();
+      });
+    });
+  }
+
+</script>
