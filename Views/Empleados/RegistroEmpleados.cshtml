@@ -7,7 +7,13 @@
   <link rel="stylesheet" href="~/css/Empleados/RegistroEmpleados.css" asp-append-version="true" />
 </head>
 
-@await Component.InvokeAsync("Modal", new { tipo = "Sucess", title = "!Enhorabuena!", message = "El empleado ha sido registrado correctamente." })
+@{
+
+  if (TempData["openModal"] != null)
+  {
+    @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = "El empleado ha sido registrado correctamente."})
+  }
+}
 
 <section class="main-container">
   <div class="titulo-seccion">
