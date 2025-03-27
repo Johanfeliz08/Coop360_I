@@ -12,8 +12,8 @@
       <RelatedAsset></RelatedAsset>
       <AssetTraitName></AssetTraitName>
       <AssetTraitValue></AssetTraitValue>
-      <Fingerprint>cv3n4q8a1o</Fingerprint>
-      <Integrity>WJ+TQ1dtH0Vlvca9nuCIEKhsreva1nIB1n/aQIbbx5s=</Integrity>
+      <Fingerprint>z9vnjrj6vi</Fingerprint>
+      <Integrity>F+2h9u+UIohEugIKU/UM19q57hWjV4s2yD/jv99Xllc=</Integrity>
       <CopyToOutputDirectory>Never</CopyToOutputDirectory>
       <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
       <OriginalItemSpec>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Components\ModalView.css'))</OriginalItemSpec>
