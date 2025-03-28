@@ -2,7 +2,7 @@
   background: rgba(0, 0, 0, 0.4);
 }
 
-.container {
+.modal-container {
   display: flex;
   flex-direction: column;
   justify-content: center;

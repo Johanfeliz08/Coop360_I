@@ -7,6 +7,12 @@
     <img src="../img/logos/1.png" alt="Logo coop360 fondo">
 </div>
 
+
+@if (ViewData["Error"] != null)
+{
+    @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = ViewData["Error"] })
+
+}
 <section class="login">
     <div class="columna-izquierda">
         <div class="color-transparente"></div>
@@ -24,12 +30,12 @@
                 <div class="login-form-group">
                     <input type="password" placeholder="Contraseña" id="contrasena" name="contrasena" required>
                 </div>
-                <div class="error">
+                @* <div class="error">
                     @if (ViewData["Error"] != null)
                     {
                         <p>@ViewData["Error"]</p>
                     }
-                </div>
+                </div> *@
                 <button type="submit" class="btn-login">Ingresar</button>
             </form>
             <div class="logo-br">
