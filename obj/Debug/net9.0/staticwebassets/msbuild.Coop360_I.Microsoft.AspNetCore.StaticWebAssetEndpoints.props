@@ -1,16 +1,16 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Components/ModalView.bbnrn3blo4.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Components\ModalView.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bbnrn3blo4"},{"Name":"integrity","Value":"sha256-Of6F/Xgjs\u002Bnu4dLiweAklSn6FWI97dppeKNPf7CzDfA="},{"Name":"label","Value":"_content/Coop360_I/css/Components/ModalView.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2813"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Of6F/Xgjs\u002Bnu4dLiweAklSn6FWI97dppeKNPf7CzDfA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 14:29:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Components/ModalView.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Components\ModalView.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-uouZj8p2nZW/IjfmSq7lKqYL6W1b9IPoBDMhP7A5riQ="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2807"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022uouZj8p2nZW/IjfmSq7lKqYL6W1b9IPoBDMhP7A5riQ=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 20:08:11 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Components/ModalView.ixtzux7irm.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Components\ModalView.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ixtzux7irm"},{"Name":"integrity","Value":"sha256-uouZj8p2nZW/IjfmSq7lKqYL6W1b9IPoBDMhP7A5riQ="},{"Name":"label","Value":"_content/Coop360_I/css/Components/ModalView.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2807"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022uouZj8p2nZW/IjfmSq7lKqYL6W1b9IPoBDMhP7A5riQ=\u0022"},{"Name":"Last-Modified","Value":"Thu, 27 Mar 2025 20:08:11 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-Of6F/Xgjs\u002Bnu4dLiweAklSn6FWI97dppeKNPf7CzDfA="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2813"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022Of6F/Xgjs\u002Bnu4dLiweAklSn6FWI97dppeKNPf7CzDfA=\u0022"},{"Name":"Last-Modified","Value":"Fri, 28 Mar 2025 14:29:30 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Cuenta/Perfil.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Cuenta\Perfil.css'))</AssetFile>

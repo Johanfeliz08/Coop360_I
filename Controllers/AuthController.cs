@@ -54,7 +54,10 @@ public class AuthController : Controller
         }
         else
         {
-            ViewBag.Error = "Usuario o contraseña incorrectos";
+            TempData["openModal"] = true;
+            TempData["Error"] = "Usuario o contraseña incorrectos.";
+            Console.WriteLine("Error al iniciar sesion, usuario o contraseña incorrectos"); // Mensaje para el log en el server
+            // ViewBag.Error = "Usuario o contraseña incorrectos.";
             return View();
         }
     }
