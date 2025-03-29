@@ -8,11 +8,11 @@
 </div>
 
 
-@if (ViewData["Error"] != null)
+@if (TempData["openModal"] != null && TempData["Error"] != null)
 {
-    @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = ViewData["Error"] })
-
+    @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
 }
+
 <section class="login">
     <div class="columna-izquierda">
         <div class="color-transparente"></div>
