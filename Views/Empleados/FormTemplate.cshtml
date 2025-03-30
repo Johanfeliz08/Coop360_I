@@ -1,0 +1,71 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Empleados/FormEmpleados.css">
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("RegistroEmpleados", "Empleados")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Empleado" ? "Actualizar" : "Guardar")"
+      asp-controller="Empleados" method="post">
+
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2></h2>
+          </div>
+          <div class="campo" id="campo_codigo_empleado" style="display: none;">
+            <label for="codigo_empleado">Codigo empleado</label>
+            <input type="text" name="codigo_empleado" id="codigo_empleado"
+              value="@((Model.Empleado?.CODIGO_EMPLEADO) ?? "")">
+          </div>
+          <div class="campo" id="campo_sexo">
+            <label for="sexo">Sexo</label>
+            <select required name="sexo" id="sexo" val>
+              <option value="default" disabled selected>Seleccionar</option>
+              @{
+
+                if (Model.Empleado?.SEXO == "M")
+                {
+                  <option value="M" selected>Masculino</option>
+                }
+                else
+                {
+                  <option value="M">Masculino</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Empleado?.SEXO == "F")
+                {
+                  <option value="F" selected>Femenino</option>
+                }
+                else
+                {
+                  <option value="F">Femenino</option>
+
+                }
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>
