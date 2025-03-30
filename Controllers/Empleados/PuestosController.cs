@@ -143,7 +143,9 @@ public class PuestosController : Controller {
             TempData["Tipo"] = "confirmation";
             TempData["Titulo"] = "¡Cuidado!";
             TempData["Confirmation"] = "¿Esta seguro que desea eliminar este puesto?";
-            TempData["codigoEmpleado"] = ID_PUESTO;
+            TempData["Controlador"] = "Puestos";
+            TempData["Parametro"] = "IdPuesto";
+            TempData["ID"] = ID_PUESTO;
             return RedirectToAction("RegistroPuestos");
         }
             return RedirectToAction("RegistroPuestos");
@@ -231,44 +233,44 @@ public class PuestosController : Controller {
 
     // }
 
-    // // Eliminar empleado
+     // Eliminar empleado
 
-    // [HttpPost]
+    [HttpPost]
 
-    // public async Task<IActionResult> EliminarAsync(string codigoEmpleado) {
+    public async Task<IActionResult> EliminarAsync(string IdPuesto) {
 
-    //     // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
-    //     if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
-    //         return RedirectToAction("Login", "Auth");
-    //     }
+        // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
+            return RedirectToAction("Login", "Auth");
+        }
         
-    // //     if (codigoEmpleado != null ) {
+        if (IdPuesto != null ) {
         
-    // //     int codigo_empleado = Convert.ToInt32(codigoEmpleado);
+        int ID_PUESTO = Convert.ToInt32(IdPuesto);
 
-    // //     try {
+        try {
 
-    // //         await _context.Database.ExecuteSqlRawAsync("EXEC SP_ELIMINAR_EMPLEADO @CODIGO_EMPLEADO = {0}", codigo_empleado);
+            await _context.Database.ExecuteSqlRawAsync("EXEC SP_ELIMINAR_PUESTO @ID_PUESTO = {0}", ID_PUESTO);
 
-    // //     } catch (Exception e) {
-    // //         TempData["openModal"] = true;
-    // //         TempData["Error"] = "Error al eliminar el empleado";
-    // //         Console.WriteLine("Error al eliminar el empleado: " + e.Message + e.Source);
-    // //         return RedirectToAction("RegistroEmpleados");
-    // //     }
+        } catch (Exception e) {
+            TempData["openModal"] = true;
+            TempData["Error"] = "Error al eliminar el puesto";
+            Console.WriteLine("Error al eliminar el puesto: " + e.Message + e.Source);
+            return RedirectToAction("RegistroPuestos");
+        }
 
-    // //     TempData["openModal"] = true;
-    // //     TempData["Success"] = "El empleado ha sido eliminado correctamente.";
-    // //     Console.WriteLine("Empleado eliminado con exito"); // Mensaje para el log en el server
-    // //     return RedirectToAction("RegistroEmpleados");
+        TempData["openModal"] = true;
+        TempData["Success"] = "El puesto ha sido eliminado correctamente.";
+        Console.WriteLine("Puesto eliminado con exito"); // Mensaje para el log en el server
+        return RedirectToAction("RegistroPuestos");
 
-    // // }
+    }
     
-    // // TempData["openModal"] = true;
-    // // TempData["Error"] = "Codigo de empleado no valido";
-    // // return RedirectToAction("RegistroEmpleados");
+    TempData["openModal"] = true;
+    TempData["Error"] = "ID del Puesto no es valido";
+    return RedirectToAction("RegistroPuestos");
 
 
-    // }
+    }
    
 }
