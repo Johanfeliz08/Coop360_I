@@ -252,7 +252,9 @@ public class EmpleadosController : Controller {
             TempData["Tipo"] = "confirmation";
             TempData["Titulo"] = "¡Cuidado!";
             TempData["Confirmation"] = "¿Esta seguro que desea eliminar este empleado?";
-            TempData["CodigoEmpleado"] = codigo_empleado;
+            TempData["Controlador"] = "Empleados";
+            TempData["Parametro"] = "codigoEmpleado";
+            TempData["ID"] = codigo_empleado;
             return RedirectToAction("RegistroEmpleados");
         }
 
