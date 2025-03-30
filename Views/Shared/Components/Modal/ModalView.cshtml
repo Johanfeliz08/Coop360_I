@@ -40,10 +40,10 @@
           @{
             if (ViewBag.Tipo == "confirmation")
             {
-              <form asp-action="Eliminar" asp-controller="Empleados" method="post">
-                <div class="campo" id="campo_codigo_empleado" style="display: none;">
-                  <label for="codigoEmpleado">Codigo empleado</label>
-                  <input type="text" name="codigoEmpleado" id="codigoEmpleado" value="@((ViewBag.codigoEmpleado) ?? "")">
+              <form asp-action="Eliminar" asp-controller="@ViewBag.Controlador" method="post">
+                <div class="campo" id="campo" style="display: none;">
+                  <label for="@ViewBag.Parametro">@ViewBag.Parametro</label>
+                  <input type="text" name="@ViewBag.Parametro" id="@ViewBag.Parametro" value="@((ViewBag.id) ?? "")">
                 </div>
                 <button type="submit" class="btn-confirmation" id="btn-aceptar">Aceptar</button>
               </form>
