@@ -7,7 +7,8 @@ public class Puesto {
   public required int ID_PUESTO {get; set;}
   public required string NOMBRE {get; set;}
   public required decimal SALARIO {get; set;}
-  public required int ID_DEPARTAMENTO {get; set;}
-  public required DateTime FECHA_CREACION {get; set;}
+  public int? ID_DEPARTAMENTO {get; set;}
+  public string? NOMBRE_DEPARTAMENTO {get; set;}
+  public DateTime? FECHA_CREACION {get; set;} 
 
 }
