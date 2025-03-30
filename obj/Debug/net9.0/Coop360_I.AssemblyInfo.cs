@@ -13,7 +13,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("Coop360_I")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+f23c255f8b895777cd47c3fd82a0048c1bf75ac7")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+e7b4751bca999911120f029ef1e9c3f9b8cc69e1")]
 [assembly: System.Reflection.AssemblyProductAttribute("Coop360_I")]
 [assembly: System.Reflection.AssemblyTitleAttribute("Coop360_I")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
