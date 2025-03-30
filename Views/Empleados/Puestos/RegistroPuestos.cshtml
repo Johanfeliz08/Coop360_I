@@ -1,0 +1,138 @@
+@{
+  ViewBag.Title = "Registro de puestos";
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  @* <link rel="stylesheet" href="~/css/Empleados/RegistroEmpleados.css" asp-append-version="true" /> *@
+</head>
+
+@{
+
+  if (TempData["openModal"] != null)
+  {
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else if (TempData["Success"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+    else if (TempData["Confirmation"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], codigoEmpleado =
+      TempData["codigoEmpleado"] })
+;
+  }
+}
+}
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+  </div>
+  <div class="data-container">
+    <div class="acciones">
+      <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <a href="@Url.Action("Crear", "Puestos")" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Agregar</span></a>
+    </div>
+    <div class="table-container">
+
+      <!-- Tabla de datos -->
+      <table id="table" class="table">
+        <thead>
+          <tr class="cabecera">
+            <!-- Columnas dinámicas -->
+            <th>
+              <div class="th">Editar</div>
+            </th>
+            <th>
+              <div class="th">
+                <span>ID Puesto</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Nombre</span>
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Salario</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Departamento</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Fecha de creacion</span>
+              </div>
+            </th>
+            <th class="btn-eliminar">
+              <div class="th">Eliminar</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo de filas dinámicas -->
+          @foreach (var puesto in Model)
+          {
+            <tr>
+              <td>
+                <a class="dato accion-editar" data-id-puesto="@puesto.ID_PUESTO"
+                  href="@Url.Action("Editar", "Puestos", new { idPuesto = @puesto.ID_PUESTO })"><i
+                    class="fi fi-tc-pencil"></i></a>
+              </td>
+              <td>
+                <div class="dato">@puesto.ID_PUESTO</div>
+              </td>
+
+              <td>
+                <div class="dato">@puesto.NOMBRE</div>
+              </td>
+
+              <td>
+                <div class="dato">@puesto.SALARIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@puesto.NOMBRE_DEPARTAMENTO</div>
+              </td>
+
+              <td>
+                <div class="dato">@puesto.FECHA_CREACION</div>
+              </td>
+              <td>
+                <a class="dato accion-eliminar" data-IdPuesto="@puesto.ID_PUESTO"
+                  href="@Url.Action("Eliminar", "Puestos", new { IdPuesto = @puesto.ID_PUESTO })"><i
+                    class="fi fi-tr-trash-xmark"></i></a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <!-- Menú flotante para ordenar -->
+      <div id="sort-menu" style="display:none; position:absolute;">
+        <ul>
+          <li><button data-order="asc">Orden Ascendente</button></li>
+          <li><button data-order="desc">Orden Descendente</button></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="~/js/Table.js"></script>
