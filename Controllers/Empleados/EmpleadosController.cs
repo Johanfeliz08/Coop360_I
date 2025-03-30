@@ -200,12 +200,21 @@ public class EmpleadosController : Controller {
             throw new Exception("Error al cargar los datos del formulario");
         }
 
-        var codigo_empleado = Convert.ToInt32(codigoEmpleado);    
-        var empleado = _context.Empleados
-        .FromSqlRaw("EXEC SP_BUSCAR_EMPLEADO @CODIGO_EMPLEADO = {0}", codigo_empleado)
-        .AsEnumerable()
-        .FirstOrDefault();
+        var codigo_empleado = Convert.ToInt32(codigoEmpleado);
+
+        // try {
+            var empleado = _context.Empleados
+            .FromSqlRaw("EXEC SP_BUSCAR_EMPLEADO @CODIGO_EMPLEADO = {0}", codigo_empleado)
+            .AsEnumerable()
+            .FirstOrDefault();
     
+        // } catch (Exception e) {
+        //     TempData["openModal"] = true;
+        //     TempData["Error"] = "Error al cargar los datos del empleado";
+        //     Console.WriteLine("Error al cargar los datos del empleado: " + e.Message + e.Source);
+        //     return RedirectToAction("RegistroEmpleados");
+        // }
+
         var viewModel = new EmpleadoViewModel
         {
             Provincias = provincias,
