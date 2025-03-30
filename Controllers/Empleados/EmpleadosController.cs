@@ -6,7 +6,6 @@ using Coop360_I.Data;
 using Coop360_I.Controllers;
 
 namespace Coop360_I.Controllers;
-
 public class EmpleadosController : Controller {
     private readonly ILogger<EmpleadosController> _logger;
     private readonly ApplicationDbContext _context;
