@@ -139,7 +139,7 @@ a {
 }
 
 .dropdown #opciones-empleados {
-  height: 300px;
+  height: 400px;
   max-height: 0px;
 }
 
@@ -271,8 +271,8 @@ a {
 }
 
 .dropdown:hover > #opciones-empleados {
-  height: 300px;
-  max-height: 300px;
+  height: 400px;
+  max-height: 400px;
 }
 
 .dropdown:hover > .dropdown-titulo {
