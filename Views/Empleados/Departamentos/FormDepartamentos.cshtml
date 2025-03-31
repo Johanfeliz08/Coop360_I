@@ -1,0 +1,50 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Empleados/FormDepartamentos.css">
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("RegistroDepartamentos", "Departamentos")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Departamento" ? "Actualizar" : "Guardar")"
+      asp-controller="Puestos" method="post">
+
+      <div class="campos-container">
+        <div class="grupo informacion-container">
+          <div class="titulo-grupo" id="titulo">
+            <h2></h2>
+          </div>
+          <div class="campo" id="campo_id_departamento" style="display: none;">
+            <label for="id_departamento">ID PUESTO</label>
+            <input type="text" name="id_departamento" id="id_departamento"
+              value="@((Model.Departamento?.ID_DEPARTAMENTO) ?? "")">
+          </div>
+          <div class="campo" id="campo_nombre_departamento">
+            <label for="NOMBRE">Nombre</label>
+            <input type="text" name="NOMBRE" id="NOMBRE" value="@((Model.Departamento?.NOMBRE) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_encargado_departamento">
+            <label for="ENCARGADO">Encargado</label>
+            <input type="text" name="ENCARGADO" id="ENCARGADO" value="@((Model.Departamento?.Encargado) ?? "")"
+              required>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>
