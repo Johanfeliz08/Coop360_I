@@ -86,7 +86,7 @@ public class DepartamentosController : Controller {
         .AsEnumerable()
         .FirstOrDefault();
         
-        ViewBag.Title = "Editar Puesto";
+        ViewBag.Title = "Editar Departamento";
         return View("~/Views/Empleados/Departamentos/FormDepartamentos.cshtml",departamento);
 
         } else {
@@ -185,7 +185,7 @@ public class DepartamentosController : Controller {
         TempData["openModal"] = true;
         TempData["Success"] = "El departamento ha sido actualizado correctamente.";
         Console.WriteLine("Departamento actualizado con exito"); // Mensaje para el log en el server
-        return RedirectToAction("RegistroDepartamento");
+        return RedirectToAction("RegistroDepartamentos");
 
     }
 
@@ -212,7 +212,7 @@ public class DepartamentosController : Controller {
             TempData["openModal"] = true;
             TempData["Error"] = "Error al eliminar el departamento";
             Console.WriteLine("Error al eliminar el departamento: " + e.Message + e.Source);
-            return RedirectToAction("RegistroDepartamento");
+            return RedirectToAction("RegistroDepartamentos");
         }
 
         TempData["openModal"] = true;

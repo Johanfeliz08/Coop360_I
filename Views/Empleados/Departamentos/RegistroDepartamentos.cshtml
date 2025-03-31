@@ -24,8 +24,9 @@ Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
     }
     else if (TempData["Confirmation"] != null)
     {
-      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], codigoEmpleado =
-      TempData["codigoEmpleado"] })
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
 ;
   }
 }
@@ -107,7 +108,7 @@ Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
               </td>
 
               <td>
-                <a class="dato accion-eliminar" data-id-departamento="@departamento.ID_DEPARTAMENTO"
+                <a class="dato accion-eliminar" data-idepartamento="@departamento.ID_DEPARTAMENTO"
                   href="@Url.Action("Eliminar", "Departamentos", new { idDepartamento = @departamento.ID_DEPARTAMENTO })"><i
                     class="fi fi-tr-trash-xmark"></i></a>
               </td>
