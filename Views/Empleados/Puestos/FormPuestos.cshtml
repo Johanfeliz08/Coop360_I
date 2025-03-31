@@ -2,12 +2,68 @@
   Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
-<h1>@ViewBag.Title</h1>>
-<h1>FormPuestos</h1>>
+<head>
+  <link rel="stylesheet" href="~/css/Empleados/FormPuestos.css">
+</head>
 
-@{
-  if (Model != null)
-  {
-    <p>data loading correctly</p>
-  }
-}
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("RegistroPuestos", "Puestos")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Puesto" ? "Actualizar" : "Guardar")" asp-controller="Puestos"
+      method="post">
+
+      <div class="campos-container">
+        <div class="grupo informacion-container">
+          <div class="titulo-grupo" id="titulo">
+            <h2></h2>
+          </div>
+          <div class="campo" id="campo_id_puesto" style="display: none;">
+            <label for="ID_PUESTO">ID PUESTO</label>
+            <input type="text" name="ID_PUESTO" id="ID_PUESTO" value="@((Model.Puesto?.ID_PUESTO) ?? "")">
+          </div>
+          <div class="campo" id="campo_nombre_puesto">
+            <label for="NOMBRE">Nombre</label>
+            <input type="text" name="NOMBRE" id="NOMBRE" value="@((Model.Puesto?.NOMBRE) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_salario_puesto">
+            <label for="SALARIO">Salario</label>
+            <input type="text" name="SALARIO" id="SALARIO" value="@((Model.Puesto?.SALARIO) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_departamento">
+            <label for="departamento">Departamento</label>
+            <select name="ID_DEPARTAMENTO" id="departamento">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var departamento in @Model.Departamentos)
+              {
+
+                if (departamento.ID_DEPARTAMENTO == Model.Puesto?.ID_DEPARTAMENTO)
+                {
+                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO" selected>
+                    @departamento.NOMBRE
+                  </option>
+                }
+                else
+                {
+                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO">
+                    @departamento.NOMBRE
+                  </option>
+                }
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>
