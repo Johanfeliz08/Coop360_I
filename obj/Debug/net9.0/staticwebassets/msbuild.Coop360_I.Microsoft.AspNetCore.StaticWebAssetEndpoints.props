@@ -1,5 +1,17 @@
 ﻿<Project>
   <ItemGroup>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Codeudores/formCodeudores.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Codeudores\formCodeudores.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-h7ac2wmJWgQ4WiCSv/ysojx9/4sc6Ryx\u002BUJfXSBAmHU="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2561"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022h7ac2wmJWgQ4WiCSv/ysojx9/4sc6Ryx\u002BUJfXSBAmHU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 22:09:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Codeudores/formCodeudores.vyy29grwjm.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Codeudores\formCodeudores.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"vyy29grwjm"},{"Name":"integrity","Value":"sha256-h7ac2wmJWgQ4WiCSv/ysojx9/4sc6Ryx\u002BUJfXSBAmHU="},{"Name":"label","Value":"_content/Coop360_I/css/Codeudores/formCodeudores.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2561"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022h7ac2wmJWgQ4WiCSv/ysojx9/4sc6Ryx\u002BUJfXSBAmHU=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 22:09:30 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Components/ModalView.bbnrn3blo4.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Components\ModalView.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -24,41 +36,41 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"w0tzwi8zil"},{"Name":"integrity","Value":"sha256-UJoxxNCrIzSeOkX7rlQzbY6VMD/xYRTOiKT17V48/K8="},{"Name":"label","Value":"_content/Coop360_I/css/Cuenta/Perfil.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2889"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022UJoxxNCrIzSeOkX7rlQzbY6VMD/xYRTOiKT17V48/K8=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Mar 2025 02:14:38 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormDepartamentos.bc6xoflegh.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormDepartamentos.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bc6xoflegh"},{"Name":"integrity","Value":"sha256-WyIWcz9V9RcdGz7HphJepaQBb/KVjLo\u002BKAeLMzJXX0w="},{"Name":"label","Value":"_content/Coop360_I/css/Empleados/FormDepartamentos.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2356"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WyIWcz9V9RcdGz7HphJepaQBb/KVjLo\u002BKAeLMzJXX0w=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 15:06:07 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormDepartamentos.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormDepartamentos.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-WyIWcz9V9RcdGz7HphJepaQBb/KVjLo\u002BKAeLMzJXX0w="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2356"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022WyIWcz9V9RcdGz7HphJepaQBb/KVjLo\u002BKAeLMzJXX0w=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 15:06:07 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-\u002B4v9j2K9WL3rpw7gB\u002BkLMXSeBX12Xft\u002Bs5871GopjH8="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"352"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022\u002B4v9j2K9WL3rpw7gB\u002BkLMXSeBX12Xft\u002Bs5871GopjH8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 22:04:08 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormEmpleados.1wd45mbvz4.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormEmpleados.css'))</AssetFile>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormDepartamentos.xh45iz9qnf.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormDepartamentos.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"1wd45mbvz4"},{"Name":"integrity","Value":"sha256-UcwP4HPrNeMshYN1zdz2yAizLj/8eyhtddg9Fg54u0Q="},{"Name":"label","Value":"_content/Coop360_I/css/Empleados/FormEmpleados.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"5746"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022UcwP4HPrNeMshYN1zdz2yAizLj/8eyhtddg9Fg54u0Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 01:00:41 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"xh45iz9qnf"},{"Name":"integrity","Value":"sha256-\u002B4v9j2K9WL3rpw7gB\u002BkLMXSeBX12Xft\u002Bs5871GopjH8="},{"Name":"label","Value":"_content/Coop360_I/css/Empleados/FormDepartamentos.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"352"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022\u002B4v9j2K9WL3rpw7gB\u002BkLMXSeBX12Xft\u002Bs5871GopjH8=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 22:04:08 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormEmpleados.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormEmpleados.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-UcwP4HPrNeMshYN1zdz2yAizLj/8eyhtddg9Fg54u0Q="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"5746"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022UcwP4HPrNeMshYN1zdz2yAizLj/8eyhtddg9Fg54u0Q=\u0022"},{"Name":"Last-Modified","Value":"Wed, 26 Mar 2025 01:00:41 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-1CmAavt5\u002B4nrDXKRS/lM/v54/QBSd06Gi8TzQhfnRYM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3742"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221CmAavt5\u002B4nrDXKRS/lM/v54/QBSd06Gi8TzQhfnRYM=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 22:20:48 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormEmpleados.gbd3c9yk1r.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormEmpleados.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"gbd3c9yk1r"},{"Name":"integrity","Value":"sha256-1CmAavt5\u002B4nrDXKRS/lM/v54/QBSd06Gi8TzQhfnRYM="},{"Name":"label","Value":"_content/Coop360_I/css/Empleados/FormEmpleados.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3742"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00221CmAavt5\u002B4nrDXKRS/lM/v54/QBSd06Gi8TzQhfnRYM=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 22:20:48 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormPuestos.7eys3ejfae.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormPuestos.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"7eys3ejfae"},{"Name":"integrity","Value":"sha256-4ZcDQjrJ6L3wjEU8KUsVKfZUH/Y9ZHQHHoO8sGA2Pz0="},{"Name":"label","Value":"_content/Coop360_I/css/Empleados/FormPuestos.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"403"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00224ZcDQjrJ6L3wjEU8KUsVKfZUH/Y9ZHQHHoO8sGA2Pz0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 02:49:04 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormPuestos.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormPuestos.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-a5j6vJDcRPyTgoJIIjps1CmEIwYOlU4kmb8MdE1\u002BC2g="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2407"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022a5j6vJDcRPyTgoJIIjps1CmEIwYOlU4kmb8MdE1\u002BC2g=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 15:06:07 GMT"}]]]></ResponseHeaders>
-    </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/FormPuestos.l8umx1so9m.css">
-      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\FormPuestos.css'))</AssetFile>
-      <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"l8umx1so9m"},{"Name":"integrity","Value":"sha256-a5j6vJDcRPyTgoJIIjps1CmEIwYOlU4kmb8MdE1\u002BC2g="},{"Name":"label","Value":"_content/Coop360_I/css/Empleados/FormPuestos.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2407"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022a5j6vJDcRPyTgoJIIjps1CmEIwYOlU4kmb8MdE1\u002BC2g=\u0022"},{"Name":"Last-Modified","Value":"Mon, 31 Mar 2025 15:06:07 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-4ZcDQjrJ6L3wjEU8KUsVKfZUH/Y9ZHQHHoO8sGA2Pz0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"403"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00224ZcDQjrJ6L3wjEU8KUsVKfZUH/Y9ZHQHHoO8sGA2Pz0=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 02:49:04 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Empleados/RegistroEmpleados.5ipweew5fc.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Empleados\RegistroEmpleados.css'))</AssetFile>
@@ -84,17 +96,29 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ykrkcy1crg"},{"Name":"integrity","Value":"sha256-XtPO0QxXCiLomXSQKWxvGwJ6kuk8kVt6\u002BYomnZzERvc="},{"Name":"label","Value":"_content/Coop360_I/css/ErrorModal.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"73"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022XtPO0QxXCiLomXSQKWxvGwJ6kuk8kVt6\u002BYomnZzERvc=\u0022"},{"Name":"Last-Modified","Value":"Wed, 12 Mar 2025 20:28:33 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/LayoutDashboard.5g5c4ngia7.css">
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Form.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Form.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vNNgNupnborvMg0odfKcgtd32uYOBr7SoBEeraOXkLM="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2208"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vNNgNupnborvMg0odfKcgtd32uYOBr7SoBEeraOXkLM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 03:33:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Form.kc41s9kfec.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Form.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"kc41s9kfec"},{"Name":"integrity","Value":"sha256-vNNgNupnborvMg0odfKcgtd32uYOBr7SoBEeraOXkLM="},{"Name":"label","Value":"_content/Coop360_I/css/Form.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2208"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022vNNgNupnborvMg0odfKcgtd32uYOBr7SoBEeraOXkLM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 03:33:06 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/LayoutDashboard.8ze1j6bdak.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\LayoutDashboard.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"5g5c4ngia7"},{"Name":"integrity","Value":"sha256-lWYrAXGMzRVEuvvBjrfxiRAoEpe5Ey1yqUPpKQ5hQlc="},{"Name":"label","Value":"_content/Coop360_I/css/LayoutDashboard.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7899"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022lWYrAXGMzRVEuvvBjrfxiRAoEpe5Ey1yqUPpKQ5hQlc=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Mar 2025 00:29:33 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"8ze1j6bdak"},{"Name":"integrity","Value":"sha256-7EIvBxQ6n0qRCdnjo\u002BSI1qIXfHcz6l4vV1\u002BIC12jSxs="},{"Name":"label","Value":"_content/Coop360_I/css/LayoutDashboard.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7900"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227EIvBxQ6n0qRCdnjo\u002BSI1qIXfHcz6l4vV1\u002BIC12jSxs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 01:44:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/LayoutDashboard.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\LayoutDashboard.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-lWYrAXGMzRVEuvvBjrfxiRAoEpe5Ey1yqUPpKQ5hQlc="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7899"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022lWYrAXGMzRVEuvvBjrfxiRAoEpe5Ey1yqUPpKQ5hQlc=\u0022"},{"Name":"Last-Modified","Value":"Fri, 21 Mar 2025 00:29:33 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7EIvBxQ6n0qRCdnjo\u002BSI1qIXfHcz6l4vV1\u002BIC12jSxs="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7900"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227EIvBxQ6n0qRCdnjo\u002BSI1qIXfHcz6l4vV1\u002BIC12jSxs=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 01:44:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/LayoutLogin.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\LayoutLogin.css'))</AssetFile>
@@ -108,6 +132,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"eki96qasia"},{"Name":"integrity","Value":"sha256-PtTUj93Wc2Fwsuo2rbfLKt3BWfT26cVK5VuL\u002BPI5aTE="},{"Name":"label","Value":"_content/Coop360_I/css/LayoutLogin.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3403"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022PtTUj93Wc2Fwsuo2rbfLKt3BWfT26cVK5VuL\u002BPI5aTE=\u0022"},{"Name":"Last-Modified","Value":"Wed, 19 Mar 2025 14:26:48 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Prestamos/Anexos/FormAnexos.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Prestamos\Anexos\FormAnexos.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7GCBoQ5NeJLUo\u002BHuQjELuRRiOdZOw8UjO0uJMygsS\u002B4="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"340"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227GCBoQ5NeJLUo\u002BHuQjELuRRiOdZOw8UjO0uJMygsS\u002B4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 03:29:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Prestamos/Anexos/FormAnexos.glx8b21oof.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Prestamos\Anexos\FormAnexos.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"glx8b21oof"},{"Name":"integrity","Value":"sha256-7GCBoQ5NeJLUo\u002BHuQjELuRRiOdZOw8UjO0uJMygsS\u002B4="},{"Name":"label","Value":"_content/Coop360_I/css/Prestamos/Anexos/FormAnexos.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"340"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227GCBoQ5NeJLUo\u002BHuQjELuRRiOdZOw8UjO0uJMygsS\u002B4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 03:29:02 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Prestamos/SolicitudPrestamo.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Prestamos\SolicitudPrestamo.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
@@ -120,17 +156,17 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"g7xzaojv2m"},{"Name":"integrity","Value":"sha256-3Cx7olDrYbdg5sskq1EHTFlG3RUQ8ryt5BrDjDgUkfo="},{"Name":"label","Value":"_content/Coop360_I/css/Prestamos/SolicitudPrestamo.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"419"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00223Cx7olDrYbdg5sskq1EHTFlG3RUQ8ryt5BrDjDgUkfo=\u0022"},{"Name":"Last-Modified","Value":"Thu, 20 Mar 2025 19:02:18 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/site.bij72u8m2b.css">
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/site.4tuf4xxfzs.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"bij72u8m2b"},{"Name":"integrity","Value":"sha256-fSd4a05JPCbNPqd/T6ozFQi3i4wy87qqS5ydv4ollaM="},{"Name":"label","Value":"_content/Coop360_I/css/site.css"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"6614"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022fSd4a05JPCbNPqd/T6ozFQi3i4wy87qqS5ydv4ollaM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 19:22:44 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"4tuf4xxfzs"},{"Name":"integrity","Value":"sha256-uMG6MvyV8PwHUQfA2z2MCF4zMB9BgcL3GteBA3udl3A="},{"Name":"label","Value":"_content/Coop360_I/css/site.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"7262"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022uMG6MvyV8PwHUQfA2z2MCF4zMB9BgcL3GteBA3udl3A=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 03:32:46 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/site.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\site.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-fSd4a05JPCbNPqd/T6ozFQi3i4wy87qqS5ydv4ollaM="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"6614"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022fSd4a05JPCbNPqd/T6ozFQi3i4wy87qqS5ydv4ollaM=\u0022"},{"Name":"Last-Modified","Value":"Tue, 25 Mar 2025 19:22:44 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-uMG6MvyV8PwHUQfA2z2MCF4zMB9BgcL3GteBA3udl3A="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"7262"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u0022uMG6MvyV8PwHUQfA2z2MCF4zMB9BgcL3GteBA3udl3A=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 03:32:46 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/favicon.b1yj3k9uc1.ico">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\favicon.ico'))</AssetFile>

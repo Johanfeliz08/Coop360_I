@@ -1,0 +1,259 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Codeudores/FormCodeudores.css">
+  <link rel="stylesheet" href="~/css/Form.css">
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("RegistroCodeudores", "Codeudores")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Codeudor" ? "Actualizar" : "Guardar")"
+      asp-controller="Codeudores" method="post">
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Informacion personal</h2>
+          </div>
+          <div class="campo" id="campo_codigo_codeudor" style="display: none;">
+            <label for="codigo_codeudor">Codigo codeudor</label>
+            <input type="text" name="codigo_codeudor" id="codigo_codeudor"
+              value="@((Model.Codeudor?.CODIGO_CODEUDOR) ?? "")">
+          </div>
+          <div class="campo" id="campo_cedula">
+            <label for="cedula">Cedula</label>
+            <input required type="text" name="cedula" id="cedula" value="@((Model.Codeudor?.CEDULA) ?? "")">
+          </div>
+          <div class="campo" id="campo_p_nombre">
+            <label for="p_nombre">Primer nombre</label>
+            <input required type="text" name="p_nombre" id="p_nombre" value="@((Model.Codeudor?.P_NOMBRE) ?? "")">
+          </div>
+          <div class="campo" id="campo_s_nombre">
+            <label for="s_nombre">Segundo nombre</label>
+            <input type="text" name="s_nombre" id="s_nombre" value="@((Model.Codeudor?.S_NOMBRE) ?? "")">
+          </div>
+          <div class="campo" id="campo_p_apellido">
+            <label for="p_apellido">Primer apellido</label>
+            <input required type="text" name="p_apellido" id="p_apellido" value="@((Model.Codeudor?.P_APELLIDO) ?? "")">
+          </div>
+          <div class="campo" id="campo_s_apellido">
+            <label for="s_apellido">Segundo apellido</label>
+            <input type="text" name="s_apellido" id="s_apellido" value="@((Model.Codeudor?.S_APELLIDO) ?? "")">
+          </div>
+          <div class="campo" id="campo_fecha_nacimiento">
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input required type="text" name="fecha_nacimiento" id="fecha_nacimiento"
+              value="@((Model.Codeudor?.FECHA_NACIMIENTO) ?? "")">
+          </div>
+          <div class="campo" id="campo_sexo">
+            <label for="sexo">Sexo</label>
+            <select required name="sexo" id="sexo" val>
+              <option value="default" disabled selected>Seleccionar</option>
+              @{
+
+                if (Model.Codeudor?.SEXO == "M")
+                {
+                  <option value="M" selected>Masculino</option>
+                }
+                else
+                {
+                  <option value="M">Masculino</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Codeudor?.SEXO == "F")
+                {
+                  <option value="F" selected>Femenino</option>
+                }
+                else
+                {
+                  <option value="F">Femenino</option>
+
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_pais_nacimiento">
+            <label for="pais_nacimiento">Pais de nacimiento</label>
+            <input required type="text" name="PAIS_NACIMIENTO" id="pais_nacimiento"
+              value="@((Model.Codeudor?.PAIS_NACIMIENTO) ?? "")">
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo contacto">
+          <div class="titulo-grupo" id="titulo-contacto">
+            <h2>Contacto</h2>
+          </div>
+          <div class="campo" id="campo_direccion">
+            <label for="direccion">Direccion</label>
+            <input required type="text" name="DIRECCION" id="direccion" value="@((Model.Codeudor?.DIRECCION) ?? "")">
+          </div>
+          <div class="campo" id="campo_telefono_principal">
+            <label for="telefono_principal">Telefono principal</label>
+            <input type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal"
+              value="@((Model.Codeudor?.TELEFONO_PRINCIPAL) ?? "")">
+          </div>
+          <div class="campo" id="campo_email">
+            <label for="email">Email</label>
+            <input type="text" name="EMAIL" id="email" value="@((Model.Codeudor?.EMAIL) ?? "")">
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo informacion-geografica">
+          <div class="titulo-grupo" id="titulo-informacion-geografica">
+            <h2>Informacion geografica</h2>
+          </div>
+          <div class="campo" id="campo_sector">
+            <label for="sector">Sector</label>
+            <select required name="ID_SECTOR" id="sector">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var sector in @Model.Sectores)
+              {
+
+                if (sector.ID_SECTOR == Model.Codeudor?.ID_SECTOR)
+                {
+                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR" selected>@sector.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR">@sector.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_ciudad">
+            <label for="ciudad">Ciudad</label>
+            <select required name="ID_CIUDAD" id="ciudad">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var ciudad in @Model.Ciudades)
+              {
+                if (ciudad.ID_CIUDAD == Model.Codeudor?.ID_CIUDAD)
+                {
+                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD" selected>@ciudad.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD">@ciudad.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_provincia">
+            <label for="provincia">Provincia</label>
+            <select required name="ID_PROVINCIA" id="provincia">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var provincia in @Model.Provincias)
+              {
+
+                if (provincia.ID_PROVINCIA == Model.Codeudor?.ID_PROVINCIA)
+                {
+                  <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA" selected>@provincia.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA">@provincia.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo informacion-laboral ">
+          <div class="titulo-grupo" id="titulo-informacion-laboral">
+            <h2>Informacion laboral</h2>
+          </div>
+          <div class="campo" id="campo_profesion">
+            <label for="profesion">Profesion</label>
+            <input type="text" name="profesion" id="profesion" value="@((Model.Codeudor?.PROFESION) ?? "")">
+          </div>
+          <div class="campo" id="campo_cargo">
+            <label for="cargo">Cargo</label>
+            <input type="text" name="cargo" id="cargo" value="@((Model.Codeudor?.CARGO) ?? "")">
+          </div>
+          <div class="campo" id="campo_lugar_trabajo">
+            <label for="lugar_trabajo">Lugar trabajo</label>
+            <input type="text" name="lugar_trabajo" id="lugar_trabajo" value="@((Model.Codeudor?.LUGAR_TRABAJO) ?? "")">
+          </div>
+          <div class="campo" id="campo_direccion_trabajo">
+            <label for="direccion_trabajo">Direccion trabajo</label>
+            <input type="text" name="direccion_trabajo" id="direccion_trabajo"
+              value="@((Model.Codeudor?.DIRECCION_TRABAJO) ?? "")">
+          </div>
+          <div class="campo" id="campo_telefono_trabajo">
+            <label for="telefono_trabajo">Telefono trabajo</label>
+            <input type="text" name="telefono_trabajo" id="telefono_trabajo"
+              value="@((Model.Codeudor?.TELEFONO_TRABAJO) ?? "")">
+          </div>
+          <div class="campo" id="campo_ingresos_mensuales">
+            <label for="ingresos_mensuales">Ingresos mensuales</label>
+            <input type="text" name="ingresos_mensuales" id="ingresos_mensuales"
+              value="@((Model.Codeudor?.INGRESOS_MENSUALES) ?? "")">
+          </div>
+          <div class=" campo" id="campo_estatus">
+            <label for="estatus">Estatus</label>
+            <select name="estatus" id="estatus">
+              <option value="default" disabled selected>Seleccionar</option>
+              @{
+
+                if (Model.Codeudor?.ESTATUS == "Activo")
+                {
+                  <option value="Activo" selected>Activo</option>
+                }
+                else
+                {
+                  <option value="Activo">Activo</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Codeudor?.ESTATUS == "Suspendido")
+                {
+                  <option value="Suspendido" selected>Suspendido</option>
+                }
+                else
+                {
+                  <option value="Suspendido">Suspendido</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Codeudor?.ESTATUS == "Inactivo")
+                {
+                  <option value="Inactivo" selected>Inactivo</option>
+                }
+                else
+                {
+                  <option value="Inactivo">Inactivo</option>
+
+                }
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>

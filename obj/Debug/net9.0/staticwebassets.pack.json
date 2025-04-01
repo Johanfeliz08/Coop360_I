@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Codeudores\\formCodeudores.css",
+      "PackagePath": "staticwebassets\\css\\Codeudores\\formCodeudores.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Components\\ModalView.css",
       "PackagePath": "staticwebassets\\css\\Components\\ModalView.css"
     },
@@ -29,12 +33,20 @@
       "PackagePath": "staticwebassets\\css\\ErrorModal.css"
     },
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Form.css",
+      "PackagePath": "staticwebassets\\css\\Form.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\LayoutDashboard.css",
       "PackagePath": "staticwebassets\\css\\LayoutDashboard.css"
     },
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\LayoutLogin.css",
       "PackagePath": "staticwebassets\\css\\LayoutLogin.css"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\Anexos\\FormAnexos.css",
+      "PackagePath": "staticwebassets\\css\\Prestamos\\Anexos\\FormAnexos.css"
     },
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudPrestamo.css",

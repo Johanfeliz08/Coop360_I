@@ -1,0 +1,113 @@
+/* Estilos  general de los formularios de registro y editar */
+
+.titulo-seccion h1 {
+  width: 100%;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  gap: 20px;
+  padding: 0px 30px;
+  padding-bottom: 150px;
+}
+
+.campos-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding: 20px 20px;
+  /* margin: 0px 20px; */
+  background-color: #fff;
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+}
+
+.campos-container .grupo {
+  padding: 20px 20px;
+  margin: 10px 0px;
+  gap: 10px;
+}
+
+.campos-container .grupo .titulo-grupo {
+  padding: 8px 0px;
+}
+
+.form-container .campos-container .grupo .titulo-grupo h2 {
+  color: var(--accent-color);
+  font-size: 2em;
+  font-weight: 300;
+  text-align: left;
+}
+
+.campos-container .grupo .campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+  max-width: 800px;
+  padding: 10px 0px;
+}
+
+.campos-container .grupo .campo label {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.campos-container .grupo .campo input {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: var(--accent-color) 1px solid;
+}
+
+.campos-container .grupo .campo select {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: var(--accent-color) 1px solid;
+}
+
+.grupo {
+  display: grid;
+}
+
+/* Estilos checkbox  */
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: var(--accent-color-2);
+  outline: none;
+}

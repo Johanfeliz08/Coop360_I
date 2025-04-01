@@ -179,7 +179,7 @@ public class DepartamentosController : Controller {
             TempData["openModal"] = true;
             TempData["Error"] = "Ha ocurrido un error al actualizar el departamento:";
             Console.WriteLine("Error al actualizar el registro: " + ex.Message + ex.Source); // Mensaje para el log en el server
-            return RedirectToAction("RegistroDepeartamentos");
+            return RedirectToAction("RegistroDepartamentos");
         }
 
         TempData["openModal"] = true;

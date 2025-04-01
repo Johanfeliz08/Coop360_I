@@ -24,6 +24,14 @@ build_property.EnableCodeStyleSeverity =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQXV0aFxMb2dpbi5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Codeudores/FormCodeudores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZXVkb3Jlc1xGb3JtQ29kZXVkb3Jlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Codeudores/RegistroCodeudores.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ29kZXVkb3Jlc1xSZWdpc3Ryb0NvZGV1ZG9yZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
 [J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Cuenta/Perfil.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQ3VlbnRhXFBlcmZpbC5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
@@ -60,8 +68,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXFJlZ2lzdHJvRW1wbGVhZG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
-[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Prestamos/Anexos.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9zXEFuZXhvcy5jc2h0bWw=
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Prestamos/Anexos/FormAnexos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9zXEFuZXhvc1xGb3JtQW5leG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Prestamos/Anexos/RegistroAnexos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9zXEFuZXhvc1xSZWdpc3Ryb0FuZXhvcy5jc2h0bWw=
 build_metadata.AdditionalFiles.CssScope = 
 
 [J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Prestamos/AprobacionPrestamo.cshtml]

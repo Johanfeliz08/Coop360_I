@@ -1,0 +1,155 @@
+#codigoempleado {
+  width: 200px;
+}
+
+/* Grid grupo informacion laboral */
+
+.informacion-personal {
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(5, 100px);
+  grid-template-areas:
+    "titulo titulo . ."
+    "cedula . . ."
+    "p_nombre s_nombre p_apellido s_apellido"
+    "fecha_nacimiento sexo . ."
+    "pais_nacimiento pais_nacimiento . .";
+}
+
+#titulo {
+  grid-area: titulo;
+}
+
+#campo_cedula {
+  grid-area: cedula;
+}
+
+#campo_p_nombre {
+  grid-area: p_nombre;
+}
+
+#campo_s_nombre {
+  grid-area: s_nombre;
+}
+
+#campo_p_apellido {
+  grid-area: p_apellido;
+}
+
+#campo_s_apellido {
+  grid-area: s_apellido;
+}
+
+#campo_fecha_nacimiento {
+  grid-area: fecha_nacimiento;
+}
+
+#campo_sexo {
+  grid-area: sexo;
+}
+
+#campo_pais_nacimiento {
+  grid-area: pais_nacimiento;
+}
+
+/* Grid grupo Contacto */
+
+.contacto {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 100px);
+  grid-template-areas:
+    "titulo titulo "
+    "direccion direccion"
+    "telefono_principal ."
+    "email email";
+}
+
+#titulo_contacto {
+  grid-area: titulo;
+}
+
+#campo_direccion {
+  grid-area: direccion;
+}
+
+#campo_telefono_principal {
+  grid-area: telefono_principal;
+}
+
+#campo_email {
+  grid-area: email;
+}
+
+/* Grid grupo informacion geografica */
+
+.informacion-geografica {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(4, 100px);
+  grid-template-areas:
+    "titulo titulo "
+    "sector sector"
+    "ciudad ciudad "
+    "provincia provincia"
+    "region region";
+}
+
+#titulo-informacion-geografica {
+  grid-area: titulo;
+}
+
+#campo_sector {
+  grid-area: sector;
+}
+
+#campo_ciudad {
+  grid-area: ciudad;
+}
+
+#campo_provincia {
+  grid-area: provincia;
+}
+
+#campo_region {
+  grid-area: region;
+}
+
+.informacion-laboral {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(5, 100px);
+  grid-template-areas:
+    "titulo titulo "
+    "profesion cargo"
+    "lugar_trabajo direccion_trabajo"
+    "telefono_trabajo ingresos_mensuales"
+    "estatus .";
+}
+
+#titulo-informacion-laboral {
+  grid-area: titulo;
+}
+
+#campo_profesion {
+  grid-area: profesion;
+}
+
+#campo_cargo {
+  grid-area: cargo;
+}
+
+#campo_lugar_trabajo {
+  grid-area: lugar_trabajo;
+}
+
+#campo_direccion_trabajo {
+  grid-area: direccion_trabajo;
+}
+#campo_telefono_trabajo {
+  grid-area: telefono_trabajo;
+}
+
+#campo_ingresos_mensuales {
+  grid-area: ingresos_mensuales;
+}
+
+#campo_estatus {
+  grid-area: estatus;
+}

@@ -6,7 +6,7 @@ public class Anexo {
   [Key]
   public required int ID_ANEXO {get; set;}
   public required string NOMBRE {get; set;}
-  // public required bit OBLIGATORIO {get; set;}
-  public required char ID_NIVEL_APROBACION {get; set;}
+  public required string OBLIGATORIO {get; set;}
+  public required string ID_NIVEL_APROBACION {get; set;}
   
 }

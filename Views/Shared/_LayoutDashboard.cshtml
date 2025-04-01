@@ -72,7 +72,6 @@
           <div class="titulo">
             <div class="opcion-icono">
               <i class="fi fi-tr-handshake-deal-loan"></i>
-              @* <img src="../img/iconos/prestamos.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Prestamos</span>
           </div>
@@ -81,13 +80,56 @@
           </div>
         </div>
         <div id="opciones-prestamo" class="opciones">
-          <li><a class="hvr-underline-from-center" href="@Url.Action("SolicitudPrestamo", "Prestamos")">Solicitud de
-              prestamo </a></li>
-          <li><a class="hvr-underline-from-center" href="#">Aprobacion de prestamos</a></li>
-          <li><a class="hvr-underline-from-center" href="#">Consultar prestamos</a></li>
-          <li><a class="hvr-underline-from-center" href="#">Categoria prestamos</a></li>
-          <li><a class="hvr-underline-from-center" href="#">Niveles de aprobacion</a></li>
-          <li><a class="hvr-underline-from-center" href="#">Anexos</a></li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("CrearSolicitudPrestamo", "Prestamos")">Registrar
+              solicitud de
+              prestamo </a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("RegistroSolicitudPrestamos", "Prestamos")">Consultar
+              solicitudes
+              de
+              prestamo </a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("Aprobar", "Prestamos")">Aprobacion de
+              prestamos</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("Crear", "Prestamos")">Registrar
+              prestamo</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("RegistroPrestamos", "Prestamos")">Consultar
+              prestamos</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("Crear", "CategoriaPrestamos")">Registrar
+              Categoria de prestamo</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center"
+              href="@Url.Action("RegistroCategoriaPrestamos", "CategoriaPrestamos")">Consultar
+              categoria de prestamos</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("Crear", "NivelesAprobacion")">Registrar
+              nivel
+              de aprobacion</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center"
+              href="@Url.Action("RegistroNivelesAprobacion", "NivelesAprobacion")">Consultar
+              niveles de aprobacion</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("Crear", "Anexos")">Registrar
+              anexo</a>
+          </li>
+          <li>
+            <a class="hvr-underline-from-center" href="@Url.Action("RegistroAnexos", "Anexos")">Consultar
+              anexos</a>
+          </li>
         </div>
       </ul>
 
@@ -176,8 +218,10 @@
           </div>
         </div>
         <div class="opciones">
-          <li><a class="hvr-underline-from-center" href="#">Registrar codedudor</a></li>
-          <li><a class="hvr-underline-from-center" href="#">Consultar codeudores</a></li>
+          <li><a class="hvr-underline-from-center" href="@Url.Action("Crear", "Codeudores")">Registrar codedudor</a>
+          </li>
+          <li><a class="hvr-underline-from-center" href="@Url.Action("RegistroCodeudores", "Codeudores")">Consultar
+              codeudores</a></li>
         </div>
       </ul>
 

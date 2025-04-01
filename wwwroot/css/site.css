@@ -307,3 +307,42 @@
   color: var(--accent-color);
   transition: all ease 0.5s;
 }
+
+/* Estilos checkbox en caso de que en la tabla haya un valor booleano  */
+
+input[type="checkbox"] {
+  width: 25px;
+  height: 25px;
+  cursor: pointer;
+  outline: none;
+}
+
+input[type="checkbox"]:focus {
+  outline: none;
+}
+
+input[type="checkbox"]:checked {
+  accent-color: var(--accent-color);
+  outline: none;
+}
+
+.data-container
+  .table-container
+  .table
+  tbody
+  tr:hover
+  td
+  input[type="checkbox"] {
+  accent-color: #fff;
+  outline: none;
+}
+.data-container
+  .table-container
+  .table
+  tbody
+  tr:hover
+  td
+  input[type="checkbox"]:checked {
+  accent-color: var(--accent-color-2);
+  outline: none;
+}
