@@ -25,7 +25,7 @@ public class EmpleadosController : Controller {
     
         // Valida que los campos obligatorios no esten vacios
 
-        if (empleado.CEDULA == null || empleado.P_NOMBRE == null || empleado.P_APELLIDO == null || empleado.DIRECCION == null || empleado.ID_SECTOR == null || empleado.ID_CIUDAD == null || empleado.ID_PROVINCIA == null || empleado.PAIS_NACIMIENTO == null || empleado.TELEFONO_PRINCIPAL == null  || empleado.SEXO == null || empleado.ESTADO_CIVIL == null || empleado.FRECUENCIA_COBRO == null || empleado.CUENTA_BANCO == "" || empleado.ID_ENTIDAD_BANCARIA == null || empleado.ID_PUESTO == null || empleado.ID_DEPARTAMENTO == null || empleado.TIPO_SANGRE == null || empleado.ID_NIVEL_APROBACION == null || empleado.ESTATUS == null ) {
+        if (empleado.CEDULA == null || empleado.P_NOMBRE == null || empleado.P_APELLIDO == null || empleado.DIRECCION == null || empleado.ID_SECTOR == null || empleado.ID_CIUDAD == null || empleado.ID_PROVINCIA == null || empleado.PAIS_NACIMIENTO == null || empleado.TELEFONO_PRINCIPAL == null  || empleado.SEXO == null || empleado.ESTADO_CIVIL == null || empleado.FRECUENCIA_COBRO == null || empleado.CUENTA_BANCO == "" || empleado.ID_ENTIDAD_BANCARIA == null || empleado.ID_PUESTO == null || empleado.ID_DEPARTAMENTO == null || empleado.TIPO_SANGRE == null || empleado.ID_NIVEL_APROBACION < 0 || empleado.ESTATUS == null ) {
             throw new Exception("El servidor no puede procesar la solicitud, campos obligatorios vacios");
         };
 
@@ -61,7 +61,8 @@ public class EmpleadosController : Controller {
             NOMBRE_FAMILIAR_SECUNDARIO = empleado.NOMBRE_FAMILIAR_SECUNDARIO ?? "",
             TELEFONO_FAMILIAR_SECUNDARIO = empleado.TELEFONO_FAMILIAR_SECUNDARIO ?? "",
             PARENTESCO_FAMILIAR_SECUNDARIO = empleado.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
-            ID_NIVEL_APROBACION = empleado.ID_NIVEL_APROBACION ?? "",
+            ID_NIVEL_APROBACION = Convert.ToInt32(empleado.ID_NIVEL_APROBACION),
+            NOMBRE_NIVEL_APROBACION = empleado.NOMBRE_NIVEL_APROBACION,
             ESTATUS = empleado.ESTATUS,
             CREADO_POR = Convert.ToInt32(empleado.CREADO_POR)
         };
@@ -290,7 +291,7 @@ public class EmpleadosController : Controller {
             empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
             empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
             empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
-            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
+            empleadoValido.ID_NIVEL_APROBACION ?? 0, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
         );
         } catch (Exception ex) {
             TempData["openModal"] = true;
@@ -332,7 +333,7 @@ public class EmpleadosController : Controller {
             empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
             empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
             empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
-            empleadoValido.ID_NIVEL_APROBACION, empleadoValido.ESTATUS);
+            empleadoValido.ID_NIVEL_APROBACION ?? 0, empleadoValido.ESTATUS);
 
         } catch(Exception ex) {
             TempData["openModal"] = true;
