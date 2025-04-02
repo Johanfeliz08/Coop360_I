@@ -144,6 +144,18 @@
       <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"glx8b21oof"},{"Name":"integrity","Value":"sha256-7GCBoQ5NeJLUo\u002BHuQjELuRRiOdZOw8UjO0uJMygsS\u002B4="},{"Name":"label","Value":"_content/Coop360_I/css/Prestamos/Anexos/FormAnexos.css"}]]]></EndpointProperties>
       <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"340"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227GCBoQ5NeJLUo\u002BHuQjELuRRiOdZOw8UjO0uJMygsS\u002B4=\u0022"},{"Name":"Last-Modified","Value":"Tue, 01 Apr 2025 03:29:02 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Prestamos\NivelesAprobacion\FormNivelesAprobacion.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"373"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 02 Apr 2025 06:11:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.e0esih7a7g.css">
+      <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Prestamos\NivelesAprobacion\FormNivelesAprobacion.css'))</AssetFile>
+      <Selectors><![CDATA[[]]]></Selectors>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"e0esih7a7g"},{"Name":"integrity","Value":"sha256-7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0="},{"Name":"label","Value":"_content/Coop360_I/css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"373"},{"Name":"Content-Type","Value":"text/css"},{"Name":"ETag","Value":"\u00227lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0=\u0022"},{"Name":"Last-Modified","Value":"Wed, 02 Apr 2025 06:11:53 GMT"}]]]></ResponseHeaders>
+    </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/css/Prestamos/SolicitudPrestamo.css">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\css\Prestamos\SolicitudPrestamo.css'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>

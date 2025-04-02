@@ -49,6 +49,10 @@
       "PackagePath": "staticwebassets\\css\\Prestamos\\Anexos\\FormAnexos.css"
     },
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\NivelesAprobacion\\FormNivelesAprobacion.css",
+      "PackagePath": "staticwebassets\\css\\Prestamos\\NivelesAprobacion\\FormNivelesAprobacion.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudPrestamo.css",
       "PackagePath": "staticwebassets\\css\\Prestamos\\SolicitudPrestamo.css"
     },

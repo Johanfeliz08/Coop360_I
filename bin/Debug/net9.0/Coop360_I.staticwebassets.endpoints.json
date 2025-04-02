@@ -3579,6 +3579,304 @@
       ]
     },
     {
+      "Route": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css",
+      "AssetFile": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005494505495"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NlnI1FFch82+DyxXd8Oue7pYsmO3AA9KHJOlnUIQMvE=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 06:11:53 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css",
+      "AssetFile": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "373"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 06:11:53 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css.gz",
+      "AssetFile": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NlnI1FFch82+DyxXd8Oue7pYsmO3AA9KHJOlnUIQMvE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 06:11:53 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-NlnI1FFch82+DyxXd8Oue7pYsmO3AA9KHJOlnUIQMvE="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.e0esih7a7g.css",
+      "AssetFile": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.005494505495"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NlnI1FFch82+DyxXd8Oue7pYsmO3AA9KHJOlnUIQMvE=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 06:11:53 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e0esih7a7g"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.e0esih7a7g.css",
+      "AssetFile": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "373"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 06:11:53 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e0esih7a7g"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-7lt1aKl43TM0Cw5CPqHqp8z8g6yUwayplu47TnORsE0="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.e0esih7a7g.css.gz",
+      "AssetFile": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "181"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"NlnI1FFch82+DyxXd8Oue7pYsmO3AA9KHJOlnUIQMvE=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 06:11:53 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "e0esih7a7g"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-NlnI1FFch82+DyxXd8Oue7pYsmO3AA9KHJOlnUIQMvE="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css.gz"
+        }
+      ]
+    },
+    {
       "Route": "css/Prestamos/SolicitudPrestamo.css",
       "AssetFile": "css/Prestamos/SolicitudPrestamo.css.gz",
       "Selectors": [
