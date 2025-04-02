@@ -1,0 +1,17 @@
+.informacion-container {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 100px);
+  grid-template-areas: "nombre_nivel_aprobacion monto_desde monto_hasta";
+}
+
+#campo_nombre_nivel_aprobacion {
+  grid-area: nombre_nivel_aprobacion;
+}
+
+#campo_monto_desde {
+  grid-area: monto_desde;
+}
+
+#campo_monto_hasta {
+  grid-area: monto_hasta;
+}
