@@ -35,7 +35,7 @@ public class AuthController : Controller
     public IActionResult Login(int usuario, string contrasena)
     {   
         var AuthUsuario = _context.Usuarios
-        .FromSqlRaw("EXEC SP_OBTENER_USUARIO @CODIGO_EMPLEADO = {0}, @CONTRASENA = {1}", Convert.ToInt32(usuario), contrasena)
+        .FromSqlRaw("EXEC SP_BUSCAR_USUARIO @CODIGO_EMPLEADO = {0}, @CONTRASENA = {1}", Convert.ToInt32(usuario), contrasena)
         .AsEnumerable()
         .FirstOrDefault();
 

@@ -82,7 +82,7 @@ public class DepartamentosController : Controller {
 
         var ID_Departamento = Convert.ToInt32(IdDepartamento);    
         var departamento = _context.Departamentos
-        .FromSqlRaw("EXEC SP_OBTENER_DEPARTAMENTO @ID_DEPARTAMENTO = {0}", ID_Departamento)
+        .FromSqlRaw("EXEC SP_BUSCAR_DEPARTAMENTO @ID_DEPARTAMENTO = {0}", ID_Departamento)
         .AsEnumerable()
         .FirstOrDefault();
         

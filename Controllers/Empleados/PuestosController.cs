@@ -113,7 +113,7 @@ public class PuestosController : Controller {
 
         var ID_Puesto = Convert.ToInt32(IdPuesto);    
         var puesto = _context.Puestos
-        .FromSqlRaw("EXEC SP_OBTENER_PUESTO @ID_PUESTO = {0}", ID_Puesto)
+        .FromSqlRaw("EXEC SP_BUSCAR_PUESTO @ID_PUESTO = {0}", ID_Puesto)
         .AsEnumerable()
         .FirstOrDefault();
 
