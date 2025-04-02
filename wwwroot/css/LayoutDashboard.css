@@ -134,7 +134,7 @@ a {
 }
 
 .dropdown #opciones-prestamo {
-  height: 750px;
+  height: 800px;
   max-height: 0px;
 }
 
@@ -256,7 +256,7 @@ a {
 
 .dropdown:hover {
   height: auto;
-  max-height: 1000px;
+  max-height: 1500px;
   transition: all ease 0.5s;
 }
 
@@ -266,8 +266,8 @@ a {
 }
 
 .dropdown:hover > #opciones-prestamo {
-  height: 750px;
-  max-height: 750px;
+  height: 800px;
+  max-height: 800px;
 }
 
 .dropdown:hover > #opciones-empleados {
