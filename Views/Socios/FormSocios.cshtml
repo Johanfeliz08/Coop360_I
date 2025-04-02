@@ -1,0 +1,347 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Socios/FormSocios.css">
+  <link rel="stylesheet" href="~/css/Form.css" />
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("RegistroSocios", "Socios")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Socio" ? "Actualizar" : "Guardar")" asp-controller="Socios"
+      method="post">
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Informacion personal</h2>
+          </div>
+          <div class="campo" id="campo_codigo_socio" style="display: none;">
+            <label for="codigo_socio">Codigo socio</label>
+            <input type="text" name="codigo_socio" id="codigo_socio" value="@((Model.Socio?.CODIGO_SOCIO) ?? "")">
+          </div>
+          <div class="campo" id="campo_cedula">
+            <label for="cedula">Cedula</label>
+            <input required type="text" name="cedula" id="cedula" value="@((Model.Socio?.CEDULA) ?? "")">
+          </div>
+          <div class="campo" id="campo_p_nombre">
+            <label for="p_nombre">Primer nombre</label>
+            <input required type="text" name="p_nombre" id="p_nombre" value="@((Model.Socio?.P_NOMBRE) ?? "")">
+          </div>
+          <div class="campo" id="campo_s_nombre">
+            <label for="s_nombre">Segundo nombre</label>
+            <input type="text" name="s_nombre" id="s_nombre" value="@((Model.Socio?.S_NOMBRE) ?? "")">
+          </div>
+          <div class="campo" id="campo_p_apellido">
+            <label for="p_apellido">Primer apellido</label>
+            <input required type="text" name="p_apellido" id="p_apellido" value="@((Model.Socio?.P_APELLIDO) ?? "")">
+          </div>
+          <div class="campo" id="campo_s_apellido">
+            <label for="s_apellido">Segundo apellido</label>
+            <input type="text" name="s_apellido" id="s_apellido" value="@((Model.Socio?.S_APELLIDO) ?? "")">
+          </div>
+          <div class="campo" id="campo_fecha_nacimiento">
+            <label for="fecha_nacimiento">Fecha de nacimiento</label>
+            <input required type="text" name="fecha_nacimiento" id="fecha_nacimiento"
+              value="@((Model.Socio?.FECHA_NACIMIENTO) ?? "")">
+          </div>
+          <div class="campo" id="campo_sexo">
+            <label for="sexo">Sexo</label>
+            <select required name="sexo" id="sexo" val>
+              <option value="default" disabled selected>Seleccionar</option>
+              @{
+
+                if (Model.Socio?.SEXO == "M")
+                {
+                  <option value="M" selected>Masculino</option>
+                }
+                else
+                {
+                  <option value="M">Masculino</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Socio?.SEXO == "F")
+                {
+                  <option value="F" selected>Femenino</option>
+                }
+                else
+                {
+                  <option value="F">Femenino</option>
+
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_estado_civil">
+            <label for="estado_civil">Estado civil</label>
+            <select required name="ESTADO_CIVIL" id="estado_civil">
+              <option value="default" disabled selected>Seleccionar</option>
+
+              @{
+
+                if (Model.Socio?.ESTADO_CIVIL == "Casado/a")
+                {
+                  <option value="Casado/a" selected>Casado/a</option>
+                }
+                else
+                {
+                  <option value="Casado/a">Casado/a</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Socio?.ESTADO_CIVIL == "Soltero/a")
+                {
+                  <option value="Soltero/a" selected>Soltero/a</option>
+                }
+                else
+                {
+                  <option value="Soltero/a">Soltero/a</option>
+
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_pais_nacimiento">
+            <label for="pais_nacimiento">Pais de nacimiento</label>
+            <input required type="text" name="PAIS_NACIMIENTO" id="pais_nacimiento"
+              value="@((Model.Socio?.PAIS_NACIMIENTO) ?? "")">
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo contacto">
+          <div class="titulo-grupo" id="titulo-contacto">
+            <h2>Contacto</h2>
+          </div>
+          <div class="campo" id="campo_direccion">
+            <label for="direccion">Direccion</label>
+            <input required type="text" name="DIRECCION" id="direccion" value="@((Model.Socio?.DIRECCION) ?? "")">
+          </div>
+          <div class="campo" id="campo_telefono_principal">
+            <label for="telefono_principal">Telefono principal</label>
+            <input type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal"
+              value="@((Model.Socio?.TELEFONO_PRINCIPAL) ?? "")">
+          </div>
+          <div class="campo" id="campo_telefono_secundario">
+            <label for="telefono_secundario">Telefono secundario</label>
+            <input type="text" name="TELEFONO_SECUNDARIO" id="telefono_secundario"
+              value="@((Model.Socio?.TELEFONO_SECUNDARIO) ?? "")">
+          </div>
+          <div class="campo" id="campo_email">
+            <label for="email">Email</label>
+            <input type="text" name="EMAIL" id="email" value="@((Model.Socio?.EMAIL) ?? "")">
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo informacion-geografica">
+          <div class="titulo-grupo" id="titulo-informacion-geografica">
+            <h2>Informacion geografica</h2>
+          </div>
+          <div class="campo" id="campo_sector">
+            <label for="sector">Sector</label>
+            <select required name="ID_SECTOR" id="sector">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var sector in @Model.Sectores)
+              {
+
+                if (sector.ID_SECTOR == Model.Socio?.ID_SECTOR)
+                {
+                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR" selected>@sector.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR">@sector.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_ciudad">
+            <label for="ciudad">Ciudad</label>
+            <select required name="ID_CIUDAD" id="ciudad">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var ciudad in @Model.Ciudades)
+              {
+                if (ciudad.ID_CIUDAD == Model.Socio?.ID_CIUDAD)
+                {
+                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD" selected>@ciudad.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD">@ciudad.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_provincia">
+            <label for="provincia">Provincia</label>
+            <select required name="ID_PROVINCIA" id="provincia">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var provincia in @Model.Provincias)
+              {
+
+                if (provincia.ID_PROVINCIA == Model.Socio?.ID_PROVINCIA)
+                {
+                  <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA" selected>@provincia.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA">@provincia.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo informacion-laboral ">
+          <div class="titulo-grupo" id="titulo-informacion-laboral">
+            <h2>Informacion laboral</h2>
+          </div>
+          <div class="campo" id="campo_profesion">
+            <label for="profesion">Profesion</label>
+            <input type="text" name="PROFESION" id="profesion" value="@((Model.Socio?.PROFESION) ?? "")">
+          </div>
+          <div class="campo" id="campo_cargo">
+            <label for="cargo">Cargo</label>
+            <input type="text" name="CARGO" id="cargo" value="@((Model.Socio?.CARGO) ?? "")">
+          </div>
+          <div class="campo" id="campo_lugar_trabajo">
+            <label for="lugar_trabajo">Lugar trabajo</label>
+            <input type="text" name="LUGAR_TRABAJO" id="lugar_trabajo" value="@((Model.Socio?.LUGAR_TRABAJO) ?? "")">
+          </div>
+          <div class="campo" id="campo_direccion_trabajo">
+            <label for="direccion_trabajo">Direccion trabajo</label>
+            <input type="text" name="DIRECCION_TRABAJO" id="direccion_trabajo"
+              value="@((Model.Socio?.DIRECCION_TRABAJO) ?? "")">
+          </div>
+          <div class="campo" id="campo_telefono_trabajo">
+            <label for="telefono_trabajo">Telefono trabajo</label>
+            <input type="text" name="TELEFONO_TRABAJO" id="telefono_trabajo"
+              value="@((Model.Socio?.TELEFONO_TRABAJO) ?? "")">
+          </div>
+          <div class="campo" id="campo_tipo_contrato">
+            <label for="tipo_contrato">Tipo contrato</label>
+            <input type="text" name="TIPO_CONTRATO" id="tipo_contrato" value="@((Model.Socio?.TIPO_CONTRATO) ?? "")">
+          </div>
+          <div class="campo" id="campo_ingresos_mensuales">
+            <label for="ingresos_mensuales">Ingresos mensuales</label>
+            <input type="text" name="INGRESOS_MENSUALES" id="ingresos_mensuales"
+              value="@((Model.Socio?.INGRESOS_MENSUALES) ?? "")">
+          </div>
+          <div class="campo" id="campo_fecha_ingreso_trabajo">
+            <label for="fecha_ingreso_trabajo">Fecha ingresos trabajo</label>
+            <input type="text" name="FECHA_INGRESO_TRABAJO" id="fecha_ingreso_trabajo"
+              value="@((Model.Socio?.FECHA_INGRESO_TRABAJO) ?? "")">
+          </div>
+          <div class="campo" id="campo_frecuencia_cobro">
+            <label for="frecuencia_cobro">Frecuencia cobro</label>
+            <select required name="FRECUENCIA_COBRO" id="frecuencia_cobro">
+              <option value="default" disabled selected>Seleccionar</option>
+
+              @{
+
+                if (Model.Socio?.FRECUENCIA_COBRO == "Semanal")
+                {
+                  <option value="Semanal" selected>Semanal</option>
+                }
+                else
+                {
+                  <option value="Semanal">Semanal</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Socio?.FRECUENCIA_COBRO == "Quincenal")
+                {
+                  <option value="Quincenal" selected>Quincenal</option>
+                }
+                else
+                {
+                  <option value="Quincenal">Quincenal</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Socio?.FRECUENCIA_COBRO == "Mensual")
+                {
+                  <option value="Mensual" selected>Mensual</option>
+                }
+                else
+                {
+                  <option value="Mensual">Mensual</option>
+
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_estatus">
+            <label for="estatus">Estatus</label>
+            <select name="estatus" id="estatus">
+              <option value="default" disabled selected>Seleccionar</option>
+              @{
+
+                if (Model.Socio?.ESTATUS == "Activo")
+                {
+                  <option value="Activo" selected>Activo</option>
+                }
+                else
+                {
+                  <option value="Activo">Activo</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Socio?.ESTATUS == "Suspendido")
+                {
+                  <option value="Suspendido" selected>Suspendido</option>
+                }
+                else
+                {
+                  <option value="Suspendido">Suspendido</option>
+
+                }
+              }
+
+              @{
+
+                if (Model.Socio?.ESTATUS == "Inactivo")
+                {
+                  <option value="Inactivo" selected>Inactivo</option>
+                }
+                else
+                {
+                  <option value="Inactivo">Inactivo</option>
+
+                }
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>

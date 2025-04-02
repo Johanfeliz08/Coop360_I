@@ -17,6 +17,7 @@ namespace Coop360_I.Data
         // Definiciones de dbsets
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Empleado> Empleados { get; set; }
+        public DbSet<Socio> Socios { get; set; }
         public DbSet<Anexo> Anexos { get; set; }
         public DbSet<Codeudor> Codeudores { get; set; }
         public DbSet<Region> Regiones { get; set; }

@@ -1,0 +1,370 @@
+@{
+  ViewBag.Title = "Registro de Socios";
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  @* <link rel="stylesheet" href="~/css/Socios/RegistroSocios.css" asp-append-version="true" /> *@
+</head>
+
+@{
+
+  if (TempData["openModal"] != null)
+  {
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else if (TempData["Success"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+    else if (TempData["Confirmation"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
+;
+  }
+}
+}
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+  </div>
+  <div class="data-container">
+    <div class="acciones">
+      <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <a href="@Url.Action("Crear", "Socios")" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Agregar</span></a>
+    </div>
+    <div class="table-container">
+
+      <!-- Tabla de datos -->
+      <table id="table" class="table">
+        <thead>
+          <tr class="cabecera">
+            <!-- Columnas dinámicas -->
+            <th>
+              <div class="th">Editar</div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Codigo Socios</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Cedula</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Primer Nombre</span>
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>segundo Nomdre</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Primer Apellido</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Segundo Apellido</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Direccion</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Sector</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Ciudad</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Provincia</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Pais Nacimiento</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Telefono Principal</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Telefono Secundario</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Fecha Nacimiento</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Email</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Sexo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Estado Civil</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Fecha Creacion</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Profesion</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Cargo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Lugar Trabajo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Direccion Trabajo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Telefono Trabajo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Tipo Contrato</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Ingreso Mensuales</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Fecha Ingreso Trabajo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Frecuencia Cobro</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Estatus</span>
+              </div>
+            </th>
+
+            <th class="btn-eliminar">
+              <div class="th">Eliminar</div>
+            </th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo de filas dinámicas -->
+          @foreach (var Socio in Model)
+          {
+            <tr>
+              <td>
+                <a class="dato accion-editar" data-codigo-socio="@Socio.CODIGO_SOCIO"
+                  href="@Url.Action("Editar", "Socios", new { codigoSocio = @Socio.CODIGO_SOCIO })"><i
+                    class="fi fi-tc-pencil"></i></a>
+              </td>
+              <td>
+                <div class="dato">@Socio.CODIGO_SOCIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.CEDULA</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.P_NOMBRE</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.S_NOMBRE</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.P_APELLIDO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.S_APELLIDO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.DIRECCION</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.NOMBRE_SECTOR</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.NOMBRE_CIUDAD</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.NOMBRE_PROVINCIA</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.PAIS_NACIMIENTO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.TELEFONO_PRINCIPAL</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.TELEFONO_SECUNDARIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.FECHA_NACIMIENTO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.EMAIL</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.SEXO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.ESTADO_CIVIL</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.FECHA_CREACION</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.PROFESION</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.CARGO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.LUGAR_TRABAJO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.DIRECCION_TRABAJO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.TELEFONO_TRABAJO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.TIPO_CONTRATO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.INGRESOS_MENSUALES</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.FECHA_INGRESO_TRABAJO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.FRECUENCIA_COBRO</div>
+              </td>
+
+              <td>
+                <div class="dato">@Socio.ESTATUS</div>
+              </td>
+              <td>
+                <a class="dato accion-eliminar" data-id-socios="@Socio.CODIGO_SOCIO"
+                  href="@Url.Action("Eliminar", "Socios", new { codigoSocio = @Socio.CODIGO_SOCIO })"><i
+                    class="fi fi-tr-trash-xmark"></i></a>
+              </td>
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <!-- Menú flotante para ordenar -->
+      <div id="sort-menu" style="display:none; position:absolute;">
+        <ul>
+          <li><button data-order="asc">Orden Ascendente</button></li>
+          <li><button data-order="desc">Orden Descendente</button></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="~/js/Table.js"></script>

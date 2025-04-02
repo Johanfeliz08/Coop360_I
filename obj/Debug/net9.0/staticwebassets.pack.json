@@ -53,6 +53,10 @@
       "PackagePath": "staticwebassets\\css\\Prestamos\\SolicitudPrestamo.css"
     },
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Socios\\FormSocios.css",
+      "PackagePath": "staticwebassets\\css\\Socios\\FormSocios.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\site.css",
       "PackagePath": "staticwebassets\\css\\site.css"
     },

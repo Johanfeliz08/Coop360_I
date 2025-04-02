@@ -7,7 +7,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>@ViewData["Title"] - Coop360_I</title>
+  <title>@ViewData["Title"] - Coop360</title>
   <script type="importmap"></script>
   <link rel="stylesheet" href="~/css/site.css">
   <link rel="stylesheet" href="~/css/LayoutDashboard.css" asp-append-version="true" />
@@ -159,7 +159,6 @@
           <div class="titulo">
             <div class="opcion-icono">
               <i class="fi fi-tr-customer-care"></i>
-              @* <img src="../img/iconos/socios.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de socios</span>
           </div>
@@ -168,8 +167,9 @@
           </div>
         </div>
         <div class="opciones">
-          <li><a class="hvr-underline-from-center" href="#">Registrar socio </a></li>
-          <li><a class="hvr-underline-from-center" href="#">Consultar socios</a></li>
+          <li><a class="hvr-underline-from-center" href="@Url.Action("Crear", "Socios")">Registrar socio </a></li>
+          <li><a class="hvr-underline-from-center" href="@Url.Action("RegistroSocios", "Socios")">Consultar socios</a>
+          </li>
         </div>
       </ul>
 

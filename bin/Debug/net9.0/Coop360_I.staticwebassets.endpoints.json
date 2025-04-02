@@ -3877,6 +3877,304 @@
       ]
     },
     {
+      "Route": "css/Socios/FormSocios.css",
+      "AssetFile": "css/Socios/FormSocios.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001468428781"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z45p3wddql3XIUelU5fe/BMyZf1kJBlyZkicBSBzjCI=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 01:25:19 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0="
+        }
+      ]
+    },
+    {
+      "Route": "css/Socios/FormSocios.css",
+      "AssetFile": "css/Socios/FormSocios.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2980"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 01:25:19 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0="
+        }
+      ]
+    },
+    {
+      "Route": "css/Socios/FormSocios.css.gz",
+      "AssetFile": "css/Socios/FormSocios.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z45p3wddql3XIUelU5fe/BMyZf1kJBlyZkicBSBzjCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 01:25:19 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-z45p3wddql3XIUelU5fe/BMyZf1kJBlyZkicBSBzjCI="
+        }
+      ]
+    },
+    {
+      "Route": "css/Socios/FormSocios.ytxouctibr.css",
+      "AssetFile": "css/Socios/FormSocios.css.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001468428781"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z45p3wddql3XIUelU5fe/BMyZf1kJBlyZkicBSBzjCI=\""
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 01:25:19 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ytxouctibr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Socios/FormSocios.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/Socios/FormSocios.ytxouctibr.css",
+      "AssetFile": "css/Socios/FormSocios.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2980"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 01:25:19 GMT"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ytxouctibr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Rp++nILniVp38E7z4guNfK1eEebE0/9qa5T6VLXhYl0="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Socios/FormSocios.css"
+        }
+      ]
+    },
+    {
+      "Route": "css/Socios/FormSocios.ytxouctibr.css.gz",
+      "AssetFile": "css/Socios/FormSocios.css.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "680"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"z45p3wddql3XIUelU5fe/BMyZf1kJBlyZkicBSBzjCI=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Wed, 02 Apr 2025 01:25:19 GMT"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "ytxouctibr"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-z45p3wddql3XIUelU5fe/BMyZf1kJBlyZkicBSBzjCI="
+        },
+        {
+          "Name": "label",
+          "Value": "css/Socios/FormSocios.css.gz"
+        }
+      ]
+    },
+    {
       "Route": "css/site.4tuf4xxfzs.css",
       "AssetFile": "css/site.css.gz",
       "Selectors": [
@@ -3917,7 +4215,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:32:46 GMT"
+          "Value": "Tue, 01 Apr 2025 04:06:53 GMT"
         },
         {
           "Name": "Vary",
@@ -3966,7 +4264,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:32:46 GMT"
+          "Value": "Tue, 01 Apr 2025 04:06:53 GMT"
         }
       ],
       "EndpointProperties": [
@@ -4015,7 +4313,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:32:46 GMT"
+          "Value": "Tue, 01 Apr 2025 04:06:53 GMT"
         },
         {
           "Name": "Vary",
@@ -4078,7 +4376,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:32:46 GMT"
+          "Value": "Tue, 01 Apr 2025 04:06:53 GMT"
         },
         {
           "Name": "Vary",
@@ -4119,7 +4417,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:32:46 GMT"
+          "Value": "Tue, 01 Apr 2025 04:06:53 GMT"
         }
       ],
       "EndpointProperties": [
@@ -4160,7 +4458,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:32:46 GMT"
+          "Value": "Tue, 01 Apr 2025 04:06:53 GMT"
         },
         {
           "Name": "Vary",
