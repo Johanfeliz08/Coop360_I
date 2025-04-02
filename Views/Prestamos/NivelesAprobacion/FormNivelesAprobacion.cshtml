@@ -1,0 +1,53 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Prestamos/NivelesAprobacion/FormNivelesAprobacion.css">
+  <link rel="stylesheet" href="~/css/Form.css">
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("RegistroNivelesAprobacion", "NivelesAprobacion")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+
+    <form id="form" asp-action="@(ViewBag.Title == "Editar nivel aprobacion" ? "Actualizar" : "Guardar")"
+      asp-controller="NivelesAprobacion" method="post">
+
+      <div class="campos-container">
+        <div class="grupo informacion-container">
+          <div class="titulo-grupo" id="titulo">
+            <h2></h2>
+          </div>
+          <div class="campo" id="campo_id_nivel_aprobacion" style="display: none;">
+            <label for="id_nivel_aprobacion">ID NIVEL APROBACION</label>
+            <input type="text" name="id_nivel_aprobacion" id="id_nivel_aprobacion"
+              value="@((Model?.ID_NIVEL_APROBACION) ?? "")">
+          </div>
+          <div class="campo" id="campo_nombre_nivel_aprobacion">
+            <label for="NOMBRE">Nombre</label>
+            <input type="text" name="NOMBRE" id="NOMBRE" value="@((Model?.NOMBRE) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_monto_desde">
+            <label for="monto_desde">Monto desde</label>
+            <input type="text" name="monto_desde" id="monto_desde" value="@((Model?.MONTO_DESDE) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_monto_hasta">
+            <label for="monto_hasta">Monto hasta</label>
+            <input type="text" name="monto_hasta" id="monto_hasta" value="@((Model?.MONTO_HASTA) ?? "")" required>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>
