@@ -25,6 +25,28 @@ public class DashboardController : Controller
             return RedirectToAction("Login", "Auth");
         }
 
+        // var menu = new Menu
+        // {
+        //     Items = new List<Item> {
+        //         new Item {
+        //             Titulo = "Prestamos",
+        //             Icono = "fi fi-tr-handshake-deal-loan",
+        //             SubItems = new List<SubItem> {
+        //                 new SubItem { Titulo = "Crear solicitud de prestamo", Url = Url.Action("CrearSolicitudPrestamo", "Prestamos") },
+        //                 new SubItem { Titulo = "Consultar solicitudes de prestamo", Url = Url.Action("RegistroSolicitudPrestamos", "Prestamos") }
+        //             }
+        //         },
+        //         new Item {
+        //             Titulo = "Socios",
+        //             Icono = "fi fi-tr-customer-care",
+        //             SubItems = new List<SubItem> {
+        //                 new SubItem { Titulo = "Registrar socio", Url = Url.Action("Crear", "Socios") },
+        //                 new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "Socios") }
+        //             }
+        //         }
+        //     }
+        // };
+
         return View();
     }
 

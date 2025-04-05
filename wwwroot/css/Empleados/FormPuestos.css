@@ -2,7 +2,7 @@
   width: 200px;
 }
 
-/* Grid grupo informacion laboral */
+/* Grid grupo informacion general */
 
 .informacion-container {
   grid-template-columns: repeat(3, 1fr);

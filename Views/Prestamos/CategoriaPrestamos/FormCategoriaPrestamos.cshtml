@@ -1,0 +1,77 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Prestamos/CategoriaPrestamos/FormCategoriaPrestamos.css">
+  <link rel="stylesheet" href="~/css/Form.css">
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("RegistroCategoriaPrestamos", "CategoriaPrestamos")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+
+    <form id="form" asp-action="@(ViewBag.Title == "Editar categoria prestamo" ? "Actualizar" : "Guardar")"
+      asp-controller="CategoriaPrestamos" method="post">
+
+      <div class="campos-container">
+        <div class="grupo informacion-container">
+          <div class="titulo-grupo" id="titulo">
+            <h2></h2>
+          </div>
+          <div class="campo" id="campo_id_categoria_prestamo" style="display: none;">
+            <label for="ID_CATEGORIA_PRESTAMO">ID CATEGORIA PRESTAMO</label>
+            <input type="text" name="ID_CATEGORIA_PRESTAMO" id="ID_CATEGORIA_PRESTAMO"
+              value="@((Model?.ID_CATEGORIA_PRESTAMO) ?? "")">
+          </div>
+          <div class="campo" id="campo_nombre_categoria_prestamo">
+            <label for="NOMBRE">Nombre</label>
+            <input type="text" name="NOMBRE" id="NOMBRE" value="@((Model?.NOMBRE) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_descripcion_categoria_prestamo">
+            <label for="DESCRIPCION">Descripcion</label>
+            <input type="text" name="DESCRIPCION" id="DESCRIPCION" value="@((Model?.DESCRIPCION) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_tasa_interes_base_categoria_prestamo">
+            <label for="TASA_INTERES_BASE">Tasa de interes base</label>
+            <input type="text" name="TASA_INTERES_BASE" id="TASA_INTERES_BASE"
+              value="@((Model?.TASA_INTERES_BASE) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_tasa_interes_minima_categoria_prestamo">
+            <label for="TASA_INTERES_MINIMA">Tasa de interes minima</label>
+            <input type="text" name="TASA_INTERES_MINIMA" id="TASA_INTERES_MINIMA"
+              value="@((Model?.TASA_INTERES_MINIMA) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_tasa_interes_maxima_categoria_prestamo">
+            <label for="TASA_INTERES_MAXIMA">Tasa de interes maxima</label>
+            <input type="text" name="TASA_INTERES_MAXIMA" id="TASA_INTERES_MAXIMA"
+              value="@((Model?.TASA_INTERES_MAXIMA) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_plazo_estandar_categoria_prestamo">
+            <label for="PLAZO_ESTANDAR">Plazo estandar</label>
+            <input type="text" name="PLAZO_ESTANDAR" id="PLAZO_ESTANDAR" value="@((Model?.PLAZO_ESTANDAR) ?? "")"
+              required>
+          </div>
+          <div class="campo" id="campo_plazo_minimo_categoria_prestamo">
+            <label for="PLAZO_MINIMO">Plazo minimo</label>
+            <input type="text" name="PLAZO_MINIMO" id="PLAZO_MINIMO" value="@((Model?.PLAZO_MINIMO) ?? "")" required>
+          </div>
+          <div class="campo" id="campo_plazo_maximo_categoria_prestamo">
+            <label for="PLAZO_MAXIMO">Plazo maximo</label>
+            <input type="text" name="PLAZO_MAXIMO" id="PLAZO_MAXIMO" value="@((Model?.PLAZO_MAXIMO) ?? "")" required>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>

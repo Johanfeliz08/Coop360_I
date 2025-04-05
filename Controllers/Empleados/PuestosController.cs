@@ -157,6 +157,8 @@ public class PuestosController : Controller {
             TempData["ID"] = ID_PUESTO;
             return RedirectToAction("RegistroPuestos");
         }
+            TempData["openModal"] = true;
+            TempData["Error"] = "El ID del puesto no es valido";
             return RedirectToAction("RegistroPuestos");
     }   
 

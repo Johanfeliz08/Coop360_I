@@ -1,5 +1,29 @@
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
+@{
+  var menu = new Menu
+  {
+    Items = new List<Item> {
+new Item {
+Titulo = "Prestamos",
+Icono = "fi fi-tr-handshake-deal-loan",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Crear solicitud de prestamo", Url = Url.Action("Crear", "Prestamos") },
+new SubItem { Titulo = "Consultar solicitudes de prestamo", Url = Url.Action("RegistroSolicitudPrestamos", "Prestamos")
+}
+}
+},
+new Item {
+Titulo = "Socios",
+Icono = "fi fi-tr-customer-care",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Registrar socio", Url = Url.Action("Crear", "Socios") },
+new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "Socios") }
+}
+}
+}
+  };
+}
 
 <!DOCTYPE html>
 <html lang="en">
@@ -10,7 +34,7 @@
   <title>@ViewData["Title"] - Coop360</title>
   <script type="importmap"></script>
   <link rel="stylesheet" href="~/css/site.css">
-  <link rel="stylesheet" href="~/css/LayoutDashboard.css" asp-append-version="true" />
+  <link rel="stylesheet" href="~/css/LayoutDashboard.css" asp-append-version="true">
 </head>
 
 <body>
@@ -60,14 +84,41 @@
         <a id="test" class="opcion-link" href="@Url.Action("Home", "Dashboard")">
           <div class="icono">
             <i class="fi fi-tr-house-chimney"></i>
-            @* <img src="../img/iconos/inicio.png" alt="Icono inicio"> *@
           </div>
           <span class="nombre">Inicio</span>
         </a>
       </div>
 
+      @foreach (var item in menu.Items)
+      {
+        <ul class="dropdown option">
+          <div class="dropdown-titulo">
+            <div class="titulo">
+              <div class="opcion-icono">
+                <i class="@item.Icono"></i>
+              </div>
+              <span class="dropdown-title">@item.Titulo</span>
+            </div>
+            <div class="dropdown-icono">
+              <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
+            </div>
+          </div>
+          <div id="opciones-prestamo" class="opciones">
+            @{
+              if (item.SubItems != null)
+                @foreach (var subItem in item.SubItems)
+                {
+                  <li>
+                    <a class="hvr-underline-from-center" href="@subItem.Url"> @subItem.Titulo </a>
+                  </li>
+                }
+            }
+          </div>
+        </ul>
+      }
+
       @* Prestamos *@
-      <ul class="dropdown option">
+      @* <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
@@ -131,15 +182,14 @@
               anexos</a>
           </li>
         </div>
-      </ul>
+      </ul> *@
 
       @*Gestion de pagos  *@
-      <ul class="dropdown option">
+      @* <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
               <i class="fi fi-tr-sack-dollar"></i>
-              @* <img src="../img/iconos/cobros.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de pagos</span>
           </div>
@@ -151,10 +201,10 @@
           <li><a class="hvr-underline-from-center" href="#">Registrar pago </a></li>
           <li><a class="hvr-underline-from-center" href="#">Historial de pagos</a></li>
         </div>
-      </ul>
+      </ul> *@
 
       @*Gestion de socios  *@
-      <ul class="dropdown option">
+      @* <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
@@ -171,7 +221,7 @@
           <li><a class="hvr-underline-from-center" href="@Url.Action("RegistroSocios", "Socios")">Consultar socios</a>
           </li>
         </div>
-      </ul>
+      </ul> *@
 
       @*Gestion de empleados  *@
       <ul class="dropdown option">
@@ -179,7 +229,6 @@
           <div class="titulo">
             <div class="opcion-icono">
               <i class="fi fi-tr-employee-man"></i>
-              @* <img src="../img/iconos/empleados.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de empleados</span>
           </div>
@@ -204,12 +253,11 @@
       </ul>
 
       @*Gestion de codeudores  *@
-      <ul class="dropdown option">
+      @* <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
               <i class="fi fi-tr-user-salary"></i>
-              @* <img src="../img/iconos/codeudores.png" alt="Icono prestamos"> *@
             </div>
             <span class="dropdown-title">Gestion de codeudores</span>
           </div>
@@ -223,7 +271,7 @@
           <li><a class="hvr-underline-from-center" href="@Url.Action("RegistroCodeudores", "Codeudores")">Consultar
               codeudores</a></li>
         </div>
-      </ul>
+      </ul> *@
 
     </nav>
   </div>

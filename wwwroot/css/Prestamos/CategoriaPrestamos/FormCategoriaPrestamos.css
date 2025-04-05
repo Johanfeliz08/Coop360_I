@@ -1,0 +1,40 @@
+.informacion-container {
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  grid-template-areas:
+    "nombre descripcion descripcion"
+    "tasa_interes_base tasa_interes_minima tasa_interes_maxima"
+    "plazo_estandar plazo_minimo plazo_maximo";
+}
+
+#campo_nombre_categoria_prestamo {
+  grid-area: nombre;
+}
+
+#campo_descripcion_categoria_prestamo {
+  grid-area: descripcion;
+}
+
+#campo_tasa_interes_base_categoria_prestamo {
+  grid-area: tasa_interes_base;
+}
+
+#campo_tasa_interes_minima_categoria_prestamo {
+  grid-area: tasa_interes_minima;
+}
+
+#campo_tasa_interes_maxima_categoria_prestamo {
+  grid-area: tasa_interes_maxima;
+}
+
+#campo_plazo_estandar_categoria_prestamo {
+  grid-area: plazo_estandar;
+}
+
+#campo_plazo_minimo_categoria_prestamo {
+  grid-area: plazo_minimo;
+}
+
+#campo_plazo_maximo_categoria_prestamo {
+  grid-area: plazo_maximo;
+}

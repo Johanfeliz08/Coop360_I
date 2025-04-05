@@ -31,7 +31,7 @@ public class Socio {
     public string? TELEFONO_TRABAJO { get; set; }
     public required string TIPO_CONTRATO { get; set; }
     public required decimal INGRESOS_MENSUALES { get; set; }
-    public DateOnly FECHA_INGRESO_TRABAJO { get; set; }
+    public DateTime FECHA_INGRESO_TRABAJO { get; set; }
     public required string FRECUENCIA_COBRO { get; set; }
     public required string ESTATUS { get; set; }
     public int? CREADO_POR { get; set; }

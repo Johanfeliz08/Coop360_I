@@ -28,6 +28,7 @@ namespace Coop360_I.Data
         public DbSet<Departamento> Departamentos { get; set; }
         public DbSet<NivelAprobacion> NivelesAprobacion { get; set; }
         public DbSet<EntidadBancaria> EntidadesBancarias { get; set; }
+        public DbSet<CategoriaPrestamo> CategoriaPrestamo { get; set; }
 
     }
 }

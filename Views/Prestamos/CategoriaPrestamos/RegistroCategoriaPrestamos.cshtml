@@ -1,5 +1,5 @@
 @{
-  ViewBag.Title = "Registro de Nivel de Aprobacion";
+  ViewBag.Title = "Registro de categoria prestamos";
   Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
 }
 
@@ -38,7 +38,7 @@
   <div class="data-container">
     <div class="acciones">
       <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
-      <a href="@Url.Action("Crear", "NivelesAprobacion")" class="btn btn-nuevo"><i
+      <a href="@Url.Action("Crear", "CategoriaPrestamos")" class="btn btn-nuevo"><i
           class="fi fi-rr-plus"></i><span>Agregar</span></a>
     </div>
     <div class="table-container">
@@ -68,22 +68,55 @@
             </th>
             <th>
               <div class="th">
-                <span>ID</span>
+                <span>ID Categoria Prestamo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Nombre</span>
               </div>
             </th>
             <th>
               <div class="th">
-                <span>Nivel de Aprobacion</span>
+                <span>Descripcion</span>
               </div>
             </th>
+
             <th>
               <div class="th">
-                <span>Monto Desde</span>
+                <span>Tasa de interes base</span>
               </div>
             </th>
+
             <th>
               <div class="th">
-                <span>Monto Hasta</span>
+                <span>Tasa de interes minima</span>
+              </div>
+            </th>
+
+
+            <th>
+              <div class="th">
+                <span>Tasa de interes maxima</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Plazo estandar</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Plazo minimo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Plazo maximo</span>
               </div>
             </th>
             <th class="btn-eliminar">
@@ -93,30 +126,54 @@
         </thead>
         <tbody>
           <!-- Ejemplo de filas dinámicas -->
-          @foreach (var nivelAprobacion in Model)
+          @foreach (var categoriaPrestamo in Model)
           {
             <tr>
               <td>
-                <a class="dato accion-editar" data-id-nivel-aprovacion="@nivelAprobacion.ID_NIVEL_APROBACION"
-                  href="@Url.Action("Editar", "NivelesAprobacion", new { idNivelAprobacion = @nivelAprobacion.ID_NIVEL_APROBACION })"><i
+                <a class="dato accion-editar" data-id-categoria-prestamo="@categoriaPrestamo.ID_CATEGORIA_PRESTAMO"
+                  href="@Url.Action("Editar", "CategoriaPrestamos", new { idCategoriaPrestamo = @categoriaPrestamo.ID_CATEGORIA_PRESTAMO })"><i
                     class="fi fi-tc-pencil"></i></a>
               </td>
               <td>
-                <div class="dato">@nivelAprobacion.ID_NIVEL_APROBACION</div>
-              </td>
-              <td>
-                <div class="dato">@nivelAprobacion.NOMBRE</div>
-              </td>
-              <td>
-                <div class="dato">@nivelAprobacion.MONTO_DESDE</div>
+                <div class="dato">@categoriaPrestamo.ID_CATEGORIA_PRESTAMO</div>
               </td>
 
               <td>
-                <div class="dato">@nivelAprobacion.MONTO_HASTA</div>
+                <div class="dato">@categoriaPrestamo.NOMBRE</div>
               </td>
+
               <td>
-                <a class="dato accion-eliminar" data-id-nivel-aprobacion="@nivelAprobacion.ID_NIVEL_APROBACION"
-                  href="@Url.Action("Eliminar", "NivelesAprobacion", new { IdNivelAprobacion = @nivelAprobacion.ID_NIVEL_APROBACION })"><i
+                <div class="dato">@categoriaPrestamo.DESCRIPCION</div>
+              </td>
+
+              <td>
+                <div class="dato">@categoriaPrestamo.TASA_INTERES_BASE</div>
+              </td>
+
+              <td>
+                <div class="dato">@categoriaPrestamo.TASA_INTERES_MINIMA</div>
+              </td>
+
+              <td>
+                <div class="dato">@categoriaPrestamo.TASA_INTERES_MAXIMA</div>
+              </td>
+
+              <td>
+                <div class="dato">@categoriaPrestamo.PLAZO_ESTANDAR</div>
+              </td>
+
+              <td>
+                <div class="dato">@categoriaPrestamo.PLAZO_MINIMO</div>
+              </td>
+
+              <td>
+                <div class="dato">@categoriaPrestamo.PLAZO_MAXIMO</div>
+              </td>
+
+
+              <td>
+                <a class="dato accion-eliminar" data-id-categoria-prestamo="@categoriaPrestamo.ID_CATEGORIA_PRESTAMO"
+                  href="@Url.Action("Eliminar", "CategoriaPrestamos", new { IdCategoriaPrestamo = @categoriaPrestamo.ID_CATEGORIA_PRESTAMO })"><i
                     class="fi fi-tr-trash-xmark"></i></a>
               </td>
             </tr>
