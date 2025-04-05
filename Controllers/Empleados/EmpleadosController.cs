@@ -4,6 +4,7 @@ using Coop360_I.Models;
 using Microsoft.EntityFrameworkCore;
 using Coop360_I.Data;
 using Coop360_I.Controllers;
+using System.Text.Json;
 
 namespace Coop360_I.Controllers;
 public class EmpleadosController : Controller {
@@ -75,6 +76,22 @@ public class EmpleadosController : Controller {
     // View con tabla que muestra los datos
     [HttpGet]
     public IActionResult RegistroEmpleados() {
+
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
+            return RedirectToAction("Login", "Auth");
+        }
+        
+        var permisosJson = HttpContext.Session.GetString("Permisos");
+        var permisos = JsonSerializer.Deserialize<List<Permiso>>(permisosJson ?? "[]");
+        
+        var viewPermiso = "ConsultarEmpleados";
+        var validarPermiso = permisos?.Where(permiso => permiso.PERMISO == viewPermiso).FirstOrDefault();
+
+        if (validarPermiso == null) {
+            return RedirectToAction("Home", "Dashboard");
+        }
+
+
 
         var empleados = _context.Empleados
         .FromSqlRaw("EXEC SP_LEER_EMPLEADOS")

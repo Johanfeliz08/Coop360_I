@@ -4,7 +4,7 @@ using Coop360_I.Models;
 using Coop360_I.Data;
 using Microsoft.AspNetCore.Http;
 using Microsoft.EntityFrameworkCore;
-
+using System.Text.Json;
 
 namespace Coop360_I.Controllers;
 
@@ -41,6 +41,7 @@ public class AuthController : Controller
 
         if (AuthUsuario != null)
         {
+
             // Guardar usuario en la sesion
             HttpContext.Session.SetInt32("ID_USUARIO", AuthUsuario.ID_USUARIO);
             HttpContext.Session.SetInt32("USUARIO", AuthUsuario.CODIGO_EMPLEADO);
@@ -50,6 +51,19 @@ public class AuthController : Controller
             HttpContext.Session.SetString("S_APELLIDO", AuthUsuario.S_APELLIDO);
             HttpContext.Session.SetString("FECHA_CREACION", AuthUsuario.FECHA_CREACION.ToString());
 
+             if (AuthUsuario.ID_USUARIO > 0) { 
+                var permisos = _context
+                .Set<Permiso>()
+                .FromSqlRaw("EXEC SP_GET_ALL_USER_PERMISSIONS @ID_USUARIO = {0}", Convert.ToInt32(AuthUsuario.ID_USUARIO))
+                .AsEnumerable()
+                .ToList();
+
+                // Convertir lista de permisos a json para poder ser almacenado en la sesion
+                var permisosJson = JsonSerializer.Serialize(permisos);
+                HttpContext.Session.SetString("Permisos", permisosJson);
+                // Console.WriteLine(permisosJson);
+            }
+
             return RedirectToAction("Home", "Dashboard");
         }
         else
@@ -57,7 +71,6 @@ public class AuthController : Controller
             TempData["openModal"] = true;
             TempData["Error"] = "Usuario o contraseña incorrectos.";
             Console.WriteLine("Error al iniciar sesion, usuario o contraseña incorrectos"); // Mensaje para el log en el server
-            // ViewBag.Error = "Usuario o contraseña incorrectos.";
             return View();
         }
     }

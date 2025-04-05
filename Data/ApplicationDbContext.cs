@@ -14,6 +14,11 @@ namespace Coop360_I.Data
         {
         }
 
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
+            modelBuilder.Entity<Permiso>().HasNoKey().ToView(null);
+        }
+
         // Definiciones de dbsets
         public DbSet<Usuario> Usuarios { get; set; }
         public DbSet<Empleado> Empleados { get; set; }

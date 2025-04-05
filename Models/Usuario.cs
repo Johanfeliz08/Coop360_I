@@ -14,4 +14,5 @@ public class Usuario {
     public required string S_NOMBRE { get; set; }
     public required string P_APELLIDO { get; set; }
     public required string S_APELLIDO { get; set; }
+
 }

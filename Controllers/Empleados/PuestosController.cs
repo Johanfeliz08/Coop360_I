@@ -4,6 +4,7 @@ using Coop360_I.Models;
 using Microsoft.EntityFrameworkCore;
 using Coop360_I.Data;
 using Coop360_I.Controllers;
+using System.Text.Json;
 
 namespace Coop360_I.Controllers;
 public class PuestosController : Controller {
@@ -45,6 +46,16 @@ public class PuestosController : Controller {
         if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
                 return RedirectToAction("Login", "Auth");
         } 
+
+        var permisosJson = HttpContext.Session.GetString("Permisos");
+        var permisos = JsonSerializer.Deserialize<List<Permiso>>(permisosJson ?? "[]");
+        
+        var viewPermiso = "ConsultarPuestos";
+        var validarPermiso = permisos?.Where(permiso => permiso.PERMISO == viewPermiso).FirstOrDefault();
+
+        if (validarPermiso == null) {
+            return RedirectToAction("Home", "Dashboard");
+        }
 
         var puestos = _context.Puestos
         .FromSqlRaw("EXEC SP_LEER_PUESTOS")

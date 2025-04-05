@@ -1,28 +1,77 @@
+@using System.Text.Json
 @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
 
 @{
-  var menu = new Menu
-  {
-    Items = new List<Item> {
-new Item {
-Titulo = "Prestamos",
-Icono = "fi fi-tr-handshake-deal-loan",
-SubItems = new List<SubItem> {
-new SubItem { Titulo = "Crear solicitud de prestamo", Url = Url.Action("Crear", "Prestamos") },
-new SubItem { Titulo = "Consultar solicitudes de prestamo", Url = Url.Action("RegistroSolicitudPrestamos", "Prestamos")
-}
-}
-},
-new Item {
-Titulo = "Socios",
-Icono = "fi fi-tr-customer-care",
-SubItems = new List<SubItem> {
-new SubItem { Titulo = "Registrar socio", Url = Url.Action("Crear", "Socios") },
-new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "Socios") }
-}
-}
-}
-  };
+       var menu = new Menu
+        {
+            Items = new List<Item> {
+                new Item {
+                    Titulo = "Gestion de Prestamos",
+                    Icono = "fi fi-tr-handshake-deal-loan",
+                    ModuloPermiso = "Prestamos",
+                    SubItems = new List<SubItem> {
+                        new SubItem { Titulo = "Crear solicitud de prestamo", Url = Url.Action("CrearSolicitudPrestamo", "Prestamos"), Permiso = "RegistrarSolicitudPrestamo" },
+                        new SubItem { Titulo = "Consultar solicitudes de prestamo", Url = Url.Action("RegistroSolicitudPrestamos", "Prestamos"), Permiso = "ConsultarSolicitudesPrestamos" },
+                        new SubItem { Titulo = "Aprobacion de prestamos", Url = Url.Action("AprobacionPrestamos", "Prestamos"), Permiso = "AprobacionSolicitudPrestamos" },
+                        new SubItem { Titulo = "Consultar prestamos", Url = Url.Action("RegistroPrestamos", "Prestamos"), Permiso = "ConsultarPrestamos" },
+                        new SubItem { Titulo = "Registrar categoria de prestamo", Url = Url.Action("Crear", "CategoriaPrestamos"), Permiso = "RegistrarCategoriaPrestamo"    },
+                        new SubItem { Titulo = "Consultar categorias de prestamo", Url = Url.Action("RegistroCategoriaPrestamos", "CategoriaPrestamos"), Permiso = "ConsultarCategoriasPrestamos"   },
+                        new SubItem { Titulo = "Registrar nivel de aprobacion", Url = Url.Action("Crear", "NivelesAprobacion"), Permiso = "RegistrarNivelAprobacion"},
+                        new SubItem { Titulo = "Consultar niveles de aprobacion", Url = Url.Action("RegistroNivelesAprobacion", "NivelesAprobacion"), Permiso = "ConsultarNivelesAprobacion"},
+                        new SubItem { Titulo = "Registrar anexo", Url = Url.Action("Crear", "Anexos"), Permiso = "RegistrarAnexo" },
+                        new SubItem { Titulo = "Consultar anexos", Url = Url.Action("RegistroAnexos", "Anexos"), Permiso = "ConsultarAnexos" }                    }
+                },
+                new Item {
+                    Titulo = "Gestion de pagos",
+                    Icono = "fi fi-tr-sack-dollar",
+                    ModuloPermiso = "Pagos",
+                    SubItems = new List<SubItem> {
+                        new SubItem { Titulo = "Registrar pago", Url = Url.Action("Crear", "Pagos"), Permiso = "RegistrarPago" },
+                        new SubItem { Titulo = "Consultar pagos", Url = Url.Action("RegistroPagos", "Pagos"), Permiso = "ConsultarPagos" },
+                    }
+                },
+                new Item {
+                    Titulo = "Gestion de socios",
+                    Icono = "fi fi-tr-customer-care",
+                    ModuloPermiso = "Socios",
+                    SubItems = new List<SubItem> {
+                        new SubItem { Titulo = "Registrar socio", Url = Url.Action("Crear", "Socios"), Permiso = "RegistrarSocio" },
+                        new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "Socios"), Permiso = "ConsultarSocios" }
+                    }
+                },
+                new Item {
+                    Titulo = "Gestion de empleados",
+                    Icono = "fi fi-tr-employee-man",
+                    ModuloPermiso = "Empleados",
+                    SubItems = new List<SubItem> {
+                        new SubItem { Titulo = "Registrar empleado", Url = Url.Action("Crear", "Empleados"), Permiso = "RegistrarEmpleado" },
+                        new SubItem { Titulo = "Consultar empledos", Url = Url.Action("RegistroEmpleados", "Empleados"), Permiso = "ConsultarEmpleados" },
+                        new SubItem { Titulo = "Registrar puesto", Url = Url.Action("Crear", "Puestos"), Permiso = "RegistrarPuesto" },
+                        new SubItem { Titulo = "Consultar puestos", Url = Url.Action("RegistroPuestos", "Puestos"), Permiso = "ConsultarPuestos" },
+                        new SubItem { Titulo = "Registrar departamento", Url = Url.Action("Crear", "Departamentos"), Permiso = "RegistrarDepartamento" },
+                        new SubItem { Titulo = "Consultar departamentos", Url = Url.Action("RegistroDepartamentos", "Departamentos"), Permiso = "ConsultarDepartamentos" },
+                        new SubItem { Titulo = "Registrar entidad bancaria", Url = Url.Action("Crear", "EntidadesBancarias"), Permiso = "RegistrarEntidadBancaria" },
+                        new SubItem { Titulo = "Consultar entidades bancarias", Url = Url.Action("RegistroEntidadBancaria", "EntidadesBancarias"), Permiso = "ConsultarEntidadesBancarias" }
+                    }
+                },
+                new Item {
+                    Titulo = "Gestion de codeudores",
+                    Icono = "fi fi-tr-user-salary",
+                    ModuloPermiso = "Codeudores",
+                    SubItems = new List<SubItem> {
+                        new SubItem { Titulo = "Registrar codeudor", Url = Url.Action("Crear", "Codeudores"), Permiso = "RegistrarCodeudor" },
+                        new SubItem { Titulo = "Consultar codeudores", Url = Url.Action("RegistroCodeudores", "Codeudores"), Permiso = "ConsultarCodeudores" },
+                    }                    
+
+                }
+            }
+        };
+
+  var session = HttpContextAccessor.HttpContext?.Session;
+  var permisosJson = session?.GetString("Permisos");
+  var permisos = JsonSerializer.Deserialize<List<Permiso>>(permisosJson ?? "[]");
+
+
 }
 
 <!DOCTYPE html>
@@ -43,7 +92,7 @@ new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "S
       <div class="nombre-usuario">
         @{
 
-          var session = HttpContextAccessor.HttpContext?.Session;
+          @* var session = HttpContextAccessor.HttpContext?.Session; *@
           var P_NOMBRE = session?.GetString("P_NOMBRE") ?? "Invitado";
           var S_NOMBRE = session?.GetString("S_NOMBRE") ?? "";
           var P_APELLIDO = session?.GetString("P_APELLIDO") ?? "";
@@ -89,33 +138,95 @@ new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "S
         </a>
       </div>
 
-      @foreach (var item in menu.Items)
-      {
-        <ul class="dropdown option">
-          <div class="dropdown-titulo">
-            <div class="titulo">
-              <div class="opcion-icono">
-                <i class="@item.Icono"></i>
-              </div>
-              <span class="dropdown-title">@item.Titulo</span>
-            </div>
-            <div class="dropdown-icono">
-              <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
-            </div>
-          </div>
-          <div id="opciones-prestamo" class="opciones">
-            @{
-              if (item.SubItems != null)
-                @foreach (var subItem in item.SubItems)
-                {
-                  <li>
-                    <a class="hvr-underline-from-center" href="@subItem.Url"> @subItem.Titulo </a>
-                  </li>
-                }
+      @{
+        if (permisos != null)
+        {
+          foreach (var item in menu.Items)
+          {
+
+            var subItemsPermitidos = item.SubItems?.Where(subItem => permisos.Any(permiso => permiso.PERMISO ==
+            subItem.Permiso)).ToList();
+
+            if (subItemsPermitidos != null && subItemsPermitidos.Any())
+            {
+              <ul class="dropdown option">
+                <div class="dropdown-titulo">
+                  <div class="titulo">
+                    <div class="opcion-icono">
+                      <i class="@item.Icono"></i>
+                    </div>
+                    <span class="dropdown-title">@item.Titulo</span>
+                  </div>
+                  <div class="dropdown-icono">
+                    <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
+                  </div>
+                </div>
+                <div id="opciones-prestamo" class="opciones">
+                  @{
+                    if (subItemsPermitidos != null)
+                    {
+                      @foreach (var subItem in subItemsPermitidos)
+                      {
+                        <li>
+                          <a class="hvr-underline-from-center" href="@subItem.Url"> @subItem.Titulo </a>
+                        </li>
+                      }
+                    }
+                  }
+                </div>
+              </ul>
+
             }
-          </div>
-        </ul>
+          }
+
+        }
       }
+
+      @* @{
+        if (permisos != null)
+        {
+          @foreach (var permiso in permisos)
+          {
+
+            foreach (var item in menu.Items)
+            {
+              if (permiso.MODULO == item.ModuloPermiso)
+              {
+                <ul class="dropdown option">
+                  <div class="dropdown-titulo">
+                    <div class="titulo">
+                      <div class="opcion-icono">
+                        <i class="@item.Icono"></i>
+                      </div>
+                      <span class="dropdown-title">@item.Titulo</span>
+                    </div>
+                    <div class="dropdown-icono">
+                      <img src="../img/iconos/flecha-menu-desplegable.png" alt="">
+                    </div>
+                  </div>
+                  <div id="opciones-prestamo" class="opciones">
+                    @{
+                      if (item.SubItems != null)
+                        @foreach (var subItem in item.SubItems)
+                        {
+
+                          if (permiso.PERMISO == subItem.Permiso)
+                          {
+                            <li>
+                              <a class="hvr-underline-from-center" href="@subItem.Url"> @subItem.Titulo </a>
+                            </li>
+                          }
+                        }
+                    }
+                  </div>
+                </ul>
+
+              }
+            }
+
+          }
+        }
+      } *@
 
       @* Prestamos *@
       @* <ul class="dropdown option">
@@ -224,7 +335,7 @@ new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "S
       </ul> *@
 
       @*Gestion de empleados  *@
-      <ul class="dropdown option">
+      @* <ul class="dropdown option">
         <div class="dropdown-titulo">
           <div class="titulo">
             <div class="opcion-icono">
@@ -250,7 +361,7 @@ new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "S
           <li><a class="hvr-underline-from-center"
               href="@Url.Action("RegistroDepartamentos", "Departamentos")">Consultar departamentos</a></li>
         </div>
-      </ul>
+      </ul> *@
 
       @*Gestion de codeudores  *@
       @* <ul class="dropdown option">

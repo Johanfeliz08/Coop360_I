@@ -83,6 +83,10 @@ public class SociosController : Controller {
         .FromSqlRaw("EXEC SP_LEER_SOCIOS")
         .AsEnumerable()
         .ToList();
+        
+        if (Socios == null) {
+            throw new Exception("Error al cargar los datos de los socios");
+        }
 
         return View("registroSocios", Socios);
 
@@ -129,72 +133,67 @@ public class SociosController : Controller {
 
     [HttpGet]
     public IActionResult Editar(string codigoSocio) {
-
         // Obtiene el CODIGO_EMPLEADO del usuario logeado y redirige al login si no hay un usuario logeado
-        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
-        {
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null) {
             return RedirectToAction("Login", "Auth");
         }
 
         // Valida la clave primaria necesaria para editar la entidad
-        if (codigoSocio != null) {
+        if (codigoSocio == null) {
+            TempData["openModal"] = true;
+            TempData["Error"] = "El código del socio no es válido";
+            return RedirectToAction("RegistroSocios");
+        }
 
+        try {
             var provincias = _context.Provincias
-            .FromSqlRaw("EXEC SP_LEER_PROVINCIAS")
-            .AsEnumerable()
-            .ToList();
+                .FromSqlRaw("EXEC SP_LEER_PROVINCIAS")
+                .AsEnumerable()
+                .ToList();
 
             var ciudades = _context.Ciudades
-            .FromSqlRaw("EXEC SP_LEER_CIUDADES")
-            .AsEnumerable()
-            .ToList();
+                .FromSqlRaw("EXEC SP_LEER_CIUDADES")
+                .AsEnumerable()
+                .ToList();
 
             var sectores = _context.Sectores
-            .FromSqlRaw("EXEC SP_LEER_SECTORES")
-            .AsEnumerable()
-            .ToList();
+                .FromSqlRaw("EXEC SP_LEER_SECTORES")
+                .AsEnumerable()
+                .ToList();
 
             if (provincias == null || ciudades == null || sectores == null) {
                 throw new Exception("Error al cargar los datos del formulario");
             }
 
             var codigo_socio = Convert.ToInt32(codigoSocio);
-
-            try {
-
-                var socio = _context.Socios
+            
+            var rawsocio = _context.Socios
                 .FromSqlRaw("EXEC SP_BUSCAR_SOCIO @CODIGO_SOCIO = {0}", codigo_socio)
                 .AsEnumerable()
                 .FirstOrDefault();
 
-            try {
-  
-                var TestviewModel = new SocioViewModel {
+            if (rawsocio == null) {
+                throw new Exception("No se encontró el socio especificado");
+            }
+
+            var socio = validarSocio(rawsocio);
+
+            var viewModel = new SocioViewModel {
                 Provincias = provincias,
                 Ciudades = ciudades,
                 Sectores = sectores,
                 Socio = socio
             };
 
-                ViewBag.Title = "Editar Socio";
-                return View("FormSocios", TestviewModel);
+            ViewBag.Title = "Editar Socio";
+            return View("FormSocios", viewModel);
 
-            } catch (Exception ex) {
-                Console.WriteLine("Error al asignar los datos al viewModel: " + ex.Message + ex.Source); // Mensaje para el log en el server
-                throw new Exception("Error al asignar los datos al viewModel" + ex.Message + ex.Source);
-            }
-
-            } catch (Exception ex) {
-                
-                Console.WriteLine("Error con el socio: " + ex.Message + ex.Source); // Mensaje para el log en el server
-                throw new Exception("error con el socio: " + ex.Message + ex.Source);
-
-            }
-
+        } catch (Exception ex) {
+            TempData["openModal"] = true;
+            TempData["Error"] = "Error al cargar los datos: " + ex.Message;
+            Console.WriteLine("Error en Editar: " + ex.Message + " Source: " + ex.Source);
+            return RedirectToAction("RegistroSocios");
         }
-
-        return RedirectToAction("Crear");
-
     }
 
 
