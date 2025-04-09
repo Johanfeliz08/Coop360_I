@@ -1,0 +1,88 @@
+.informacion-usuario {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(3, 100px);
+  grid-template-areas:
+    "titulo titulo"
+    "codigo_empleado empleado"
+    "rol .";
+}
+
+#titulo {
+  grid-area: titulo;
+}
+
+#campo_codigo_empleado {
+  grid-area: codigo_empleado;
+}
+
+#campo_nombre_empleado {
+  grid-area: empleado;
+}
+
+#campo_rol {
+  grid-area: rol;
+}
+
+.permisos-usuarios {
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: 100px auto;
+  grid-template-areas:
+    "titulo titulo"
+    "permisos permisos";
+}
+
+#titulo-grupo {
+  grid-area: titulo;
+}
+
+.permisos-container {
+  gap: 50px;
+}
+
+ul {
+  list-style: none;
+}
+
+.permisos-container .lista-modulos .modulo {
+  padding: 10px 0px;
+}
+
+.titulo {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+
+.lista-modulos .modulo .titulo .modulo-icono i {
+  font-size: 25px;
+  color: var(--accent-color);
+}
+
+.lista-modulos .modulo .titulo span {
+  font-size: 20px;
+  color: var(--accent-color);
+}
+
+.lista-modulos .modulo .opciones-modulo ul {
+  display: flex;
+  flex-direction: column;
+  padding-left: 40px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  gap: 5px;
+}
+
+.lista-modulos .modulo .opciones-modulo .opcion {
+  display: flex;
+  flex-direction: row;
+  justify-content: left;
+  align-items: center;
+  gap: 10px;
+}
+
+.lista-modulos .modulo .opciones-modulo .opcion input[type="checkbox"] {
+  width: 20px;
+  height: 20px;
+}

@@ -16,7 +16,8 @@ namespace Coop360_I.Data
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.Entity<Permiso>().HasNoKey().ToView(null);
+            modelBuilder.Entity<PermisoCuenta>().HasNoKey().ToView(null);
+            modelBuilder.Entity<CuentaUsuario>().HasNoKey().ToView(null);
         }
 
         // Definiciones de dbsets
@@ -26,7 +27,7 @@ namespace Coop360_I.Data
         public DbSet<Anexo> Anexos { get; set; }
         public DbSet<Codeudor> Codeudores { get; set; }
         public DbSet<Region> Regiones { get; set; }
-        public DbSet<Provincia> Provincias { get; set; }  
+        public DbSet<Provincia> Provincias { get; set; }
         public DbSet<Ciudad> Ciudades { get; set; }
         public DbSet<Sector> Sectores { get; set; }
         public DbSet<Puesto> Puestos { get; set; }
@@ -34,6 +35,7 @@ namespace Coop360_I.Data
         public DbSet<NivelAprobacion> NivelesAprobacion { get; set; }
         public DbSet<EntidadBancaria> EntidadesBancarias { get; set; }
         public DbSet<CategoriaPrestamo> CategoriaPrestamo { get; set; }
-
+        public DbSet<Rol> Roles { get; set; }
+        public DbSet<Permiso> Permisos { get; set; }
     }
 }

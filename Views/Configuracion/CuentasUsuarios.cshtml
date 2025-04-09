@@ -1,0 +1,152 @@
+|@{
+ViewBag.Title = "Configuracion de usuarios";
+Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+</head>
+
+@{
+
+  if (TempData["openModal"] != null)
+  {
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else if (TempData["Success"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+    else if (TempData["Confirmation"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
+;
+  }
+}
+}
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+  </div>
+  <div class="data-container">
+    <div class="acciones">
+      <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      @* <a href="@Url.Action("CrearCuentaUsuario", "Configuracion")" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Agregar</span></a> *@
+    </div>
+    <div class="table-container">
+      @{
+
+        if (Model.Count == 0)
+        {
+          <div class="no-data">
+            <div class="icono">
+              <i class="fi fi-tr-drawer-empty"></i>
+            </div>
+            <div class="mensaje">
+              <span>No hay datos disponibles.</span>
+            </div>
+          </div>
+        }
+
+      }
+      <!-- Tabla de datos -->
+      <table id="table" class="table">
+        <thead>
+          <tr class="cabecera">
+            <!-- Columnas dinámicas -->
+            <th>
+              <div class="th">Editar</div>
+            </th>
+            <th>
+              <div class="th">
+                <span>ID Usuario</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Codigo Empleado</span>
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Empleado</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>ID Rol</span>
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Rol</span>
+              </div>
+            </th>
+            @* <th class="btn-eliminar">
+              <div class="th">Eliminar</div>
+            </th> *@
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Ejemplo de filas dinámicas -->
+          @foreach (var usuario in Model)
+          {
+            <tr>
+              <td>
+                <a class="dato accion-editar" data-idUsuario="@usuario.ID_USUARIO"
+                  href="@Url.Action("EditarCuentaUsuario", "Configuracion", new { IdUsuario = @usuario.ID_USUARIO })"><i
+                    class="fi fi-tc-pencil"></i></a>
+              </td>
+
+              <td>
+                <div class="dato">@usuario.ID_USUARIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@usuario.CODIGO_EMPLEADO</div>
+              </td>
+
+              <td>
+                <div class="dato">@usuario.NOMBRE_EMPLEADO</div>
+              </td>
+
+              <td>
+                <div class="dato">@usuario.ID_ROL</div>
+              </td>
+              <td>
+                <div class="dato">@usuario.NOMBRE_ROL</div>
+              </td>
+
+              @* <td>
+                <a class="dato accion-eliminar" data-idUsuario="@usuario.ID_USUARIO"
+                  href="@Url.Action("EliminarCuentaUsuario", "Configuracion", new { idUsuario = @usuario.ID_USUARIO })"><i
+                    class="fi fi-tr-trash-xmark"></i></a>
+              </td> *@
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <!-- Menú flotante para ordenar -->
+      <div id="sort-menu" style="display:none; position:absolute;">
+        <ul>
+          <li><button data-order="asc">Orden Ascendente</button></li>
+          <li><button data-order="desc">Orden Descendente</button></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="~/js/Table.js"></script>
