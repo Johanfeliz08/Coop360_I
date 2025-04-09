@@ -1,11 +1,15 @@
 using System.ComponentModel.DataAnnotations;
 
-public class Permiso {
+public class Permiso
+{
 
-    [Key]
-    public required string PERMISO { get; set; }
-    public string? MODULO { get; set; }
+  [Key]
+  public required int ID_PERMISO { get; set; }
+
+  public required string NOMBRE { get; set; }
+
+  public required string DESCRIPCION { get; set; }
+
+  public required string MODULO { get; set; }
 
 }
-
-
