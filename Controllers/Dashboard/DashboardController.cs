@@ -84,8 +84,18 @@ public class DashboardController : Controller
                     SubItems = new List<SubItem> {
                         new SubItem { Titulo = "Registrar codeudor", Url = Url.Action("Crear", "Codeudores"), Permiso = "RegistrarCodeudor" },
                         new SubItem { Titulo = "Consultar codeudores", Url = Url.Action("RegistroCodeudores", "Codeudores"), Permiso = "ConsultarCodeudores" },
-                    }                    
+                    }
 
+                },
+                new Item {
+                    Titulo = "Configuracion",
+                    Icono = "fi fi-tc-settings",
+                    ModuloPermiso = "Configuracion",
+                    SubItems = new List<SubItem> {
+                        new SubItem { Titulo = "Usuarios", Url = Url.Action("Usuarios", "Configuracion"), Permiso = "ConfigurarUsuarios" },
+                        new SubItem { Titulo = "Roles", Url = Url.Action("Roles", "Configuracion"), Permiso = "ConfigurarRoles" },
+                        new SubItem { Titulo = "Permisos", Url = Url.Action("Permisos", "Configuracion"), Permiso = "ConfigurarPermisos" }
+                    }
                 }
             }
         };

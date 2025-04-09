@@ -33,7 +33,7 @@ public class AuthController : Controller
 
     [HttpPost]
     public IActionResult Login(int usuario, string contrasena)
-    {   
+    {
         var AuthUsuario = _context.Usuarios
         .FromSqlRaw("EXEC SP_BUSCAR_USUARIO @CODIGO_EMPLEADO = {0}, @CONTRASENA = {1}", Convert.ToInt32(usuario), contrasena)
         .AsEnumerable()
@@ -51,9 +51,10 @@ public class AuthController : Controller
             HttpContext.Session.SetString("S_APELLIDO", AuthUsuario.S_APELLIDO);
             HttpContext.Session.SetString("FECHA_CREACION", AuthUsuario.FECHA_CREACION.ToString());
 
-             if (AuthUsuario.ID_USUARIO > 0) { 
+            if (AuthUsuario.ID_USUARIO > 0)
+            {
                 var permisos = _context
-                .Set<Permiso>()
+                .Set<PermisoCuenta>()
                 .FromSqlRaw("EXEC SP_GET_ALL_USER_PERMISSIONS @ID_USUARIO = {0}", Convert.ToInt32(AuthUsuario.ID_USUARIO))
                 .AsEnumerable()
                 .ToList();
@@ -61,7 +62,6 @@ public class AuthController : Controller
                 // Convertir lista de permisos a json para poder ser almacenado en la sesion
                 var permisosJson = JsonSerializer.Serialize(permisos);
                 HttpContext.Session.SetString("Permisos", permisosJson);
-                // Console.WriteLine(permisosJson);
             }
 
             return RedirectToAction("Home", "Dashboard");
