@@ -1,12 +1,15 @@
 
 using System.ComponentModel.DataAnnotations;
 
-public class Usuario {
+public class Usuario
+{
 
     [Key]
     public int ID_USUARIO { get; set; }
     public required int CODIGO_EMPLEADO { get; set; }
     public required string CONTRASENA { get; set; }
+
+    public required int ID_ROL { get; set; }
 
     public DateTime FECHA_CREACION { get; set; }
 
@@ -14,5 +17,7 @@ public class Usuario {
     public required string S_NOMBRE { get; set; }
     public required string P_APELLIDO { get; set; }
     public required string S_APELLIDO { get; set; }
+
+    public required int ID_NIVEL_APROBACION { get; set; }
 
 }

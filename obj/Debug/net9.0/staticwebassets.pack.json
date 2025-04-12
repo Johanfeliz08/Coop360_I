@@ -65,6 +65,10 @@
       "PackagePath": "staticwebassets\\css\\Prestamos\\SolicitudPrestamo.css"
     },
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css",
+      "PackagePath": "staticwebassets\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Socios\\FormSocios.css",
       "PackagePath": "staticwebassets\\css\\Socios\\FormSocios.css"
     },
@@ -135,6 +139,10 @@
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Form.js",
       "PackagePath": "staticwebassets\\js\\Form.js"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js",
+      "PackagePath": "staticwebassets\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js"
     },
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Table.js",

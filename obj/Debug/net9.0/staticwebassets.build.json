@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "n+6e6AMqy2kCF+fiyhL9iqwbPaY86IxlrOrzJYeWKM8=",
+  "Hash": "6LwfFLqKlxJU3vUkV3D1czRVtnrcdo8sFvofY107mjY=",
   "Source": "Coop360_I",
   "BasePath": "_content/Coop360_I",
   "Mode": "Default",
@@ -78,6 +78,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\lib\\jquery-validation\\dist\\additional-methods.min.js"
+    },
+    {
+      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\1b92iu3bew-5ipweew5fc.gz",
+      "SourceId": "Coop360_I",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Coop360_I",
+      "RelativePath": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo#[.{fingerprint=5ipweew5fc}]?.css.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css"
     },
     {
       "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\25ji82a2kd-e0esih7a7g.gz",
@@ -1023,6 +1044,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Form.js"
+    },
+    {
+      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\kq8ztzhuk3-mos0ukyxrv.gz",
+      "SourceId": "Coop360_I",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\",
+      "BasePath": "_content/Coop360_I",
+      "RelativePath": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo#[.{fingerprint=mos0ukyxrv}]?.js.gz",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Alternative",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js",
+      "AssetTraitName": "Content-Encoding",
+      "AssetTraitValue": "gzip",
+      "Fingerprint": "2i4zkzze4d",
+      "Integrity": "dk5zXjakCNH4Ou+cy14yQg8P6spdI6lCZn/a0glTOkY=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js"
     },
     {
       "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\lg4olzrahw-fvhpjtyr6v.gz",
@@ -2033,6 +2075,27 @@
       "OriginalItemSpec": "wwwroot\\css\\Prestamos\\NivelesAprobacion\\FormNivelesAprobacion.css"
     },
     {
+      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css",
+      "SourceId": "Coop360_I",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\",
+      "BasePath": "_content/Coop360_I",
+      "RelativePath": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo#[.{fingerprint}]?.css",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "5ipweew5fc",
+      "Integrity": "47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css"
+    },
+    {
       "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudPrestamo.css",
       "SourceId": "Coop360_I",
       "SourceType": "Discovered",
@@ -2430,6 +2493,27 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\Form.js"
+    },
+    {
+      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js",
+      "SourceId": "Coop360_I",
+      "SourceType": "Discovered",
+      "ContentRoot": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\",
+      "BasePath": "_content/Coop360_I",
+      "RelativePath": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo#[.{fingerprint}]?.js",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "AssetMergeBehavior": "",
+      "AssetMergeSource": "",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "Fingerprint": "mos0ukyxrv",
+      "Integrity": "Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA=",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js"
     },
     {
       "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\site.js",
@@ -6442,7 +6526,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:33:06 GMT"
+          "Value": "Sat, 12 Apr 2025 00:46:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6495,7 +6579,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:33:06 GMT"
+          "Value": "Sat, 12 Apr 2025 00:46:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6532,7 +6616,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:33:06 GMT"
+          "Value": "Sat, 12 Apr 2025 00:46:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6579,7 +6663,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:33:06 GMT"
+          "Value": "Sat, 12 Apr 2025 00:46:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6640,7 +6724,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:33:06 GMT"
+          "Value": "Sat, 12 Apr 2025 00:46:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -6685,7 +6769,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Tue, 01 Apr 2025 03:33:06 GMT"
+          "Value": "Sat, 12 Apr 2025 00:46:37 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -8202,6 +8286,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-NlnI1FFch82+DyxXd8Oue7pYsmO3AA9KHJOlnUIQMvE="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.5ipweew5fc.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\1b92iu3bew-5ipweew5fc.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "1.000000000000"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 00:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.5ipweew5fc.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 00:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.5ipweew5fc.css.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\1b92iu3bew-5ipweew5fc.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 00:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "5ipweew5fc"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\1b92iu3bew-5ipweew5fc.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "1.000000000000"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 00:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 00:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
+        }
+      ]
+    },
+    {
+      "Route": "css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\1b92iu3bew-5ipweew5fc.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "0"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 00:45:50 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-47DEQpj8HBSa+/TImW+5JCeuQeRkm5NMpJWZG3hSuFU="
         }
       ]
     },
@@ -10840,6 +11222,304 @@
         {
           "Name": "integrity",
           "Value": "sha256-VLkKsobuLSB8YlIoiC6bmQI2le0jy2VSZFTf6cHgzAE="
+        }
+      ]
+    },
+    {
+      "Route": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\kq8ztzhuk3-mos0ukyxrv.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001230012300"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "812"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dk5zXjakCNH4Ou+cy14yQg8P6spdI6lCZn/a0glTOkY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:39:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA="
+        }
+      ]
+    },
+    {
+      "Route": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:39:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA="
+        }
+      ]
+    },
+    {
+      "Route": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\kq8ztzhuk3-mos0ukyxrv.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "812"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dk5zXjakCNH4Ou+cy14yQg8P6spdI6lCZn/a0glTOkY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:39:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-dk5zXjakCNH4Ou+cy14yQg8P6spdI6lCZn/a0glTOkY="
+        }
+      ]
+    },
+    {
+      "Route": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.mos0ukyxrv.js",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\kq8ztzhuk3-mos0ukyxrv.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.001230012300"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "812"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dk5zXjakCNH4Ou+cy14yQg8P6spdI6lCZn/a0glTOkY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:39:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mos0ukyxrv"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA="
+        }
+      ]
+    },
+    {
+      "Route": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.mos0ukyxrv.js",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\Prestamos\\SolicitudesPrestamos\\FormSolicitudPrestamo.js",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "2592"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:39:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mos0ukyxrv"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-Np8TgH+z82oSkFwuDsVt6U5tTprHaXWpCQcl+5MPgxA="
+        }
+      ]
+    },
+    {
+      "Route": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.mos0ukyxrv.js.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\kq8ztzhuk3-mos0ukyxrv.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "812"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/javascript"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"dk5zXjakCNH4Ou+cy14yQg8P6spdI6lCZn/a0glTOkY=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 12 Apr 2025 06:39:59 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "max-age=31536000, immutable"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "fingerprint",
+          "Value": "mos0ukyxrv"
+        },
+        {
+          "Name": "label",
+          "Value": "js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js.gz"
+        },
+        {
+          "Name": "integrity",
+          "Value": "sha256-dk5zXjakCNH4Ou+cy14yQg8P6spdI6lCZn/a0glTOkY="
         }
       ]
     },

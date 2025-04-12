@@ -12,16 +12,16 @@ ModuloPermiso = "Prestamos",
 SubItems = new List<SubItem> {
 new SubItem { Titulo = "Crear solicitud de prestamo", Url = Url.Action("CrearSolicitudPrestamo", "Prestamos"), Permiso =
 "RegistrarSolicitudPrestamo" },
-new SubItem { Titulo = "Consultar solicitudes de prestamo", Url = Url.Action("RegistroSolicitudPrestamos", "Prestamos"),
+new SubItem { Titulo = "Consultar solicitudes de prestamo", Url = Url.Action("SolicitudesPrestamos", "Prestamos"),
 Permiso = "ConsultarSolicitudesPrestamos" },
 new SubItem { Titulo = "Aprobacion de prestamos", Url = Url.Action("AprobacionPrestamos", "Prestamos"), Permiso =
 "AprobacionSolicitudPrestamos" },
 new SubItem { Titulo = "Consultar prestamos", Url = Url.Action("RegistroPrestamos", "Prestamos"), Permiso =
 "ConsultarPrestamos" },
-new SubItem { Titulo = "Registrar categoria de prestamo", Url = Url.Action("Crear", "CategoriasPrestamo"), Permiso =
+new SubItem { Titulo = "Registrar categoria de prestamo", Url = Url.Action("Crear", "CategoriaPrestamos"), Permiso =
 "RegistrarCategoriaPrestamo" },
-new SubItem { Titulo = "Consultar categorias de prestamo", Url = Url.Action("RegistroCategoriasPrestamo",
-"CategoriaPrestamo"), Permiso = "ConsultarCategoriasPrestamos" },
+new SubItem { Titulo = "Consultar categorias de prestamo", Url = Url.Action("RegistroCategoriaPrestamos",
+"CategoriaPrestamos"), Permiso = "ConsultarCategoriasPrestamos" },
 new SubItem { Titulo = "Registrar nivel de aprobacion", Url = Url.Action("Crear", "NivelesAprobacion"), Permiso =
 "RegistrarNivelAprobacion"},
 new SubItem { Titulo = "Consultar niveles de aprobacion", Url = Url.Action("RegistroNivelesAprobacion",
@@ -64,7 +64,7 @@ new SubItem { Titulo = "Consultar departamentos", Url = Url.Action("RegistroDepa
 "ConsultarDepartamentos" },
 new SubItem { Titulo = "Registrar entidad bancaria", Url = Url.Action("Crear", "EntidadesBancarias"), Permiso =
 "RegistrarEntidadBancaria" },
-new SubItem { Titulo = "Consultar entidades bancarias", Url = Url.Action("RegistroEntidadBancaria",
+new SubItem { Titulo = "Consultar entidades bancarias", Url = Url.Action("RegistroEntidadesBancarias",
 "EntidadesBancarias"), Permiso = "ConsultarEntidadesBancarias" }
 }
 },

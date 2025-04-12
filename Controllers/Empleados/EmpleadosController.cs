@@ -31,11 +31,16 @@ public class EmpleadosController : Controller
 
         // Valida que los campos obligatorios no esten vacios
 
-        if (empleado.CEDULA == null || empleado.P_NOMBRE == null || empleado.P_APELLIDO == null || empleado.DIRECCION == null || empleado.ID_SECTOR == null || empleado.ID_CIUDAD == null || empleado.ID_PROVINCIA == null || empleado.PAIS_NACIMIENTO == null || empleado.TELEFONO_PRINCIPAL == null || empleado.SEXO == null || empleado.ESTADO_CIVIL == null || empleado.FRECUENCIA_COBRO == null || empleado.CUENTA_BANCO == "" || empleado.ID_ENTIDAD_BANCARIA == null || empleado.ID_PUESTO == null || empleado.ID_DEPARTAMENTO == null || empleado.TIPO_SANGRE == null || empleado.ID_NIVEL_APROBACION < 0 || empleado.ESTATUS == null)
+        if (empleado.CEDULA == null || empleado.P_NOMBRE == null || empleado.P_APELLIDO == null || empleado.DIRECCION == null || empleado.ID_SECTOR == null || empleado.ID_CIUDAD == null || empleado.ID_PROVINCIA == null || empleado.PAIS_NACIMIENTO == null || empleado.TELEFONO_PRINCIPAL == null || empleado.SEXO == null || empleado.ESTADO_CIVIL == null || empleado.FRECUENCIA_COBRO == null || empleado.CUENTA_BANCO == "" || empleado.ID_PUESTO == null || empleado.ID_DEPARTAMENTO == null || empleado.TIPO_SANGRE == null || empleado.ID_NIVEL_APROBACION < 0 || empleado.ESTATUS == null)
         {
             throw new Exception("El servidor no puede procesar la solicitud, campos obligatorios vacios");
         }
         ;
+
+        if (empleado.ID_ENTIDAD_BANCARIA == null)
+        {
+            Console.WriteLine("empleado.ID_ENTIDAD_BANCARIA NULL BEFORE: " + empleado.ID_ENTIDAD_BANCARIA);
+        }
 
         // Validacion y conversion de datos
         var empleadoValido = new Empleado
@@ -59,7 +64,7 @@ public class EmpleadosController : Controller
             ESTADO_CIVIL = empleado.ESTADO_CIVIL,
             FRECUENCIA_COBRO = empleado.FRECUENCIA_COBRO,
             CUENTA_BANCO = empleado.CUENTA_BANCO,
-            ID_ENTIDAD_BANCARIA = Convert.ToInt32(empleado.ID_ENTIDAD_BANCARIA ?? 0),
+            ID_ENTIDAD_BANCARIA = empleado.ID_ENTIDAD_BANCARIA != null ? Convert.ToInt32(empleado.ID_ENTIDAD_BANCARIA) : null,
             ID_PUESTO = Convert.ToInt32(empleado.ID_PUESTO ?? 0),
             ID_DEPARTAMENTO = Convert.ToInt32(empleado.ID_DEPARTAMENTO ?? 0),
             TIPO_SANGRE = empleado.TIPO_SANGRE,
@@ -74,6 +79,9 @@ public class EmpleadosController : Controller
             ESTATUS = empleado.ESTATUS,
             CREADO_POR = Convert.ToInt32(empleado.CREADO_POR)
         };
+
+        Console.WriteLine("empleadoValido.ID_ENTIDAD_BANCARIA: after " + empleadoValido.ID_ENTIDAD_BANCARIA);
+
 
         return empleadoValido;
     }
@@ -331,7 +339,7 @@ public class EmpleadosController : Controller
                 empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
                 empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
                 empleadoValido.SEXO, empleadoValido.ESTADO_CIVIL, empleadoValido.FRECUENCIA_COBRO, empleadoValido.CUENTA_BANCO,
-                empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
+                empleadoValido.ID_ENTIDAD_BANCARIA, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
                 empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
                 empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
                 empleadoValido.ID_NIVEL_APROBACION ?? 0, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
@@ -378,7 +386,7 @@ public class EmpleadosController : Controller
             empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
             empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
             empleadoValido.SEXO, empleadoValido.ESTADO_CIVIL, empleadoValido.FRECUENCIA_COBRO, empleadoValido.CUENTA_BANCO,
-            empleadoValido.ID_ENTIDAD_BANCARIA ?? 0, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
+            empleadoValido.ID_ENTIDAD_BANCARIA, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
             empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
             empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
             empleadoValido.ID_NIVEL_APROBACION ?? 0, empleadoValido.ESTATUS);

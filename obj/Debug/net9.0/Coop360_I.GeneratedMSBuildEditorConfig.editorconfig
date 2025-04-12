@@ -56,6 +56,14 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXERlcGFydGFtZW50b3NcUmVnaXN0cm9EZXBhcnRhbWVudG9zLmNzaHRtbA==
 build_metadata.AdditionalFiles.CssScope = 
 
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Empleados/EntidadesBancarias/FormEntidadesBancarias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEVudGlkYWRlc0JhbmNhcmlhc1xGb3JtRW50aWRhZGVzQmFuY2FyaWFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Empleados/EntidadesBancarias/RegistroEntidadesBancarias.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEVudGlkYWRlc0JhbmNhcmlhc1xSZWdpc3Ryb0VudGlkYWRlc0JhbmNhcmlhcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Empleados/FormEmpleados.cshtml]
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRW1wbGVhZG9zXEZvcm1FbXBsZWFkb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
@@ -112,8 +120,12 @@ build_metadata.AdditionalFiles.CssScope =
 build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9zXE5pdmVsZXNBcHJvYmFjaW9uXFJlZ2lzdHJvTml2ZWxlc0Fwcm9iYWNpb24uY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
-[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Prestamos/SolicitudPrestamo.cshtml]
-build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9zXFNvbGljaXR1ZFByZXN0YW1vLmNzaHRtbA==
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9zXFNvbGljaXR1ZGVzUHJlc3RhbW9zXEZvcm1Tb2xpY2l0dWRQcmVzdGFtby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Prestamos/SolicitudesPrestamos/RegistroSolicitudesPrestamos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUHJlc3RhbW9zXFNvbGljaXR1ZGVzUHJlc3RhbW9zXFJlZ2lzdHJvU29saWNpdHVkZXNQcmVzdGFtb3MuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
 
 [J:/Universidad - Ingenieria en Sistemas/Enero - Abril 2024/Proyecto Integrador I - Teofilo/Fase C - Desarrollo/Coop360_I/Views/Shared/Components/Modal/ModalView.cshtml]

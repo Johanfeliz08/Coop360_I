@@ -305,3 +305,5 @@ D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\saa8dtaixl-3xkgk6ao7t.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\saa8dtaixl-bf5o5kfax9.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\rf4a2iz3q6-d2lf6la9ho.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\1b92iu3bew-5ipweew5fc.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\kq8ztzhuk3-mos0ukyxrv.gz

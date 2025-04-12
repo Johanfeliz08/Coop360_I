@@ -1,0 +1,188 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css">
+  <link rel="stylesheet" href="~/css/Form.css" />
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("SolicitudesPrestamos", "Prestamos")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Solicitud de Prestamo" ? "Actualizar" : "Guardar")"
+      asp-controller="Prestamos" method="post">
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Detalles de la solicitud</h2>
+          </div>
+          <div class="campo" id="campo_id_solicitud" style="display: none;">
+            <label for="id_solicitud">ID Solicitud</label>
+            <input type="text" name="id_solicitud" id="id_solicitud" value="@Model.SolicitudPrestamo?.ID_SOLICITUD">
+          </div>
+          <div class="campo" id="campo_socios">
+            <label for="codigo_socio">Socio</label>
+            <select required name="CODIGO_SOCIO" id="codigo_socio">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var socio in @Model.Socios)
+              {
+
+                if (socio.CODIGO_SOCIO == Model.SolicitudPrestamo?.CODIGO_SOCIO)
+                {
+                  <option id="@socio.CODIGO_SOCIO" value="@socio.CODIGO_SOCIO" selected>@socio.P_NOMBRE @socio.S_NOMBRE
+                    @socio.P_APELLIDO @socio.S_APELLIDO</option>
+                }
+                else
+                {
+                  <option id="@socio.CODIGO_SOCIO" value="@socio.CODIGO_SOCIO">
+                    @socio.P_NOMBRE @socio.S_NOMBRE @socio.P_APELLIDO @socio.S_APELLIDO</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_categoria_prestamo">
+            <label for="categoria_prestamo">Categoria de prestamo</label>
+            <select required name="ID_CATEGORIA_PRESTAMO" id="id_categoria_prestamo">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var categoriaPrestamo in @Model.CategoriasPrestamos)
+              {
+
+                if (categoriaPrestamo.ID_CATEGORIA_PRESTAMO == Model.SolicitudPrestamo?.ID_CATEGORIA_PRESTAMO)
+                {
+                  <option id="@categoriaPrestamo.ID_CATEGORIA_PRESTAMO" value="@categoriaPrestamo.ID_CATEGORIA_PRESTAMO"
+                    selected>@categoriaPrestamo.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@categoriaPrestamo.ID_CATEGORIA_PRESTAMO" value="@categoriaPrestamo.ID_CATEGORIA_PRESTAMO">
+                    @categoriaPrestamo.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_monto_solicitado">
+            <label for="monto_solicitado">Monto solicitado</label>
+            <input type="text" name="monto_solicitado" id="monto_solicitado"
+              value="@Model.SolicitudPrestamo?.MONTO_SOLICITADO">
+          </div>
+          <div class="campo" id="campo_plazo_meses">
+            <label for="plazo_meses">Plazo (Meses)</label>
+            <input type="text" name="plazo_meses" id="plazo_meses" value="@Model.SolicitudPrestamo?.PLAZO_MESES">
+          </div>
+          <div class="campo" id="campo_tasa_interes">
+            <label for="tasa_interes">Tasa de interes (%)</label>
+            <input type="text" name="tasa_interes" id="tasa_interes" value="@Model.SolicitudPrestamo?.TASA_INTERES">
+          </div>
+          <div class="campo" id="campo_cantidad_cuotas">
+            <label for="cantidad_cuotas">Cantidad de cuotas</label>
+            <input type="text" name="cantidad_cuotas" id="cantidad_cuotas"
+              value="@Model.SolicitudPrestamo?.CANTIDAD_CUOTAS">
+          </div>
+          <div class="campo" id="campo_monto_por_cuota">
+            <label for="monto_por_cuota">Monto por cuota</label>
+            <input type="text" name="monto_por_cuota" id="monto_por_cuota"
+              value="@Model.SolicitudPrestamo?.MONTO_POR_CUOTA">
+          </div>
+          @{
+            if (ViewBag.Title == "Editar Solicitud de Prestamo")
+            {
+              <div class="campo" id="campo_estatus">
+                <label for="estatus">Estatus</label>
+                <select name="estatus" id="estatus">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  <option value="Anulada">Anulada</option>
+                </select>
+              </div>
+            }
+          }
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Garantias</h2>
+          </div>
+          <div class="campo" id="campo_codeudor_principal">
+            <label for="codeudor_principal">Codeudor principal</label>
+            <select required name="CODIGO_CODEUDOR_PRINCIPAL" id="codigo_codeudor_principal">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var codeudorPrincipal in @Model.Codeudores)
+              {
+
+                if (codeudorPrincipal.CODIGO_CODEUDOR == Model.SolicitudPrestamo?.CODIGO_CODEUDOR_PRINCIPAL)
+                {
+                  <option id="@codeudorPrincipal.CODIGO_CODEUDOR" value="@codeudorPrincipal.CODIGO_CODEUDOR" selected>
+                    @codeudorPrincipal.P_NOMBRE @codeudorPrincipal.S_NOMBRE @codeudorPrincipal.P_APELLIDO
+                    @codeudorPrincipal.S_APELLIDO</option>
+                }
+                else
+                {
+                  <option id="@codeudorPrincipal.CODIGO_CODEUDOR" value="@codeudorPrincipal.CODIGO_CODEUDOR">
+                    @codeudorPrincipal.P_NOMBRE @codeudorPrincipal.S_NOMBRE @codeudorPrincipal.P_APELLIDO
+                    @codeudorPrincipal.S_APELLIDO</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_codeudor_secundario">
+            <label for="codeudor_secundario">Codeudor secundario</label>
+            <select required name="CODIGO_CODEUDOR_SECUNDARIO" id="codigo_codeudor_secundario">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var codeudorSecundario in @Model.Codeudores)
+              {
+
+                if (codeudorSecundario.CODIGO_CODEUDOR == Model.SolicitudPrestamo?.CODIGO_CODEUDOR_SECUNDARIO)
+                {
+                  <option id="@codeudorSecundario.CODIGO_CODEUDOR" value="@codeudorSecundario.CODIGO_CODEUDOR" selected>
+                    @codeudorSecundario.P_NOMBRE @codeudorSecundario.S_NOMBRE @codeudorSecundario.P_APELLIDO
+                    @codeudorSecundario.S_APELLIDO</option>
+                }
+                else
+                {
+                  <option id="@codeudorSecundario.CODIGO_CODEUDOR" value="@codeudorSecundario.CODIGO_CODEUDOR">
+                    @codeudorSecundario.P_NOMBRE @codeudorSecundario.S_NOMBRE @codeudorSecundario.P_APELLIDO
+                    @codeudorSecundario.S_APELLIDO</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_codeudor_terciario">
+            <label for="codeudor_terciario">Codeudor terciario</label>
+            <select required name="CODIGO_CODEUDOR_TERCIARIO" id="codigo_codeudor_terciario">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var codeudorTerciario in @Model.Codeudores)
+              {
+
+                if (codeudorTerciario.CODIGO_CODEUDOR == Model.SolicitudPrestamo?.CODIGO_CODEUDOR_TERCIARIO)
+                {
+                  <option id="@codeudorTerciario.CODIGO_CODEUDOR" value="@codeudorTerciario.CODIGO_CODEUDOR" selected>
+                    @codeudorTerciario.P_NOMBRE @codeudorTerciario.S_NOMBRE @codeudorTerciario.P_APELLIDO
+                    @codeudorTerciario.S_APELLIDO</option>
+                }
+                else
+                {
+                  <option id="@codeudorTerciario.CODIGO_CODEUDOR" value="@codeudorTerciario.CODIGO_CODEUDOR">
+                    @codeudorTerciario.P_NOMBRE @codeudorTerciario.S_NOMBRE @codeudorTerciario.P_APELLIDO
+                    @codeudorTerciario.S_APELLIDO</option>
+                }
+              }
+            </select>
+          </div>
+
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>
+<script src="~/js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js"></script>

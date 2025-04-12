@@ -1,5 +1,6 @@
 using Microsoft.EntityFrameworkCore;
 using Coop360_I.Data;
+using System.Text.Json;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -10,10 +11,12 @@ builder.Services.AddDbContext<ApplicationDbContext>(options => options.UseSqlSer
 // Add services to the container.
 builder.Services.AddControllersWithViews();
 
+
 builder.Services.AddHttpContextAccessor();
 
 // Manejo de sesiones
-builder.Services.AddSession(options => {
+builder.Services.AddSession(options =>
+{
     options.IdleTimeout = TimeSpan.FromMinutes(30);
     options.Cookie.HttpOnly = true;
     options.Cookie.IsEssential = true;

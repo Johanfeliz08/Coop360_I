@@ -40,8 +40,9 @@ public class Empleado
     public string? NOMBRE_FAMILIAR_SECUNDARIO { get; set; }
     public string? TELEFONO_FAMILIAR_SECUNDARIO { get; set; }
     public string? PARENTESCO_FAMILIAR_SECUNDARIO { get; set; }
-    public int? ID_NIVEL_APROBACION {get; set;}
-    public string? NOMBRE_NIVEL_APROBACION {get; set;}
+    public int? ID_NIVEL_APROBACION { get; set; }
+    public string? NOMBRE_NIVEL_APROBACION { get; set; }
     public required string ESTATUS { get; set; }
     public int? CREADO_POR { get; set; }
+
 }
