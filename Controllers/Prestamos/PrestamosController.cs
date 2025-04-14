@@ -32,10 +32,6 @@ public class PrestamosController : Controller
             throw new Exception("El código del socio es requerido");
         }
 
-        if (solicitudPrestamo.SOLICITUD_REALIZADA_POR <= 0)
-        {
-            throw new Exception("El código del empleado que realizó la solicitud es requerido");
-        }
 
         if (solicitudPrestamo.MONTO_SOLICITADO <= 0)
         {
@@ -248,9 +244,55 @@ public class PrestamosController : Controller
     }
 
     [HttpPost]
-    public IActionResult ActualizarSolicitudPrestamo(SolicitudPrestamo solicitudPrestamo)
+    public async Task<IActionResult> ActualizarSolicitudPrestamo(SolicitudPrestamo solicitudPrestamo)
     {
-        return View("~/Views/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.cshtml", solicitudPrestamo);
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        if (solicitudPrestamo != null)
+        {
+            var nivelesAprobacion = _context.NivelesAprobacion
+                            .FromSqlRaw("EXEC SP_LEER_NIVELES_APROBACION")
+                            .AsEnumerable()
+                            .ToList();
+
+            if (nivelesAprobacion.Count > 0)
+            {
+
+                // Itera sobre los niveles de aprobacion y asigna el nivel si el monto solicitado se encuentra dentro del rango
+                foreach (var nivel in nivelesAprobacion)
+                {
+                    if (solicitudPrestamo.MONTO_SOLICITADO >= nivel.MONTO_DESDE && solicitudPrestamo.MONTO_SOLICITADO <= nivel.MONTO_HASTA)
+                    {
+                        solicitudPrestamo.ID_NIVEL_APROBACION_REQUERIDO = Convert.ToInt32(nivel.ID_NIVEL_APROBACION);
+                    }
+                }
+
+            }
+            else
+            {
+                TempData["openModal"] = true;
+                TempData["Error"] = "No hay un nivel de aprobación definido para la solicitud de préstamo";
+                return RedirectToAction("SolicitudesPrestamos", "Prestamos");
+            }
+
+            solicitudPrestamo.ESTATUS = solicitudPrestamo.ESTATUS == "Anulada" ? "Anulada" : "Pendiente";
+
+            var solicitudPrestamoValida = validarSolicitudPrestamo(solicitudPrestamo);
+
+            await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR_SOLICITUD_PRESTAMO @ID_SOLICITUD = {0}, @CODIGO_SOCIO = {1}, @MONTO_SOLICITADO = {2}, @PLAZO_MESES = {3}, @CANTIDAD_CUOTAS = {4}, @MONTO_POR_CUOTA = {5}, @TASA_INTERES = {6}, @ID_CATEGORIA_PRESTAMO = {7}, @ID_NIVEL_APROBACION_REQUERIDO = {8}, @CODIGO_CODEUDOR_PRINCIPAL = {9}, @CODIGO_CODEUDOR_SECUNDARIO = {10}, @CODIGO_CODEUDOR_TERCIARIO = {11}, @ESTATUS = {12}", solicitudPrestamoValida.ID_SOLICITUD, solicitudPrestamoValida.CODIGO_SOCIO, solicitudPrestamoValida.MONTO_SOLICITADO, solicitudPrestamoValida.PLAZO_MESES, solicitudPrestamoValida.CANTIDAD_CUOTAS, solicitudPrestamoValida.MONTO_POR_CUOTA, solicitudPrestamoValida.TASA_INTERES, solicitudPrestamoValida.ID_CATEGORIA_PRESTAMO, solicitudPrestamoValida.ID_NIVEL_APROBACION_REQUERIDO, solicitudPrestamoValida.CODIGO_CODEUDOR_PRINCIPAL, solicitudPrestamoValida.CODIGO_CODEUDOR_SECUNDARIO, solicitudPrestamoValida.CODIGO_CODEUDOR_TERCIARIO, solicitudPrestamoValida.ESTATUS);
+
+            TempData["openModal"] = true;
+            TempData["Success"] = "Solicitud de préstamo actualizada correctamente";
+            return RedirectToAction("SolicitudesPrestamos", "Prestamos");
+
+        }
+
+        TempData["openModal"] = true;
+        TempData["Error"] = "Ha ocurrido un error al actualizar la solicitud de préstamo";
+        return RedirectToAction("SolicitudesPrestamos", "Prestamos");
     }
 
     [HttpGet]
