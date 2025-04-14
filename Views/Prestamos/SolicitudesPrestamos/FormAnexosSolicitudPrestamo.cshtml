@@ -1,0 +1,66 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css">
+  <link rel="stylesheet" href="~/css/Form.css" />
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("CrearSolicitudPrestamo", "Prestamos")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="form" asp-action="ActualizarAnexosSolicitudPrestamo" asp-controller="Prestamos" method="post">
+
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Anexos requeridos</h2>
+          </div>
+          @{
+            if (@Model.Count > 0)
+            {
+              foreach (var detalleAnexo in @Model)
+              {
+
+                if (@detalleAnexo.TIPO == "Archivo")
+                {
+                  <div class="campo" id="campo_anexo" style="display: none;">
+                    <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                    <input type="file" name="idAnexos" id="@detalleAnexo.ID_ANEXO" value="@detalleAnexo.ID_ANEXO">
+                  </div>
+                  <div class="campo" id="campo_anexo">
+                    <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                    <input type="file" name="detallesAnexos" id="@detalleAnexo.ID_ANEXO">
+                  </div>
+                }
+                else if (@detalleAnexo.TIPO == "Dato")
+                {
+                  <div class="campo" id="campo_dato" style="display: none;">
+                    <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                    <input type="text" name="idAnexos" id="@detalleAnexo.ID_ANEXO" value="@detalleAnexo.ID_ANEXO">
+                  </div>
+                  <div class="campo" id="campo_dato">
+                    <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                    <input type="text" name="detallesAnexos" id="@detalleAnexo.ID_ANEXO">
+                  </div>
+                }
+              }
+            }
+          }
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>
+<script src="~/js/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.js"></script>

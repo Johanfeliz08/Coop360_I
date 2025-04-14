@@ -3,7 +3,7 @@
 }
 
 <head>
-  <link rel="stylesheet" href="~/css/Prestamos/SolicitudesPrestamos/FormSolicitudPrestamo.css">
+  <link rel="stylesheet" href="~/css/Prestamos/SolicitudesPrestamos/FormConsultaSolicitudPrestamoAprobacion.css">
   <link rel="stylesheet" href="~/css/Form.css" />
 </head>
 
@@ -11,16 +11,16 @@
   <div class="titulo-seccion">
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
-      <a href="@Url.Action("SolicitudesPrestamos", "Prestamos")" class="btn btn-regresar"><i
+      <a href="@Url.Action("AprobacionSolicitudesPrestamos", "Prestamos")" class="btn btn-regresar"><i
           class="fi fi-rr-undo"></i></a>
-      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
-          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+      <button type="button" id="btn-aprobar" class="btn btn-nuevo"><i
+          class="fi fi-tr-memo-circle-check"></i><span>Aprobar</span></button>
+      <button type="button" id="btn-rechazar" class="btn btn-rechazar"><i
+          class="fi fi-tr-vote-nay"></i><span>Rechazar</span></button>
     </div>
   </div>
   <div class="form-container">
-    <form id="form"
-      asp-action="@(ViewBag.Title == "Editar Solicitud de Prestamo" ? "ActualizarSolicitudPrestamo" : "GuardarSolicitudPrestamo")"
-      asp-controller="Prestamos" method="post">
+    <form id="form" asp-action="" asp-controller="" method="post">
       <div class="campos-container">
         <div class="grupo informacion-personal">
           <div class="titulo-grupo" id="titulo">
@@ -32,7 +32,7 @@
           </div>
           <div class="campo" id="campo_socios">
             <label for="codigo_socio">Socio</label>
-            <select required name="CODIGO_SOCIO" id="codigo_socio">
+            <select required name="CODIGO_SOCIO" id="codigo_socio" disabled>
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var socio in @Model.Socios)
               {
@@ -52,7 +52,7 @@
           </div>
           <div class="campo" id="campo_categoria_prestamo">
             <label for="categoria_prestamo">Categoria de prestamo</label>
-            <select required name="ID_CATEGORIA_PRESTAMO" id="id_categoria_prestamo">
+            <select required name="ID_CATEGORIA_PRESTAMO" id="id_categoria_prestamo" disabled>
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var categoriaPrestamo in @Model.CategoriasPrestamos)
               {
@@ -73,34 +73,34 @@
           <div class="campo" id="campo_monto_solicitado">
             <label for="monto_solicitado">Monto solicitado</label>
             <input type="text" name="monto_solicitado" id="monto_solicitado"
-              value="@Model.SolicitudPrestamo?.MONTO_SOLICITADO">
+              value="@Model.SolicitudPrestamo?.MONTO_SOLICITADO" disabled>
           </div>
           <div class="campo" id="campo_plazo_meses">
             <label for="plazo_meses">Plazo (Meses)</label>
             <input type="text" name="plazo_meses" id="plazo_meses" value="@Model.SolicitudPrestamo?.PLAZO_MESES"
-              readonly>
+              disabled>
           </div>
           <div class="campo" id="campo_tasa_interes">
             <label for="tasa_interes">Tasa de interes (%)</label>
             <input type="text" name="tasa_interes" id="tasa_interes" value="@Model.SolicitudPrestamo?.TASA_INTERES"
-              readonly>
+              disabled>
           </div>
           <div class="campo" id="campo_cantidad_cuotas">
             <label for="cantidad_cuotas">Cantidad de cuotas</label>
             <input type="text" name="cantidad_cuotas" id="cantidad_cuotas"
-              value="@Model.SolicitudPrestamo?.CANTIDAD_CUOTAS" readonly>
+              value="@Model.SolicitudPrestamo?.CANTIDAD_CUOTAS" disabled>
           </div>
           <div class="campo" id="campo_monto_por_cuota">
             <label for="monto_por_cuota">Monto por cuota</label>
             <input type="text" name="monto_por_cuota" id="monto_por_cuota"
-              value="@Model.SolicitudPrestamo?.MONTO_POR_CUOTA" readonly>
+              value="@Model.SolicitudPrestamo?.MONTO_POR_CUOTA" disabled>
           </div>
           @{
             if (ViewBag.Title == "Editar Solicitud de Prestamo")
             {
               <div class="campo" id="campo_estatus">
                 <label for="estatus">Estatus</label>
-                <select name="estatus" id="estatus">
+                <select name="estatus" id="estatus" disabled>
                   <option value="default" disabled selected>Seleccionar</option>
                   <option value="Anulada">Anulada</option>
                 </select>
@@ -110,40 +110,38 @@
         </div>
       </div>
       @{
-        if (ViewBag.Title == "Editar Solicitud de Prestamo")
-        {
-          <div class="campos-container">
-            <div class="grupo informacion-personal">
-              <div class="titulo-grupo" id="titulo">
-                <h2>Anexos requeridos</h2>
-              </div>
-              @{
-                if (@Model.DetallesAnexos.Count > 0)
+        <div class="campos-container">
+          <div class="grupo informacion-personal">
+            <div class="titulo-grupo" id="titulo">
+              <h2>Anexos requeridos</h2>
+            </div>
+            @{
+              if (@Model.DetallesAnexos.Count > 0)
+              {
+                foreach (var detalleAnexo in @Model.DetallesAnexos)
                 {
-                  foreach (var detalleAnexo in @Model.DetallesAnexos)
-                  {
 
-                    if (@detalleAnexo.TIPO == "Archivo")
-                    {
-                      <div class="campo" id="campo_anexo">
-                        <label for="anexo">@detalleAnexo.NOMBRE_ANEXO</label>
-                        <input type="file" name="anexo" id="anexo" value="@detalleAnexo.VALOR">
-                      </div>
-                    }
-                    else if (@detalleAnexo.TIPO == "Dato")
-                    {
-                      <div class="campo" id="campo_dato">
-                        <label for="dato">@detalleAnexo.NOMBRE_ANEXO</label>
-                        <input type="text" name="dato" id="dato" value="@detalleAnexo.VALOR">
-                      </div>
-                    }
+                  if (@detalleAnexo.TIPO == "Archivo")
+                  {
+                    <div class="campo" id="campo_anexo">
+                      <label for="anexo">@detalleAnexo.NOMBRE_ANEXO</label>
+                      <input type="file" name="anexo" id="anexo" value="@detalleAnexo.VALOR" disabled>
+                    </div>
+                  }
+                  else if (@detalleAnexo.TIPO == "Dato")
+                  {
+                    <div class="campo" id="campo_dato">
+                      <label for="dato">@detalleAnexo.NOMBRE_ANEXO</label>
+                      <input type="text" name="dato" id="dato" value="@detalleAnexo.VALOR" disabled>
+                    </div>
                   }
                 }
               }
-            </div>
+            }
           </div>
-        }
+        </div>
       }
+
       <div class="campos-container">
         <div class="grupo informacion-personal">
           <div class="titulo-grupo" id="titulo">
@@ -151,7 +149,7 @@
           </div>
           <div class="campo" id="campo_codeudor_principal">
             <label for="codeudor_principal">Codeudor principal</label>
-            <select required name="CODIGO_CODEUDOR_PRINCIPAL" id="codigo_codeudor_principal">
+            <select required name="CODIGO_CODEUDOR_PRINCIPAL" id="codigo_codeudor_principal" disabled>
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var codeudorPrincipal in @Model.Codeudores)
               {
@@ -173,7 +171,7 @@
           </div>
           <div class="campo" id="campo_codeudor_secundario">
             <label for="codeudor_secundario">Codeudor secundario</label>
-            <select required name="CODIGO_CODEUDOR_SECUNDARIO" id="codigo_codeudor_secundario">
+            <select required name="CODIGO_CODEUDOR_SECUNDARIO" id="codigo_codeudor_secundario" disabled>
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var codeudorSecundario in @Model.Codeudores)
               {
@@ -195,7 +193,7 @@
           </div>
           <div class="campo" id="campo_codeudor_terciario">
             <label for="codeudor_terciario">Codeudor terciario</label>
-            <select required name="CODIGO_CODEUDOR_TERCIARIO" id="codigo_codeudor_terciario">
+            <select required name="CODIGO_CODEUDOR_TERCIARIO" id="codigo_codeudor_terciario" disabled>
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var codeudorTerciario in @Model.Codeudores)
               {

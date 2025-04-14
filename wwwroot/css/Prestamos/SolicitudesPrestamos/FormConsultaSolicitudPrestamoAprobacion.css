@@ -1,0 +1,87 @@
+#btn-aprobar {
+  background: var(--accent-color);
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 170px;
+  border: none;
+}
+
+#btn-aprobar i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: var(--accent-color-2);
+  padding-right: 10px;
+  /* border: solid 1px red; */
+  transition: all ease 0.5s;
+}
+
+#btn-aprobar span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2em;
+  /* border: solid 1px blue; */
+  transition: all ease 0.5s;
+}
+
+#btn-aprobar:hover {
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+#btn-aprobar:hover i {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+#btn-aprobar:hover span {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+#btn-rechazar {
+  background: red;
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 170px;
+  border: none;
+}
+
+#btn-rechazar i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: #fff;
+  padding-right: 10px;
+  transition: all ease 0.5s;
+}
+
+#btn-rechazar span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2em;
+  transition: all ease 0.5s;
+}
+
+#btn-rechazar:hover {
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+#btn-rechazar:hover i {
+  color: #fff;
+  transition: all ease 0.5s;
+}
+
+#btn-rechazar:hover span {
+  color: #fff;
+  transition: all ease 0.5s;
+}

@@ -1,7 +1,7 @@
 .informacion-container {
-  grid-template-columns: 1fr 100px 1fr;
+  grid-template-columns: 1fr 100px 1fr 1fr;
   grid-template-rows: repeat(1, 100px);
-  grid-template-areas: "nombre obligatorio nivelaprobacion";
+  grid-template-areas: "nombre obligatorio nivelaprobacion tipo";
 }
 
 #campo_nombre_anexo {
@@ -14,4 +14,8 @@
 
 #campo_nivel_aprobacion {
   grid-area: nivelaprobacion;
+}
+
+#campo_tipo {
+  grid-area: tipo;
 }
