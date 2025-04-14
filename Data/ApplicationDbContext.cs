@@ -25,6 +25,7 @@ namespace Coop360_I.Data
         public DbSet<Empleado> Empleados { get; set; }
         public DbSet<Socio> Socios { get; set; }
         public DbSet<Anexo> Anexos { get; set; }
+        public DbSet<DetalleAnexo> DetalleAnexos { get; set; }
         public DbSet<Codeudor> Codeudores { get; set; }
         public DbSet<Region> Regiones { get; set; }
         public DbSet<Provincia> Provincias { get; set; }

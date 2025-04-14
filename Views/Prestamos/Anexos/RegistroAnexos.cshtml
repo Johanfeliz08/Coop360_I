@@ -88,6 +88,10 @@
             </th>
             <th>
               <div class="th">
+                <span>Tipo</span>
+            </th>
+            <th>
+              <div class="th">
                 <span>Eliminar</span>
             </th>
           </tr>
@@ -128,6 +132,11 @@
               <td>
                 <div class="dato">@anexo?.NOMBRE_NIVEL_APROBACION</div>
               </td>
+
+              <td>
+                <div class="dato">@anexo.TIPO</div>
+              </td>
+
               <td>
                 <a class="dato accion-eliminar" data-id-anexo="@anexo?.ID_ANEXO"
                   href="@Url.Action("Eliminar", "Anexos", new { idAnexo = @anexo?.ID_ANEXO })"><i

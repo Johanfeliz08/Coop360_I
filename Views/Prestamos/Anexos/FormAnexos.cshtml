@@ -70,6 +70,37 @@
               }
             </select>
           </div>
+          <div class="campo" id="campo_tipo">
+            <label for="tipo">Tipo</label>
+            <select name="TIPO" id="tipo">
+              <option value="default" disabled selected>Seleccionar</option>
+
+              @{
+
+                if (Model.Anexo?.TIPO == "Dato")
+                {
+                  <option value="Dato" selected>Dato</option>
+                }
+                else
+                {
+                  <option value="Dato">Dato</option>
+
+                }
+              }
+              @{
+
+                if (Model.Anexo?.TIPO == "Archivo")
+                {
+                  <option value="Archivo" selected>Archivo</option>
+                }
+                else
+                {
+                  <option value="Archivo">Archivo</option>
+
+                }
+              }
+            </select>
+          </div>
         </div>
       </div>
 

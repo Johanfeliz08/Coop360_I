@@ -20,7 +20,7 @@ public class AnexosController : Controller {
             throw new Exception("El servidor no puede procesar la solicitud, objeto Anexo vacio");
         }
 
-        if (anexo.ID_ANEXO < 0 || string.IsNullOrEmpty(anexo.NOMBRE)  || anexo.ID_NIVEL_APROBACION < 0 || string.IsNullOrEmpty(anexo.NOMBRE_NIVEL_APROBACION)) {
+        if (anexo.ID_ANEXO < 0 || string.IsNullOrEmpty(anexo.NOMBRE)  || anexo.ID_NIVEL_APROBACION < 0 || string.IsNullOrEmpty(anexo.NOMBRE_NIVEL_APROBACION) || string.IsNullOrEmpty(anexo.TIPO)) {
             throw new Exception("El servidor no puede procesar la solicitud, campos obligatorios vacios");
         }
 
@@ -29,7 +29,8 @@ public class AnexosController : Controller {
             NOMBRE = anexo.NOMBRE,
             OBLIGATORIO = anexo.OBLIGATORIO == "S" ? "S" : "N",
             ID_NIVEL_APROBACION = Convert.ToInt32(anexo.ID_NIVEL_APROBACION),
-            NOMBRE_NIVEL_APROBACION = anexo.NOMBRE_NIVEL_APROBACION
+            NOMBRE_NIVEL_APROBACION = anexo.NOMBRE_NIVEL_APROBACION,
+            TIPO = anexo.TIPO
         };
 
         return anexoValido;
@@ -179,8 +180,8 @@ public class AnexosController : Controller {
 
         try {
          await _context.Database.ExecuteSqlRawAsync(
-            "EXEC SP_CREAR_ANEXO @NOMBRE = {0}, @OBLIGATORIO = {1}, @ID_NIVEL_APROBACION = {2}",
-            anexoValido.NOMBRE, anexoValido.OBLIGATORIO, anexoValido.ID_NIVEL_APROBACION ?? 0
+            "EXEC SP_CREAR_ANEXO @NOMBRE = {0}, @OBLIGATORIO = {1}, @ID_NIVEL_APROBACION = {2}, @TIPO = {3}",
+            anexoValido.NOMBRE, anexoValido.OBLIGATORIO, anexoValido.ID_NIVEL_APROBACION ?? 0, anexoValido.TIPO
         );
         } catch (Exception ex) {
             TempData["openModal"] = true;
@@ -211,8 +212,8 @@ public class AnexosController : Controller {
 
         try {
          await _context.Database.ExecuteSqlRawAsync(
-            "EXEC SP_ACTUALIZAR_ANEXO @ID_ANEXO = {0},@NOMBRE = {1}, @OBLIGATORIO = {2}, @ID_NIVEL_APROBACION = {3}",
-            anexoValido.ID_ANEXO, anexoValido.NOMBRE, anexoValido.OBLIGATORIO, anexoValido.ID_NIVEL_APROBACION ?? 0
+            "EXEC SP_ACTUALIZAR_ANEXO @ID_ANEXO = {0},@NOMBRE = {1}, @OBLIGATORIO = {2}, @ID_NIVEL_APROBACION = {3}, @TIPO = {4}",
+            anexoValido.ID_ANEXO, anexoValido.NOMBRE, anexoValido.OBLIGATORIO, anexoValido.ID_NIVEL_APROBACION ?? 0, anexoValido.TIPO
         );
         } catch (Exception ex) {
             TempData["openModal"] = true;

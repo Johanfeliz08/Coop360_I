@@ -9,5 +9,6 @@ public class Anexo {
   public required string OBLIGATORIO {get; set;}
   public int? ID_NIVEL_APROBACION {get; set;}
   public string? NOMBRE_NIVEL_APROBACION {get; set;}
+  public required string TIPO {get; set;}
 
 }
