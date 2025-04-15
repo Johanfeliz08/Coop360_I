@@ -7,6 +7,7 @@ using Microsoft.EntityFrameworkCore.Storage.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json;
 using System.Runtime.Serialization.Json;
+using System.Text.RegularExpressions;
 
 namespace Coop360_I.Controllers;
 
@@ -244,21 +245,21 @@ public class PrestamosController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> ActualizarSolicitudPrestamo(SolicitudPrestamo solicitudPrestamo)
+    public async Task<IActionResult> ActualizarSolicitudPrestamo(SolicitudPrestamo solicitudPrestamo, List<string> idDetalleAnexos, List<string> detallesAnexos, List<string> idDetalleAnexosArchivos, List<IFormFile> detallesAnexosArchivos)
     {
         if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
         {
             return RedirectToAction("Login", "Auth");
         }
 
-        if (solicitudPrestamo != null)
+        if (solicitudPrestamo != null) // Valido que la solicitud no sea nula/vacia
         {
-            var nivelesAprobacion = _context.NivelesAprobacion
+            var nivelesAprobacion = _context.NivelesAprobacion // Obtengo los diferentes niveles de aprobacion
                             .FromSqlRaw("EXEC SP_LEER_NIVELES_APROBACION")
                             .AsEnumerable()
                             .ToList();
 
-            if (nivelesAprobacion.Count > 0)
+            if (nivelesAprobacion.Count > 0) // Valido que existan niveles de aprobacion
             {
 
                 // Itera sobre los niveles de aprobacion y asigna el nivel si el monto solicitado se encuentra dentro del rango
@@ -278,10 +279,68 @@ public class PrestamosController : Controller
                 return RedirectToAction("SolicitudesPrestamos", "Prestamos");
             }
 
-            solicitudPrestamo.ESTATUS = solicitudPrestamo.ESTATUS == "Anulada" ? "Anulada" : "Pendiente";
+            solicitudPrestamo.ESTATUS = solicitudPrestamo.ESTATUS == "Anulada" ? "Anulada" : "Pendiente"; // Valido si el estatus cambio a anulada, si es asi, actualizo el estatus a anulado, sino lo mantengo como pendiente
 
-            var solicitudPrestamoValida = validarSolicitudPrestamo(solicitudPrestamo);
+            var solicitudPrestamoValida = validarSolicitudPrestamo(solicitudPrestamo); // Valido la solicitud de manera general
 
+            // Obtengo los detalles de los anexos de la solicitud de prestamo
+
+            var dataDetallesAnexos = _context.DetalleAnexos
+                .FromSqlRaw("EXEC SP_OBTENER_DETALLES_ANEXOS_SOLICITUD_PRESTAMO @ID_SOLICITUD_PRESTAMO = {0}", solicitudPrestamoValida.ID_SOLICITUD)
+                .AsEnumerable()
+                .ToList();
+
+            // Valido que tanto los id de los detalles de los anexos como los archivos existan
+            if (idDetalleAnexosArchivos.Count > 0 && idDetalleAnexosArchivos != null && detallesAnexosArchivos.Count > 0 && detallesAnexosArchivos != null)
+            {
+
+                // Itera sobre los archivos y guarda los archivos en el servidor
+                for (int i = 0; i < detallesAnexosArchivos.Count; i++)
+                {
+                    var archivo = detallesAnexosArchivos[i];
+                    var idDetalleAnexoArchivo = idDetalleAnexosArchivos[i];
+
+                    var archivoAnexo = new DetalleAnexo // Inicializo el objeto para guardar el archivo
+                    {
+                        ID_DETALLE_ANEXO = 0,
+                        NOMBRE_ANEXO = "",
+                        VALOR = "",
+                        TIPO = "",
+                        ID_ANEXO = 0,
+                        ID_SOLICITUD_PRESTAMO = 0
+                    };
+
+                    Console.WriteLine("Entrando al bucle de idDetalleAnexoArchivo");
+                    Console.WriteLine($"ID Detalle Anexo Archivo: {idDetalleAnexoArchivo}");
+                    archivoAnexo.ID_DETALLE_ANEXO = Convert.ToInt32(idDetalleAnexoArchivo); // Obtengo el id del detalle del anexo
+                    archivoAnexo.NOMBRE_ANEXO = dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.NOMBRE_ANEXO; // Obtengo el nombre del anexo
+                    archivoAnexo.VALOR = ""; // Inicializo el valor del anexo
+                    archivoAnexo.TIPO = "Archivo"; // Asigno el tipo de anexo
+                    archivoAnexo.ID_ANEXO = Convert.ToInt32(dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.ID_ANEXO); // Obtengo el id del anexo
+                    archivoAnexo.ID_SOLICITUD_PRESTAMO = Convert.ToInt32(solicitudPrestamoValida.ID_SOLICITUD); // Obtengo el id de la solicitud de prestamo
+
+                    var nombreUnico = ""; // Inicializo el nombre unico
+                    if (string.IsNullOrEmpty(archivoAnexo.NOMBRE_ANEXO)) // Si el nombre del anexo es nulo, genero un nombre unico
+                    {
+                        nombreUnico = Guid.NewGuid().ToString() + Path.GetExtension(archivo.FileName); // Genero un nombre unico
+                    }
+                    else // Si el nombre del anexo no es nulo, genero un nombre unico basado en el nombre del anexo
+                    {
+                        nombreUnico = Guid.NewGuid().ToString() + "_" + Regex.Replace(archivoAnexo.NOMBRE_ANEXO, @"\s+", "") + "_" + archivoAnexo.ID_SOLICITUD_PRESTAMO.ToString() + Path.GetExtension(archivo.FileName); // Genero un nombre unico
+                    }
+
+                    var ruta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Archivos", nombreUnico); // Obtengo la ruta del archivo
+                    archivoAnexo.VALOR = nombreUnico; // Asigno la ruta del archivo al objeto
+                    await using var stream = new FileStream(ruta, FileMode.Create); // Creo un stream para guardar el archivo
+                    await archivo.CopyToAsync(stream); // Copio el archivo al stream
+                    // Actualizo los detalles de los anexos
+                    await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR_DETALLE_ANEXO @ID_DETALLE_ANEXO = {0}, @VALOR = {1}", archivoAnexo.ID_DETALLE_ANEXO, archivoAnexo.VALOR);
+
+                }
+
+            }
+
+            // Luego de actualizar los anexos, actualizo la solicitud de prestamo
             await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR_SOLICITUD_PRESTAMO @ID_SOLICITUD = {0}, @CODIGO_SOCIO = {1}, @MONTO_SOLICITADO = {2}, @PLAZO_MESES = {3}, @CANTIDAD_CUOTAS = {4}, @MONTO_POR_CUOTA = {5}, @TASA_INTERES = {6}, @ID_CATEGORIA_PRESTAMO = {7}, @ID_NIVEL_APROBACION_REQUERIDO = {8}, @CODIGO_CODEUDOR_PRINCIPAL = {9}, @CODIGO_CODEUDOR_SECUNDARIO = {10}, @CODIGO_CODEUDOR_TERCIARIO = {11}, @ESTATUS = {12}", solicitudPrestamoValida.ID_SOLICITUD, solicitudPrestamoValida.CODIGO_SOCIO, solicitudPrestamoValida.MONTO_SOLICITADO, solicitudPrestamoValida.PLAZO_MESES, solicitudPrestamoValida.CANTIDAD_CUOTAS, solicitudPrestamoValida.MONTO_POR_CUOTA, solicitudPrestamoValida.TASA_INTERES, solicitudPrestamoValida.ID_CATEGORIA_PRESTAMO, solicitudPrestamoValida.ID_NIVEL_APROBACION_REQUERIDO, solicitudPrestamoValida.CODIGO_CODEUDOR_PRINCIPAL, solicitudPrestamoValida.CODIGO_CODEUDOR_SECUNDARIO, solicitudPrestamoValida.CODIGO_CODEUDOR_TERCIARIO, solicitudPrestamoValida.ESTATUS);
 
             TempData["openModal"] = true;
@@ -313,7 +372,13 @@ public class PrestamosController : Controller
                 .AsEnumerable()
                 .ToList();
 
-            return View("~/Views/Prestamos/SolicitudesPrestamos/FormAnexosSolicitudPrestamo.cshtml", detallesAnexos);
+            var viewModel = new FormAnexoSolicitudPrestamoViewModel
+            {
+                ID_SOLICITUD_PRESTAMO = ID_SOLICITUD,
+                DetallesAnexos = detallesAnexos
+            };
+
+            return View("~/Views/Prestamos/SolicitudesPrestamos/FormAnexosSolicitudPrestamo.cshtml", viewModel);
         }
 
 
@@ -323,28 +388,97 @@ public class PrestamosController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> ActualizarAnexosSolicitudPrestamo(List<string> idAnexos, List<string> detallesAnexos)
+    public async Task<IActionResult> ActualizarAnexosSolicitudPrestamo(string IdSolicitudPrestamo, List<string> idDetalleAnexosArchivos, List<IFormFile> detallesAnexosArchivos)
     {
 
-        if (detallesAnexos.Count > 0)
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
         {
+            return RedirectToAction("Login", "Auth");
+        }
 
-            for (int i = 0; i < detallesAnexos.Count; i++)
+        if (IdSolicitudPrestamo != null)
+        {
+            var ID_SOLICITUD = Convert.ToInt32(IdSolicitudPrestamo);
+
+            var dataDetallesAnexos = _context.DetalleAnexos
+                .FromSqlRaw("EXEC SP_OBTENER_DETALLES_ANEXOS_SOLICITUD_PRESTAMO @ID_SOLICITUD_PRESTAMO = {0}", ID_SOLICITUD)
+                .AsEnumerable()
+                .ToList();
+
+            try
             {
-                await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR_DETALLE_ANEXO @ID_DETALLE_ANEXO = {0}, @VALOR = {1}",
-                 idAnexos[i], detallesAnexos[i]);
-            }
+                // Valido que tanto los id de los detalles de los anexos como los archivos existan
+                if (idDetalleAnexosArchivos.Count > 0 && idDetalleAnexosArchivos != null && detallesAnexosArchivos.Count > 0 && detallesAnexosArchivos != null)
+                {
 
-            TempData["openModal"] = true;
-            TempData["Success"] = "Anexos actualizados correctamente";
-            return RedirectToAction("SolicitudesPrestamos", "Prestamos");
+                    // Console.WriteLine("ID Solicitud Prestamo: " + ID_SOLICITUD);
+                    // Console.WriteLine("ID Detalle Anexo Archivo: " + idDetalleAnexosArchivos.Count);
+                    // Console.WriteLine("Detalles Anexos Archivos: " + detallesAnexosArchivos.Count);
+                    // Console.WriteLine("Data Detalles Anexos: " + dataDetallesAnexos.Count);
+
+                    // Itera sobre los archivos y guarda los archivos en el servidor
+                    for (int i = 0; i < detallesAnexosArchivos.Count; i++)
+                    {
+                        var archivo = detallesAnexosArchivos[i];
+                        var idDetalleAnexoArchivo = idDetalleAnexosArchivos[i];
+
+                        var archivoAnexo = new DetalleAnexo // Inicializo el objeto para guardar el archivo
+                        {
+                            ID_DETALLE_ANEXO = 0,
+                            NOMBRE_ANEXO = "",
+                            VALOR = "",
+                            TIPO = "",
+                            ID_ANEXO = 0,
+                            ID_SOLICITUD_PRESTAMO = 0
+                        };
+
+                        Console.WriteLine("Entrando al bucle de idDetalleAnexoArchivo");
+                        Console.WriteLine($"ID Detalle Anexo Archivo: {idDetalleAnexoArchivo}");
+                        archivoAnexo.ID_DETALLE_ANEXO = Convert.ToInt32(idDetalleAnexoArchivo); // Obtengo el id del detalle del anexo
+                        archivoAnexo.NOMBRE_ANEXO = dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.NOMBRE_ANEXO; // Obtengo el nombre del anexo
+                        archivoAnexo.VALOR = ""; // Inicializo el valor del anexo
+                        archivoAnexo.TIPO = "Archivo"; // Asigno el tipo de anexo
+                        archivoAnexo.ID_ANEXO = Convert.ToInt32(dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.ID_ANEXO); // Obtengo el id del anexo
+                        archivoAnexo.ID_SOLICITUD_PRESTAMO = Convert.ToInt32(ID_SOLICITUD); // Obtengo el id de la solicitud de prestamo
+
+                        var nombreUnico = ""; // Inicializo el nombre unico
+                        if (string.IsNullOrEmpty(archivoAnexo.NOMBRE_ANEXO)) // Si el nombre del anexo es nulo, genero un nombre unico
+                        {
+                            nombreUnico = Guid.NewGuid().ToString() + Path.GetExtension(archivo.FileName); // Genero un nombre unico
+                        }
+                        else // Si el nombre del anexo no es nulo, genero un nombre unico basado en el nombre del anexo
+                        {
+                            nombreUnico = Guid.NewGuid().ToString() + "_" + Regex.Replace(archivoAnexo.NOMBRE_ANEXO, @"\s+", "") + "_" + archivoAnexo.ID_SOLICITUD_PRESTAMO.ToString() + Path.GetExtension(archivo.FileName); // Genero un nombre unico
+                        }
+
+                        var ruta = Path.Combine(Directory.GetCurrentDirectory(), "wwwroot/Archivos", nombreUnico); // Obtengo la ruta del archivo
+                        archivoAnexo.VALOR = nombreUnico; // Asigno la ruta del archivo al objeto
+                        await using var stream = new FileStream(ruta, FileMode.Create); // Creo un stream para guardar el archivo
+                        await archivo.CopyToAsync(stream); // Copio el archivo al stream
+                                                           // Actualizo los detalles de los anexos
+                        await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR_DETALLE_ANEXO @ID_DETALLE_ANEXO = {0}, @VALOR = {1}", archivoAnexo.ID_DETALLE_ANEXO, archivoAnexo.VALOR);
+
+                    }
+                }
+
+                TempData["openModal"] = true;
+                TempData["Success"] = "Solicitud de prestamo creada correctamente.";
+                return RedirectToAction("SolicitudesPrestamos", "Prestamos");
+            }
+            catch (Exception ex)
+            {
+                Console.WriteLine("Error al actualizar los anexos: " + ex.Message + ex.Source); // Mensaje para el log en el server
+            }
         }
 
         TempData["openModal"] = true;
-        TempData["Error"] = "No se encontraron anexos para actualizar";
+        TempData["Error"] = "La solicitud se ha creado correctamente, pero no se han podido actualizar los anexos";
         return RedirectToAction("SolicitudesPrestamos", "Prestamos");
 
     }
+
+
+
 
     [HttpPost]
     public async Task<IActionResult> GuardarSolicitudPrestamoAsync(SolicitudPrestamo solicitudPrestamo)
@@ -416,7 +550,7 @@ public class PrestamosController : Controller
                     foreach (var anexo in anexosRequeridos)
                     {
 
-                        Console.WriteLine("ID Anexo: " + anexo.ID_ANEXO);
+                        // Console.WriteLine("ID Anexo: " + anexo.ID_ANEXO);
                         await _context.Database.ExecuteSqlRawAsync("EXEC SP_CREAR_DETALLE_ANEXO @ID_ANEXO = {0}, @ID_SOLICITUD_PRESTAMO = {1}",
                         anexo.ID_ANEXO, idSolicitudPrestamo);
 
@@ -433,7 +567,6 @@ public class PrestamosController : Controller
 
             TempData["openModal"] = true;
             TempData["Success"] = "Solicitud de préstamo creada correctamente";
-            // return RedirectToAction("SolicitudesPrestamos", "Prestamos");
             return RedirectToAction("FormAnexosSolicitudPrestamo", "Prestamos", new { IdSolicitudPrestamo = idSolicitudPrestamo });
 
         }

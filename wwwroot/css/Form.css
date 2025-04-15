@@ -111,3 +111,65 @@ input[type="checkbox"]:checked {
   accent-color: var(--accent-color-2);
   outline: none;
 }
+
+/* Estilos para los campos de archivo */
+
+#campo_anexo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: left;
+  gap: 10px;
+}
+
+.input-btn-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+}
+
+/* Estilos para los botones de descarga */
+.btn-descargar {
+  background: var(--accent-color);
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 38px;
+  width: 65px;
+  border: none;
+  border-radius: 5px;
+}
+
+.btn-descargar i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+.btn-descargar span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2em;
+  transition: all ease 0.5s;
+}
+
+.btn-descargar:hover {
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+.btn-descargar:hover i {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+.btn-descargar:hover span {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}

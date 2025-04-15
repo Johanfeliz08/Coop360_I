@@ -13,5 +13,6 @@ public class DetalleAnexo
     public string? VALOR { get; set; }
 
     public string? TIPO { get; set; }
+
 }
 
