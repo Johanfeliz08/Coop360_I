@@ -285,7 +285,6 @@ D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\h91iiy6my2-vyy29grwjm.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\ovusbn7rif-xh45iz9qnf.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\vk6dfis8yw-gbd3c9yk1r.gz
-J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\hdmpyyg27s-kc41s9kfec.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\b379ska2m2-ytxouctibr.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\25ji82a2kd-e0esih7a7g.gz
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\h91iiy6my2-vyy29grwjm.gz
@@ -324,3 +323,25 @@ D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\bylh3sm538-8qsww8ulcn.gz
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\xaicstnlar-8qsww8ulcn.gz
 D:\Johan\Universidad\Enero - Abril 2025\Integrador I\Coop360_I\obj\Debug\net9.0\compressed\n9qiczvudm-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\ltvu6c8miz-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\r3xwyo7j56-3xpey62pwr.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\irkwc8l47t-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\nkl6hkfci3-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\ytct3wxi5p-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\svtmi5hyap-3xpey62pwr.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\pswx8c27wt-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\8wavgb49cx-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\ku1huu3d27-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\bf5ehylcz7-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\h2p5o8ba7o-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\hr70ywyl2j-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\81rbytd2m8-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\bylh3sm538-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\xaicstnlar-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\7wl3sxyayc-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\r965gltyko-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\ugbqbotjq9-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\8azlnr6cmy-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\n9qiczvudm-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\36gx2ubg1k-8qsww8ulcn.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\hdmpyyg27s-gz97qi543t.gz

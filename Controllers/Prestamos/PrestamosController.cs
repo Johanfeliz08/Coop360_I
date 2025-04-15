@@ -245,7 +245,7 @@ public class PrestamosController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> ActualizarSolicitudPrestamo(SolicitudPrestamo solicitudPrestamo, List<string> idDetalleAnexos, List<string> detallesAnexos, List<string> idDetalleAnexosArchivos, List<IFormFile> detallesAnexosArchivos)
+    public async Task<IActionResult> ActualizarSolicitudPrestamo(SolicitudPrestamo solicitudPrestamo, List<string> idDetalleAnexosArchivos, List<IFormFile> detallesAnexosArchivos)
     {
         if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
         {
@@ -414,11 +414,6 @@ public class PrestamosController : Controller
                 if (idDetalleAnexosArchivos.Count > 0 && idDetalleAnexosArchivos != null && detallesAnexosArchivos.Count > 0 && detallesAnexosArchivos != null)
                 {
 
-                    // Console.WriteLine("ID Solicitud Prestamo: " + ID_SOLICITUD);
-                    // Console.WriteLine("ID Detalle Anexo Archivo: " + idDetalleAnexosArchivos.Count);
-                    // Console.WriteLine("Detalles Anexos Archivos: " + detallesAnexosArchivos.Count);
-                    // Console.WriteLine("Data Detalles Anexos: " + dataDetallesAnexos.Count);
-
                     // Itera sobre los archivos y guarda los archivos en el servidor
                     foreach (var archivo in detallesAnexosArchivos)
                     {
@@ -449,12 +444,11 @@ public class PrestamosController : Controller
                         }
                         ;
 
-                        // Console.WriteLine("ID Detalle Anexo: " + archivoAnexo.ID_DETALLE_ANEXO);
-                        // Console.WriteLine("Archivo Anexo: " + archivoAnexo.NOMBRE_ANEXO);
-                        // Console.WriteLine("Valor: " + archivoAnexo.VALOR);
-                        // Console.WriteLine("Tipo: " + archivoAnexo.TIPO);
-                        // Console.WriteLine("ID Anxo: " + archivoAnexo.ID_ANEXO);
-                        // Console.WriteLine("ID Solicitud Prestamo: " + archivoAnexo.ID_SOLICITUD_PRESTAMO);
+                        if (archivoAnexo.ID_DETALLE_ANEXO == 0 || archivoAnexo.NOMBRE_ANEXO == null || archivoAnexo.VALOR == null || archivoAnexo.TIPO == null || archivoAnexo.ID_ANEXO == 0 || archivoAnexo.ID_SOLICITUD_PRESTAMO == 0)
+                        {
+                            throw new Exception("Ha ocurrido un error al actualizar los anexos de la solicitud de préstamo");
+                        }
+
 
                         var nombreUnico = ""; // Inicializo el nombre unico
                         if (string.IsNullOrEmpty(archivoAnexo.NOMBRE_ANEXO)) // Si el nombre del anexo es nulo, genero un nombre unico
@@ -470,7 +464,7 @@ public class PrestamosController : Controller
                         archivoAnexo.VALOR = nombreUnico; // Asigno la ruta del archivo al objeto
                         await using var stream = new FileStream(ruta, FileMode.Create); // Creo un stream para guardar el archivo
                         await archivo.CopyToAsync(stream); // Copio el archivo al stream
-                                                           // Actualizo los detalles de los anexos
+                        // Actualizo los detalles de los anexos
                         await _context.Database.ExecuteSqlRawAsync("EXEC SP_ACTUALIZAR_DETALLE_ANEXO @ID_DETALLE_ANEXO = {0}, @VALOR = {1}", archivoAnexo.ID_DETALLE_ANEXO, archivoAnexo.VALOR);
 
                     }
@@ -491,8 +485,6 @@ public class PrestamosController : Controller
         return RedirectToAction("SolicitudesPrestamos", "Prestamos");
 
     }
-
-
 
 
     [HttpPost]
