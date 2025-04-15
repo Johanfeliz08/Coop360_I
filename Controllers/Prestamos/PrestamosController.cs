@@ -295,10 +295,8 @@ public class PrestamosController : Controller
             {
 
                 // Itera sobre los archivos y guarda los archivos en el servidor
-                for (int i = 0; i < detallesAnexosArchivos.Count; i++)
+                foreach (var archivo in detallesAnexosArchivos)
                 {
-                    var archivo = detallesAnexosArchivos[i];
-                    var idDetalleAnexoArchivo = idDetalleAnexosArchivos[i];
 
                     var archivoAnexo = new DetalleAnexo // Inicializo el objeto para guardar el archivo
                     {
@@ -310,14 +308,19 @@ public class PrestamosController : Controller
                         ID_SOLICITUD_PRESTAMO = 0
                     };
 
-                    Console.WriteLine("Entrando al bucle de idDetalleAnexoArchivo");
-                    Console.WriteLine($"ID Detalle Anexo Archivo: {idDetalleAnexoArchivo}");
-                    archivoAnexo.ID_DETALLE_ANEXO = Convert.ToInt32(idDetalleAnexoArchivo); // Obtengo el id del detalle del anexo
-                    archivoAnexo.NOMBRE_ANEXO = dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.NOMBRE_ANEXO; // Obtengo el nombre del anexo
-                    archivoAnexo.VALOR = ""; // Inicializo el valor del anexo
-                    archivoAnexo.TIPO = "Archivo"; // Asigno el tipo de anexo
-                    archivoAnexo.ID_ANEXO = Convert.ToInt32(dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.ID_ANEXO); // Obtengo el id del anexo
-                    archivoAnexo.ID_SOLICITUD_PRESTAMO = Convert.ToInt32(solicitudPrestamoValida.ID_SOLICITUD); // Obtengo el id de la solicitud de prestamo
+                    foreach (var idDetalleAnexoArchivo in idDetalleAnexosArchivos) // Itera sobre los id de los detalles de los anexos
+                    {
+
+                        Console.WriteLine("ID Detalle Anexo Archivo: " + idDetalleAnexoArchivo);
+                        archivoAnexo.ID_DETALLE_ANEXO = Convert.ToInt32(idDetalleAnexoArchivo); // Obtengo el id del detalle del anexo
+                        archivoAnexo.NOMBRE_ANEXO = dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.NOMBRE_ANEXO; // Obtengo el nombre del anexo
+                        archivoAnexo.VALOR = ""; // Inicializo el valor del anexo
+                        archivoAnexo.TIPO = "Archivo"; // Asigno el tipo de anexo
+                        archivoAnexo.ID_ANEXO = Convert.ToInt32(dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.ID_ANEXO); // Obtengo el id del anexo
+                        archivoAnexo.ID_SOLICITUD_PRESTAMO = Convert.ToInt32(solicitudPrestamoValida.ID_SOLICITUD); // Obtengo el id de la solicitud de prestamo
+
+                    }
+                    ;
 
                     var nombreUnico = ""; // Inicializo el nombre unico
                     if (string.IsNullOrEmpty(archivoAnexo.NOMBRE_ANEXO)) // Si el nombre del anexo es nulo, genero un nombre unico
@@ -417,10 +420,9 @@ public class PrestamosController : Controller
                     // Console.WriteLine("Data Detalles Anexos: " + dataDetallesAnexos.Count);
 
                     // Itera sobre los archivos y guarda los archivos en el servidor
-                    for (int i = 0; i < detallesAnexosArchivos.Count; i++)
+                    foreach (var archivo in detallesAnexosArchivos)
                     {
-                        var archivo = detallesAnexosArchivos[i];
-                        var idDetalleAnexoArchivo = idDetalleAnexosArchivos[i];
+
 
                         var archivoAnexo = new DetalleAnexo // Inicializo el objeto para guardar el archivo
                         {
@@ -432,14 +434,27 @@ public class PrestamosController : Controller
                             ID_SOLICITUD_PRESTAMO = 0
                         };
 
-                        Console.WriteLine("Entrando al bucle de idDetalleAnexoArchivo");
-                        Console.WriteLine($"ID Detalle Anexo Archivo: {idDetalleAnexoArchivo}");
-                        archivoAnexo.ID_DETALLE_ANEXO = Convert.ToInt32(idDetalleAnexoArchivo); // Obtengo el id del detalle del anexo
-                        archivoAnexo.NOMBRE_ANEXO = dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.NOMBRE_ANEXO; // Obtengo el nombre del anexo
-                        archivoAnexo.VALOR = ""; // Inicializo el valor del anexo
-                        archivoAnexo.TIPO = "Archivo"; // Asigno el tipo de anexo
-                        archivoAnexo.ID_ANEXO = Convert.ToInt32(dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.ID_ANEXO); // Obtengo el id del anexo
-                        archivoAnexo.ID_SOLICITUD_PRESTAMO = Convert.ToInt32(ID_SOLICITUD); // Obtengo el id de la solicitud de prestamo
+                        foreach (var idDetalleAnexoArchivo in idDetalleAnexosArchivos) // Itera sobre los id de los detalles de los anexos
+                        {
+
+                            Console.WriteLine("Entrando al bucle de idDetalleAnexoArchivo");
+                            Console.WriteLine($"ID Detalle Anexo Archivo: {idDetalleAnexoArchivo}");
+                            archivoAnexo.ID_DETALLE_ANEXO = Convert.ToInt32(idDetalleAnexoArchivo); // Obtengo el id del detalle del anexo
+                            archivoAnexo.NOMBRE_ANEXO = dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.NOMBRE_ANEXO; // Obtengo el nombre del anexo
+                            archivoAnexo.VALOR = ""; // Inicializo el valor del anexo
+                            archivoAnexo.TIPO = "Archivo"; // Asigno el tipo de anexo
+                            archivoAnexo.ID_ANEXO = Convert.ToInt32(dataDetallesAnexos.Where(detalle => detalle.ID_DETALLE_ANEXO == Convert.ToInt32(idDetalleAnexoArchivo)).FirstOrDefault()?.ID_ANEXO); // Obtengo el id del anexo
+                            archivoAnexo.ID_SOLICITUD_PRESTAMO = Convert.ToInt32(ID_SOLICITUD); // Obtengo el id de la solicitud de prestamo
+
+                        }
+                        ;
+
+                        // Console.WriteLine("ID Detalle Anexo: " + archivoAnexo.ID_DETALLE_ANEXO);
+                        // Console.WriteLine("Archivo Anexo: " + archivoAnexo.NOMBRE_ANEXO);
+                        // Console.WriteLine("Valor: " + archivoAnexo.VALOR);
+                        // Console.WriteLine("Tipo: " + archivoAnexo.TIPO);
+                        // Console.WriteLine("ID Anxo: " + archivoAnexo.ID_ANEXO);
+                        // Console.WriteLine("ID Solicitud Prestamo: " + archivoAnexo.ID_SOLICITUD_PRESTAMO);
 
                         var nombreUnico = ""; // Inicializo el nombre unico
                         if (string.IsNullOrEmpty(archivoAnexo.NOMBRE_ANEXO)) // Si el nombre del anexo es nulo, genero un nombre unico
