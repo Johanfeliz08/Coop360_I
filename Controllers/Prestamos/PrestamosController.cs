@@ -691,6 +691,33 @@ public class PrestamosController : Controller
         return RedirectToAction("AprobacionSolicitudesPrestamos", "Prestamos");
     }
 
+
+    // Modal para aprobar solicitud de prestamo
+    [HttpGet]
+    public IActionResult ConfirmarAprobacionSolicitudPrestamo(string IdSolicitudPrestamo)
+    {
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        if (IdSolicitudPrestamo != null)
+        {
+            int ID_SOLICITUD = Convert.ToInt32(IdSolicitudPrestamo);
+            TempData["openModalAprobacionRechazo"] = true;
+            TempData["Tipo"] = "aprobacion";
+            TempData["Aprobacion"] = "¿Esta seguro que desea aprobar esta solicitud de préstamo?";
+            TempData["Controlador"] = "Prestamos";
+            TempData["Parametro"] = "IdSolicitudPrestamo";
+            TempData["ID"] = ID_SOLICITUD;
+            return RedirectToAction("ConsultarSolicitudPrestamoAprobacion", "Prestamos", new { IdSolicitudPrestamo = ID_SOLICITUD });
+        }
+
+        throw new Exception("Error al abrir la modal de aprobacion de prestamos");
+
+    }
+
+
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

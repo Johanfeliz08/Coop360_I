@@ -1,5 +1,5 @@
 <head>
-  <link rel="stylesheet" href="~/css/Components/ModalView.css" />
+  <link rel="stylesheet" href="~/css/Components/ModalAprobacionRechazoView.css" />
 </head>
 
 <dialog open class="modal" id="modal">
@@ -11,24 +11,13 @@
       <div class="header">
         <div class="icono">
           @{
-            if (ViewBag.Tipo == "error")
-            {
-              <i class="fi fi-tr-x" style="color:red; font-size:2.5em ;"></i>
-            }
-            else if (ViewBag.Tipo == "success")
-            {
-              <i class="fi fi-rr-check" style="color:var(--accent-color)"></i>
-
-            }
-            else if (ViewBag.Tipo == "confirmation")
-            {
-
-              <i class="fi fi-tr-triangle-warning" style="color:#ffb805"></i>
-
-            }
-            else if (ViewBag.Tipo == "aprobacion")
+            if (ViewBag.Tipo == "aprobacion")
             {
               <i class="fi fi-tr-memo-circle-check" style="color:var(--accent-color)"></i>
+            }
+            else if (ViewBag.Tipo == "rechazo")
+            {
+              <i class="fi fi-tr-x" style="color:red; font-size:2.5em ;"></i>
             }
           }
         </div>
@@ -42,20 +31,27 @@
       <div class="footer">
         <div class="btn-container">
           @{
-            if (ViewBag.Tipo == "confirmation")
+            if (ViewBag.Tipo == "rechazo")
             {
-              <form asp-action="Eliminar" asp-controller="@ViewBag.Controlador" method="post">
+              <form asp-action="" asp-controller="@ViewBag.Controlador" method="post">
                 <div class="campo" id="campo" style="display: none;">
                   <label for="@ViewBag.Parametro">@ViewBag.Parametro</label>
                   <input type="text" name="@ViewBag.Parametro" id="@ViewBag.Parametro" value="@((ViewBag.id) ?? "")">
                 </div>
-                <button type="submit" class="btn-confirmation" id="btn-aceptar">Aceptar</button>
+                <button type="submit" class="btn-confirmation" id="btn-aceptar">Rechazar</button>
               </form>
               <button class="btn btn-cancelar" id="btn-cancelar">Cancelar</button>
             }
             else
             {
-              <button class="btn @( ViewBag.Tipo == "error" ? "btn-error" : "btn-success")" id="btn">Aceptar</button>
+              <form asp-action="" asp-controller="@ViewBag.Controlador" method="post">
+                <div class="campo" id="campo" style="display: none;">
+                  <label for="@ViewBag.Parametro">@ViewBag.Parametro</label>
+                  <input type="text" name="@ViewBag.Parametro" id="@ViewBag.Parametro" value="@((ViewBag.id) ?? "")">
+                </div>
+                <button type="submit" class="btn-aprobar" id="btn-aceptar">Aprobar</button>
+              </form>
+              <button class="btn btn-cancelar" id="btn-cancelar">Cancelar</button>
             }
           }
         </div>

@@ -1,6 +1,10 @@
 {
   "Files": [
     {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\Archivos\\005ce45f-2735-4dcb-98c6-9768e62798af_ContratodeTrabajo_7.txt",
+      "PackagePath": "staticwebassets\\Archivos\\005ce45f-2735-4dcb-98c6-9768e62798af_ContratodeTrabajo_7.txt"
+    },
+    {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\Archivos\\058637e1-1f15-45ab-aa43-67dbc1e64902.txt",
       "PackagePath": "staticwebassets\\Archivos\\058637e1-1f15-45ab-aa43-67dbc1e64902.txt"
     },
@@ -19,6 +23,14 @@
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\Archivos\\23a93606-967e-4005-b70a-aab70ded4990.txt",
       "PackagePath": "staticwebassets\\Archivos\\23a93606-967e-4005-b70a-aab70ded4990.txt"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\Archivos\\44d2b1bd-01ce-4fd1-8f58-e86283ff1bf8_ContratodeTrabajo_6.txt",
+      "PackagePath": "staticwebassets\\Archivos\\44d2b1bd-01ce-4fd1-8f58-e86283ff1bf8_ContratodeTrabajo_6.txt"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\Archivos\\64cdd759-57d7-479b-9736-a4d0cad359bc.txt",
+      "PackagePath": "staticwebassets\\Archivos\\64cdd759-57d7-479b-9736-a4d0cad359bc.txt"
     },
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\Archivos\\669066e0-3d30-4231-ad92-8ea58914527a_ContratodeTrabajo_36.txt",
@@ -87,6 +99,10 @@
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Codeudores\\formCodeudores.css",
       "PackagePath": "staticwebassets\\css\\Codeudores\\formCodeudores.css"
+    },
+    {
+      "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Components\\ModalAprobacionRechazoView.css",
+      "PackagePath": "staticwebassets\\css\\Components\\ModalAprobacionRechazoView.css"
     },
     {
       "Id": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Components\\ModalView.css",

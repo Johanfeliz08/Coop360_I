@@ -7,16 +7,32 @@
   <link rel="stylesheet" href="~/css/Form.css" />
 </head>
 
+@{
+
+  if (TempData["openModalAprobacionRechazo"] != null)
+  {
+
+    if (TempData["Aprobacion"] != null)
+    {
+      @await Component.InvokeAsync("ModalAprobacionRechazo", new { tipo = "aprobacion", mensaje = TempData["Aprobacion"],
+      controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
+}
+}
+}
+
+
 <section class="main-container">
   <div class="titulo-seccion">
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
       <a href="@Url.Action("AprobacionSolicitudesPrestamos", "Prestamos")" class="btn btn-regresar"><i
           class="fi fi-rr-undo"></i></a>
-      <button type="button" id="btn-aprobar" class="btn btn-nuevo"><i
-          class="fi fi-tr-memo-circle-check"></i><span>Aprobar</span></button>
-      <button type="button" id="btn-rechazar" class="btn btn-rechazar"><i
-          class="fi fi-tr-vote-nay"></i><span>Rechazar</span></button>
+      <a href="@Url.Action("ConfirmarAprobacionSolicitudPrestamo", "Prestamos", new { idSolicitudPrestamo = Model.SolicitudPrestamo.ID_SOLICITUD })"
+        class="btn btn-nuevo"><i class="fi fi-tr-memo-circle-check"></i><span>Aprobar</span></a>
+      <a href="@Url.Action("RechazarSolicitudPrestamo", "Prestamos", new { idSolicitudPrestamo = Model.SolicitudPrestamo.ID_SOLICITUD })"
+        id="btn-rechazar" class="btn btn-rechazar"><i class="fi fi-tr-vote-nay"></i><span>Rechazar</span></a>
     </div>
   </div>
   <div class="form-container">
@@ -110,6 +126,7 @@
         </div>
       </div>
       @{
+
         <div class="campos-container">
           <div class="grupo informacion-personal">
             <div class="titulo-grupo" id="titulo">
@@ -123,16 +140,44 @@
 
                   if (@detalleAnexo.TIPO == "Archivo")
                   {
-                    <div class="campo" id="campo_anexo">
-                      <label for="anexo">@detalleAnexo.NOMBRE_ANEXO</label>
-                      <input type="file" name="anexo" id="anexo" value="@detalleAnexo.VALOR" disabled>
+                    <div class="campo" id="campo_anexo" style="display: none;">
+                      <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                      <input type="text" name="idDetalleAnexosArchivos" id="@detalleAnexo.ID_DETALLE_ANEXO"
+                        value="@detalleAnexo.ID_DETALLE_ANEXO">
+                    </div>
+                    <div class="campo campo-archivo" id="campo_anexo">
+                      <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                      <div class="input-btn-container">
+                        <input type="file" name="detallesAnexosArchivos" id="@detalleAnexo.ID_ANEXO" disabled>
+                        <a href="@Url.Content($"~/Archivos/{detalleAnexo?.VALOR}")" target="_blank" class="btn-descargar"><i
+                            class="fi fi-tr-file-download"></i></a>
+                      </div>
+                      @{
+                        if (detalleAnexo?.VALOR != null)
+                        {
+
+                          <p><span style="font-weight: bold;">Archivo actual:</span><span>
+                              @System.IO.Path.GetFileName(detalleAnexo.VALOR)</span></p>
+                        }
+                        else
+                        {
+                          <p><span style="font-weight: bold;">Archivo actual:</span><span>
+                              No hay archivo</span></p>
+                        }
+                      }
                     </div>
                   }
                   else if (@detalleAnexo.TIPO == "Dato")
                   {
+                    <div class="campo" id="campo_dato" style="display: none;">
+                      <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                      <input type="text" name="idDetalleAnexos" id="@detalleAnexo.ID_DETALLE_ANEXO"
+                        value="@detalleAnexo.ID_DETALLE_ANEXO" disabled>
+                    </div>
                     <div class="campo" id="campo_dato">
-                      <label for="dato">@detalleAnexo.NOMBRE_ANEXO</label>
-                      <input type="text" name="dato" id="dato" value="@detalleAnexo.VALOR" disabled>
+                      <label for="@detalleAnexo.ID_ANEXO">@detalleAnexo.NOMBRE_ANEXO</label>
+                      <input type="text" name="detallesAnexos" id="@detalleAnexo.ID_ANEXO" value="@((detalleAnexo?.VALOR) ?? "")"
+                        disabled>
                     </div>
                   }
                 }
@@ -140,6 +185,7 @@
             }
           </div>
         </div>
+
       }
 
       <div class="campos-container">
