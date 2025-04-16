@@ -2,7 +2,7 @@ using Microsoft.AspNetCore.Mvc;
 
 public class ModalAprobacionRechazoViewComponent : ViewComponent
 {
-  public IViewComponentResult Invoke(string tipo, string mensaje, string controlador, string parametro, int id)
+  public IViewComponentResult Invoke(string tipo, string mensaje, string controlador, string parametro, int id, string montoSolicitado)
   {
 
     // Tipos: error, success, confirmation
@@ -21,6 +21,11 @@ public class ModalAprobacionRechazoViewComponent : ViewComponent
         if (id != 0)
         {
           ViewBag.id = id;
+        }
+
+        if (montoSolicitado != null)
+        {
+          ViewBag.montoSolicitado = montoSolicitado;
         }
 
       }

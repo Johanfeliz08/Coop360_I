@@ -694,22 +694,22 @@ public class PrestamosController : Controller
 
     // Modal para aprobar solicitud de prestamo
     [HttpGet]
-    public IActionResult ConfirmarAprobacionSolicitudPrestamo(string IdSolicitudPrestamo)
+    public IActionResult ConfirmarAprobacionSolicitudPrestamo(string IdSolicitudPrestamo, string montoSolicitado)
     {
         if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
         {
             return RedirectToAction("Login", "Auth");
         }
 
-        if (IdSolicitudPrestamo != null)
+        if (IdSolicitudPrestamo != null && montoSolicitado != null)
         {
             int ID_SOLICITUD = Convert.ToInt32(IdSolicitudPrestamo);
             TempData["openModalAprobacionRechazo"] = true;
-            TempData["Tipo"] = "aprobacion";
-            TempData["Aprobacion"] = "¿Esta seguro que desea aprobar esta solicitud de préstamo?";
+            TempData["Aprobacion"] = "true";
             TempData["Controlador"] = "Prestamos";
             TempData["Parametro"] = "IdSolicitudPrestamo";
             TempData["ID"] = ID_SOLICITUD;
+            TempData["MontoSolicitado"] = montoSolicitado;
             return RedirectToAction("ConsultarSolicitudPrestamoAprobacion", "Prestamos", new { IdSolicitudPrestamo = ID_SOLICITUD });
         }
 
@@ -717,6 +717,27 @@ public class PrestamosController : Controller
 
     }
 
+    // Modal para rechazar solicitud de prestamo
+    [HttpGet]
+    public IActionResult ConfirmarRechazoSolicitudPrestamo(string IdSolicitudPrestamo)
+    {
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+        if (IdSolicitudPrestamo != null)
+        {
+            int ID_SOLICITUD = Convert.ToInt32(IdSolicitudPrestamo);
+            TempData["openModalAprobacionRechazo"] = true;
+            TempData["Rechazo"] = "true";
+            TempData["Controlador"] = "Prestamos";
+            TempData["Parametro"] = "IdSolicitudPrestamo";
+            TempData["ID"] = ID_SOLICITUD;
+            return RedirectToAction("ConsultarSolicitudPrestamoAprobacion", "Prestamos", new { IdSolicitudPrestamo = ID_SOLICITUD });
+        }
+
+        throw new Exception("Error al abrir la modal de rechazo de prestamos");
+    }
 
     public IActionResult Error()
     {

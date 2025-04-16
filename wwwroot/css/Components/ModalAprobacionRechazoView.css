@@ -24,17 +24,10 @@
   align-items: center;
   background: #fff;
   width: 620px;
-  height: 500px;
+  height: auto;
   border-radius: 25px;
   gap: 12px;
-}
-
-.modal .footer .btn-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  gap: 10px;
+  padding: 25px 0px;
 }
 
 /* Open animation */
@@ -85,7 +78,7 @@ dialog[open] > .container > .content {
 }
 
 .icono i {
-  font-size: 4.5em;
+  font-size: 3.5em;
 }
 
 /* Titulo */
@@ -94,54 +87,53 @@ dialog[open] > .container > .content {
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 19px;
+  font-size: 15px;
 }
 
-/* Mensaje */
+/* Formulario */
 
-.modal .content .mensaje {
-  text-align: center;
+.modal .content .form-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
-.mensaje p {
-  font-weight: 300;
-  font-size: 1.2em;
+.modal .content .form-container .campos {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
 }
 
 /* Boton aceptar */
 
-.footer .btn {
+.formContainer .btn {
   padding: 5px 10px;
   display: flex;
   justify-content: center;
   align-items: center;
   height: 45px;
-  width: 170px;
+  width: 150px;
   border: none;
   border-radius: 15px;
-  font-size: 20px;
+  font-size: 15px;
   cursor: pointer;
 }
 
-.btn-error {
-  background: red;
-  transition: all ease 0.5s;
-  color: #fff;
-}
-
-.btn-success {
-  color: #fff;
-  background: var(--accent-color);
-  transition: all ease 0.5s;
-}
-
-.footer #btn:hover {
+.formContainer #btn:hover {
   color: #fff;
   background: var(--accent-color-2);
   transition: all ease 0.5s;
 }
 
-/* Confirmation modal styel */
+.formContainer .buttons {
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+}
 
 .btn-aprobar {
   padding: 5px 10px;
@@ -165,6 +157,28 @@ dialog[open] > .container > .content {
   transition: all ease 0.5s;
 }
 
+.btnRechazar {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 170px;
+  border: none;
+  border-radius: 15px;
+  font-size: 20px;
+  cursor: pointer;
+  color: #fff;
+  background: red;
+  transition: all ease 0.5s;
+}
+
+.btnRechazar:hover {
+  color: #fff;
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
 .btn-cancelar {
   background: #d6d6d6;
   color: #000;
@@ -175,4 +189,49 @@ dialog[open] > .container > .content {
   color: #fff;
   background: var(--accent-color-2);
   transition: all ease 0.5s;
+}
+
+/* Estilos de los inputs */
+
+.formContainer .campo {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  gap: 10px;
+  max-width: 800px;
+  padding: 10px 0px;
+}
+
+.formContainer .campo label {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 400;
+  font-size: 1.1em;
+}
+
+.formContainer .campo input {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+input:focus {
+  outline: var(--accent-color) 1px solid;
+}
+
+textarea {
+  min-width: 300px;
+  max-width: 300px;
+  min-height: 100px;
+  max-height: 100px;
+  font-family: "Oxygen", sans-serif;
+  font-size: 15px;
+}
+
+textarea:focus {
+  outline: var(--accent-color) 1px solid;
 }
