@@ -235,3 +235,15 @@ textarea {
 textarea:focus {
   outline: var(--accent-color) 1px solid;
 }
+
+/* Disabled submit button style */
+
+#btn-submit[disabled] {
+  background: #d6d6d6;
+  color: #000;
+  transition: all ease 0.5s;
+}
+
+#btn-submit[disabled]:hover {
+  color: #fff;
+}

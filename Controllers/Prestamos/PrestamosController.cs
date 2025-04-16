@@ -739,6 +739,81 @@ public class PrestamosController : Controller
         throw new Exception("Error al abrir la modal de rechazo de prestamos");
     }
 
+    [HttpPost]
+    public async Task<IActionResult> AprobarSolicitudPrestamo(string idSolicitudPrestamo, string montoAprobado, string notaAprobacion)
+    {
+
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        if (idSolicitudPrestamo != null && montoAprobado != null && notaAprobacion != null)
+        {
+            // Obtener los datos de la solicitud de prestamo
+            int ID_SOLICITUD = Convert.ToInt32(idSolicitudPrestamo);
+            var solicitudPrestamo = _context.SolicitudPrestamos
+                .FromSqlRaw("EXEC SP_BUSCAR_SOLICITUD_PRESTAMO @ID_SOLICITUD = {0}", ID_SOLICITUD)
+                .AsEnumerable()
+                .FirstOrDefault() ?? throw new Exception("No se encontró la solicitud de préstamo");
+
+            // Actualizar los datos de la solicitud de prestamo
+            solicitudPrestamo.SOLICITUD_APROBADA_RECHAZADA_POR = Convert.ToInt32(HttpContext.Session.GetInt32("ID_USUARIO"));
+            solicitudPrestamo.NOTA_APROBACION_RECHAZO = notaAprobacion;
+
+            var prestamo = new Prestamo()
+            {
+                ID_PRESTAMO = 0,
+                ID_SOLICITUD = ID_SOLICITUD,
+                // CODIGO_SOCIO = solicitudPrestamo?.CODIGO_SOCIO,
+                // NOMBRE_SOCIO = solicitudPrestamo?.SOCIO,
+                // SOLICITUD_REALIZADA_POR = solicitudPrestamo?.SOLICITUD_REALIZADA_POR,
+                // NOMBRE_SOLICITUD_REALIZADA_POR = solicitudPrestamo?.NOMBRE_SOLICITUD_REALIZADA_POR,
+                // SOLICITUD_APROBADA_RECHAZADA_POR = Convert.ToInt32(HttpContext.Session.GetInt32("ID_USUARIO")),
+                // NOMBRE_SOLICITUD_APROBADA_RECHAZADA_POR = HttpContext.Session.GetString("NOMBRE_USUARIO"),
+                // FECHA_APROBACION_RECHAZO = DateTime.Now,
+                MONTO_APROBADO = Convert.ToDecimal(montoAprobado),
+                BALANCE_RESTANTE = Convert.ToDecimal(montoAprobado),
+                PLAZO_MESES = Convert.ToInt32(solicitudPrestamo?.PLAZO_MESES),
+                CANTIDAD_CUOTAS = Convert.ToInt32(solicitudPrestamo?.CANTIDAD_CUOTAS),
+                TASA_INTERES = Convert.ToDecimal(solicitudPrestamo?.TASA_INTERES),
+                // FECHA_CREACION = DateTime.Now,
+                // FECHA_INICIO = DateTime.Now,
+                // FECHA_FINAL = DateTime.Now,
+                // CODIGO_CODEUDOR_PRINCIPAL = solicitudPrestamo?.CODIGO_CODEUDOR_PRINCIPAL,
+                // NOMBRE_CODEUDOR_PRINCIPAL = solicitudPrestamo?.NOMBRE_CODEUDOR_PRINCIPAL,
+                // CODIGO_CODEUDOR_SECUNDARIO = solicitudPrestamo?.CODIGO_CODEUDOR_SECUNDARIO,
+                // NOMBRE_CODEUDOR_SECUNDARIO = solicitudPrestamo?.NOMBRE_CODEUDOR_SECUNDARIO,
+                // CODIGO_CODEUDOR_TERCIARIO = solicitudPrestamo?.CODIGO_CODEUDOR_TERCIARIO,
+                // NOMBRE_CODEUDOR_TERCIARIO = solicitudPrestamo?.NOMBRE_CODEUDOR_TERCIARIO,
+                // ESTATUS_DESEMBOLSO = "Pendiente",
+                // ESTATUS = "Activo",
+
+            };
+
+            try
+            {
+                await _context.Database.ExecuteSqlRawAsync("EXEC SP_APROBAR_SOLICITUD_PRESTAMO @ID_SOLICITUD_PRESTAMO = {0}, @SOLICITUD_APROBADA_RECHAZADA_POR = {1}, @NOTA_APROBACION_RECHAZO = {2}, @MONTO_APROBADO = {3}, @PLAZO_MESES = {4}, @CANTIDAD_CUOTAS = {5}, @TASA_INTERES = {6}",
+                solicitudPrestamo.ID_SOLICITUD, solicitudPrestamo.SOLICITUD_APROBADA_RECHAZADA_POR, solicitudPrestamo.NOTA_APROBACION_RECHAZO, prestamo.MONTO_APROBADO, solicitudPrestamo.PLAZO_MESES, solicitudPrestamo.CANTIDAD_CUOTAS, solicitudPrestamo.TASA_INTERES);
+                TempData["openModal"] = true;
+                TempData["Success"] = "Solicitud de préstamo aprobada correctamente";
+                return RedirectToAction("AprobacionSolicitudesPrestamos", "Prestamos");
+            }
+            catch (Exception ex)
+            {
+                TempData["openModal"] = true;
+                TempData["Error"] = "Ha ocurrido un error al aprobar la solicitud de préstamo: " + ex.Message;
+                return RedirectToAction("AprobacionSolicitudesPrestamos", "Prestamos");
+            }
+
+        }
+
+        TempData["openModal"] = true;
+        TempData["Error"] = "Los datos necesarios para aprobar la solicitud de préstamo no son válidos";
+        return RedirectToAction("AprobacionSolicitudesPrestamos", "Prestamos");
+
+    }
+
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

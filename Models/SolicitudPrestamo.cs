@@ -53,6 +53,7 @@ public class SolicitudPrestamo
 
   public string? NOMBRE_CODEUDOR_TERCIARIO { get; set; }
 
+  public string? NOTA_APROBACION_RECHAZO { get; set; }
   public required string ESTATUS { get; set; }
 
 
