@@ -1,0 +1,170 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Form.css" />
+</head>
+
+@{
+
+  if (TempData["openModalDesembolso"] != null)
+  {
+
+    @await Component.InvokeAsync("ModalDesembolso", new { id = TempData["ID"] })
+  }
+}
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("ConsultarPrestamos", "Prestamos")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+
+      @{
+        if (Model.ESTATUS_DESEMBOLSO == "Pendiente")
+        {
+          <a id="btn-desembolsar"
+            href="@Url.Action("ConfirmarDesembolsoPrestamo", "Prestamos", new { IdPrestamo = Model.ID_PRESTAMO })"
+            class="btn btn-nuevo"><i class="fi fi-tr-piggy-bank"></i><span>Desembolsar</span></a>
+
+        }
+      }
+
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="form" asp-action="ActualizarPrestamo" asp-controller="Prestamos" method="POST"
+      enctype="multipart/form-data">
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Detalles del prestamo</h2>
+          </div>
+          <div class="campo" id="campo_id_prestamo" style="display: none;">
+            <label for="id_prestamo">ID Prestamo</label>
+            <input type="text" name="id_prestamo" id="id_prestamo" value="@Model?.ID_PRESTAMO" readonly>
+          </div>
+          <div class="campo" id="campo_socios">
+            <label for="codigo_socio">Socio</label>
+            <input type="text" name="socio" id="codigo_socio" value="@Model?.NOMBRE_SOCIO" readonly>
+          </div>
+
+          <div class="campo" id="campo_solicitud_realizada_por">
+            <label for="solicitud_realizada_por">Solicitud realizada por</label>
+            <input type="text" name="solicitud_realizada_por" id="solicitud_realizada_por"
+              value="@Model?.NOMBRE_SOLICITUD_REALIZADA_POR" readonly>
+          </div>
+
+          <div class="campo" id="campo_fecha_aprobacion_rechazo">
+            <label for="fecha_aprobacion_rechazo">Fecha de aprobacion</label>
+            <input type="text" name="fecha_aprobacion_rechazo" id="fecha_aprobacion_rechazo"
+              value="@Model?.FECHA_APROBACION_RECHAZO" readonly>
+          </div>
+          <div class="campo" id="campo_monto_aprobado">
+            <label for="monto_aprobado">Monto aprobado</label>
+            <input type="text" name="monto_aprobado" id="monto_aprobado" value="@Model?.MONTO_APROBADO" readonly>
+          </div>
+          <div class="campo" id="campo_balance_restante">
+            <label for="balance_restante">Balance restante</label>
+            <input type="text" name="balance_restante" id="balance_restante" value="@Model?.BALANCE_RESTANTE" readonly>
+          </div>
+          <div class="campo" id="campo_plazo_meses">
+            <label for="plazo_meses">Plazo (Meses)</label>
+            <input type="text" name="plazo_meses" id="plazo_meses" value="@Model?.PLAZO_MESES" readonly>
+          </div>
+          <div class="campo" id="campo_cantidad_cuotas">
+            <label for="cantidad_cuotas">Cantidad de cuotas</label>
+            <input type="text" name="cantidad_cuotas" id="cantidad_cuotas" value="@Model?.CANTIDAD_CUOTAS" readonly>
+          </div>
+          <div class="campo" id="campo_monto_por_cuota">
+            <label for="monto_por_cuota">Monto por cuota</label>
+            <input type="text" name="monto_por_cuota" id="monto_por_cuota" value="@Model?.MONTO_POR_CUOTA" readonly>
+          </div>
+          <div class="campo" id="campo_tasa_interes">
+            <label for="tasa_interes">Tasa de interes (%)</label>
+            <input type="text" name="tasa_interes" id="tasa_interes" value="@Model?.TASA_INTERES" readonly>
+          </div>
+          <div class="campo" id="campo_categoria_prestamo">
+            <label for="categoria_prestamo">Categoria de prestamo</label>
+            <input type="text" name="categoria_prestamo" id="categoria_prestamo"
+              value="@Model?.NOMBRE_CATEGORIA_PRESTAMO" readonly>
+          </div>
+          <div class="campo" id="campo_fecha_inicio">
+            <label for="fecha_inicio">Fecha inicio</label>
+            <input type="text" name="fecha_inicio" id="fecha_inicio" value="@Model?.FECHA_INICIO" readonly>
+          </div>
+          <div class="campo" id="campo_fecha_final">
+            <label for="fecha_final">Fecha final</label>
+            <input type="text" name="fecha_final" id="fecha_final" value="@Model?.FECHA_FINAL" readonly>
+          </div>
+          <div class="campo" id="campo_estatus_desembolso">
+            <label for="estatus_desembolso">Estatus desembolso</label>
+            <select name="estatus_desembolso" id="estatus_desembolso">
+              <option value="default" disabled selected>Seleccionar</option>
+              @{
+                if (Model?.ESTATUS_DESEMBOLSO == "Pendiente")
+                {
+                  <option value="Pendiente" selected>Pendiente</option>
+                }
+                if (Model?.ESTATUS_DESEMBOLSO == "Desembolsado")
+                {
+                  <option value="Desembolsado" selected>Desembolsado</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_estatus">
+            <label for="estatus">Estatus</label>
+            <select name="estatus" id="estatus">
+              <option value="default" disabled selected>Seleccionar</option>
+              @{
+                if (Model?.ESTATUS == "Pendiente")
+                {
+                  <option value="Pendiente" selected disable>Pendiente</option>
+                }
+                if (Model?.ESTATUS == "Activo")
+                {
+                  <option value="Activo" selected disabled>Activo</option>
+                }
+                if (Model?.ESTATUS == "Cancelado")
+                {
+                  <option value="Cancelado" selected>Cancelado</option>
+                }
+                else
+                {
+                  <option value="Cancelado">Cancelado</option>
+                }
+              }
+            </select>
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Garantias</h2>
+          </div>
+          <div class="campo" id="campo_codeudor_principal">
+            <label for="codeudor_principal">Codeudor principal</label>
+            <input type="text" name="codeudor_principal" id="codeudor_principal"
+              value="@Model?.NOMBRE_CODEUDOR_PRINCIPAL" readonly>
+          </div>
+          <div class="campo" id="campo_codeudor_secundario">
+            <label for="codeudor_secundario">Codeudor secundario</label>
+            <input type="text" name="csecundario" id="codeudor_secundario" value="@Model?.NOMBRE_CODEUDOR_SECUNDARIO"
+              readonly>
+          </div>
+          <div class="campo" id="campo_codeudor_terciario">
+            <label for="codeudor_terciario">Codeudor terciario</label>
+            <input type="text" name="codeudor_terciario" id="codeudor_terciario"
+              value="@Model?.NOMBRE_CODEUDOR_TERCIARIO" readonly>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>

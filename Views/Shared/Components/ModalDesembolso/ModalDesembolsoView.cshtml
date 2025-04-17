@@ -1,0 +1,84 @@
+<head>
+  <link rel="stylesheet" href="~/css/Components/ModalDesembolsoView.css" />
+</head>
+
+<dialog open class="modal" id="modal">
+  <div class="modal-container">
+    <div class="content">
+      <div class="btn-cerrar">
+        <button class="btn btn-cerrar" id="btn-cerrar"><i class="fi fi-tr-x"></i></button>
+      </div>
+      <div class="header">
+        <div class="icono">
+          <i class="fi fi-tr-piggy-bank" style="color:var(--accent-color)"></i>
+        </div>
+        <div class="titulo">
+          <h2>@ViewBag.Titulo</h2>
+        </div>
+      </div>
+      <div class="formContainer">
+        <form id="frmDesembolso" asp-action="DesembolsarPrestamo" asp-controller="Prestamos" method="post">
+          <div class="campos">
+            <div class="campo" id="campo" style="display: none;">
+              <label for="id_prestamo">ID PRESTAMO</label>
+              <input type="text" name="IdPrestamo" id="id_prestamo" value="@((ViewBag.id) ?? "")">
+            </div>
+            <div class="campo" id="metodo">
+              <label for="metodo">Metodo:</label>
+              <select required name="metodo" id="metodo">
+                <option value="default" disabled selected>Seleccionar</option>
+                <option value="Efectivo">Efectivo</option>
+                <option value="Transferencia">Transferencia</option>
+                <option value="Cheque">Cheque</option>
+              </select>
+            </div>
+            <div class="campo" id="campo_nota">
+              <label for="nota_desembolso">Nota de desembolso:</label>
+              <textarea name="notaDesembolso" id="nota_desembolso"></textarea>
+            </div>
+            <div class="buttons">
+              <button type="submit" class="btn btn-submit btn-desembolsar" id="btn-desembolsar">Desembolsar</button>
+              <button class="btn btn-cancelar" id="btn-cancelar">Cancelar</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</dialog>
+
+<script>
+
+  const dialog = document.querySelector("dialog");
+
+  if (dialog != null) {
+
+    const btnCerrar = document.getElementById("btn-cerrar");
+    btnCerrar.addEventListener("click", (e) => {
+      e.preventDefault();
+      dialog.close();
+    });
+
+    const btnCancelar = document.getElementById("btn-cancelar");
+    btnCancelar.addEventListener("click", (e) => {
+      e.preventDefault();
+      dialog.close();
+    });
+
+    const frmDesembolso = document.getElementById("frmDesembolso");
+    const inputMetodo = document.getElementById("metodo");
+    const submitBtn = document.getElementById("btn-desembolsar").disabled = true;
+
+    inputMetodo.addEventListener("change", (e) => {
+
+      if (inputMetodo.value != "default") {
+        const submitBtn = document.getElementById("btn-desembolsar").disabled = false;
+      }
+
+    });
+
+  }
+
+
+
+</script>

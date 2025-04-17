@@ -64,9 +64,6 @@ Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
               <div class="th">Consultar</div>
             </th>
             <th>
-              <div class="th">Aprobar/Rechazar</div>
-            </th>
-            <th>
               <div class="th">
                 <span>Id Solicitud</span>
               </div>
@@ -183,11 +180,6 @@ Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
                 <a class="dato accion-consultar" data-idSolicitudPrestamo="@solicitudPrestamo.ID_SOLICITUD"
                   href="@Url.Action("ConsultarSolicitudPrestamoAprobacion", "Prestamos", new { IdSolicitudPrestamo = @solicitudPrestamo.ID_SOLICITUD })"><i
                     class="fi fi-tr-overview"></i></a>
-              </td>
-              <td>
-                <a class="dato accion-aprobar-rechazar" data-idSolicitudPrestamo="@solicitudPrestamo.ID_SOLICITUD"
-                  href="@Url.Action("", "Prestamos", new { IdSolicitudPrestamo = @solicitudPrestamo.ID_SOLICITUD })"><i
-                    class="fi fi-rr-refresh"></i></a>
               </td>
 
               <td>

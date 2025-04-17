@@ -9,6 +9,31 @@
 
 @{
 
+  if (TempData["openModal"] != null)
+  {
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else if (TempData["Success"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+    else if (TempData["Confirmation"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
+;
+  }
+}
+}
+
+@{
+
   if (TempData["openModalAprobacionRechazo"] != null)
   {
     if (TempData["Aprobacion"] != null)

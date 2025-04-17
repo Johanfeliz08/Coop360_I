@@ -89,18 +89,13 @@ public class PrestamosController : Controller
 
             var idRol = HttpContext.Session.GetInt32("ID_ROL");
             var idNivelAprobacion = HttpContext.Session.GetInt32("ID_NIVEL_APROBACION");
-            var codigoEmpleado = HttpContext.Session.GetInt32("CODIGO_EMPLEADO");
-
-            if (idRol != 6)
-            {
-                // Filtra las solicitudes solo las creadas por el usuario/empleado logeado
-                var solicitudesPrestamosFiltradas = solicitudesPrestamos.Where(solicitud => solicitud.SOLICITUD_REALIZADA_POR == codigoEmpleado && solicitud.ESTATUS == "Pendiente").ToList();
-                return View("~/Views/Prestamos/SolicitudesPrestamos/RegistroSolicitudesPrestamos.cshtml", solicitudesPrestamosFiltradas);
-            }
+            var codigoEmpleado = HttpContext.Session.GetInt32("ID_USUARIO");
 
 
-            return View("~/Views/Prestamos/SolicitudesPrestamos/RegistroSolicitudesPrestamos.cshtml", solicitudesPrestamos);
-
+            // Filtra las solicitudes solo las creadas por el usuario/empleado logeado
+            var solicitudesPrestamosFiltradas = solicitudesPrestamos.Where(solicitud => solicitud.SOLICITUD_REALIZADA_POR == codigoEmpleado && solicitud.ESTATUS == "Pendiente").ToList();
+            return View("~/Views/Prestamos/SolicitudesPrestamos/RegistroSolicitudesPrestamos.cshtml", solicitudesPrestamosFiltradas);
+        
 
         }
         catch (Exception ex)
@@ -584,7 +579,6 @@ public class PrestamosController : Controller
 
     }
 
-    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
 
     // Aprobacion de solicitudes de prestamos
 
@@ -603,19 +597,15 @@ public class PrestamosController : Controller
                 .AsEnumerable()
                 .ToList();
 
-            var idRol = HttpContext.Session.GetInt32("ID_ROL");
-            var idNivelAprobacion = HttpContext.Session.GetInt32("ID_NIVEL_APROBACION");
-            var codigoEmpleado = HttpContext.Session.GetInt32("CODIGO_EMPLEADO");
+            var idRol = Convert.ToInt32(HttpContext.Session.GetInt32("ID_ROL"));
+            var idNivelAprobacion = Convert.ToInt32(HttpContext.Session.GetInt32("ID_NIVEL_APROBACION"));
+            var codigoEmpleado = Convert.ToInt32(HttpContext.Session.GetInt32("ID_USUARIO"));
+            
+            // Filtra las solicitudes solo las creadas por el usuario/empleado logeado
+            var solicitudesPrestamosFiltradas = new List<SolicitudPrestamo>();
+            solicitudesPrestamosFiltradas = solicitudesPrestamos.Where(solicitud => solicitud.SOLICITUD_REALIZADA_POR == codigoEmpleado && solicitud.ESTATUS == "Pendiente" && solicitud.ID_NIVEL_APROBACION_REQUERIDO == idNivelAprobacion).ToList(); // Filtra las solicitudes solo las creadas por el usuario/empleado logeado
 
-            if (idRol != 6)
-            {
-                // Filtra las solicitudes solo las creadas por el usuario/empleado logeado
-                var solicitudesPrestamosFiltradas = solicitudesPrestamos.Where(solicitud => solicitud.SOLICITUD_REALIZADA_POR == codigoEmpleado && solicitud.ESTATUS == "Pendiente").ToList();
-                return View("~/Views/Prestamos/SolicitudesPrestamos/AprobacionSolicitudesPrestamos.cshtml", solicitudesPrestamosFiltradas);
-            }
-
-
-            return View("~/Views/Prestamos/SolicitudesPrestamos/AprobacionSolicitudesPrestamos.cshtml", solicitudesPrestamos);
+            return View("~/Views/Prestamos/SolicitudesPrestamos/AprobacionSolicitudesPrestamos.cshtml", solicitudesPrestamosFiltradas);
 
 
         }
@@ -696,10 +686,10 @@ public class PrestamosController : Controller
     [HttpGet]
     public IActionResult ConfirmarAprobacionSolicitudPrestamo(string IdSolicitudPrestamo, string montoSolicitado)
     {
-        // if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
-        // {
-        //     return RedirectToAction("Login", "Auth");
-        // }
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
 
         if (IdSolicitudPrestamo != null && montoSolicitado != null)
         {
@@ -740,7 +730,7 @@ public class PrestamosController : Controller
     }
 
     [HttpPost]
-    public async Task<IActionResult> AprobarSolicitudPrestamo(string idSolicitudPrestamo, string montoAprobado, string notaAprobacion)
+    public async Task<IActionResult> AprobarSolicitudPrestamo(string IdSolicitudPrestamo, string montoAprobado, string notaAprobacion)
     {
 
         if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
@@ -748,14 +738,31 @@ public class PrestamosController : Controller
             return RedirectToAction("Login", "Auth");
         }
 
-        if (idSolicitudPrestamo != null && montoAprobado != null && notaAprobacion != null)
+        if (IdSolicitudPrestamo != null && montoAprobado != null)
         {
             // Obtener los datos de la solicitud de prestamo
-            int ID_SOLICITUD = Convert.ToInt32(idSolicitudPrestamo);
+            int ID_SOLICITUD = Convert.ToInt32(IdSolicitudPrestamo);
             var solicitudPrestamo = _context.SolicitudPrestamos
                 .FromSqlRaw("EXEC SP_BUSCAR_SOLICITUD_PRESTAMO @ID_SOLICITUD = {0}", ID_SOLICITUD)
                 .AsEnumerable()
                 .FirstOrDefault() ?? throw new Exception("No se encontró la solicitud de préstamo");
+
+            // Obtener los detalles anexos de la solicitud de prestamo
+            var detallesAnexos = _context.DetalleAnexos
+                .FromSqlRaw("EXEC SP_OBTENER_DETALLES_ANEXOS_SOLICITUD_PRESTAMO @ID_SOLICITUD_PRESTAMO = {0}", ID_SOLICITUD)
+                .AsEnumerable()
+                .ToList();
+
+            if (detallesAnexos != null ){
+            
+                var detallesAnexosNulos = detallesAnexos.Where(detalle => detalle.VALOR == null).ToList(); // Filtra los detalles anexos que no tienen valor
+                if (detallesAnexosNulos.Count > 0) {
+                    TempData["openModal"] = true;
+                    TempData["Error"] = "No es posible aprobar la solicitud de préstamo, ya que faltan anexos por completar";
+                    return RedirectToAction("ConsultarSolicitudPrestamoAprobacion", "Prestamos", new { IdSolicitudPrestamo = ID_SOLICITUD });
+                }
+
+            } 
 
             // Actualizar los datos de la solicitud de prestamo
             solicitudPrestamo.SOLICITUD_APROBADA_RECHAZADA_POR = Convert.ToInt32(HttpContext.Session.GetInt32("ID_USUARIO"));
@@ -814,6 +821,160 @@ public class PrestamosController : Controller
 
     }
 
+    [HttpPost]
+
+    public async Task<IActionResult> RechazarSolicitudPrestamo(string IdSolicitudPrestamo, string notaRechazo){
+        
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        if (IdSolicitudPrestamo != null && notaRechazo != null)
+        {
+            // Obtener los datos de la solicitud de prestamo
+            int ID_SOLICITUD = Convert.ToInt32(IdSolicitudPrestamo);
+            var solicitudPrestamo = _context.SolicitudPrestamos
+                .FromSqlRaw("EXEC SP_BUSCAR_SOLICITUD_PRESTAMO @ID_SOLICITUD = {0}", ID_SOLICITUD)
+                .AsEnumerable()
+                .FirstOrDefault() ?? throw new Exception("No se encontró la solicitud de préstamo");
+
+            // Actualizar los datos de la solicitud de prestamo
+            solicitudPrestamo.SOLICITUD_APROBADA_RECHAZADA_POR = Convert.ToInt32(HttpContext.Session.GetInt32("ID_USUARIO"));
+            solicitudPrestamo.NOTA_APROBACION_RECHAZO = notaRechazo;
+
+            try
+            {
+                await _context.Database.ExecuteSqlRawAsync("EXEC SP_RECHAZAR_SOLICITUD_PRESTAMO @ID_SOLICITUD_PRESTAMO = {0}, @SOLICITUD_APROBADA_RECHAZADA_POR = {1}, @NOTA_APROBACION_RECHAZO = {2}",
+                solicitudPrestamo.ID_SOLICITUD, solicitudPrestamo.SOLICITUD_APROBADA_RECHAZADA_POR, solicitudPrestamo.NOTA_APROBACION_RECHAZO);
+                TempData["openModal"] = true;
+                TempData["Success"] = "Solicitud de préstamo rechazada correctamente";
+                return RedirectToAction("AprobacionSolicitudesPrestamos", "Prestamos");
+            }
+            catch (Exception ex)
+            {
+                TempData["openModal"] = true;
+                TempData["Error"] = "Ha ocurrido un error al rechazar la solicitud de préstamo: " + ex.Message;
+                return RedirectToAction("AprobacionSolicitudesPrestamos", "Prestamos");
+            }
+
+        }
+
+                TempData["openModal"] = true;
+                TempData["Error"] = "Los datos necesarios para rechazar la solicitud de préstamo no son válidos";    
+                return RedirectToAction("AprobacionSolicitudesPrestamos", "Prestamos");
+
+
+    }
+
+    [HttpGet]
+
+    public IActionResult ConsultarPrestamos(){
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        var prestamos = _context.Prestamos
+            .FromSqlRaw("EXEC SP_LEER_PRESTAMOS")
+            .AsEnumerable()
+            .ToList();
+
+        return View("~/Views/Prestamos/ConsultarPrestamos.cshtml", prestamos);
+    }
+
+    [HttpGet]
+    public IActionResult ConsultarPrestamo(string IdPrestamo){
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        if (IdPrestamo != null) {
+
+            var ID_PRESTAMO = Convert.ToInt32(IdPrestamo);
+
+           // Obtener datos necesarios para el formulario
+
+            var prestamo = _context.Prestamos
+                .FromSqlRaw("EXEC SP_BUSCAR_PRESTAMO @ID_PRESTAMO = {0}", ID_PRESTAMO) // Cambiar el id del prestamo por el que se desea consultar
+                .AsEnumerable()
+                .FirstOrDefault() ?? throw new Exception("No se encontró el préstamo");
+
+            ViewBag.Title = "Consultar Prestamo";
+            return View("~/Views/Prestamos/FormConsultarPrestamo.cshtml", prestamo);
+        
+        }
+
+        TempData["openModal"] = true;
+        TempData["Error"] = "No se encontró el préstamo";
+        return RedirectToAction("ConsultarPrestamos", "Prestamos");
+
+    }
+
+    [HttpGet]
+
+    public IActionResult ConfirmarDesembolsoPrestamo(string IdPrestamo) {
+
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        if (IdPrestamo != null) {
+
+            int ID_PRESTAMO = Convert.ToInt32(IdPrestamo);
+            TempData["openModalDesembolso"] = true;
+            TempData["ID"] = ID_PRESTAMO;
+            return RedirectToAction("ConsultarPrestamo", "Prestamos", new { IdPrestamo = ID_PRESTAMO });
+        }
+
+        throw new Exception("Error al abrir la modal de desembolso de prestamos");
+
+    }
+
+    [HttpPost]
+
+    public async Task<IActionResult> DesembolsarPrestamo(string IdPrestamo, string metodo, string notaDesembolso){
+
+        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        {
+            return RedirectToAction("Login", "Auth");
+        }
+
+        if (IdPrestamo != null && metodo != null) {
+
+            int ID_PRESTAMO = Convert.ToInt32(IdPrestamo);
+            int DESEMBOLSADO_POR = Convert.ToInt32(HttpContext.Session.GetInt32("ID_USUARIO"));
+
+            if (ID_PRESTAMO > 0 && DESEMBOLSADO_POR > 0) {
+                try
+                {
+                    await _context.Database.ExecuteSqlRawAsync("EXEC SP_DESEMBOLSAR_PRESTAMO @ID_PRESTAMO = {0}, @METODO = {1}, @DESEMBOLSADO_POR = {2}, @NOTA_DESEMBOLSO = {3}",
+                    ID_PRESTAMO, metodo, DESEMBOLSADO_POR, notaDesembolso
+                    );
+                    TempData["openModal"] = true;
+                    TempData["Success"] = "Préstamo desembolsado correctamente";
+                    return RedirectToAction("ConsultarPrestamos", "Prestamos");
+                }
+                catch (Exception ex)
+                {
+                    TempData["openModal"] = true;
+                    TempData["Error"] = "Ha ocurrido un error al desembolsar el préstamo";
+                    Console.WriteLine("Error al desembolsar el préstamo: " + ex.Message + ex.Source); // Mensaje para el log en el server
+                    return RedirectToAction("ConsultarPrestamos", "Prestamos");
+                }
+            }
+
+        }
+
+        TempData["openModal"] = true;
+        TempData["Error"] = "Los datos necesarios para desembolsar el préstamo no son válidos";    
+        return RedirectToAction("ConsultarPrestamos", "Prestamos");
+
+    }
+
+    [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });

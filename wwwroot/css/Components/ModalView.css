@@ -101,6 +101,7 @@ dialog[open] > .container > .content {
 
 .modal .content .mensaje {
   text-align: center;
+  padding: 0px 30px;
 }
 
 .mensaje p {

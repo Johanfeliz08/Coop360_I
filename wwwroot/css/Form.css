@@ -173,3 +173,10 @@ input[type="checkbox"]:checked {
   color: var(--accent-color);
   transition: all ease 0.5s;
 }
+
+/* Boton desembolsar */
+
+#btn-desembolsar {
+  padding: 5px 30px;
+  width: 210px;
+}

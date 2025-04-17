@@ -151,7 +151,7 @@ dialog[open] > .container > .content {
   gap: 10px;
 }
 
-.btn-aprobar {
+.btn-desembolsar {
   padding: 5px 10px;
   display: flex;
   justify-content: center;
@@ -167,29 +167,7 @@ dialog[open] > .container > .content {
   transition: all ease 0.5s;
 }
 
-.btn-aprobar:hover {
-  color: #fff;
-  background: var(--accent-color-2);
-  transition: all ease 0.5s;
-}
-
-.btnRechazar {
-  padding: 5px 10px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 45px;
-  width: 170px;
-  border: none;
-  border-radius: 15px;
-  font-size: 20px;
-  cursor: pointer;
-  color: #fff;
-  background: red;
-  transition: all ease 0.5s;
-}
-
-.btnRechazar:hover {
+.btn-desembolsar:hover {
   color: #fff;
   background: var(--accent-color-2);
   transition: all ease 0.5s;
@@ -253,14 +231,28 @@ textarea:focus {
   outline: var(--accent-color) 1px solid;
 }
 
+.campo select {
+  font-family: "Oxygen", sans-serif;
+  font-weight: 300;
+  font-size: 1.1em;
+  padding: 5px;
+  width: 100%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+}
+
+select:focus {
+  outline: var(--accent-color) 1px solid;
+}
+
 /* Disabled submit button style */
 
-#btn-aprobacionrechazo[disabled] {
+#btn-desembolsar[disabled] {
   background: #d6d6d6;
   color: #000;
   transition: all ease 0.5s;
 }
 
-#btn-aprobacionrechazo[disabled]:hover {
+#btn-desembolsar[disabled]:hover {
   color: #fff;
 }

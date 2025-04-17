@@ -29,7 +29,13 @@ public class Prestamo
 
   public required int CANTIDAD_CUOTAS { get; set; }
 
+  public decimal? MONTO_POR_CUOTA { get; set; }
+
   public required decimal TASA_INTERES { get; set; }
+
+  public int? ID_CATEGORIA_PRESTAMO { get; set; }
+
+  public string? NOMBRE_CATEGORIA_PRESTAMO { get; set; }
 
   public DateTime? FECHA_CREACION { get; set; }
 
