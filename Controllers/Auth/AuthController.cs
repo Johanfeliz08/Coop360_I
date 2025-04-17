@@ -53,18 +53,6 @@ public class AuthController : Controller
             HttpContext.Session.SetInt32("ID_ROL", AuthUsuario.ID_ROL);
             HttpContext.Session.SetInt32("ID_NIVEL_APROBACION", AuthUsuario.ID_NIVEL_APROBACION);
 
-
-            Console.WriteLine("ID_USUARIO: " + HttpContext.Session.GetInt32("ID_USUARIO"));
-            Console.WriteLine("CODIGO_EMPLEADO: " + HttpContext.Session.GetInt32("USUARIO"));
-            Console.WriteLine("P_NOMBRE: " + HttpContext.Session.GetString("P_NOMBRE"));
-            Console.WriteLine("S_NOMBRE: " + HttpContext.Session.GetString("S_NOMBRE"));
-            Console.WriteLine("P_APELLIDO: " + HttpContext.Session.GetString("P_APELLIDO"));
-            Console.WriteLine("S_APELLIDO: " + HttpContext.Session.GetString("S_APELLIDO"));
-            Console.WriteLine("FECHA_CREACION: " + HttpContext.Session.GetString("FECHA_CREACION"));
-            Console.WriteLine("ID_ROL: " + HttpContext.Session.GetInt32("ID_ROL"));
-            Console.WriteLine("ID_NIVEL_APROBACION: " + HttpContext.Session.GetInt32("ID_NIVEL_APROBACION"));
-
-
             if (AuthUsuario.ID_USUARIO > 0)
             {
                 var permisos = _context
