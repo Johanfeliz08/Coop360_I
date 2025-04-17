@@ -696,10 +696,10 @@ public class PrestamosController : Controller
     [HttpGet]
     public IActionResult ConfirmarAprobacionSolicitudPrestamo(string IdSolicitudPrestamo, string montoSolicitado)
     {
-        if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
-        {
-            return RedirectToAction("Login", "Auth");
-        }
+        // if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+        // {
+        //     return RedirectToAction("Login", "Auth");
+        // }
 
         if (IdSolicitudPrestamo != null && montoSolicitado != null)
         {
