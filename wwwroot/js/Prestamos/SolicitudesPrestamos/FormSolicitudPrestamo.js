@@ -40,18 +40,25 @@ categoriaPrestamoInput.addEventListener("change", () => {
 
 // Asignar la cantidad de cuotas y el monto por cuotas basado en el plazo y la tasa de interes
 const asignarCuotasMontoCuota = () => {
-  const plazoMeses = plazoMesesInput.value;
+  let plazoMeses = plazoMesesInput.value;
 
   // Calcular la cantidad de cuotas
-  const cantidadCuotas = plazoMeses * 1;
+  let cantidadCuotas = plazoMeses * 1;
   cantidadCuotasInput.value = cantidadCuotas;
 
-  // Calcular el monto por cuota
-  const montoPorCuota = montoSolicitadoInput.value / cantidadCuotas;
-  montoPorCuotaInput.value = montoPorCuota.toLocaleString("en-US", {
-    minimumFractionDigits: 2,
-    maximumFractionDigits: 2,
-  });
+  // Calcular el monto interes, el impuesto el monto por cuota
+  let montoInteres =
+    Number(montoSolicitadoInput.value) * (Number(tasaInteresInput.value) / 100);
+
+  let impuesto = Number(montoInteres) * (10 / 100); // 10% de impuesto
+
+  let montoPorCuotaBase =
+    Number(montoSolicitadoInput.value) / Number(cantidadCuotas);
+
+  let montoPorCuota =
+    montoPorCuotaBase + Number(montoInteres) + Number(impuesto);
+
+  montoPorCuotaInput.value = montoPorCuota;
 };
 
 // Asignar el evento al input de la cantidad de cuotas

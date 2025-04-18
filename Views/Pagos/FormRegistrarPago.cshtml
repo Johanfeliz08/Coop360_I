@@ -1,0 +1,106 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Pagos/FormRegistrarPago.css">
+  <link rel="stylesheet" href="~/css/Form.css" />
+</head>
+
+@{
+
+  if (TempData["openModal"] != null)
+  {
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else if (TempData["Success"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+    else if (TempData["Confirmation"] != null)
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
+;
+}
+}
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("HistorialPagos", "Pagos")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo">
+        <i class="fi fi-tr-usd-circle"></i><span>Pagar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="form" asp-action="GuardarPago" asp-controller="Pagos" method="POST">
+      <div class="campos-container">
+        <div class="grupo informacion-personal">
+          <div class="titulo-grupo" id="titulo">
+            <h2></h2>
+          </div>
+          <div class="campo" id="campo_id_pago" style="display: none;">
+            <label for="id_pago">Id pago</label>
+            <input type="text" name="id_pago" id="id_pago" value="">
+          </div>
+          <div class="campo" id="campo_socios">
+            <label for="codigo_socio">Socio</label>
+            <select required name="CODIGO_SOCIO" id="socio">
+              <option value="default" disabled selected>Seleccionar</option>
+              @foreach (var socio in @Model.Socios)
+              {
+                <option id="@socio.CODIGO_SOCIO" value="@socio.CODIGO_SOCIO">@socio.P_NOMBRE @socio.S_NOMBRE
+                  @socio.P_APELLIDO @socio.S_APELLIDO</option>
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_prestamos">
+            <label for="prestamos">Prestamo</label>
+            <select required name="ID_PRESTAMO" id="prestamos">
+              <option value="default" disabled selected>Seleccionar</option>
+              <option id="nodata" value="nodata" disabled style="display:none">Este socio no tiene prestamos
+                disponibles </option>
+              @foreach (var prestamo in @Model.Prestamos)
+              {
+                <option id="@prestamo.ID_PRESTAMO" value="@prestamo.ID_PRESTAMO" socio="@prestamo.CODIGO_SOCIO">
+                  #@prestamo.ID_PRESTAMO - @prestamo.NOMBRE_SOCIO - RD$@prestamo.MONTO_APROBADO -
+                  @prestamo.FECHA_INICIO?.ToString("dd/MM/yyyy")
+                </option>
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_numero_cuota">
+            <label for="numero_cuota">Numero cuota</label>
+            <input type="text" name="numero_cuota" id="numero_cuota" readonly>
+          </div>
+          <div class="campo" id="campo_monto_a_pagar">
+            <label for="monto_a_pagar">Monto a pagar</label>
+            <input type="text" name="monto_a_pagar" id="monto_a_pagar" readonly>
+          </div>
+          <div class="campo" id="campo_monto_recibido">
+            <label for="monto_recibido">Monto recibido</label>
+            <input type="text" name="monto_recibido" id="monto_recibido">
+          </div>
+          <div class="campo" id="campo_monto_a_devolver">
+            <label for="monto_a_devolver">Monto a devolver</label>
+            <input type="text" name="monto_a_devolver" id="monto_a_devolver" readonly>
+          </div>
+          <div class="campo" id="campo_monto_devuelto">
+            <label for="monto_devuelto">Monto devuelto</label>
+            <input type="text" name="monto_devuelto" id="monto_devuelto">
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>
+<script src="~/js/Pagos/FormRegistrarPago.js"></script>
