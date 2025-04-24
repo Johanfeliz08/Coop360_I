@@ -1,7 +1,5 @@
 public class EmpleadoViewModel
 {
-    // public required List<Region> Regiones { get; set; }
-
     public Empleado? Empleado { get; set; }
     public required List<Provincia> Provincias { get; set; }
     public required List<Ciudad> Ciudades { get; set; }
@@ -12,3 +10,4 @@ public class EmpleadoViewModel
     public required List<EntidadBancaria> EntidadesBancarias { get; set; }
 
 }
+

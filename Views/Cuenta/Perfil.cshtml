@@ -7,6 +7,46 @@
   <link rel="stylesheet" href="~/css/Cuenta/Perfil.css" asp-append-version="true" />
 </head>
 
+@{
+
+  if (TempData["openModal"] != null)
+  {
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else if (TempData["Success"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+    else if (TempData["Confirmation"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
+;
+  }
+}
+}
+
+@{
+
+  if (TempData["openModalAprobacionRechazo"] != null)
+  {
+    if (TempData["CambiarContrasena"] != null)
+    {
+      @await Component.InvokeAsync("ModalAprobacionRechazo", new { tipo = "cambiarContrasena", mensaje = "",
+      controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"], montoSolicitado = "" })
+}
+}
+}
+
+
 <section class="main-container">
   <div class="titulo-seccion">
     <h1>Mi Perfil</h1>
@@ -40,11 +80,12 @@
           <span class="valor">@Model.CODIGO_EMPLEADO</span>
         </div>
         <div class="campo">
-          <span class="label">Contrasena:</span>
+          <span class="label">Contraseña:</span>
           <span class="valor">******************</span>
         </div>
-        <div class="btn">
-          <button type="button">Cambiar contraseña</button>
+        <div class="acciones">
+          <a id="btnCambiarContrasena" href="@Url.Action("ModalCambiarContrasena", "Cuenta")" class="btn btn-nuevo">
+            <span>Cambiar contraseña</span></a>
         </div>
       </div>
 

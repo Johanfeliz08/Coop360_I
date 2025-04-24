@@ -5,6 +5,7 @@ using Microsoft.EntityFrameworkCore;
 using Coop360_I.Data;
 using Coop360_I.Controllers;
 using System.Text.Json;
+using Microsoft.AspNetCore.Identity;
 
 namespace Coop360_I.Controllers;
 public class EmpleadosController : Controller
@@ -333,8 +334,12 @@ public class EmpleadosController : Controller
 
         try
         {
+            var defaultContrasena = "123456789";
+            var hasher = new PasswordHasher<Object>();
+            var hashedContrasena = hasher.HashPassword(new object(), defaultContrasena);
+
             await _context.Database.ExecuteSqlRawAsync(
-                "EXEC SP_CREAR_EMPLEADO @CEDULA = {0}, @P_NOMBRE = {1}, @S_NOMBRE = {2}, @P_APELLIDO = {3}, @S_APELLIDO = {4}, @DIRECCION = {5}, @ID_SECTOR = {6}, @ID_CIUDAD = {7}, @ID_PROVINCIA = {8}, @PAIS_NACIMIENTO = {9}, @TELEFONO_PRINCIPAL = {10}, @TELEFONO_SECUNDARIO = {11}, @FECHA_NACIMIENTO = {12}, @EMAIL = {13}, @SEXO = {14}, @ESTADO_CIVIL = {15}, @FRECUENCIA_COBRO = {16}, @CUENTA_BANCO = {17}, @ID_ENTIDAD_BANCARIA = {18}, @ID_PUESTO = {19}, @ID_DEPARTAMENTO = {20}, @TIPO_SANGRE = {21}, @NOMBRE_FAMILIAR_PRIMARIO = {22}, @TELEFONO_FAMILIAR_PRIMARIO = {23}, @PARENTESCO_FAMILIAR_PRIMARIO = {24}, @NOMBRE_FAMILIAR_SECUNDARIO = {25}, @TELEFONO_FAMILIAR_SECUNDARIO = {26}, @PARENTESCO_FAMILIAR_SECUNDARIO = {27}, @ID_NIVEL_APROBACION = {28}, @ESTATUS = {29}, @CREADO_POR = {30}",
+                "EXEC SP_CREAR_EMPLEADO @CEDULA = {0}, @P_NOMBRE = {1}, @S_NOMBRE = {2}, @P_APELLIDO = {3}, @S_APELLIDO = {4}, @DIRECCION = {5}, @ID_SECTOR = {6}, @ID_CIUDAD = {7}, @ID_PROVINCIA = {8}, @PAIS_NACIMIENTO = {9}, @TELEFONO_PRINCIPAL = {10}, @TELEFONO_SECUNDARIO = {11}, @FECHA_NACIMIENTO = {12}, @EMAIL = {13}, @SEXO = {14}, @ESTADO_CIVIL = {15}, @FRECUENCIA_COBRO = {16}, @CUENTA_BANCO = {17}, @ID_ENTIDAD_BANCARIA = {18}, @ID_PUESTO = {19}, @ID_DEPARTAMENTO = {20}, @TIPO_SANGRE = {21}, @NOMBRE_FAMILIAR_PRIMARIO = {22}, @TELEFONO_FAMILIAR_PRIMARIO = {23}, @PARENTESCO_FAMILIAR_PRIMARIO = {24}, @NOMBRE_FAMILIAR_SECUNDARIO = {25}, @TELEFONO_FAMILIAR_SECUNDARIO = {26}, @PARENTESCO_FAMILIAR_SECUNDARIO = {27}, @ID_NIVEL_APROBACION = {28}, @ESTATUS = {29}, @CREADO_POR = {30}, @CONTRASENA = {31}",
                 empleadoValido.CEDULA, empleadoValido.P_NOMBRE, empleadoValido.S_NOMBRE ?? "", empleadoValido.P_APELLIDO, empleadoValido.S_APELLIDO ?? "",
                 empleadoValido.DIRECCION, empleadoValido.ID_SECTOR ?? 0, empleadoValido.ID_CIUDAD ?? 0, empleadoValido.ID_PROVINCIA ?? 0, empleadoValido.PAIS_NACIMIENTO,
                 empleadoValido.TELEFONO_PRINCIPAL, empleadoValido.TELEFONO_SECUNDARIO ?? "", empleadoValido.FECHA_NACIMIENTO, empleadoValido.EMAIL ?? "",
@@ -342,7 +347,7 @@ public class EmpleadosController : Controller
                 empleadoValido.ID_ENTIDAD_BANCARIA, empleadoValido.ID_PUESTO ?? 0, empleadoValido.ID_DEPARTAMENTO ?? 0, empleadoValido.TIPO_SANGRE,
                 empleadoValido.NOMBRE_FAMILIAR_PRIMARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_PRIMARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_PRIMARIO ?? "",
                 empleadoValido.NOMBRE_FAMILIAR_SECUNDARIO ?? "", empleadoValido.TELEFONO_FAMILIAR_SECUNDARIO ?? "", empleadoValido.PARENTESCO_FAMILIAR_SECUNDARIO ?? "",
-                empleadoValido.ID_NIVEL_APROBACION ?? 0, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0
+                empleadoValido.ID_NIVEL_APROBACION ?? 0, empleadoValido.ESTATUS, empleadoValido.CREADO_POR ?? 0, hashedContrasena
             );
         }
         catch (Exception ex)

@@ -19,6 +19,10 @@
             {
               <i class="fi fi-tr-vote-nay" style="color:red;"></i>
             }
+            else if (ViewBag.Tipo == "cambiarContrasena")
+            {
+              <i class="fi fi-tr-user-key" style="color:var(--accent-color)"></i>
+            }
           }
         </div>
         <div class="titulo">
@@ -41,6 +45,34 @@
                 </div>
                 <div class="buttons">
                   <button type="submit" class="btn btn-submit btnRechazar" id="btn-aprobacionrechazo">Rechazar</button>
+                  <button class="btn btn-cancelar" id="btn-cancelar">Cancelar</button>
+                </div>
+              </div>
+            </form>
+          }
+          else if (ViewBag.Tipo == "cambiarContrasena")
+          {
+            <form id="frmCambioContrasena" asp-action="CambiarContrasena" asp-controller="Cuenta" method="post">
+              <div class="campos">
+                <div class="campo" id="campo" style="display: none;">
+                  <label for="@ViewBag.Parametro">@ViewBag.Parametro</label>
+                  <input type="text" name="@ViewBag.Parametro" id="@ViewBag.Parametro" value="@((ViewBag.id) ?? "")">
+                </div>
+                <div class="campo" id="campo_contrasena_actual">
+                  <label for="contrasenaActual">Contraseña actual:</label>
+                  <input type="password" name="contrasenaActual" id="contrasenaActual">
+                </div>
+                <div class="campo" id="campo_contrasena_nueva">
+                  <label for="contrasenaNueva">Nueva contraseña:</label>
+                  <input type="password" name="contrasenaNueva" id="contrasenaNueva">
+                </div>
+                <div class="campo" id="campo_confirmar_contrasena_nueva">
+                  <label for="confirmarContrasena">Confirmar contraseña nueva:</label>
+                  <input type="password" name="confirmarContrasena" id="confirmarContrasena">
+                </div>
+                <div class="buttons">
+                  <button type="submit" class="btn-submit btn-cambiarContrasena" id="btn-cambiarContrasena">Cambiar
+                    contraseña</button>
                   <button class="btn btn-cancelar" id="btn-cancelar">Cancelar</button>
                 </div>
               </div>
@@ -81,147 +113,4 @@
   </div>
 </dialog>
 
-<script>
-
-  const dialog = document.querySelector("dialog");
-
-  if (dialog != null) {
-
-    const btnCerrar = document.getElementById("btn-cerrar");
-    btnCerrar.addEventListener("click", (e) => {
-      e.preventDefault();
-      dialog.close();
-    });
-
-    const btnCancelar = document.getElementById("btn-cancelar");
-    btnCancelar.addEventListener("click", (e) => {
-      e.preventDefault();
-      dialog.close();
-    });
-
-  }
-
-  const frmAprobacion = document.getElementById("frmAprobacion");
-  const frmRechazo = document.getElementById("frmRechazo");
-  const inputMontoSolicitado = document.getElementById("monto_solicitado");
-  const inputMontoAprobado = document.getElementById("monto_aprobado");
-  const textareaNotaAprobacion = document.getElementById("nota_aprobacion_rechazo");
-  const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = true;
-
-
-  if (frmAprobacion != null) {
-    inputMontoAprobado.addEventListener("change", (e) => {
-
-      let montoSolicitado = inputMontoSolicitado.value;
-      let montoAprobado = inputMontoAprobado.value;
-
-      const error = document.getElementById("error_monto_aprobado");
-      const errorNotaAprobacion = document.getElementById("error_nota_aprobacion");
-
-
-      if (error != null) {
-        error.remove();
-      }
-
-      if (errorNotaAprobacion != null) {
-        errorNotaAprobacion.remove();
-      }
-
-      if (Number(montoAprobado) > Number(montoSolicitado)) {
-
-        inputMontoAprobado.style.outline = "1px solid red";
-        const error = document.createElement("p");
-        error.id = "error_monto_aprobado";
-        error.style.color = "red";
-        error.style.fontSize = "12px";
-        error.style.margin = "0px";
-        error.style.padding = "0px";
-        error.textContent = "El monto aprobado no puede ser mayor al monto solicitado";
-        inputMontoAprobado.after(error);
-        const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = true;
-
-
-      } else if (Number(montoAprobado) < Number(montoSolicitado) && textareaNotaAprobacion.value == "") {
-
-        inputMontoAprobado.style.outline = "none";
-        textareaNotaAprobacion.style.outline = "1px solid red";
-        const error = document.createElement("p");
-        error.id = "error_nota_aprobacion";
-        error.style.color = "red";
-        error.style.fontSize = "12px";
-        error.style.margin = "0px";
-        error.style.padding = "10px 0px";
-        error.textContent = "La nota de aprobación es requerida cuando el monto aprobado es menor al monto solicitado";
-        textareaNotaAprobacion.after(error);
-        const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = true;
-
-      } else {
-        inputMontoAprobado.style.outline = "none";
-        textareaNotaAprobacion.style.outline = "none";
-        const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = false;
-      }
-
-    })
-
-    textareaNotaAprobacion.addEventListener("change", (e) => {
-      let montoSolicitado = inputMontoSolicitado.value;
-      let montoAprobado = inputMontoAprobado.value;
-
-      const error = document.getElementById("error_nota_aprobacion");
-
-      if (error != null) {
-        error.remove();
-      }
-
-      if ((Number(montoAprobado) < Number(montoSolicitado)) && textareaNotaAprobacion.value == "") {
-
-        textareaNotaAprobacion.style.outline = "1px solid red";
-        const error = document.createElement("p");
-        error.id = "error_nota_aprobacion";
-        error.style.color = "red";
-        error.style.fontSize = "12px";
-        error.style.margin = "0px";
-        error.style.padding = "0px";
-        error.textContent = "La nota de aprobación es requerida cuando el monto aprobado es menor al monto solicitado";
-        textareaNotaAprobacion.after(error);
-        const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = true;
-
-      } else {
-
-        inputMontoAprobado.style.outline = "none";
-        textareaNotaAprobacion.style.outline = "none";
-        const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = false;
-
-      }
-    });
-
-  }
-
-
-  if (frmRechazo != null) {
-    textareaNotaAprobacion.addEventListener("change", (e) => {
-      const error = document.getElementById("error_nota_aprobacion");
-
-      if (error != null) {
-        error.remove();
-      }
-
-      if (textareaNotaAprobacion.value == "") {
-        textareaNotaAprobacion.style.outline = "1px solid red";
-        const error = document.createElement("p");
-        error.id = "error_nota_aprobacion";
-        error.style.color = "red";
-        error.style.fontSize = "12px";
-        error.style.margin = "0px";
-        error.style.padding = "0px";
-        error.textContent = "La nota de rechazo es requerida";
-        textareaNotaAprobacion.after(error);
-        const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = true;
-      } else {
-        textareaNotaAprobacion.style.outline = "none";
-        const submitBtn = document.getElementById("btn-aprobacionrechazo").disabled = false;
-      }
-    });
-  }
-
-</script>
+<script src="~/js/ModalAprobacionRechazo/ModalAprobacionRechazo.js"></script>

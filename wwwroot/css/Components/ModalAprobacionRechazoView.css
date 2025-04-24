@@ -149,6 +149,7 @@ dialog[open] > .container > .content {
   display: flex;
   flex-direction: row;
   gap: 10px;
+  padding: 15px 0px;
 }
 
 .btn-aprobar {
@@ -173,6 +174,8 @@ dialog[open] > .container > .content {
   transition: all ease 0.5s;
 }
 
+/* Boton rechazar */
+
 .btnRechazar {
   padding: 5px 10px;
   display: flex;
@@ -195,6 +198,8 @@ dialog[open] > .container > .content {
   transition: all ease 0.5s;
 }
 
+/* Boton cancelar */
+
 .btn-cancelar {
   background: #d6d6d6;
   color: #000;
@@ -202,6 +207,30 @@ dialog[open] > .container > .content {
 }
 
 .btn-cancelar:hover {
+  color: #fff;
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+/* Boton cambiar contraseña */
+
+.btn-cambiarContrasena {
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 45px;
+  width: 200px;
+  border: none;
+  border-radius: 15px;
+  font-size: 15px;
+  cursor: pointer;
+  color: #fff;
+  background: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+.btn-cambiarContrasena:hover {
   color: #fff;
   background: var(--accent-color-2);
   transition: all ease 0.5s;
@@ -262,5 +291,15 @@ textarea:focus {
 }
 
 #btn-aprobacionrechazo[disabled]:hover {
+  color: #fff;
+}
+
+#btn-cambiarContrasena[disabled] {
+  background: #d6d6d6;
+  color: #000;
+  transition: all ease 0.5s;
+}
+
+#btn-cambiarContrasena[disabled]:hover {
   color: #fff;
 }

@@ -5,7 +5,7 @@ public class ModalAprobacionRechazoViewComponent : ViewComponent
   public IViewComponentResult Invoke(string tipo, string mensaje, string controlador, string parametro, int id, string montoSolicitado)
   {
 
-    // Tipos: error, success, confirmation
+    // Tipos: aprobacion, rechazo, cambiarContrasena
 
     if (tipo != null || mensaje != null)
     {
@@ -33,6 +33,17 @@ public class ModalAprobacionRechazoViewComponent : ViewComponent
       {
         ViewBag.Controlador = controlador;
         ViewBag.Titulo = "¡Rechazo de préstamo!";
+        ViewBag.Parametro = parametro;
+
+        if (id != 0)
+        {
+          ViewBag.id = id;
+        }
+      }
+      else if (tipo == "cambiarContrasena")
+      {
+        ViewBag.Controlador = controlador;
+        ViewBag.Titulo = "¡Cambio de contraseña!";
         ViewBag.Parametro = parametro;
 
         if (id != 0)
