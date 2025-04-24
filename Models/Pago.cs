@@ -1,6 +1,7 @@
 using System.ComponentModel.DataAnnotations;
 
-public class Pago {
+public class Pago
+{
 
   [Key]
   public int? ID_PAGO { get; set; }

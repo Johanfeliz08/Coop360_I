@@ -41,5 +41,6 @@ namespace Coop360_I.Data
         public DbSet<Permiso> Permisos { get; set; }
         public DbSet<SolicitudPrestamo> SolicitudPrestamos { get; set; }
         public DbSet<Prestamo> Prestamos { get; set; }
+        public DbSet<Pago> Pagos { get; set; }
     }
 }

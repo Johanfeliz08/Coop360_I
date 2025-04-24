@@ -1,0 +1,100 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Pagos/ConsultarPagos.css">
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("ConsultarTablaAmortizacion", "Pagos")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a>
+      @* <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button> *@
+    </div>
+  </div>
+  <div class="amortizacion-container">
+
+    <div class="amortizacion-content">
+
+      <div class="header">
+        <div class="logo">
+          <img src="../img/logos/4.png" alt="Coop360 logo">
+        </div>
+        <div class="titulo">
+          <h2>Tabla de amortizacion</h2>
+        </div>
+        <div class="descricion">
+          <p>Historial de pagos</p>
+        </div>
+      </div>
+      <div class="detalle">
+        <div class="prestamo">
+          <span class="label">Prestamo:</span> <br>
+          #@Model.Prestamo.ID_PRESTAMO - @Model.Prestamo.NOMBRE_SOCIO - RD$@Model.Prestamo.MONTO_APROBADO -
+          @Model.Prestamo.FECHA_INICIO?.ToString("dd/MM/yyyy")
+        </div>
+        <div class="fecha">
+          @{
+            <span class="label">Fecha:</span> <br>
+            <span> @DateTime.Now.ToString("dd/MM/yyyy") </span>
+          }
+        </div>
+      </div>
+      <div class="pagos-container">
+        @{
+          if (Model.Pagos.Count == 0)
+          {
+            <div class="no-data" id="no-dataAmortizacion">
+              <div class="icono">
+                <i class="fi fi-tr-drawer-empty"></i>
+              </div>
+              <div class="mensaje">
+                <span>No hay datos disponibles.</span>
+              </div>
+            </div>
+          }
+        }
+        <table>
+          <thead>
+            <tr>
+              <th>Cuota #</th>
+              <th>Monto a pagar</th>
+              <th>Monto recibido</th>
+              <th>Monto devuelto</th>
+              <th>Interes</th>
+              <th>Capital</th>
+              <th>Impuesto</th>
+              <th>Balance restante</th>
+              <th>Fecha de pago</th>
+              <th>Estatus</th>
+            </tr>
+          </thead>
+          <tbody id="pagos">
+
+            @foreach (var pago in Model.Pagos)
+            {
+              <tr>
+                <td>@pago.NUMERO_CUOTA</td>
+                <td>@pago.MONTO_A_PAGAR</td>
+                <td>@pago.MONTO_RECIBIDO</td>
+                <td>@pago.MONTO_DEVUELTO</td>
+                <td>@pago.MONTO_INTERES</td>
+                <td>@pago.MONTO_CAPITAL</td>
+                <td>@pago.IMPUESTO</td>
+                <td>@pago.MONTO_RESTANTE</td>
+                <td>@pago.FECHA.ToString("dd/MM/yyyy")</td>
+                <td>@pago.ESTATUS</td>
+              </tr>
+            }
+
+
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</section>

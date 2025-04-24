@@ -98,14 +98,6 @@ public class PagosController : Controller
 
 
   [HttpPost]
-  public IActionResult Test()
-  {
-    Console.WriteLine("TEEEEEEEEEEEEEEEEEEEEEEEEESTT");
-    return RedirectToAction("RegistrarPago", "Pagos");
-  }
-
-
-  [HttpPost]
 
   public async Task<IActionResult> GuardarPagoAsync(Pago pago)
   {
@@ -173,5 +165,79 @@ public class PagosController : Controller
     return RedirectToAction("RegistrarPago", "Pagos");
   }
 
+
+  [HttpGet]
+  public IActionResult ConsultarTablaAmortizacion()
+  {
+    if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+    {
+      return RedirectToAction("Login", "Auth");
+    }
+
+    var prestamos = _context.Prestamos
+        .FromSqlRaw("EXEC SP_LEER_PRESTAMOS")
+        .AsEnumerable()
+        .ToList();
+
+    return View("~/Views/Pagos/ConsultarTablaAmortizacion.cshtml", prestamos);
+  }
+
+  [HttpGet]
+  public IActionResult ConsultarPagos(string IdPrestamo)
+  {
+
+    if (HttpContext.Session.GetInt32("ID_USUARIO") == null)
+    {
+      return RedirectToAction("Login", "Auth");
+    }
+
+    if (IdPrestamo != null)
+    {
+
+      var ID_PRESTAMO = Convert.ToInt32(IdPrestamo);
+
+      try
+      {
+
+        // Prestamo
+
+        var prestamo = _context.Prestamos
+        .FromSqlRaw("EXEC SP_BUSCAR_PRESTAMO @ID_PRESTAMO={0}", ID_PRESTAMO)
+        .AsEnumerable()
+        .FirstOrDefault();
+
+        // Pagos
+
+        var pagos = _context.Pagos
+        .FromSqlRaw("EXEC SP_CREAR_TABLA_AMORTIZACION_PRESTAMO @ID_PRESTAMO={0}", ID_PRESTAMO)
+        .AsEnumerable()
+        .ToList();
+
+        var ViewModel = new ConsultarPagosViewModel
+        {
+          Prestamo = prestamo,
+          Pagos = pagos
+        };
+
+        ViewBag.Title = "Tabla de amortizacion";
+        return View("~/Views/Pagos/ConsultarPagos.cshtml", ViewModel);
+      }
+      catch (Exception ex)
+      {
+        TempData["openModal"] = true;
+        TempData["Error"] = "Error al obtener los pagos: " + ex.Message;
+        Console.WriteLine("Error al obtener los pagos: " + ex.Message);
+        return RedirectToAction("ConsultarTablaAmortizacion", "Pagos");
+      }
+
+    }
+
+    TempData["openModal"] = true;
+    TempData["Error"] = "El ID del prestamo es nulo o no valido";
+    Console.WriteLine("El ID del prestamo es nulo o no valido");
+    return RedirectToAction("ConsularTablaAmortizacion", "Pagos");
+
+
+  }
 
 }

@@ -1,0 +1,70 @@
+.titulo-seccion h1 {
+  width: 100%;
+}
+
+.amortizacion-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  gap: 20px;
+  padding: 0px 30px;
+  padding-bottom: 150px;
+}
+
+.amortizacion-container .amortizacion-content {
+  display: flex;
+  flex-direction: column;
+  justify-content: top;
+  align-items: left;
+  width: 100%;
+  height: 100%;
+  padding-top: 100px;
+  padding-bottom: 200px;
+  padding-left: 200px;
+  padding-right: 200px;
+  /* margin: 0px 20px; */
+  background-color: #fff;
+  -webkit-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 3px 8px -2px rgba(0, 0, 0, 0.3);
+}
+
+.amortizacion-content .header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.amortizacion-content .detalle {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 0px;
+}
+.amortizacion-content .detalle .label {
+  font-weight: 700;
+}
+
+.amortizacion-content .pagos-container {
+  position: relative;
+  padding: 10px 0px;
+}
+
+.amortizacion-content .pagos-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.amortizacion-content .pagos-container table thead tr th {
+  padding: 5px 0px;
+  text-align: left;
+  font-weight: 700;
+  color: var(--accent-color);
+}
+
+#no-dataAmortizacion {
+  top: 110px;
+}

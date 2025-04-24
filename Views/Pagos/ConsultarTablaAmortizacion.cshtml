@@ -1,0 +1,296 @@
+|@{
+ViewBag.Title = "Consultar tabla de amortización";
+Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+}
+
+<head>
+</head>
+
+@{
+
+  if (TempData["openModal"] != null)
+  {
+
+    if (TempData["Error"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "error", mensaje = TempData["Error"] })
+      ;
+    }
+    else if (TempData["Success"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "success", mensaje = TempData["Success"] })
+      ;
+    }
+    else if (TempData["Confirmation"] != null)
+    {
+      @await Component.InvokeAsync("Modal", new { tipo = "confirmation", mensaje = TempData["Confirmation"], controlador =
+      TempData["Controlador"], parametro = TempData["Parametro"], ID =
+      TempData["ID"] })
+;
+  }
+}
+}
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+  </div>
+  <div class="data-container">
+    <div class="acciones">
+      <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      @* <a href="@Url.Action("CrearSolicitudPrestamo", "Prestamos")" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Agregar</span></a> *@
+    </div>
+    <div class="table-container">
+      @{
+
+        if (Model.Count == 0)
+        {
+          <div class="no-data">
+            <div class="icono">
+              <i class="fi fi-tr-drawer-empty"></i>
+            </div>
+            <div class="mensaje">
+              <span>No hay datos disponibles.</span>
+            </div>
+          </div>
+        }
+
+      }
+      <!-- Tabla de datos -->
+      <table id="table" class="table">
+        <thead>
+          <tr class="cabecera">
+            <!-- Columnas dinámicas -->
+            <th>
+              <div class="th">Consultar pagos</div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Id Prestamo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Codigo Socio</span>
+              </div>
+            </th>
+            <th>
+              <div class="th">
+                <span>Nombre Socio</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Solicitud Realizada Por</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Solicitud Aprobada/Rechazada Por</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Fecha Aprobacion</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Monto Aprobado</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Balance Restante</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Plazo en Meses</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Cantidad de Cuotas</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Monto por Cuota</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Tasa de Interes</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Categoria Prestamo</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Codeudor principal</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Codeudor secundario</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Codeudor terciario</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Fecha Inicio</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Fecha Final</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>Estatus Desembolso</span>
+              </div>
+            </th>
+
+            <th>
+              <div class="th">
+                <span>ESTATUS</span>
+              </div>
+            </th>
+
+          </tr>
+        </thead>
+        <tbody>
+          @foreach (var prestamo in Model)
+          {
+            <tr>
+              <td>
+                <a class="dato accion-consultar" data-idPrestamo="@prestamo.ID_SOLICITUD"
+                  href="@Url.Action("ConsultarPagos", "Pagos", new { IdPrestamo = @prestamo.ID_PRESTAMO })"><i
+                    class="fi fi-tr-overview"></i></a>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.ID_PRESTAMO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.CODIGO_SOCIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.NOMBRE_SOCIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.NOMBRE_SOLICITUD_REALIZADA_POR</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.NOMBRE_SOLICITUD_APROBADA_RECHAZADA_POR</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.FECHA_APROBACION_RECHAZO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.MONTO_APROBADO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.BALANCE_RESTANTE</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.PLAZO_MESES</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.CANTIDAD_CUOTAS</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.MONTO_POR_CUOTA</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.TASA_INTERES%</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.NOMBRE_CATEGORIA_PRESTAMO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.NOMBRE_CODEUDOR_PRINCIPAL</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.NOMBRE_CODEUDOR_SECUNDARIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.NOMBRE_CODEUDOR_TERCIARIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.FECHA_INICIO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.FECHA_FINAL</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.ESTATUS_DESEMBOLSO</div>
+              </td>
+
+              <td>
+                <div class="dato">@prestamo.ESTATUS</div>
+              </td>
+
+            </tr>
+          }
+        </tbody>
+      </table>
+
+      <!-- Menú flotante para ordenar -->
+      <div id="sort-menu" style="display:none; position:absolute;">
+        <ul>
+          <li><button data-order="asc">Orden Ascendente</button></li>
+          <li><button data-order="desc">Orden Descendente</button></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<script src="~/js/Table.js"></script>
