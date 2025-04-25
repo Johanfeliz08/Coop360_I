@@ -1,0 +1,218 @@
+@{
+  Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
+
+  var menu = new Menu
+  {
+    Items = new List<Item> {
+new Item {
+Titulo = "Gestion de Prestamos",
+Icono = "fi fi-tr-handshake-deal-loan",
+ModuloPermiso = "Prestamos",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Crear solicitud de prestamo", Url = Url.Action("CrearSolicitudPrestamo", "Prestamos"), Permiso =
+"RegistrarSolicitudPrestamo" },
+new SubItem { Titulo = "Consultar solicitudes de prestamo", Url = Url.Action("RegistroSolicitudPrestamos", "Prestamos"),
+Permiso = "ConsultarSolicitudesPrestamos" },
+new SubItem { Titulo = "Aprobacion de prestamos", Url = Url.Action("AprobacionPrestamos", "Prestamos"), Permiso =
+"AprobacionSolicitudPrestamos" },
+new SubItem { Titulo = "Consultar prestamos", Url = Url.Action("RegistroPrestamos", "Prestamos"), Permiso =
+"ConsultarPrestamos" },
+new SubItem { Titulo = "Registrar categoria de prestamo", Url = Url.Action("Crear", "CategoriasPrestamo"), Permiso =
+"RegistrarCategoriaPrestamo" },
+new SubItem { Titulo = "Consultar categorias de prestamo", Url = Url.Action("RegistroCategoriasPrestamo",
+"CategoriaPrestamo"), Permiso = "ConsultarCategoriasPrestamos" },
+new SubItem { Titulo = "Registrar nivel de aprobacion", Url = Url.Action("Crear", "NivelesAprobacion"), Permiso =
+"RegistrarNivelAprobacion"},
+new SubItem { Titulo = "Consultar niveles de aprobacion", Url = Url.Action("RegistroNivelesAprobacion",
+"NivelesAprobacion"), Permiso = "ConsultarNivelesAprobacion"},
+new SubItem { Titulo = "Registrar anexo", Url = Url.Action("Crear", "Anexos"), Permiso = "RegistrarAnexo" },
+new SubItem { Titulo = "Consultar anexos", Url = Url.Action("RegistroAnexos", "Anexos"), Permiso = "ConsultarAnexos" } }
+},
+new Item {
+Titulo = "Gestion de pagos",
+Icono = "fi fi-tr-sack-dollar",
+ModuloPermiso = "Pagos",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Registrar pago", Url = Url.Action("Crear", "Pagos"), Permiso = "RegistrarPago" },
+new SubItem { Titulo = "Consultar pagos", Url = Url.Action("RegistroPagos", "Pagos"), Permiso = "ConsultarPagos" },
+}
+},
+new Item {
+Titulo = "Gestion de socios",
+Icono = "fi fi-tr-customer-care",
+ModuloPermiso = "Socios",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Registrar socio", Url = Url.Action("Crear", "Socios"), Permiso = "RegistrarSocio" },
+new SubItem { Titulo = "Consultar socios", Url = Url.Action("RegistroSocios", "Socios"), Permiso = "ConsultarSocios" }
+}
+},
+new Item {
+Titulo = "Gestion de empleados",
+Icono = "fi fi-tr-employee-man",
+ModuloPermiso = "Empleados",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Registrar empleado", Url = Url.Action("Crear", "Empleados"), Permiso = "RegistrarEmpleado" },
+new SubItem { Titulo = "Consultar empledos", Url = Url.Action("RegistroEmpleados", "Empleados"), Permiso =
+"ConsultarEmpleados" },
+new SubItem { Titulo = "Registrar puesto", Url = Url.Action("Crear", "Puestos"), Permiso = "RegistrarPuesto" },
+new SubItem { Titulo = "Consultar puestos", Url = Url.Action("RegistroPuestos", "Puestos"), Permiso = "ConsultarPuestos"
+},
+new SubItem { Titulo = "Registrar departamento", Url = Url.Action("Crear", "Departamentos"), Permiso =
+"RegistrarDepartamento" },
+new SubItem { Titulo = "Consultar departamentos", Url = Url.Action("RegistroDepartamentos", "Departamentos"), Permiso =
+"ConsultarDepartamentos" },
+new SubItem { Titulo = "Registrar entidad bancaria", Url = Url.Action("Crear", "EntidadesBancarias"), Permiso =
+"RegistrarEntidadBancaria" },
+new SubItem { Titulo = "Consultar entidades bancarias", Url = Url.Action("RegistroEntidadBancaria",
+"EntidadesBancarias"), Permiso = "ConsultarEntidadesBancarias" }
+}
+},
+new Item {
+Titulo = "Gestion de codeudores",
+Icono = "fi fi-tr-user-salary",
+ModuloPermiso = "Codeudores",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Registrar codeudor", Url = Url.Action("Crear", "Codeudores"), Permiso = "RegistrarCodeudor" },
+new SubItem { Titulo = "Consultar codeudores", Url = Url.Action("RegistroCodeudores", "Codeudores"), Permiso =
+"ConsultarCodeudores" },
+}
+
+},
+new Item {
+Titulo = "Configuracion",
+Icono = "fi fi-tc-settings",
+ModuloPermiso = "Configuracion",
+SubItems = new List<SubItem> {
+new SubItem { Titulo = "Usuarios", Url = Url.Action("CuentasUsuarios", "Configuracion"), Permiso = "ConfigurarUsuarios"
+},
+new SubItem { Titulo = "Roles", Url = Url.Action("Roles", "Configuracion"), Permiso = "ConfigurarRoles" },
+new SubItem { Titulo = "Permisos", Url = Url.Action("Permisos", "Configuracion"), Permiso = "ConfigurarPermisos" }
+}
+}
+}
+  };
+
+}
+
+<head>
+  <link rel="stylesheet" href="~/css/Configuracion/FormCuentaUsuarios.css">
+  <link rel="stylesheet" href="~/css/Form.css">
+</head>
+
+<section class="main-container">
+  <div class="titulo-seccion">
+    <h1>@ViewBag.Title</h1>
+    <div class="acciones">
+      <a href="@Url.Action("Roles", "Configuracion")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button type="button" id="btn-submit" class="btn btn-nuevo"><i
+          class="fi fi-rr-plus"></i><span>Guardar</span></button>
+    </div>
+  </div>
+  <div class="form-container">
+    <form id="form" asp-action="@(ViewBag.Title == "Editar Rol" ? "ActualizarRol" : "GuardarRol")"
+      asp-controller="Configuracion" method="post">
+      <div class="campos-container">
+        <div class="grupo informacion_usuario">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Rol</h2>
+          </div>
+          <div class="campo" id="campo_id_rol" style="display: none;">
+            <label for="id_rol">ID Rol</label>
+            <input type="text" name="id_rol" id="id_rol" value="@((Model.Rol?.ID_ROL) ?? "")">
+          </div>
+          <div class="campo" id="campo_nombre_rol">
+            <label for="nombre_rol">Nombre Rol</label>
+            <input required type="text" name="nombre_rol" id="nombre_rol" value="@((Model.Rol?.NOMBRE) ?? "")">
+          </div>
+          <div class="campo" id="campo_descripcion_rol">
+            <label for="descripcion_rol">Descripcion</label>
+            <input type="text" name="descripcion_rol" id="descripcion_rol" value="@((Model.Rol?.DESCRIPCION) ?? "")">
+          </div>
+        </div>
+      </div>
+      <div class="campos-container">
+        <div class="grupo permisos-usuarios">
+          <div class="titulo-grupo" id="titulo">
+            <h2>Permisos</h2>
+          </div>
+          <div class="permisos-container">
+            @{
+              foreach (var item in menu.Items)
+              {
+
+                <ul class="lista-modulos" id="lista-modulos">
+                  <li class="modulo">
+                    <div class="titulo-modulo">
+                      <div class="titulo">
+                        <div class="modulo-icono">
+                          <i class="@item.Icono"></i>
+                        </div>
+                        <span class="">@item.Titulo</span>
+                      </div>
+                    </div>
+                    <div id="opciones-modulo" class="opciones-modulo">
+                      @{
+
+                        if (@ViewBag.Title == "Editar Rol")
+                        {
+                          var permisos = @Model.Permisos as List<Permiso>;
+                          var permisosRol = @Model.PermisosRol as List<PermisoRol>;
+
+                          <ul>
+                            @foreach (var subItem in item.SubItems)
+                            {
+                              if (permisosRol.Any(permiso => permiso.PERMISO == subItem.Permiso))
+                              {
+                                <li class="opcion">
+                                  <input type="checkbox" name="permisosSeleccionados" id="@subItem.Permiso"
+                                    value="@permisos.Where(permiso => permiso.NOMBRE == subItem.Permiso).FirstOrDefault()?.ID_PERMISO"
+                                    checked>
+                                  <label for="@subItem.Permiso">@subItem.Titulo</label>
+                                </li>
+                              }
+                              else
+                              {
+                                <li class="opcion">
+                                  <input type="checkbox" name="permisosSeleccionados" id="@subItem.Permiso"
+                                    value="@permisos.Where(permiso => permiso.NOMBRE == subItem.Permiso).FirstOrDefault()?.ID_PERMISO">
+                                  <label for="@subItem.Permiso">@subItem.Titulo</label>
+                                </li>
+                              }
+                            }
+
+                          </ul>
+                        }
+                        else
+                        {
+                          var permisos = @Model.Permisos as List<Permiso>;
+
+                          <ul>
+                            @foreach (var subItem in item.SubItems)
+                            {
+                              <li class="opcion">
+                                <input type="checkbox" name="permisosSeleccionados" id="@subItem.Permiso"
+                                  value="@permisos.Where(permiso => permiso.NOMBRE == subItem.Permiso).FirstOrDefault()?.ID_PERMISO">
+                                <label for="@subItem.Permiso">@subItem.Titulo</label>
+                              </li>
+                            }
+
+                          </ul>
+                        }
+
+
+                      }
+                    </div>
+                  </li>
+
+                </ul>
+
+              }
+            }
+
+          </div>
+        </div>
+    </form>
+  </div>
+</section>
+
+<script src="~/js/Form.js"></script>

@@ -19,6 +19,7 @@ namespace Coop360_I.Data
             modelBuilder.Entity<PermisoCuenta>().HasNoKey().ToView(null);
             modelBuilder.Entity<CuentaUsuario>().HasNoKey().ToView(null);
             modelBuilder.Entity<NumeroCuota>().HasNoKey().ToView(null);
+            modelBuilder.Entity<PermisoRol>().HasNoKey().ToView(null);
         }
 
         // Definiciones de dbsets

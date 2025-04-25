@@ -50,7 +50,7 @@
           </div>
           <div class="campo" id="campo_nivel_aprobacion">
             <label for="nivel_aprobacion">Nivel Aprobacion</label>
-            <select name="ID_NIVEL_APROBACION" id="nivel_aprobacion">
+            <select required name="ID_NIVEL_APROBACION" id="nivel_aprobacion">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var nivel_aprobacion in @Model.NivelesAprobacion)
               {
@@ -72,7 +72,7 @@
           </div>
           <div class="campo" id="campo_tipo">
             <label for="tipo">Tipo</label>
-            <select name="TIPO" id="tipo">
+            <select required name="TIPO" id="tipo">
               <option value="default" disabled selected>Seleccionar</option>
 
               @{

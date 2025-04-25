@@ -180,3 +180,15 @@ input[type="checkbox"]:checked {
   padding: 5px 30px;
   width: 210px;
 }
+
+/* Estilo desactivado para boton enviar */
+
+#btn-submit[disabled] {
+  background: #d6d6d6;
+  color: #000;
+  transition: all ease 0.5s;
+}
+
+#btn-submit[disabled]:hover {
+  color: #fff;
+}

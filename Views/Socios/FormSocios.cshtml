@@ -134,7 +134,7 @@
           </div>
           <div class="campo" id="campo_telefono_principal">
             <label for="telefono_principal">Telefono principal</label>
-            <input type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal"
+            <input required type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal"
               value="@((Model.Socio?.TELEFONO_PRINCIPAL) ?? "")">
           </div>
           <div class="campo" id="campo_telefono_secundario">
@@ -215,15 +215,16 @@
           </div>
           <div class="campo" id="campo_profesion">
             <label for="profesion">Profesion</label>
-            <input type="text" name="PROFESION" id="profesion" value="@((Model.Socio?.PROFESION) ?? "")">
+            <input required type="text" name="PROFESION" id="profesion" value="@((Model.Socio?.PROFESION) ?? "")">
           </div>
           <div class="campo" id="campo_cargo">
             <label for="cargo">Cargo</label>
-            <input type="text" name="CARGO" id="cargo" value="@((Model.Socio?.CARGO) ?? "")">
+            <input required type="text" name="CARGO" id="cargo" value="@((Model.Socio?.CARGO) ?? "")">
           </div>
           <div class="campo" id="campo_lugar_trabajo">
             <label for="lugar_trabajo">Lugar trabajo</label>
-            <input type="text" name="LUGAR_TRABAJO" id="lugar_trabajo" value="@((Model.Socio?.LUGAR_TRABAJO) ?? "")">
+            <input required type="text" name="LUGAR_TRABAJO" id="lugar_trabajo"
+              value="@((Model.Socio?.LUGAR_TRABAJO) ?? "")">
           </div>
           <div class="campo" id="campo_direccion_trabajo">
             <label for="direccion_trabajo">Direccion trabajo</label>
@@ -237,11 +238,12 @@
           </div>
           <div class="campo" id="campo_tipo_contrato">
             <label for="tipo_contrato">Tipo contrato</label>
-            <input type="text" name="TIPO_CONTRATO" id="tipo_contrato" value="@((Model.Socio?.TIPO_CONTRATO) ?? "")">
+            <input required type="text" name="TIPO_CONTRATO" id="tipo_contrato"
+              value="@((Model.Socio?.TIPO_CONTRATO) ?? "")">
           </div>
           <div class="campo" id="campo_ingresos_mensuales">
             <label for="ingresos_mensuales">Ingresos mensuales</label>
-            <input type="text" name="INGRESOS_MENSUALES" id="ingresos_mensuales"
+            <input required type="text" name="INGRESOS_MENSUALES" id="ingresos_mensuales"
               value="@((Model.Socio?.INGRESOS_MENSUALES) ?? "")">
           </div>
           <div class="campo" id="campo_fecha_ingreso_trabajo">
@@ -296,7 +298,7 @@
           </div>
           <div class="campo" id="campo_estatus">
             <label for="estatus">Estatus</label>
-            <select name="estatus" id="estatus">
+            <select required name="estatus" id="estatus">
               <option value="default" disabled selected>Seleccionar</option>
               @{
 

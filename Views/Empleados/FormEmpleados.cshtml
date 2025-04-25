@@ -119,7 +119,7 @@
           </div>
           <div class="campo" id="campo_tipo_sangre">
             <label for="tipo_sangre">Tipo de sangre</label>
-            <select name="TIPO_SANGRE" id="tipo_sangre">
+            <select required name="TIPO_SANGRE" id="tipo_sangre">
               <option value="default" disabled selected>Seleccionar</option>
               @{
 
@@ -244,7 +244,7 @@
           </div>
           <div class="campo" id="campo_telefono_principal">
             <label for="telefono_principal">Telefono principal</label>
-            <input type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal"
+            <input required type="text" name="TELEFONO_PRINCIPAL" id="telefono_principal"
               value="@((Model.Empleado?.TELEFONO_PRINCIPAL) ?? "")">
           </div>
           <div class="campo" id="campo_telefono_secundario">
@@ -336,11 +336,12 @@
           </div>
           <div class="campo" id="campo_cuenta_banco">
             <label for="cuenta_banco">Cuenta banco</label>
-            <input type="text" name="CUENTA_BANCO" id="cuenta_banco" value="@((Model.Empleado?.CUENTA_BANCO) ?? "")">
+            <input required type="text" name="CUENTA_BANCO" id="cuenta_banco"
+              value="@((Model.Empleado?.CUENTA_BANCO) ?? "")">
           </div>
           <div class="campo" id="campo_entidad_bancaria">
             <label for="entidad_bancaria">Entidad bancaria</label>
-            <select name="ID_ENTIDAD_BANCARIA" id="entidad_bancaria">
+            <select required name="ID_ENTIDAD_BANCARIA" id="entidad_bancaria">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var entidad_bancaria in @Model.EntidadesBancarias)
               {
@@ -359,7 +360,7 @@
           </div>
           <div class="campo" id="campo_puesto">
             <label for="puesto">Puesto</label>
-            <select name="ID_PUESTO" id="puesto">
+            <select required name="ID_PUESTO" id="puesto">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var puesto in @Model.Puestos)
               {
@@ -378,7 +379,7 @@
           </div>
           <div class="campo" id="campo_departamento">
             <label for="departamento">Departamento</label>
-            <select name="ID_DEPARTAMENTO" id="departamento">
+            <select required name="ID_DEPARTAMENTO" id="departamento">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var departamento in @Model.Departamentos)
               {
@@ -400,7 +401,7 @@
           </div>
           <div class="campo" id="campo_nivel_aprobacion">
             <label for="nivel_aprobacion">Nivel Aprobacion</label>
-            <select name="ID_NIVEL_APROBACION" id="nivel_aprobacion">
+            <select required name="ID_NIVEL_APROBACION" id="nivel_aprobacion">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var nivel_aprobacion in @Model.NivelesAprobacion)
               {
@@ -467,7 +468,7 @@
           </div>
           <div class="campo" id="campo_estatus">
             <label for="estatus">Estatus</label>
-            <select name="estatus" id="estatus">
+            <select required name="estatus" id="estatus">
               <option value="default" disabled selected>Seleccionar</option>
               @{
 
@@ -518,17 +519,17 @@
           </div>
           <div class="campo" id="campo_nombre_familiar_primario">
             <label for="nombre_familiar_primario">Nombre familiar primario</label>
-            <input type="text" name="NOMBRE_FAMILIAR_PRIMARIO" id="nombre_familiar_primario"
+            <input required type="text" name="NOMBRE_FAMILIAR_PRIMARIO" id="nombre_familiar_primario"
               value="@((Model.Empleado?.NOMBRE_FAMILIAR_PRIMARIO) ?? "")">
           </div>
           <div class="campo" id="campo_telefono_familiar_primario">
             <label for="telefono_familiar_primario">Telefono familiar primario</label>
-            <input type="text" name="TELEFONO_FAMILIAR_PRIMARIO" id="telefono_familiar_primario"
+            <input required type="text" name="TELEFONO_FAMILIAR_PRIMARIO" id="telefono_familiar_primario"
               value="@((Model.Empleado?.TELEFONO_FAMILIAR_PRIMARIO) ?? "")">
           </div>
           <div class="campo" id="campo_parentesco_familiar_primario">
             <label for="parentesco_familiar_primario">Parentesco familiar primario</label>
-            <select name="PARENTESCO_FAMILIAR_PRIMARIO" id="parentesco_familiar_primario">
+            <select required name="PARENTESCO_FAMILIAR_PRIMARIO" id="parentesco_familiar_primario">
               <option value="default" disabled selected>Seleccionar</option>
               @{
 

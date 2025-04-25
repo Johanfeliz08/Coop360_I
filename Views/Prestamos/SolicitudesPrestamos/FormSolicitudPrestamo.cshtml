@@ -52,7 +52,7 @@
           </div>
           <div class="campo" id="campo_categoria_prestamo">
             <label for="categoria_prestamo">Categoria de prestamo</label>
-            <select required name="ID_CATEGORIA_PRESTAMO" id="id_categoria_prestamo">
+            <select name="ID_CATEGORIA_PRESTAMO" id="id_categoria_prestamo" required>
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var categoriaPrestamo in @Model.CategoriasPrestamos)
               {
@@ -72,27 +72,27 @@
           </div>
           <div class="campo" id="campo_monto_solicitado">
             <label for="monto_solicitado">Monto solicitado</label>
-            <input type="text" name="monto_solicitado" id="monto_solicitado"
+            <input required type="text" name="monto_solicitado" id="monto_solicitado"
               value="@Model.SolicitudPrestamo?.MONTO_SOLICITADO">
           </div>
           <div class="campo" id="campo_plazo_meses">
             <label for="plazo_meses">Plazo (Meses)</label>
-            <input type="text" name="plazo_meses" id="plazo_meses" value="@Model.SolicitudPrestamo?.PLAZO_MESES"
-              readonly>
+            <input required type="text" name="plazo_meses" id="plazo_meses"
+              value="@Model.SolicitudPrestamo?.PLAZO_MESES" readonly>
           </div>
           <div class="campo" id="campo_tasa_interes">
             <label for="tasa_interes">Tasa de interes (%)</label>
-            <input type="text" name="tasa_interes" id="tasa_interes" value="@Model.SolicitudPrestamo?.TASA_INTERES"
-              readonly>
+            <input required type="text" name="tasa_interes" id="tasa_interes"
+              value="@Model.SolicitudPrestamo?.TASA_INTERES" readonly>
           </div>
           <div class="campo" id="campo_cantidad_cuotas">
             <label for="cantidad_cuotas">Cantidad de cuotas</label>
-            <input type="text" name="cantidad_cuotas" id="cantidad_cuotas"
+            <input required type="text" name="cantidad_cuotas" id="cantidad_cuotas"
               value="@Model.SolicitudPrestamo?.CANTIDAD_CUOTAS" readonly>
           </div>
           <div class="campo" id="campo_monto_por_cuota">
             <label for="monto_por_cuota">Monto por cuota</label>
-            <input type="text" name="monto_por_cuota" id="monto_por_cuota"
+            <input required type="text" name="monto_por_cuota" id="monto_por_cuota"
               value="@Model.SolicitudPrestamo?.MONTO_POR_CUOTA" readonly>
           </div>
           @{
@@ -200,7 +200,7 @@
           </div>
           <div class="campo" id="campo_codeudor_secundario">
             <label for="codeudor_secundario">Codeudor secundario</label>
-            <select required name="CODIGO_CODEUDOR_SECUNDARIO" id="codigo_codeudor_secundario">
+            <select name="CODIGO_CODEUDOR_SECUNDARIO" id="codigo_codeudor_secundario">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var codeudorSecundario in @Model.Codeudores)
               {
@@ -222,7 +222,7 @@
           </div>
           <div class="campo" id="campo_codeudor_terciario">
             <label for="codeudor_terciario">Codeudor terciario</label>
-            <select required name="CODIGO_CODEUDOR_TERCIARIO" id="codigo_codeudor_terciario">
+            <select name="CODIGO_CODEUDOR_TERCIARIO" id="codigo_codeudor_terciario">
               <option value="default" disabled selected>Seleccionar</option>
               @foreach (var codeudorTerciario in @Model.Codeudores)
               {
