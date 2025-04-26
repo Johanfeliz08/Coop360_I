@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "MvS2ooMrPAglIDcFYgJx2fDg9kySK2L/L52MlrwV+F4=",
+  "Hash": "x+UzvPI7PlQ7v6TmfTs+G+VmYmag0VourJx1sIi4Fak=",
   "Source": "Coop360_I",
   "BasePath": "_content/Coop360_I",
   "Mode": "Default",
@@ -1298,12 +1298,12 @@
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\lib\\jquery\\dist\\jquery.min.map"
     },
     {
-      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-y69m6qn2l5.gz",
+      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-ajeoymo9pd.gz",
       "SourceId": "Coop360_I",
       "SourceType": "Discovered",
       "ContentRoot": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Coop360_I",
-      "RelativePath": "css/Form#[.{fingerprint=y69m6qn2l5}]?.css.gz",
+      "RelativePath": "css/Form#[.{fingerprint=ajeoymo9pd}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -1312,8 +1312,8 @@
       "RelatedAsset": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Form.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "up3varpdvy",
-      "Integrity": "korukDXBJPtYORIewH7Cw2NM26bcDoX7fwBNGI32yoY=",
+      "Fingerprint": "t8zjy2bvv5",
+      "Integrity": "LVNNkNG1G9h2h0BTsKUMJibnd8b22C0NkC6MJ/DQbok=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Form.css"
@@ -2117,12 +2117,12 @@
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\Archivos\\67ec4fc6-fde6-4ae7-a234-9110a32442bb_CartadeRecomendacion_20.txt"
     },
     {
-      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-gaecs1i568.gz",
+      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-vipbn0wfjw.gz",
       "SourceId": "Coop360_I",
       "SourceType": "Discovered",
       "ContentRoot": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Coop360_I",
-      "RelativePath": "css/site#[.{fingerprint=gaecs1i568}]?.css.gz",
+      "RelativePath": "css/site#[.{fingerprint=vipbn0wfjw}]?.css.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -2131,8 +2131,8 @@
       "RelatedAsset": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\site.css",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "gpj2hgglin",
-      "Integrity": "RAEagWRQQwxkJZO7kUYpBI4aq2jeyAcaGqu+xjRb9Wk=",
+      "Fingerprint": "b6z4kr0uls",
+      "Integrity": "7RSMVAOzwj2zMbFraMXxoHTpdFIXSUwEpaR6fyhUJBE=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\site.css"
@@ -2201,12 +2201,12 @@
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\lib\\bootstrap\\dist\\css\\bootstrap-reboot.rtl.min.css.map"
     },
     {
-      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xtxxf3hu2r.gz",
+      "Identity": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xphgpj9bxw.gz",
       "SourceId": "Coop360_I",
       "SourceType": "Discovered",
       "ContentRoot": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\",
       "BasePath": "_content/Coop360_I",
-      "RelativePath": "js/site#[.{fingerprint=xtxxf3hu2r}]?.js.gz",
+      "RelativePath": "js/site#[.{fingerprint=xphgpj9bxw}]?.js.gz",
       "AssetKind": "All",
       "AssetMode": "All",
       "AssetRole": "Alternative",
@@ -2215,8 +2215,8 @@
       "RelatedAsset": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\site.js",
       "AssetTraitName": "Content-Encoding",
       "AssetTraitValue": "gzip",
-      "Fingerprint": "rl5dcbfpcw",
-      "Integrity": "Ydq7YvQUzhbo68waLZeQvZnPOvmTeQ+HyDqjkA1whsA=",
+      "Fingerprint": "v9p57rf6e4",
+      "Integrity": "zc2zvHjgKLOCCiss/BrkbFa1cDGv0BHbtdNXpo29GgU=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\site.js"
@@ -3622,8 +3622,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "y69m6qn2l5",
-      "Integrity": "Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8=",
+      "Fingerprint": "ajeoymo9pd",
+      "Integrity": "lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\Form.css"
@@ -3853,8 +3853,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "gaecs1i568",
-      "Integrity": "qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY=",
+      "Fingerprint": "vipbn0wfjw",
+      "Integrity": "94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\css\\site.css"
@@ -4315,8 +4315,8 @@
       "RelatedAsset": "",
       "AssetTraitName": "",
       "AssetTraitValue": "",
-      "Fingerprint": "xtxxf3hu2r",
-      "Integrity": "hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=",
+      "Fingerprint": "xphgpj9bxw",
+      "Integrity": "Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM=",
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\js\\site.js"
@@ -19045,13 +19045,13 @@
       ]
     },
     {
-      "Route": "css/Form.css",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-y69m6qn2l5.gz",
+      "Route": "css/Form.ajeoymo9pd.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-ajeoymo9pd.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000998003992"
+          "Quality": "0.000993048659"
         }
       ],
       "ResponseHeaders": [
@@ -19061,19 +19061,19 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1001"
+          "Value": "1006"
         },
         {
           "Name": "ETag",
-          "Value": "\"korukDXBJPtYORIewH7Cw2NM26bcDoX7fwBNGI32yoY=\""
+          "Value": "\"LVNNkNG1G9h2h0BTsKUMJibnd8b22C0NkC6MJ/DQbok=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:52:50 GMT"
+          "Value": "Sat, 26 Apr 2025 02:27:57 GMT"
         },
         {
           "Name": "Cache-Control",
-          "Value": "no-cache"
+          "Value": "max-age=31536000, immutable"
         },
         {
           "Name": "Content-Encoding",
@@ -19089,18 +19089,26 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8=\""
+          "Value": "W/\"lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc=\""
         }
       ],
       "EndpointProperties": [
         {
+          "Name": "fingerprint",
+          "Value": "ajeoymo9pd"
+        },
+        {
+          "Name": "label",
+          "Value": "css/Form.css"
+        },
+        {
           "Name": "integrity",
-          "Value": "sha256-Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8="
+          "Value": "sha256-lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc="
         }
       ]
     },
     {
-      "Route": "css/Form.css",
+      "Route": "css/Form.ajeoymo9pd.css",
       "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Form.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -19110,7 +19118,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4781"
+          "Value": "4789"
         },
         {
           "Name": "Content-Type",
@@ -19118,121 +19126,21 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8=\""
+          "Value": "\"lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:52:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8="
-        }
-      ]
-    },
-    {
-      "Route": "css/Form.css.gz",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-y69m6qn2l5.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1001"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"korukDXBJPtYORIewH7Cw2NM26bcDoX7fwBNGI32yoY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:52:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "no-cache"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "integrity",
-          "Value": "sha256-korukDXBJPtYORIewH7Cw2NM26bcDoX7fwBNGI32yoY="
-        }
-      ]
-    },
-    {
-      "Route": "css/Form.y69m6qn2l5.css",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-y69m6qn2l5.gz",
-      "Selectors": [
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip",
-          "Quality": "0.000998003992"
-        }
-      ],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1001"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"korukDXBJPtYORIewH7Cw2NM26bcDoX7fwBNGI32yoY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:52:50 GMT"
+          "Value": "Sat, 26 Apr 2025 02:27:57 GMT"
         },
         {
           "Name": "Cache-Control",
           "Value": "max-age=31536000, immutable"
-        },
-        {
-          "Name": "Content-Encoding",
-          "Value": "gzip"
-        },
-        {
-          "Name": "Vary",
-          "Value": "Content-Encoding"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "W/\"Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "y69m6qn2l5"
+          "Value": "ajeoymo9pd"
         },
         {
           "Name": "label",
@@ -19240,13 +19148,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8="
+          "Value": "sha256-lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc="
         }
       ]
     },
     {
-      "Route": "css/Form.y69m6qn2l5.css",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Form.css",
+      "Route": "css/Form.ajeoymo9pd.css.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-ajeoymo9pd.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -19255,7 +19163,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "4781"
+          "Value": "1006"
         },
         {
           "Name": "Content-Type",
@@ -19263,56 +19171,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8=\""
+          "Value": "\"LVNNkNG1G9h2h0BTsKUMJibnd8b22C0NkC6MJ/DQbok=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:52:50 GMT"
-        },
-        {
-          "Name": "Cache-Control",
-          "Value": "max-age=31536000, immutable"
-        }
-      ],
-      "EndpointProperties": [
-        {
-          "Name": "fingerprint",
-          "Value": "y69m6qn2l5"
-        },
-        {
-          "Name": "label",
-          "Value": "css/Form.css"
-        },
-        {
-          "Name": "integrity",
-          "Value": "sha256-Cja+qwEPmgMD9G5ZyX9BWS8d/MWPeHKNie8A8LP3YM8="
-        }
-      ]
-    },
-    {
-      "Route": "css/Form.y69m6qn2l5.css.gz",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-y69m6qn2l5.gz",
-      "Selectors": [],
-      "ResponseHeaders": [
-        {
-          "Name": "Accept-Ranges",
-          "Value": "bytes"
-        },
-        {
-          "Name": "Content-Length",
-          "Value": "1001"
-        },
-        {
-          "Name": "Content-Type",
-          "Value": "text/css"
-        },
-        {
-          "Name": "ETag",
-          "Value": "\"korukDXBJPtYORIewH7Cw2NM26bcDoX7fwBNGI32yoY=\""
-        },
-        {
-          "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:52:50 GMT"
+          "Value": "Sat, 26 Apr 2025 02:27:57 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -19330,7 +19193,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "y69m6qn2l5"
+          "Value": "ajeoymo9pd"
         },
         {
           "Name": "label",
@@ -19338,7 +19201,144 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-korukDXBJPtYORIewH7Cw2NM26bcDoX7fwBNGI32yoY="
+          "Value": "sha256-LVNNkNG1G9h2h0BTsKUMJibnd8b22C0NkC6MJ/DQbok="
+        }
+      ]
+    },
+    {
+      "Route": "css/Form.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-ajeoymo9pd.gz",
+      "Selectors": [
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip",
+          "Quality": "0.000993048659"
+        }
+      ],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1006"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LVNNkNG1G9h2h0BTsKUMJibnd8b22C0NkC6MJ/DQbok=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Apr 2025 02:27:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "W/\"lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc=\""
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc="
+        }
+      ]
+    },
+    {
+      "Route": "css/Form.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\Form.css",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "4789"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Apr 2025 02:27:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-lpk5GIPaxvI6jopEes7Cr4zSx4BRfR6XKP4zjSR5JGc="
+        }
+      ]
+    },
+    {
+      "Route": "css/Form.css.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\hdmpyyg27s-ajeoymo9pd.gz",
+      "Selectors": [],
+      "ResponseHeaders": [
+        {
+          "Name": "Accept-Ranges",
+          "Value": "bytes"
+        },
+        {
+          "Name": "Content-Length",
+          "Value": "1006"
+        },
+        {
+          "Name": "Content-Type",
+          "Value": "text/css"
+        },
+        {
+          "Name": "ETag",
+          "Value": "\"LVNNkNG1G9h2h0BTsKUMJibnd8b22C0NkC6MJ/DQbok=\""
+        },
+        {
+          "Name": "Last-Modified",
+          "Value": "Sat, 26 Apr 2025 02:27:57 GMT"
+        },
+        {
+          "Name": "Cache-Control",
+          "Value": "no-cache"
+        },
+        {
+          "Name": "Content-Encoding",
+          "Value": "gzip"
+        },
+        {
+          "Name": "Vary",
+          "Value": "Content-Encoding"
+        }
+      ],
+      "EndpointProperties": [
+        {
+          "Name": "integrity",
+          "Value": "sha256-LVNNkNG1G9h2h0BTsKUMJibnd8b22C0NkC6MJ/DQbok="
         }
       ]
     },
@@ -22324,12 +22324,12 @@
     },
     {
       "Route": "css/site.css",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-gaecs1i568.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-vipbn0wfjw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000654450262"
+          "Quality": "0.000660066007"
         }
       ],
       "ResponseHeaders": [
@@ -22339,15 +22339,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1527"
+          "Value": "1514"
         },
         {
           "Name": "ETag",
-          "Value": "\"RAEagWRQQwxkJZO7kUYpBI4aq2jeyAcaGqu+xjRb9Wk=\""
+          "Value": "\"7RSMVAOzwj2zMbFraMXxoHTpdFIXSUwEpaR6fyhUJBE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 18 Apr 2025 16:17:45 GMT"
+          "Value": "Sat, 26 Apr 2025 01:55:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22367,13 +22367,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY=\""
+          "Value": "W/\"94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY="
+          "Value": "sha256-94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U="
         }
       ]
     },
@@ -22388,7 +22388,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7914"
+          "Value": "7895"
         },
         {
           "Name": "Content-Type",
@@ -22396,11 +22396,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY=\""
+          "Value": "\"94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 18 Apr 2025 16:17:45 GMT"
+          "Value": "Sat, 26 Apr 2025 01:55:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22410,13 +22410,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY="
+          "Value": "sha256-94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U="
         }
       ]
     },
     {
       "Route": "css/site.css.gz",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-gaecs1i568.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-vipbn0wfjw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -22425,7 +22425,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1527"
+          "Value": "1514"
         },
         {
           "Name": "Content-Type",
@@ -22433,11 +22433,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RAEagWRQQwxkJZO7kUYpBI4aq2jeyAcaGqu+xjRb9Wk=\""
+          "Value": "\"7RSMVAOzwj2zMbFraMXxoHTpdFIXSUwEpaR6fyhUJBE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 18 Apr 2025 16:17:45 GMT"
+          "Value": "Sat, 26 Apr 2025 01:55:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22455,18 +22455,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-RAEagWRQQwxkJZO7kUYpBI4aq2jeyAcaGqu+xjRb9Wk="
+          "Value": "sha256-7RSMVAOzwj2zMbFraMXxoHTpdFIXSUwEpaR6fyhUJBE="
         }
       ]
     },
     {
-      "Route": "css/site.gaecs1i568.css",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-gaecs1i568.gz",
+      "Route": "css/site.vipbn0wfjw.css",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-vipbn0wfjw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.000654450262"
+          "Quality": "0.000660066007"
         }
       ],
       "ResponseHeaders": [
@@ -22476,15 +22476,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1527"
+          "Value": "1514"
         },
         {
           "Name": "ETag",
-          "Value": "\"RAEagWRQQwxkJZO7kUYpBI4aq2jeyAcaGqu+xjRb9Wk=\""
+          "Value": "\"7RSMVAOzwj2zMbFraMXxoHTpdFIXSUwEpaR6fyhUJBE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 18 Apr 2025 16:17:45 GMT"
+          "Value": "Sat, 26 Apr 2025 01:55:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22504,13 +22504,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY=\""
+          "Value": "W/\"94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gaecs1i568"
+          "Value": "vipbn0wfjw"
         },
         {
           "Name": "label",
@@ -22518,12 +22518,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY="
+          "Value": "sha256-94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U="
         }
       ]
     },
     {
-      "Route": "css/site.gaecs1i568.css",
+      "Route": "css/site.vipbn0wfjw.css",
       "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\css\\site.css",
       "Selectors": [],
       "ResponseHeaders": [
@@ -22533,7 +22533,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "7914"
+          "Value": "7895"
         },
         {
           "Name": "Content-Type",
@@ -22541,11 +22541,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY=\""
+          "Value": "\"94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 18 Apr 2025 16:17:45 GMT"
+          "Value": "Sat, 26 Apr 2025 01:55:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22555,7 +22555,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gaecs1i568"
+          "Value": "vipbn0wfjw"
         },
         {
           "Name": "label",
@@ -22563,13 +22563,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-qIyCi5OCylrYBAEfjUmSitdSUp8upcKJzC2pirL+5kY="
+          "Value": "sha256-94zADplcnQwLZxMWRxJs3iIrasBC45ZgdaZGD8WXb/U="
         }
       ]
     },
     {
-      "Route": "css/site.gaecs1i568.css.gz",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-gaecs1i568.gz",
+      "Route": "css/site.vipbn0wfjw.css.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\saa8dtaixl-vipbn0wfjw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -22578,7 +22578,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "1527"
+          "Value": "1514"
         },
         {
           "Name": "Content-Type",
@@ -22586,11 +22586,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"RAEagWRQQwxkJZO7kUYpBI4aq2jeyAcaGqu+xjRb9Wk=\""
+          "Value": "\"7RSMVAOzwj2zMbFraMXxoHTpdFIXSUwEpaR6fyhUJBE=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 18 Apr 2025 16:17:45 GMT"
+          "Value": "Sat, 26 Apr 2025 01:55:41 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -22608,7 +22608,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "gaecs1i568"
+          "Value": "vipbn0wfjw"
         },
         {
           "Name": "label",
@@ -22616,7 +22616,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-RAEagWRQQwxkJZO7kUYpBI4aq2jeyAcaGqu+xjRb9Wk="
+          "Value": "sha256-7RSMVAOzwj2zMbFraMXxoHTpdFIXSUwEpaR6fyhUJBE="
         }
       ]
     },
@@ -24471,7 +24471,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:53:03 GMT"
+          "Value": "Sat, 26 Apr 2025 02:21:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -24524,7 +24524,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:53:03 GMT"
+          "Value": "Sat, 26 Apr 2025 02:21:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -24561,7 +24561,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:53:03 GMT"
+          "Value": "Sat, 26 Apr 2025 02:21:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -24608,7 +24608,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:53:03 GMT"
+          "Value": "Sat, 26 Apr 2025 02:21:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -24669,7 +24669,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:53:03 GMT"
+          "Value": "Sat, 26 Apr 2025 02:21:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -24714,7 +24714,7 @@
         },
         {
           "Name": "Last-Modified",
-          "Value": "Fri, 25 Apr 2025 15:53:03 GMT"
+          "Value": "Sat, 26 Apr 2025 02:21:28 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25640,12 +25640,12 @@
     },
     {
       "Route": "js/site.js",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xtxxf3hu2r.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xphgpj9bxw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.005263157895"
+          "Quality": "0.004629629630"
         }
       ],
       "ResponseHeaders": [
@@ -25655,15 +25655,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "189"
+          "Value": "215"
         },
         {
           "Name": "ETag",
-          "Value": "\"Ydq7YvQUzhbo68waLZeQvZnPOvmTeQ+HyDqjkA1whsA=\""
+          "Value": "\"zc2zvHjgKLOCCiss/BrkbFa1cDGv0BHbtdNXpo29GgU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:09:47 GMT"
+          "Value": "Sat, 26 Apr 2025 02:20:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25683,13 +25683,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+          "Value": "W/\"Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+          "Value": "sha256-Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM="
         }
       ]
     },
@@ -25704,7 +25704,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "231"
+          "Value": "278"
         },
         {
           "Name": "Content-Type",
@@ -25712,11 +25712,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+          "Value": "\"Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:09:47 GMT"
+          "Value": "Sat, 26 Apr 2025 02:20:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25726,13 +25726,13 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+          "Value": "sha256-Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM="
         }
       ]
     },
     {
       "Route": "js/site.js.gz",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xtxxf3hu2r.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xphgpj9bxw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -25741,7 +25741,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "189"
+          "Value": "215"
         },
         {
           "Name": "Content-Type",
@@ -25749,11 +25749,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ydq7YvQUzhbo68waLZeQvZnPOvmTeQ+HyDqjkA1whsA=\""
+          "Value": "\"zc2zvHjgKLOCCiss/BrkbFa1cDGv0BHbtdNXpo29GgU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:09:47 GMT"
+          "Value": "Sat, 26 Apr 2025 02:20:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25771,18 +25771,18 @@
       "EndpointProperties": [
         {
           "Name": "integrity",
-          "Value": "sha256-Ydq7YvQUzhbo68waLZeQvZnPOvmTeQ+HyDqjkA1whsA="
+          "Value": "sha256-zc2zvHjgKLOCCiss/BrkbFa1cDGv0BHbtdNXpo29GgU="
         }
       ]
     },
     {
-      "Route": "js/site.xtxxf3hu2r.js",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xtxxf3hu2r.gz",
+      "Route": "js/site.xphgpj9bxw.js",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xphgpj9bxw.gz",
       "Selectors": [
         {
           "Name": "Content-Encoding",
           "Value": "gzip",
-          "Quality": "0.005263157895"
+          "Quality": "0.004629629630"
         }
       ],
       "ResponseHeaders": [
@@ -25792,15 +25792,15 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "189"
+          "Value": "215"
         },
         {
           "Name": "ETag",
-          "Value": "\"Ydq7YvQUzhbo68waLZeQvZnPOvmTeQ+HyDqjkA1whsA=\""
+          "Value": "\"zc2zvHjgKLOCCiss/BrkbFa1cDGv0BHbtdNXpo29GgU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:09:47 GMT"
+          "Value": "Sat, 26 Apr 2025 02:20:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25820,13 +25820,13 @@
         },
         {
           "Name": "ETag",
-          "Value": "W/\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+          "Value": "W/\"Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM=\""
         }
       ],
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xtxxf3hu2r"
+          "Value": "xphgpj9bxw"
         },
         {
           "Name": "label",
@@ -25834,12 +25834,12 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+          "Value": "sha256-Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM="
         }
       ]
     },
     {
-      "Route": "js/site.xtxxf3hu2r.js",
+      "Route": "js/site.xphgpj9bxw.js",
       "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\wwwroot\\js\\site.js",
       "Selectors": [],
       "ResponseHeaders": [
@@ -25849,7 +25849,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "231"
+          "Value": "278"
         },
         {
           "Name": "Content-Type",
@@ -25857,11 +25857,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo=\""
+          "Value": "\"Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:09:47 GMT"
+          "Value": "Sat, 26 Apr 2025 02:20:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25871,7 +25871,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xtxxf3hu2r"
+          "Value": "xphgpj9bxw"
         },
         {
           "Name": "label",
@@ -25879,13 +25879,13 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-hRQyftXiu1lLX2P9Ly9xa4gHJgLeR1uGN5qegUobtGo="
+          "Value": "sha256-Sw00HdFYp7/mAQ/sChPJmh5x60zcXrZCkqq4uUO71JM="
         }
       ]
     },
     {
-      "Route": "js/site.xtxxf3hu2r.js.gz",
-      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xtxxf3hu2r.gz",
+      "Route": "js/site.xphgpj9bxw.js.gz",
+      "AssetFile": "J:\\Universidad - Ingenieria en Sistemas\\Enero - Abril 2024\\Proyecto Integrador I - Teofilo\\Fase C - Desarrollo\\Coop360_I\\obj\\Debug\\net9.0\\compressed\\uf72ph25ef-xphgpj9bxw.gz",
       "Selectors": [],
       "ResponseHeaders": [
         {
@@ -25894,7 +25894,7 @@
         },
         {
           "Name": "Content-Length",
-          "Value": "189"
+          "Value": "215"
         },
         {
           "Name": "Content-Type",
@@ -25902,11 +25902,11 @@
         },
         {
           "Name": "ETag",
-          "Value": "\"Ydq7YvQUzhbo68waLZeQvZnPOvmTeQ+HyDqjkA1whsA=\""
+          "Value": "\"zc2zvHjgKLOCCiss/BrkbFa1cDGv0BHbtdNXpo29GgU=\""
         },
         {
           "Name": "Last-Modified",
-          "Value": "Mon, 10 Mar 2025 21:09:47 GMT"
+          "Value": "Sat, 26 Apr 2025 02:20:36 GMT"
         },
         {
           "Name": "Cache-Control",
@@ -25924,7 +25924,7 @@
       "EndpointProperties": [
         {
           "Name": "fingerprint",
-          "Value": "xtxxf3hu2r"
+          "Value": "xphgpj9bxw"
         },
         {
           "Name": "label",
@@ -25932,7 +25932,7 @@
         },
         {
           "Name": "integrity",
-          "Value": "sha256-Ydq7YvQUzhbo68waLZeQvZnPOvmTeQ+HyDqjkA1whsA="
+          "Value": "sha256-zc2zvHjgKLOCCiss/BrkbFa1cDGv0BHbtdNXpo29GgU="
         }
       ]
     },

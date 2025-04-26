@@ -16,7 +16,6 @@ J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\Coop360_I.RazorAssemblyInfo.cs
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\Coop360_I.sourcelink.json
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\scopedcss\bundle\Coop360_I.styles.css
-J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\uf72ph25ef-xtxxf3hu2r.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\8wfvracvqn-bqjiyaj88i.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\fzyqfuime1-c2jlpeoesf.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\nadvq2txvq-erw9l3u2r3.gz
@@ -359,7 +358,6 @@ J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\de00uxc4d5-qh0jlmyhvz.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\86eed35f6t-dg8kmk5bal.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\djt9bks8wr-fq9d0tdz4t.gz
-J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\saa8dtaixl-gaecs1i568.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\gu7kz6j1w4-5ipweew5fc.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\fkzmcx97a2-qh0jlmyhvz.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\geuwtby9vk-2pxxixwow7.gz
@@ -374,5 +372,7 @@ J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\xf427xy4oh-5ipweew5fc.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\iyj9p7q6nw-pbw1r7a1l2.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\rqhhvl7869-cd81rxla39.gz
-J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\hdmpyyg27s-y69m6qn2l5.gz
 J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\kl45fh09n3-zzr71woovx.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\hdmpyyg27s-ajeoymo9pd.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\saa8dtaixl-vipbn0wfjw.gz
+J:\Universidad - Ingenieria en Sistemas\Enero - Abril 2024\Proyecto Integrador I - Teofilo\Fase C - Desarrollo\Coop360_I\obj\Debug\net9.0\compressed\uf72ph25ef-xphgpj9bxw.gz

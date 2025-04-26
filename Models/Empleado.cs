@@ -31,6 +31,7 @@ public class Empleado
     public string? NOMBRE_ENTIDAD_BANCARIA { get; set; }
     public int? ID_PUESTO { get; set; }
     public string? NOMBRE_PUESTO { get; set; }
+    public decimal? SALARIO { get; set; }
     public int? ID_DEPARTAMENTO { get; set; }
     public string? NOMBRE_DEPARTAMENTO { get; set; }
     public required string TIPO_SANGRE { get; set; }

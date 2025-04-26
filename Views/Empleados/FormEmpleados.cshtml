@@ -12,8 +12,6 @@
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
       <button id="btnRegresar" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></button>
-
-      @* <a href="@Url.Action("RegistroEmpleados", "Empleados")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a> *@
       <button type="button" id="btn-submit" class="btn btn-nuevo"><i
           class="fi fi-rr-plus"></i><span>Guardar</span></button>
     </div>
@@ -318,17 +316,6 @@
               }
             </select>
           </div>
-          @* <div class="campo" id="campo_region">
-            <label for="region">Region</label>
-            <select required name="ID_REGION" id="region">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var region in @Model.Regiones)
-              {
-
-                <option id="@region.ID_REGION" value="@region.ID_REGION">@region.REGION</option>
-              }
-            </select>
-          </div> *@
         </div>
       </div>
       <div class="campos-container">
@@ -343,85 +330,115 @@
           </div>
           <div class="campo" id="campo_entidad_bancaria">
             <label for="entidad_bancaria">Entidad bancaria</label>
-            <select required name="ID_ENTIDAD_BANCARIA" id="entidad_bancaria">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var entidad_bancaria in @Model.EntidadesBancarias)
-              {
-                if (entidad_bancaria.ID == Model.Empleado?.ID_ENTIDAD_BANCARIA)
-                {
-                  <option id="@entidad_bancaria.ID" value="@entidad_bancaria.ID" selected>
-                    @entidad_bancaria.NOMBRE</option>
-                }
-                else
-                {
-                  <option id="@entidad_bancaria.ID" value="@entidad_bancaria.ID">
-                    @entidad_bancaria.NOMBRE</option>
-                }
-              }
-            </select>
+            <div class="campo-container">
+              <div class="select-container">
+                <select required name="ID_ENTIDAD_BANCARIA" id="entidad_bancaria">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  @foreach (var entidad_bancaria in @Model.EntidadesBancarias)
+                  {
+                    if (entidad_bancaria.ID == Model.Empleado?.ID_ENTIDAD_BANCARIA)
+                    {
+                      <option id="@entidad_bancaria.ID" value="@entidad_bancaria.ID" selected>
+                        @entidad_bancaria.NOMBRE</option>
+                    }
+                    else
+                    {
+                      <option id="@entidad_bancaria.ID" value="@entidad_bancaria.ID">
+                        @entidad_bancaria.NOMBRE</option>
+                    }
+                  }
+                </select>
+              </div>
+              <div class="btnIrForm">
+                <a href="@Url.Action("Crear", "EntidadesBancarias")" class="btn btn-ir"><i
+                    class="fi fi-rr-plus"></i></a>
+              </div>
+            </div>
           </div>
           <div class="campo" id="campo_puesto">
             <label for="puesto">Puesto</label>
-            <select required name="ID_PUESTO" id="puesto">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var puesto in @Model.Puestos)
-              {
+            <div class="campo-container">
+              <div class="select-container">
+                <select required name="ID_PUESTO" id="puesto">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  @foreach (var puesto in @Model.Puestos)
+                  {
 
-                if (puesto.ID_PUESTO == Model.Empleado?.ID_PUESTO)
-                {
-                  <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO" selected>@puesto.NOMBRE</option>
-                }
-                else
-                {
-                  <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO">@puesto.NOMBRE</option>
-                }
+                    if (puesto.ID_PUESTO == Model.Empleado?.ID_PUESTO)
+                    {
+                      <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO" selected>@puesto.NOMBRE</option>
+                    }
+                    else
+                    {
+                      <option id="@puesto.ID_PUESTO" value="@puesto.ID_PUESTO">@puesto.NOMBRE</option>
+                    }
 
-              }
-            </select>
+                  }
+                </select>
+              </div>
+              <div class="btnIrForm">
+                <a href="@Url.Action("Crear", "Puestos")" class="btn btn-ir"><i class="fi fi-rr-plus"></i></a>
+              </div>
+            </div>
           </div>
           <div class="campo" id="campo_departamento">
             <label for="departamento">Departamento</label>
-            <select required name="ID_DEPARTAMENTO" id="departamento">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var departamento in @Model.Departamentos)
-              {
+            <div class="campo-container">
+              <div class="select-container">
+                <select required name="ID_DEPARTAMENTO" id="departamento">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  @foreach (var departamento in @Model.Departamentos)
+                  {
 
-                if (departamento.ID_DEPARTAMENTO == Model.Empleado?.ID_DEPARTAMENTO)
-                {
-                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO" selected>
-                    @departamento.NOMBRE
-                  </option>
-                }
-                else
-                {
-                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO">
-                    @departamento.NOMBRE
-                  </option>
-                }
-              }
-            </select>
+                    if (departamento.ID_DEPARTAMENTO == Model.Empleado?.ID_DEPARTAMENTO)
+                    {
+                      <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO" selected>
+                        @departamento.NOMBRE
+                      </option>
+                    }
+                    else
+                    {
+                      <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO">
+                        @departamento.NOMBRE
+                      </option>
+                    }
+                  }
+                </select>
+              </div>
+              <div class="btnIrForm">
+                <a href="@Url.Action("Crear", "Departamentos")" class="btn btn-ir"><i class="fi fi-rr-plus"></i></a>
+              </div>
+            </div>
           </div>
           <div class="campo" id="campo_nivel_aprobacion">
             <label for="nivel_aprobacion">Nivel Aprobacion</label>
-            <select required name="ID_NIVEL_APROBACION" id="nivel_aprobacion">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var nivel_aprobacion in @Model.NivelesAprobacion)
-              {
+            <div class="campo-container">
+              <div class="select-container">
+                <select required name="ID_NIVEL_APROBACION" id="nivel_aprobacion">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  @foreach (var nivel_aprobacion in @Model.NivelesAprobacion)
+                  {
 
-                if (nivel_aprobacion.ID_NIVEL_APROBACION == Model.Empleado?.ID_NIVEL_APROBACION)
-                {
-                  <option id="@nivel_aprobacion.ID_NIVEL_APROBACION" value="@nivel_aprobacion.ID_NIVEL_APROBACION" selected>
-                    @nivel_aprobacion.NOMBRE
-                  </option>
-                }
-                else
-                {
-                  <option id="@nivel_aprobacion.ID_NIVEL_APROBACION" value="@nivel_aprobacion.ID_NIVEL_APROBACION">
-                    @nivel_aprobacion.NOMBRE
-                  </option>
-                }
-              }
-            </select>
+                    if (nivel_aprobacion.ID_NIVEL_APROBACION == Model.Empleado?.ID_NIVEL_APROBACION)
+                    {
+                      <option id="@nivel_aprobacion.ID_NIVEL_APROBACION" value="@nivel_aprobacion.ID_NIVEL_APROBACION"
+                        selected>
+                        @nivel_aprobacion.NOMBRE
+                      </option>
+                    }
+                    else
+                    {
+                      <option id="@nivel_aprobacion.ID_NIVEL_APROBACION" value="@nivel_aprobacion.ID_NIVEL_APROBACION">
+                        @nivel_aprobacion.NOMBRE
+                      </option>
+                    }
+                  }
+                </select>
+              </div>
+              <div class="btnIrForm">
+                <a href="@Url.Action("", "")" class="btn btn-ir"><i class="fi fi-rr-plus"></i></a>
+              </div>
+            </div>
           </div>
           <div class="campo" id="campo_frecuencia_cobro">
             <label for="frecuencia_cobro">Frecuencia cobro</label>

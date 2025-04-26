@@ -35,8 +35,6 @@
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
       <button id="btnRegresar" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></button>
-
-      @* <a href="@Url.Action("HistorialPagos", "Pagos")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a> *@
       <button type="button" id="btn-submit" class="btn btn-nuevo">
         <i class="fi fi-tr-usd-circle"></i><span>Pagar</span></button>
     </div>
@@ -54,14 +52,21 @@
           </div>
           <div class="campo" id="campo_socios">
             <label for="codigo_socio">Socio</label>
-            <select required name="CODIGO_SOCIO" id="socio">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var socio in @Model.Socios)
-              {
-                <option id="@socio.CODIGO_SOCIO" value="@socio.CODIGO_SOCIO">@socio.P_NOMBRE @socio.S_NOMBRE
-                  @socio.P_APELLIDO @socio.S_APELLIDO</option>
-              }
-            </select>
+            <div class="campo-container">
+              <div class="select-container">
+                <select required name="CODIGO_SOCIO" id="socio">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  @foreach (var socio in @Model.Socios)
+                  {
+                    <option id="@socio.CODIGO_SOCIO" value="@socio.CODIGO_SOCIO">@socio.P_NOMBRE @socio.S_NOMBRE
+                      @socio.P_APELLIDO @socio.S_APELLIDO</option>
+                  }
+                </select>
+              </div>
+              <div class="btnIrForm">
+                <a href="@Url.Action("Crear", "Socios")" class="btn btn-ir"><i class="fi fi-rr-plus"></i></a>
+              </div>
+            </div>
           </div>
           <div class="campo" id="campo_prestamos">
             <label for="prestamos">Prestamo</label>

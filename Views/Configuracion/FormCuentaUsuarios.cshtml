@@ -104,9 +104,6 @@ new SubItem { Titulo = "Permisos", Url = Url.Action("Permisos", "Configuracion")
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
       <button id="btnRegresar" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></button>
-
-      @* <a href="@Url.Action("CuentasUsuarios", "Configuracion")" class="btn btn-regresar"><i
-          class="fi fi-rr-undo"></i></a> *@
       <button type="button" id="btn-submit" class="btn btn-nuevo"><i
           class="fi fi-rr-plus"></i><span>Guardar</span></button>
     </div>
@@ -135,21 +132,28 @@ new SubItem { Titulo = "Permisos", Url = Url.Action("Permisos", "Configuracion")
 
           <div class="campo" id="campo_rol">
             <label for="id_rol">Rol</label>
-            <select required name="ID_ROL" id="id_rol">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var rol in @Model.Roles)
-              {
+            <div class="campo-container">
+              <div class="select-container">
+                <select required name="ID_ROL" id="id_rol">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  @foreach (var rol in @Model.Roles)
+                  {
 
-                if (rol.ID_ROL == Model.CuentaUsuario?.ID_ROL)
-                {
-                  <option id="@rol.ID_ROL" value="@rol.ID_ROL" selected>@rol.NOMBRE</option>
-                }
-                else
-                {
-                  <option id="@rol.ID_ROL" value="@rol.ID_ROL">@rol.NOMBRE</option>
-                }
-              }
-            </select>
+                    if (rol.ID_ROL == Model.CuentaUsuario?.ID_ROL)
+                    {
+                      <option id="@rol.ID_ROL" value="@rol.ID_ROL" selected>@rol.NOMBRE</option>
+                    }
+                    else
+                    {
+                      <option id="@rol.ID_ROL" value="@rol.ID_ROL">@rol.NOMBRE</option>
+                    }
+                  }
+                </select>
+              </div>
+              <div class="btnIrForm">
+                <a href="@Url.Action("CrearRol", "Configuracion")" class="btn btn-ir"><i class="fi fi-rr-plus"></i></a>
+              </div>
+            </div>
           </div>
 
         </div>
