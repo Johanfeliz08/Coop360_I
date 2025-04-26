@@ -34,7 +34,9 @@
   <div class="titulo-seccion">
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
-      <a href="@Url.Action("HistorialPagos", "Pagos")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button id="btnRegresar" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></button>
+
+      @* <a href="@Url.Action("HistorialPagos", "Pagos")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a> *@
       <button type="button" id="btn-submit" class="btn btn-nuevo">
         <i class="fi fi-tr-usd-circle"></i><span>Pagar</span></button>
     </div>

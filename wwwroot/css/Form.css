@@ -76,6 +76,14 @@ input:focus {
   outline: var(--accent-color) 1px solid;
 }
 
+.select-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: left;
+  align-items: left;
+  width: 100%;
+}
+
 .campos-container .grupo .campo select {
   font-family: "Oxygen", sans-serif;
   font-weight: 300;
@@ -192,3 +200,57 @@ input[type="checkbox"]:checked {
 #btn-submit[disabled]:hover {
   color: #fff;
 }
+
+/* Boton para ir al formulario de la entidad */
+
+.campo-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: top;
+  gap: 10px;
+}
+
+.btnIrForm .btn-ir {
+  background: var(--accent-color);
+  padding: 5px 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 35px;
+  width: 55px;
+  border-radius: 5px;
+}
+
+.btnIrForm .btn-ir i {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.5em;
+  color: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+.btnIrForm .btn-ir span {
+  color: #fff;
+  font-weight: 800;
+  font-size: 1.2em;
+  transition: all ease 0.5s;
+}
+
+.btnIrForm .btn-ir:hover {
+  background: var(--accent-color-2);
+  transition: all ease 0.5s;
+}
+
+.btnIrForm .btn-ir:hover i {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+.btnIrForm .btn-ir:hover span {
+  color: var(--accent-color);
+  transition: all ease 0.5s;
+}
+
+/*  */

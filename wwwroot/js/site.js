@@ -1,4 +1,11 @@
-﻿// Please see documentation at https://learn.microsoft.com/aspnet/core/client-side/bundling-and-minification
-// for details on configuring this project to bundle and minify static web assets.
+﻿// Boton volver
 
-// Write your JavaScript code.
+const btnsRegresar = document.querySelectorAll(".btn-regresar");
+if (btnsRegresar != null) {
+  btnsRegresar.forEach((btn) => {
+    btn.addEventListener("click", function (e) {
+      e.preventDefault();
+      window.history.back();
+    });
+  });
+}

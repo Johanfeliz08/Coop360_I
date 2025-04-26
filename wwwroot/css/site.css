@@ -130,6 +130,7 @@
   height: 45px;
   width: 60px;
   transition: all ease 0.5s;
+  border: none;
 }
 
 .acciones .btn-regresar i {
@@ -358,23 +359,11 @@ input[type="checkbox"]:checked {
   outline: none;
 }
 
-.data-container
-  .table-container
-  .table
-  tbody
-  tr:hover
-  td
-  input[type="checkbox"] {
+.data-container .table-container .table tbody tr:hover td input[type="checkbox"] {
   accent-color: #fff;
   outline: none;
 }
-.data-container
-  .table-container
-  .table
-  tbody
-  tr:hover
-  td
-  input[type="checkbox"]:checked {
+.data-container .table-container .table tbody tr:hover td input[type="checkbox"]:checked {
   accent-color: var(--accent-color-2);
   outline: none;
 }

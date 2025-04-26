@@ -30,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function () {
       error.style.color = "red";
       error.style.fontSize = "12px";
       error.style.margin = "0px";
-      error.style.padding = "0px";
+      error.style.padding = "8px 0px";
       error.textContent = "El campo es requerido";
       btnSubmit.disabled = true;
       Element.after(error);

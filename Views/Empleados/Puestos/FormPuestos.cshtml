@@ -11,7 +11,7 @@
   <div class="titulo-seccion">
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
-      <a href="@Url.Action("RegistroPuestos", "Puestos")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button id="btnRegresar" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></button>
       <button type="button" id="btn-submit" class="btn btn-nuevo"><i
           class="fi fi-rr-plus"></i><span>Guardar</span></button>
     </div>
@@ -40,25 +40,32 @@
           </div>
           <div class="campo" id="campo_departamento">
             <label for="departamento">Departamento</label>
-            <select required name="ID_DEPARTAMENTO" id="departamento">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var departamento in @Model.Departamentos)
-              {
-
-                if (departamento.ID_DEPARTAMENTO == Model.Puesto?.ID_DEPARTAMENTO)
-                {
-                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO" selected>
-                    @departamento.NOMBRE
-                  </option>
-                }
-                else
-                {
-                  <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO">
-                    @departamento.NOMBRE
-                  </option>
-                }
-              }
-            </select>
+            <div class="campo-container">
+              <div class="select-container">
+                <select required name="ID_DEPARTAMENTO" id="departamento">
+                  <option value="default" disabled selected>Seleccionar</option>
+                  @foreach (var departamento in @Model.Departamentos)
+                  {
+                    if (departamento.ID_DEPARTAMENTO == Model.Puesto?.ID_DEPARTAMENTO)
+                    {
+                      <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO" selected>
+                        @departamento.NOMBRE
+                      </option>
+                    }
+                    else
+                    {
+                      <option id="@departamento.ID_DEPARTAMENTO" value="@departamento.ID_DEPARTAMENTO">
+                        @departamento.NOMBRE
+                      </option>
+                    }
+                  }
+                </select>
+              </div>
+              <div class="btnIrForm">
+                @* <button id="btnIr" class="btn btn-ir"><i class="fi fi-rr-plus"></i></button> *@
+                <a href="@Url.Action("Crear", "Departamentos")" class="btn btn-ir"><i class="fi fi-rr-plus"></i></a>
+              </div>
+            </div>
           </div>
         </div>
       </div>

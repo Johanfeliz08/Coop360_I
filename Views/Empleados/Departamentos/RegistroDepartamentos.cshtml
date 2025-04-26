@@ -37,7 +37,9 @@ Layout = "~/Views/Shared/_LayoutDashboard.cshtml";
   </div>
   <div class="data-container">
     <div class="acciones">
-      <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a>
+      <button id="btnRegresar" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></button>
+
+      @* <a href="@Url.Action("Home", "Dashboard")" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></a> *@
       <a href="@Url.Action("Crear", "Departamentos")" class="btn btn-nuevo"><i
           class="fi fi-rr-plus"></i><span>Agregar</span></a>
     </div>

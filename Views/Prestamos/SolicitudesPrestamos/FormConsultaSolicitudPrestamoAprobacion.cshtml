@@ -58,8 +58,10 @@
   <div class="titulo-seccion">
     <h1>@ViewBag.Title</h1>
     <div class="acciones">
-      <a href="@Url.Action("AprobacionSolicitudesPrestamos", "Prestamos")" class="btn btn-regresar"><i
-          class="fi fi-rr-undo"></i></a>
+      <button id="btnRegresar" class="btn btn-regresar"><i class="fi fi-rr-undo"></i></button>
+
+      @* <a href="@Url.Action("AprobacionSolicitudesPrestamos", "Prestamos")" class="btn btn-regresar"><i
+          class="fi fi-rr-undo"></i></a> *@
       <a href="@Url.Action("ConfirmarAprobacionSolicitudPrestamo", "Prestamos", new { idSolicitudPrestamo = Model.SolicitudPrestamo.ID_SOLICITUD, montoSolicitado = Model.SolicitudPrestamo.MONTO_SOLICITADO })"
         class="btn btn-nuevo"><i class="fi fi-tr-memo-circle-check"></i><span>Aprobar</span></a>
       <a href="@Url.Action("ConfirmarRechazoSolicitudPrestamo", "Prestamos", new { idSolicitudPrestamo = Model.SolicitudPrestamo.ID_SOLICITUD })"
