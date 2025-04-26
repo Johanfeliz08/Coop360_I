@@ -9,14 +9,14 @@ public class Usuario
     public required int CODIGO_EMPLEADO { get; set; }
     public required string CONTRASENA { get; set; }
 
-    public required int ID_ROL { get; set; }
+    public int? ID_ROL { get; set; }
 
-    public DateTime FECHA_CREACION { get; set; }
+    public DateTime? FECHA_CREACION { get; set; }
 
     public required string P_NOMBRE { get; set; }
-    public required string S_NOMBRE { get; set; }
+    public string? S_NOMBRE { get; set; }
     public required string P_APELLIDO { get; set; }
-    public required string S_APELLIDO { get; set; }
+    public string? S_APELLIDO { get; set; }
 
     public required int ID_NIVEL_APROBACION { get; set; }
 
