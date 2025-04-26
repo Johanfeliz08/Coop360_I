@@ -927,14 +927,14 @@
     <StaticWebAssetEndpoint Include="_content/Coop360_I/js/Form.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Form.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-gdVZFBiCrE/ZzPcIWZQJSMsJXa1eoId17urVPP\u002BRQCA="}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"2412"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022gdVZFBiCrE/ZzPcIWZQJSMsJXa1eoId17urVPP\u002BRQCA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 02:21:28 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"integrity","Value":"sha256-vXP9N\u002BR2zK5DBE8odONAM14KNdX\u002BRuIKmAtL08DeMco="}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"no-cache"},{"Name":"Content-Length","Value":"3451"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022vXP9N\u002BR2zK5DBE8odONAM14KNdX\u002BRuIKmAtL08DeMco=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 09:04:37 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
-    <StaticWebAssetEndpoint Include="_content/Coop360_I/js/Form.zzr71woovx.js">
+    <StaticWebAssetEndpoint Include="_content/Coop360_I/js/Form.ts3epgfyy4.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\Form.js'))</AssetFile>
       <Selectors><![CDATA[[]]]></Selectors>
-      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"zzr71woovx"},{"Name":"integrity","Value":"sha256-gdVZFBiCrE/ZzPcIWZQJSMsJXa1eoId17urVPP\u002BRQCA="},{"Name":"label","Value":"_content/Coop360_I/js/Form.js"}]]]></EndpointProperties>
-      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"2412"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022gdVZFBiCrE/ZzPcIWZQJSMsJXa1eoId17urVPP\u002BRQCA=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 02:21:28 GMT"}]]]></ResponseHeaders>
+      <EndpointProperties><![CDATA[[{"Name":"fingerprint","Value":"ts3epgfyy4"},{"Name":"integrity","Value":"sha256-vXP9N\u002BR2zK5DBE8odONAM14KNdX\u002BRuIKmAtL08DeMco="},{"Name":"label","Value":"_content/Coop360_I/js/Form.js"}]]]></EndpointProperties>
+      <ResponseHeaders><![CDATA[[{"Name":"Accept-Ranges","Value":"bytes"},{"Name":"Cache-Control","Value":"max-age=31536000, immutable"},{"Name":"Content-Length","Value":"3451"},{"Name":"Content-Type","Value":"text/javascript"},{"Name":"ETag","Value":"\u0022vXP9N\u002BR2zK5DBE8odONAM14KNdX\u002BRuIKmAtL08DeMco=\u0022"},{"Name":"Last-Modified","Value":"Sat, 26 Apr 2025 09:04:37 GMT"}]]]></ResponseHeaders>
     </StaticWebAssetEndpoint>
     <StaticWebAssetEndpoint Include="_content/Coop360_I/js/ModalAprobacionRechazo/ModalAprobacionRechazo.623atqfhu5.js">
       <AssetFile>$([System.IO.Path]::GetFullPath('$(MSBuildThisFileDirectory)..\staticwebassets\js\ModalAprobacionRechazo\ModalAprobacionRechazo.js'))</AssetFile>

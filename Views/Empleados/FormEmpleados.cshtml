@@ -263,41 +263,6 @@
           <div class="titulo-grupo" id="titulo-informacion-geografica">
             <h2>Informacion geografica</h2>
           </div>
-          <div class="campo" id="campo_sector">
-            <label for="sector">Sector</label>
-            <select required name="ID_SECTOR" id="sector">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var sector in @Model.Sectores)
-              {
-
-                if (sector.ID_SECTOR == Model.Empleado?.ID_SECTOR)
-                {
-                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR" selected>@sector.NOMBRE</option>
-                }
-                else
-                {
-                  <option id="@sector.ID_SECTOR" value="@sector.ID_SECTOR">@sector.NOMBRE</option>
-                }
-              }
-            </select>
-          </div>
-          <div class="campo" id="campo_ciudad">
-            <label for="ciudad">Ciudad</label>
-            <select required name="ID_CIUDAD" id="ciudad">
-              <option value="default" disabled selected>Seleccionar</option>
-              @foreach (var ciudad in @Model.Ciudades)
-              {
-                if (ciudad.ID_CIUDAD == Model.Empleado?.ID_CIUDAD)
-                {
-                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD" selected>@ciudad.NOMBRE</option>
-                }
-                else
-                {
-                  <option id="@ciudad.ID_CIUDAD" value="@ciudad.ID_CIUDAD">@ciudad.NOMBRE</option>
-                }
-              }
-            </select>
-          </div>
           <div class="campo" id="campo_provincia">
             <label for="provincia">Provincia</label>
             <select required name="ID_PROVINCIA" id="provincia">
@@ -312,6 +277,52 @@
                 else
                 {
                   <option id="@provincia.ID_PROVINCIA" value="@provincia.ID_PROVINCIA">@provincia.NOMBRE</option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_ciudad">
+            <label for="ciudad">Ciudad</label>
+            <select required name="ID_CIUDAD" id="ciudad">
+              <option value="default" disabled selected>Seleccionar</option>
+              <option id="nociudades" value="nociudades" disabled style="display:none;">No hay ciudades registradas para
+                la
+                provincia seleccionada.</option>
+
+              @foreach (var ciudad in @Model.Ciudades)
+              {
+                if (ciudad.ID_CIUDAD == Model.Empleado?.ID_CIUDAD)
+                {
+                  <option id="@ciudad.ID_CIUDAD" provincia="@ciudad.ID_PROVINCIA" value="@ciudad.ID_CIUDAD" selected>
+                    @ciudad.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@ciudad.ID_CIUDAD" provincia="@ciudad.ID_PROVINCIA" value="@ciudad.ID_CIUDAD">@ciudad.NOMBRE
+                  </option>
+                }
+              }
+            </select>
+          </div>
+          <div class="campo" id="campo_sector">
+            <label for="sector">Sector</label>
+            <select required name="ID_SECTOR" id="sector">
+              <option value="default" disabled selected>Seleccionar</option>
+              <option id="nosectores" value="nosectores" disabled style="display:none;">No hay sectores registrados para
+                la
+                ciudad seleccionada.</option>
+              @foreach (var sector in @Model.Sectores)
+              {
+
+                if (sector.ID_SECTOR == Model.Empleado?.ID_SECTOR)
+                {
+                  <option id="@sector.ID_SECTOR" ciudad="@sector.ID_CIUDAD" value="@sector.ID_SECTOR" selected>
+                    @sector.NOMBRE</option>
+                }
+                else
+                {
+                  <option id="@sector.ID_SECTOR" ciudad="@sector.ID_CIUDAD" value="@sector.ID_SECTOR">@sector.NOMBRE
+                  </option>
                 }
               }
             </select>

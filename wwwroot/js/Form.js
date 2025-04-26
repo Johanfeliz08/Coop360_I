@@ -66,4 +66,89 @@ document.addEventListener("DOMContentLoaded", function () {
 
   // Validar el formulario al cargar la página
   validarFormulario(requiredElements);
+
+  // Renderizar provincias, ciudades y sectores dependiendo su padre
+
+  // Obtener los select de provincia, ciudad y sector
+  const selectProvincia = document.getElementById("provincia");
+  const selectCiudad = document.getElementById("ciudad");
+  const selectSector = document.getElementById("sector");
+
+  // Verificar que los selects existan y luego ocultar opciones dependiendo la seleccion
+  if (selectProvincia != null && selectCiudad != null && selectSector != null) {
+    // Obtener todas las opciones de los selects
+
+    const provinciasOptions = selectProvincia.querySelectorAll("option");
+    const ciudadesOptions = selectCiudad.querySelectorAll("option");
+    const sectoresOptions = selectSector.querySelectorAll("option");
+
+    // Ocultar todas las opciones de ciudad y sector al cargar la pagina
+    ciudadesOptions.forEach((ciudad) => {
+      if (ciudad.value != "default") {
+        ciudad.style.display = "none";
+      }
+    });
+    sectoresOptions.forEach((sector) => {
+      if (sector.value != "default") {
+        sector.style.display = "none";
+      }
+    });
+
+    selectProvincia.addEventListener("change", (e) => {
+      // Obtener el ID de la provincia que esta seleccionada actualmente
+      const IdProvincia = selectProvincia.value;
+      // Resetear la ciudad y el sector
+      selectCiudad.value = "default";
+      selectSector.value = "default";
+
+      // Validar que no sea la opcion default
+      if (IdProvincia != "default") {
+        ciudadesOptions.forEach((ciudad) => {
+          if (ciudad.getAttribute("provincia") == IdProvincia || ciudad.value == "default") {
+            // Si la ciudad tiene el mismo ID de provincia, mostrarla
+            ciudad.style.display = "block";
+          } else {
+            ciudad.style.display = "none";
+          }
+        });
+
+        const ciudadesVisibles = Array.from(ciudadesOptions).filter((ciudad) => getComputedStyle(ciudad).display === "block" && ciudad.value != "default");
+
+        if (ciudadesVisibles.length <= 0) {
+          // Si no hay ciudades disponibles, renderizar un mensaje
+          const opcionNoCiudades = document.getElementById("nociudades");
+          console.log(opcionNoCiudades);
+          opcionNoCiudades.style.display = "block";
+          selectCiudad.value = "nociudades";
+        }
+      }
+    });
+
+    selectCiudad.addEventListener("change", (e) => {
+      const IdCiudad = selectCiudad.value;
+      // Resetear el sector
+      selectSector.value = "default";
+
+      if (IdCiudad != "default") {
+        sectoresOptions.forEach((sector) => {
+          if (sector.getAttribute("ciudad") == IdCiudad || sector.value == "default") {
+            // Si el sector tiene el mismo ID de ciudad, mostrarlo
+            sector.style.display = "block";
+          } else {
+            sector.style.display = "none";
+          }
+        });
+
+        const sectoresVisibles = Array.from(sectoresOptions).filter((sector) => getComputedStyle(sector).display === "block" && sector.value != "default");
+
+        if (sectoresVisibles.length <= 0) {
+          // Si no hay sectores disponibles, renderizar un mensaje
+          const opcionNoSectores = document.getElementById("nosectores");
+          console.log(opcionNoSectores);
+          opcionNoSectores.style.display = "block";
+          selectSector.value = "nosectores";
+        }
+      }
+    });
+  }
 });
